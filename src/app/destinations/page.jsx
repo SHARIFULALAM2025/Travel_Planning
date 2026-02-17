@@ -1,0 +1,11 @@
+import React from 'react';
+
+const Destinations = () => {
+    return (
+      <div>
+        <h1 className="">destinations</h1>
+      </div>
+    )
+};
+
+export default Destinations;
