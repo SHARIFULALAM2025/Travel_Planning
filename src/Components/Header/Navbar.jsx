@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
       <div className=" flex justify-between items-center px-6 py-2">
-        {/* Logo / Profile */}
+        {/* Logo */}
         <Link href="/">
           <div className="flex items-center gap-3 cursor-pointer">
             <figure className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-blue-500">
@@ -44,7 +44,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Right Side (future use) */}
+        {/* Right Side  */}
         <div className="hidden lg:block">
           <Link
             href="/signup"
