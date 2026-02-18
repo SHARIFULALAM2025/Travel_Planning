@@ -9,7 +9,7 @@ const Login = () => {
         {/* Left Side: Visual/Branding (Consistent with Signup) */}
         <div className="relative hidden md:block bg-blue-400">
           <Image
-            src="/assets/loginpage.png"
+            src="/assets/login2.jpg"
             alt="Workspace inspiration"
             fill
             className="object-cover"
