@@ -7,9 +7,9 @@ const Login = () => {
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
       <div className="max-w-5xl w-full bg-white rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
         {/* Left Side: Visual/Branding (Consistent with Signup) */}
-        <div className="relative hidden md:block bg-amber-400">
+        <div className="relative hidden md:block bg-blue-400">
           <Image
-            src="https://i.ibb.co.com/60q3m3WP/Skyward-flight-over-the-city.png"
+            src="/assets/login2.jpg"
             alt="Workspace inspiration"
             fill
             className="object-cover"
@@ -43,7 +43,7 @@ const Login = () => {
                 id="email"
                 type="email"
                 placeholder="enter your email"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-transparent outline-none transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
                 required
               />
             </div>
@@ -61,7 +61,7 @@ const Login = () => {
                 <Link
                   href="/forgot-password"
                   size="sm"
-                  className="text-sm text-amber-600 hover:underline font-medium"
+                  className="text-sm text-blue-600 hover:underline font-medium"
                 >
                   Forgot password?
                 </Link>
@@ -70,7 +70,7 @@ const Login = () => {
                 id="password"
                 type="password"
                 placeholder="••••••••"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-400 focus:border-transparent outline-none transition-all"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
                 required
               />
             </div>
@@ -81,7 +81,7 @@ const Login = () => {
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                className="h-4 w-4 text-amber-600 focus:ring-amber-500 border-gray-300 rounded cursor-pointer"
+                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded cursor-pointer"
               />
               <label
                 htmlFor="remember-me"
@@ -94,7 +94,7 @@ const Login = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-amber-200/50 transition-all transform active:scale-[0.98] mt-2"
+              className="w-full bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-blue-200/50 transition-all transform active:scale-[0.98] mt-2"
             >
               Sign In
             </button>
@@ -114,24 +114,24 @@ const Login = () => {
             <div className="grow border-t border-black"></div>
           </div>
           <div className="">
-            <button
-              type="button" // Use type="button" so it doesn't accidentally submit the form
-              className="w-full flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-gray-700 font-semibold py-3 px-4 border border-gray-300 rounded-lg shadow-sm transition-all duration-200 active:scale-[0.98]"
-            >
-              {/* Google Icon Wrapper */}
-              <div className="w-5 h-5 flex items-center justify-center">
-                <GoogleIcon />
-              </div>
-
-              <span>Continue with Google</span>
-            </button>
+        <button
+          
+          className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 text-black"
+        >
+          <img
+            src="https://www.svgrepo.com/show/475656/google-color.svg"
+            className="w-5"
+            alt="Google"
+          />
+          Login with Google
+        </button>
           </div>
 
           <p className="text-center text-sm text-gray-600">
             Don not have an account?{' '}
             <Link
               href="/signup"
-              className="text-amber-600 font-semibold hover:underline"
+              className="text-blue-600 font-semibold hover:underline"
             >
               Create an account
             </Link>
