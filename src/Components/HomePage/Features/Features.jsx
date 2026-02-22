@@ -27,12 +27,7 @@ const Features = () => {
       title: "Track Budget",
       description: "Monitor expenses and control spending.",
     },
-    {
-      id: 4,
-      icon: MessageSquare,
-      title: "Reviews",
-      description: "Write and read traveler reviews.",
-    },
+
     {
       id: 5,
       icon: Users,
@@ -46,17 +41,17 @@ const Features = () => {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+        <div className="mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
             Travel Management Features
           </h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-base">
+          <p className="mt-3 text-gray-500">
             Everything you need to plan and manage your trips efficiently.
           </p>
         </div>
 
         {/* 5 Column Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
 
           {features.map((feature) => (
             <div
