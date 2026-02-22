@@ -1,9 +1,61 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import GoogleIcon from '@mui/icons-material/Google'
+import { useForm } from 'react-hook-form'
+import { uploadImage } from '../ReusableFunction/UploadImage'
+import bcrypt from 'bcryptjs'
+import { signIn } from 'next-auth/react'
+import { postUser } from '@/app/option/saveUser'
+import toast from 'react-hot-toast'
+import { useRouter } from 'next/navigation'
 
 const Signup = () => {
+  const router=useRouter()
+  const HandelSocialLogin = async () => {
+    const res = await signIn('google', { redirect: false })
+    if (res?.error) {
+      toast.error('Login Failed!')
+    } else {
+      toast.success("sign up successfully!");
+      router.push("/")
+
+    }
+
+  }
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm()
+  const handleSignUp = async (data) => {
+    try {
+      const { name, email, password, image } = data
+      if (!image || image.length == 0) {
+        toast.error('please select an image')
+        return
+      }
+      const profileImage = image[0]
+      const userImage = await uploadImage(profileImage)
+      const hasPassword = await bcrypt.hash(password, 10)
+      if (!userImage) {
+        toast.error('image upload failed')
+        return
+      }
+      await postUser({ name, email, password: hasPassword, image: userImage })
+
+      toast.success('user save successfully')
+      reset()
+    } catch (error) {
+      if (error.response?.status == 400) {
+        toast.dismiss('email already exist')
+      } else {
+        console.error(error)
+        toast.error('something went wrong')
+      }
+    }
+  }
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
       <div className="max-w-5xl w-full bg-white rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
@@ -31,7 +83,7 @@ const Signup = () => {
             <p className="text-gray-500 mt-2">Start your journey with us.</p>
           </div>
 
-          <form className="space-y-5">
+          <form className="space-y-5" onSubmit={handleSubmit(handleSignUp)}>
             {/* Full Name */}
             <div>
               <label
@@ -47,8 +99,11 @@ const Signup = () => {
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg
              text-gray-900 placeholder-gray-500 placeholder-opacity-100
              focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
-                required
+                {...register('name', { required: true })}
               />
+              {errors.name && (
+                <span className="text-red-600">This field is required !</span>
+              )}
             </div>
 
             {/* Email */}
@@ -61,33 +116,35 @@ const Signup = () => {
               </label>
               <input
                 id="email"
+                {...register('email', { required: true })}
                 type="email"
                 placeholder="you@email.com"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg
              text-gray-900 placeholder-gray-500 placeholder-opacity-100
              focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
-                required
               />
+              {errors.email && (
+                <span className="text-red-600">This field is required !</span>
+              )}
             </div>
 
             {/* Password */}
             <div>
-              <label
-                htmlFor="password"
-                name="password"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
+              <label className="block text-sm font-medium text-gray-700 mb-1">
                 Password
               </label>
               <input
                 id="password"
+                {...register('password', { required: true })}
                 type="password"
                 placeholder="Enter your password"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg
              text-gray-900 placeholder-gray-500 placeholder-opacity-100
              focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
-                required
               />
+              {errors.password && (
+                <span className="text-red-600">This field is required !</span>
+              )}
             </div>
 
             {/* Profile Picture (File Input) */}
@@ -101,8 +158,12 @@ const Signup = () => {
               <input
                 id="avatar"
                 type="file"
+                {...register('image', { required: true })}
                 className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 transition-colors cursor-pointer"
               />
+              {errors.image && (
+                <span className="text-red-600">This field is required !</span>
+              )}
             </div>
 
             {/* Submit Button */}
@@ -126,17 +187,19 @@ const Signup = () => {
             <div className="grow border-t border-black"></div>
           </div>
           <div className="">
-        <button
-          
-          className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 text-black"
-        >
-          <img
-            src="https://www.svgrepo.com/show/475656/google-color.svg"
-            className="w-5"
-            alt="Google"
-          />
-          Login with Google
-        </button>
+            <button
+              onClick={HandelSocialLogin}
+              className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 text-black"
+            >
+              <Image
+                width={100}
+                height={20}
+                src="https://www.svgrepo.com/show/475656/google-color.svg"
+                className="w-5"
+                alt="Google"
+              />
+              Login with Google
+            </button>
           </div>
 
           <p className="text-center text-sm text-gray-600 mt-8">
