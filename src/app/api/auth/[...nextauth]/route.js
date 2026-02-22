@@ -17,7 +17,7 @@ export const authOptions = {
                 return null;
             }
         }),
-        // social login
+        // social login provider
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
