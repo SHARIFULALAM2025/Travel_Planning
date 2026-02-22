@@ -1,12 +1,47 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import GoogleIcon from '@mui/icons-material/Google'
+import { useForm } from 'react-hook-form'
+import { signIn } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
+import toast from 'react-hot-toast'
 const Login = () => {
+  const router = useRouter()
+  const HandelSocialLogin = async () => {
+    const res = await signIn('google', { redirect: false })
+    if (res?.error) {
+      toast.error('Login Failed!')
+    } else {
+      toast.success('sign up successfully!')
+      router.push('/')
+    }
+  }
+  const {
+    register,
+    handleSubmit,
+
+    formState: { errors },
+  } = useForm()
+  const handelLogin = async (data) => {
+    const result = await signIn('credentials', {
+      email: data.email,
+      password: data.password,
+      redirect: false,
+    })
+
+    if (result?.error) {
+      toast.error('Login failed: ' + result.error)
+    } else {
+      toast.success('Login successfully!')
+      router.push("/")
+
+
+    }
+  }
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
       <div className="max-w-5xl w-full bg-white rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
-        {/* Left Side: Visual/Branding (Consistent with Signup) */}
         <div className="relative hidden md:block bg-blue-400">
           <Image
             src="/assets/login2.jpg"
@@ -30,7 +65,7 @@ const Login = () => {
             </p>
           </div>
 
-          <form className="space-y-5">
+          <form className="space-y-5" onSubmit={handleSubmit(handelLogin)}>
             {/* Email Address */}
             <div>
               <label
@@ -40,12 +75,14 @@ const Login = () => {
                 Email Address
               </label>
               <input
-                id="email"
+                {...register('email', { required: true })}
                 type="email"
                 placeholder="enter your email"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
-                required
               />
+              {errors.email && (
+                <span className="text-red-600">This field is required !</span>
+              )}
             </div>
 
             {/* Password */}
@@ -67,12 +104,14 @@ const Login = () => {
                 </Link>
               </div>
               <input
-                id="password"
+                {...register('password', { required: true })}
                 type="password"
                 placeholder="••••••••"
                 className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
-                required
               />
+              {errors.password && (
+                <span className="text-red-600">This field is required !</span>
+              )}
             </div>
 
             {/* Remember Me Checkbox */}
@@ -114,17 +153,19 @@ const Login = () => {
             <div className="grow border-t border-black"></div>
           </div>
           <div className="">
-        <button
-          
-          className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 text-black"
-        >
-          <img
-            src="https://www.svgrepo.com/show/475656/google-color.svg"
-            className="w-5"
-            alt="Google"
-          />
-          Login with Google
-        </button>
+            <button
+              onClick={HandelSocialLogin}
+              className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 text-black"
+            >
+              <Image
+                width={100}
+                height={20}
+                src="https://www.svgrepo.com/show/475656/google-color.svg"
+                className="w-5"
+                alt="Google"
+              />
+              Login with Google
+            </button>
           </div>
 
           <p className="text-center text-sm text-gray-600">
