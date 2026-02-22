@@ -24,80 +24,83 @@ const Banner = () => {
 
     return (
         <section
-            className="relative w-full h-[80vh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
+            className="relative w-full h-[85vh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
             style={{
                 backgroundImage: `url('https://i.ibb.co.com/TMkbGZ00/exploring-global-travel-destinations-world-map-visual-representation-business-environment-aerial-vie.webp')`
             }}
         >
-            {/* Layered Overlays: vignette + gradient */}
-            <div className="absolute inset-0 bg-black/30" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-black/60 mix-blend-multiply" />
+            {/* Layered overlays */}
+            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/70 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(255,255,255,0.03),_transparent_25%)] pointer-events-none" />
 
-            {/* Subtle decorative pattern (faint) */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(255,255,255,0.02),_transparent_20%)] pointer-events-none" />
-
-            <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 lg:px-10 flex flex-col items-center justify-center text-center gap-6">
-                {/* Intro */}
+            {/* Content */}
+            <div className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 flex flex-col items-center text-center gap-8">
+                
+                {/* Headline */}
                 <div className="max-w-3xl">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight drop-shadow-lg">
-                        Discover your next adventure
+                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight drop-shadow-xl">
+                        Discover Your Next Adventure
                     </h1>
-                    <p className="mt-4 text-lg sm:text-xl text-slate-200/90 max-w-2xl mx-auto font-light leading-relaxed">
+                    <p className="mt-4 text-lg sm:text-xl text-slate-200/90 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
                         Plan effortlessly with curated recommendations, smart itineraries, and seamless booking — everything for premium travelers.
                     </p>
                 </div>
 
-                {/* Search Bar - glass panel */}
+                {/* Search Form */}
                 <form
                     onSubmit={handleSearch}
-                    className="w-full mt-6 bg-white/8 backdrop-blur-md border border-white/10 rounded-2xl p-4 sm:p-5 lg:p-6 shadow-xl max-w-4xl"
+                    className="w-full mt-8 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col sm:flex-row items-center gap-4"
                 >
-                    <div className="flex flex-col sm:flex-row items-center gap-3">
-                        <div className="flex-1 w-full grid grid-cols-1 sm:grid-cols-3 gap-3 items-end">
-                            <div className="flex flex-col">
-                                <label className="text-xs text-slate-200/80 mb-1 font-medium">Destination</label>
-                                <input
-                                    type="text"
-                                    name="destination"
-                                    placeholder="Where are you going?"
-                                    value={formData.destination}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-lg bg-white/90 text-slate-900 placeholder-slate-400 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                                />
-                            </div>
+                    <div className="flex-1 w-full grid grid-cols-1 sm:grid-cols-3 gap-4 items-end">
 
-                            <div className="flex flex-col">
-                                <label className="text-xs text-slate-200/80 mb-1 font-medium">Dates</label>
-                                <input
-                                    type="date"
-                                    name="dates"
-                                    value={formData.dates}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-lg bg-white/90 text-slate-900 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                                />
-                            </div>
-
-                            <div className="flex flex-col">
-                                <label className="text-xs text-slate-200/80 mb-1 font-medium">Guests</label>
-                                <input
-                                    type="number"
-                                    name="guests"
-                                    placeholder="Guests"
-                                    value={formData.guests}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-lg bg-white/90 text-slate-900 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-                                />
-                            </div>
+                        {/* Destination */}
+                        <div className="flex flex-col">
+                            <label className="text-xs text-slate-200/80 mb-1 font-semibold tracking-wide uppercase">Destination</label>
+                            <input
+                                type="text"
+                                name="destination"
+                                placeholder="Where are you going?"
+                                value={formData.destination}
+                                onChange={handleChange}
+                                className="w-full px-5 py-3 rounded-xl bg-white/95 text-slate-900 placeholder-slate-400 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md transition-all"
+                            />
                         </div>
 
-                        <div className="sm:ml-3 w-full sm:w-auto">
-                            <button
-                                type="submit"
-                                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
-                            >
-                                Search
-                            </button>
+                        {/* Dates */}
+                        <div className="flex flex-col">
+                            <label className="text-xs text-slate-200/80 mb-1 font-semibold tracking-wide uppercase">Dates</label>
+                            <input
+                                type="date"
+                                name="dates"
+                                value={formData.dates}
+                                onChange={handleChange}
+                                className="w-full px-5 py-3 rounded-xl bg-white/95 text-slate-900 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md transition-all"
+                            />
                         </div>
+
+                        {/* Guests */}
+                        <div className="flex flex-col">
+                            <label className="text-xs text-slate-200/80 mb-1 font-semibold tracking-wide uppercase">Guests</label>
+                            <input
+                                type="number"
+                                name="guests"
+                                placeholder="Guests"
+                                value={formData.guests}
+                                onChange={handleChange}
+                                className="w-full px-5 py-3 rounded-xl bg-white/95 text-slate-900 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md transition-all"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Search Button */}
+                    <div className="sm:ml-4 w-full sm:w-auto">
+                        <button
+                            type="submit"
+                            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-xl hover:shadow-2xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:-translate-y-1"
+                        >
+                            Search
+                        </button>
                     </div>
                 </form>
             </div>

@@ -1,86 +1,97 @@
-import React from 'react';
-import { Brain, Wallet, Star, Sparkles } from 'lucide-react';
+import React from "react";
+import {
+  MapPlus,
+  Globe2,
+  Wallet,
+  MessageSquare,
+  Users,
+} from "lucide-react";
 
 const Features = () => {
-    const features = [
-        {
-            id: 1,
-            icon: Brain,
-            title: 'Smart Trip Planner',
-            description: 'Plan your entire trip with AI-powered recommendations tailored to your preferences.'
-        },
-        {
-            id: 2,
-            icon: Wallet,
-            title: 'Budget Tracker',
-            description: 'Track expenses and stay within your travel budget with detailed expense management.'
-        },
-        {
-            id: 3,
-            icon: Star,
-            title: 'User Reviews',
-            description: 'Read authentic reviews from verified travelers to make informed decisions.'
-        },
-        {
-            id: 4,
-            icon: Sparkles,
-            title: 'Hidden Places Recommendation',
-            description: 'Discover secret destinations off the beaten path and create unforgettable memories.'
-        }
-    ];
+  const features = [
+    {
+      id: 1,
+      icon: MapPlus,
+      title: "Create Trips",
+      description: "Create and manage your travel plans easily.",
+    },
+    {
+      id: 2,
+      icon: Globe2,
+      title: "Explore Places",
+      description: "Discover and add new destinations.",
+    },
+    {
+      id: 3,
+      icon: Wallet,
+      title: "Track Budget",
+      description: "Monitor expenses and control spending.",
+    },
+    {
+      id: 4,
+      icon: MessageSquare,
+      title: "Reviews",
+      description: "Write and read traveler reviews.",
+    },
+    {
+      id: 5,
+      icon: Users,
+      title: "Group Planning",
+      description: "Plan trips together with friends.",
+    },
+  ];
 
-    return (
-        <section className="py-20  bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
-            {/* Decorative gradient blobs */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -mr-48 -mt-48"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -ml-48 -mb-48"></div>
-            
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                {/* Section Header */}
-                <div className="text-center mb-16 sm:mb-20 lg:mb-24">
-                    <h2 className="text-5xl font-bold tracking-tight text-gray-900 mb-4 sm:mb-6">
-                        Why Choose Us
-                    </h2>
-                    <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto font-light leading-relaxed">
-                        Everything you need to plan, book, and enjoy your perfect travel experience
-                    </p>
+  return (
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* Header */}
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            Travel Management Features
+          </h2>
+          <p className="text-gray-500 max-w-xl mx-auto text-base">
+            Everything you need to plan and manage your trips efficiently.
+          </p>
+        </div>
+
+        {/* 5 Column Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+
+          {features.map((feature) => (
+            <div
+              key={feature.id}
+              className="group bg-white border border-gray-200 rounded-2xl p-5 
+              text-center transition-all duration-300 
+              hover:shadow-lg hover:-translate-y-1 hover:border-indigo-400"
+            >
+              {/* Icon */}
+              <div className="mb-4 flex justify-center">
+                <div className="w-12 h-12 flex items-center justify-center 
+                rounded-xl bg-indigo-50 group-hover:bg-indigo-600 
+                transition-all duration-300">
+                  <feature.icon
+                    size={22}
+                    className="text-indigo-600 group-hover:text-white transition-all duration-300"
+                  />
                 </div>
+              </div>
 
-                {/* Features Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                    {features.map((feature) => (
-                        <div
-                            key={feature.id}
-                            className="group relative bg-white/80 backdrop-blur-xl rounded-2xl p-7 sm:p-8 shadow-md hover:shadow-2xl transition-all duration-500 ease-out transform hover:-translate-y-2 border border-white/50 hover:border-blue-200/50"
-                        >
-                            {/* Hover glow effect */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-indigo-500/0 group-hover:from-blue-500/10 group-hover:to-indigo-500/10 rounded-2xl transition-all duration-500"></div>
+              {/* Title */}
+              <h3 className="text-sm font-semibold text-gray-900 mb-2">
+                {feature.title}
+              </h3>
 
-                            {/* Icon */}
-                            <div className="mb-5 transform transition-all duration-500 group-hover:scale-125 group-hover:rotate-12 relative z-20 inline-block">
-                                <feature.icon size={56} className="text-blue-600 group-hover:text-indigo-600 transition-colors duration-500" strokeWidth={1.5} />
-                            </div>
-
-                            {/* Title */}
-                            <h3 className="text-lg sm:text-xl font-semibold tracking-wide text-gray-900 mb-3 relative z-20">
-                                {feature.title}
-                            </h3>
-
-                            {/* Description */}
-                            <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-light relative z-20">
-                                {feature.description}
-                            </p>
-
-                            {/* Animated accent line */}
-                            <div className="mt-6 flex items-center gap-3 relative z-20">
-                                <div className="h-1 w-8 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all duration-500 group-hover:w-full"></div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
+              {/* Description */}
+              <p className="text-xs text-gray-500 leading-relaxed">
+                {feature.description}
+              </p>
             </div>
-        </section>
-    );
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Features;

@@ -1,93 +1,135 @@
-import React from 'react';
-import Image from 'next/image';
-import { ArrowRight, Star } from 'lucide-react';
+import React from "react";
+import Image from "next/image";
+import { ArrowRight, Star } from "lucide-react";
 
 const Personalized = () => {
   const cards = [
     {
       id: 1,
-      image: 'https://i.ibb.co.com/zT1s8ykw/cb217bfd.avif',
-      category: 'Luxury Cabin',
+      image: "https://i.ibb.co.com/zT1s8ykw/cb217bfd.avif",
+      category: "Luxury Cabin",
       rating: 4.9,
-      title: 'Secluded Lakeview Cabin',
-      description: 'Cozy cabin with private deck, hot tub, and panoramic mountain views.',
-      price: '$420/night'
+      title: "Secluded Lakeview Cabin",
+      description:
+        "Cozy cabin with private deck, hot tub, and panoramic mountain views.",
+      price: "$420/night",
     },
     {
       id: 2,
-      image: 'https://i.ibb.co.com/GfKPbfJQ/033097-450547.jpg',
-      category: 'Hiking Trip',
+      image: "https://i.ibb.co.com/zT1s8ykw/cb217bfd.avif",
+      category: "Hiking Trip",
       rating: 4.8,
-      title: 'Guided Alpine Trek',
-      description: 'Three-day guided trek through alpine trails with expert local guides.',
-      price: '$220/person'
+      title: "Guided Alpine Trek",
+      description:
+        "Three-day guided trek through alpine trails with expert local guides.",
+      price: "$220/person",
     },
     {
       id: 3,
-      image: 'https://i.ibb.co.com/TMGjwhP8/serene-underground-cave-tranquil-water-channels-reflecting-warm-light-natural-wonder-stunning-featur.webp',
-      category: 'Unique Stay',
+      image:
+        "https://i.ibb.co.com/zT1s8ykw/cb217bfd.avif",
+      category: "Unique Stay",
       rating: 4.7,
-      title: 'Cliffside Cave Retreat',
-      description: 'A one-of-a-kind cave conversion with modern comforts and dramatic views.',
-      price: '$310/night'
-    }
+      title: "Cliffside Cave Retreat",
+      description:
+        "A one-of-a-kind cave conversion with modern comforts and dramatic views.",
+      price: "$310/night",
+    },
+    {
+      id: 4,
+      image:
+        "https://i.ibb.co.com/zT1s8ykw/cb217bfd.avif",
+      category: "Beach Escape",
+      rating: 4.8,
+      title: "Private Island Retreat",
+      description:
+        "Exclusive beachfront stay with crystal-clear waters and sunset views.",
+      price: "$520/night",
+    },
   ];
 
   return (
-    <section className="bg-gradient-to-b from-gray-50 to-white py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between mb-10">
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Personalized for you</h2>
-            <p className="mt-2 text-sm sm:text-base text-gray-600">Based on your recent interest in <span className="font-medium">Mountain Getaways</span></p>
-          </div>
+    <section className="bg-white py-24">
+      <div className="max-w-7xl mx-auto px-6">
+
+        {/* Header */}
+        <div className="mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            Personalized For You
+          </h2>
+          <p className="mt-3 text-gray-500">
+            Based on your recent interest in{" "}
+            <span className="font-semibold text-indigo-600">
+              Mountain Getaways
+            </span>
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* 4 Column Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {cards.map((card) => (
             <article
               key={card.id}
-              className="relative bg-white/60 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-white/40"
+              className="group bg-white rounded-3xl overflow-hidden
+              border border-gray-100
+              shadow-md hover:shadow-2xl
+              transition-all duration-500 hover:-translate-y-2"
             >
-              <div className="relative h-64 w-full">
+              {/* Image */}
+              <div className="relative h-56 w-full overflow-hidden">
                 <Image
                   src={card.image}
                   alt={card.title}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 25vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
-                {/* Dark overlay for legibility */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
-                {/* Category pill */}
-                <div className="absolute left-4 bottom-4 bg-white/90 text-sm text-gray-800 px-3 py-1 rounded-full backdrop-blur-sm shadow-sm">
+                <div className="absolute left-4 bottom-4 bg-white/95 text-xs font-medium text-gray-800 px-3 py-1 rounded-full shadow-sm">
                   {card.category}
                 </div>
 
-                {/* Rating badge */}
-                <div className="absolute top-4 right-4 bg-white/95 text-gray-900 px-3 py-1 rounded-full shadow-md flex items-center gap-2">
-                  <Star size={14} className="text-yellow-400" />
-                  <span className="text-sm font-medium">{card.rating}</span>
+                <div className="absolute top-4 right-4 bg-white text-gray-900 px-3 py-1 rounded-full shadow-md flex items-center gap-1">
+                  <Star size={14} className="text-yellow-400 fill-yellow-400" />
+                  <span className="text-sm font-medium">
+                    {card.rating}
+                  </span>
                 </div>
               </div>
 
-              <div className="p-6 sm:p-7 flex flex-col gap-4">
-                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 leading-tight">{card.title}</h3>
-                <p className="text-sm text-gray-600 flex-1">{card.description}</p>
+              {/* Content */}
+              <div className="p-6 flex flex-col gap-4">
+                <h3 className="text-base font-semibold text-gray-900">
+                  {card.title}
+                </h3>
 
-                <div className="flex items-center justify-between mt-2">
-                  <div className="text-lg font-bold text-gray-900">{card.price}</div>
-                  <button className="inline-flex items-center gap-2 px-4 py-2 bg-white text-blue-600 font-semibold rounded-lg shadow-sm border border-white/30 hover:shadow-lg hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-600 hover:text-white transition-all duration-300">
-                    <span>Quick View</span>
-                    <ArrowRight size={16} />
+                <p className="text-sm text-gray-600 flex-1 leading-relaxed">
+                  {card.description}
+                </p>
+
+                <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                  <span className="text-base font-bold text-gray-900">
+                    {card.price}
+                  </span>
+
+                  <button
+                    className="inline-flex items-center gap-2 px-3 py-1.5
+                    bg-indigo-600 text-white text-sm font-medium
+                    rounded-lg shadow-sm
+                    hover:bg-indigo-700 hover:shadow-md
+                    transition-all duration-300"
+                  >
+                    Quick View
+                    <ArrowRight size={14} />
                   </button>
                 </div>
               </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );

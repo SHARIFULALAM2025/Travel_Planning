@@ -4,14 +4,15 @@ import { navItems } from './NavData'
 import Link from 'next/link'
 import Image from 'next/image'
 import { signOut, useSession } from 'next-auth/react'
+import { usePathname } from 'next/navigation'  // <- import this
 
 const Navbar = () => {
-  const { data: session, status } = useSession()
+  const { data: session } = useSession()
+  const pathname = usePathname()  // <- get current path
+
   const handelSignOut = () => {
-    signOut({callbackUrl:"/signup"})
-
+    signOut({ callbackUrl: "/signup" })
   }
-
 
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
@@ -27,29 +28,33 @@ const Navbar = () => {
               className="object-cover"
             />
           </figure>
-          <span className="font-bold text-blue-600 text-lg hidden sm:block">
+          <span className="font-bold text-blue-700 text-lg hidden sm:block">
             TravelMate
           </span>
         </Link>
 
         {/* Navigation Items */}
         <div className="flex items-center gap-6">
-          {navItems.map((item, index) => (
-            <Link
-              key={index}
-              href={item.path}
-              className="relative flex items-center gap-2 text-gray-600 font-medium text-base
-                         hover:text-blue-600 transition-colors duration-300
-                         after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px]
-                         after:bg-blue-600 after:transition-all hover:after:w-full"
-            >
-              <span className="text-lg">{item.icon}</span>
-              <span className="hidden md:block">{item.name}</span>
-            </Link>
-          ))}
+          {navItems.map((item, index) => {
+            const isActive = pathname === item.path  // check if active
+
+            return (
+              <Link
+                key={index}
+                href={item.path}
+                className={`relative flex items-center gap-2 text-base font-medium
+                  transition-colors duration-300
+                  after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all
+                  ${isActive ? 'text-blue-600 after:w-full' : 'text-gray-600 hover:text-blue-600 hover:after:w-full'}`}
+              >
+                <span className="text-lg">{item.icon}</span>
+                <span className="hidden md:block">{item.name}</span>
+              </Link>
+            )
+          })}
         </div>
 
-        {/* Sign Up Button */}
+        {/* Sign Up / LogOut Button */}
         {session?.user ? (
           <button
             onClick={handelSignOut}
