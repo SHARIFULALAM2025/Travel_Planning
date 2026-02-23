@@ -96,7 +96,7 @@ const Login = () => {
                   Password
                 </label>
                 <Link
-                  href="/forgot-password"
+                  href="/reset"
                   size="sm"
                   className="text-sm text-blue-600 hover:underline font-medium"
                 >
