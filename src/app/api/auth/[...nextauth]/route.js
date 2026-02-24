@@ -65,11 +65,12 @@ export const authOptions = {
         },
         async signIn({ user, account }) {
             try {
-                if (account.provider === "google") {
+                if (account.provider === "google" || account.provider ==="github") {
                     const userData = {
-                        name: user.name,
-                        email: user.email,
-                        image: user.image
+                        name: user.name || user.login,
+                        email: user.email || (user.emails && user.emails[0]?.value),
+                        image: user.image,
+                        provider:account.provider
                     };
                     await postUser(userData);
                 }
@@ -78,7 +79,8 @@ export const authOptions = {
                 console.error("backend Error:", error);
                 return true;
             }
-        }
+        },
+
     }
 };
 
