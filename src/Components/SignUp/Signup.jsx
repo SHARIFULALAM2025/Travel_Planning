@@ -46,6 +46,12 @@ const Signup = () => {
       await postUser({ name, email, password: hasPassword, image: userImage })
 
       toast.success('user save successfully')
+       await signIn('credentials', {
+         email,
+         password,
+         redirect: true,
+         callbackUrl: '/',
+       })
       reset()
     } catch (error) {
       if (error.response?.status == 400) {
