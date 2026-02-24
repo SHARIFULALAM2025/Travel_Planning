@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import toast from 'react-hot-toast'
+import { FaGithub } from 'react-icons/fa6'
 const Login = () => {
   const router = useRouter()
   const HandelSocialLogin = async () => {
@@ -17,6 +18,15 @@ const Login = () => {
       router.push('/')
     }
   }
+   const HandelGitHubLogin = async () => {
+     const res = await signIn('github', { redirect: false })
+     if (res?.error) {
+       toast.error('Login Failed!')
+     } else {
+       toast.success('sign up successfully!')
+       router.push('/')
+     }
+   }
   const {
     register,
     handleSubmit,
@@ -155,7 +165,7 @@ const Login = () => {
           <div className="">
             <button
               onClick={HandelSocialLogin}
-              className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 text-black"
+              className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 text-white hover:bg-gray-600  bg-black"
             >
               <Image
                 width={100}
@@ -167,6 +177,27 @@ const Login = () => {
               Login with Google
             </button>
           </div>
+          <div className=" flex items-center ">
+                      {/* Left Line */}
+                      <div className="grow border-t border-black"></div>
+
+                      {/* OR Text */}
+                      <span className="shrink mx-4 text-black text-sm font-medium uppercase tracking-wider">
+                        Or
+                      </span>
+
+                      {/* Right Line */}
+                      <div className="grow border-t border-black"></div>
+                    </div>
+                    <div className="">
+                      <button
+                        onClick={HandelGitHubLogin}
+                        className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-black"
+                      >
+                        <FaGithub></FaGithub>
+                        Login with GitHub
+                      </button>
+                    </div>
 
           <p className="text-center text-sm text-gray-600">
             Don not have an account?{' '}

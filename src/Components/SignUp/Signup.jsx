@@ -9,6 +9,7 @@ import { signIn } from 'next-auth/react'
 import { postUser } from '@/app/option/saveUser'
 import toast from 'react-hot-toast'
 import { useRouter } from 'next/navigation'
+import { FaGithub } from 'react-icons/fa6'
 
 const Signup = () => {
   const router=useRouter()
@@ -206,7 +207,7 @@ const Signup = () => {
           <div className="">
             <button
               onClick={HandelSocialLogin}
-              className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 text-black"
+              className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2  bg-black text-white hover:bg-gray-600"
             >
               <Image
                 width={100}
@@ -235,6 +236,7 @@ const Signup = () => {
               onClick={HandelGitHubLogin}
               className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-black"
             >
+              <FaGithub></FaGithub>
               Login with GitHub
             </button>
           </div>
