@@ -23,6 +23,17 @@ const Signup = () => {
     }
 
   }
+  const HandelGitHubLogin = async() => {
+     const res = await signIn('github', { redirect: false })
+    if (res?.error) {
+      toast.error('Login Failed!')
+    } else {
+      toast.success("sign up successfully!");
+      router.push("/")
+
+    }
+
+  }
   const {
     register,
     handleSubmit,
@@ -205,6 +216,26 @@ const Signup = () => {
                 alt="Google"
               />
               Login with Google
+            </button>
+          </div>
+          <div className=" flex items-center ">
+            {/* Left Line */}
+            <div className="grow border-t border-black"></div>
+
+            {/* OR Text */}
+            <span className="shrink mx-4 text-black text-sm font-medium uppercase tracking-wider">
+              Or
+            </span>
+
+            {/* Right Line */}
+            <div className="grow border-t border-black"></div>
+          </div>
+          <div className="">
+            <button
+              onClick={HandelGitHubLogin}
+              className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-black"
+            >
+              Login with GitHub
             </button>
           </div>
 
