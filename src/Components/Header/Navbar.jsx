@@ -1,10 +1,12 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { navItems } from './NavData'
 import Link from 'next/link'
 import Image from 'next/image'
 import { signOut, useSession } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
+import DarkMode from '../DarkMode/DarkMode'
+import { useTheme } from 'next-themes'
 
 const Navbar = () => {
   const { data: session } = useSession()
@@ -13,15 +15,26 @@ const Navbar = () => {
   const handleSignOut = () => {
     signOut({ callbackUrl: "/signup" })
   }
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
 
   return (
-    <nav className="sticky top-0 z-50 bg-white backdrop-blur-xl  shadow-[0_2px_20px_rgba(0,0,0,0.04)]">
+    <nav
+      className={`sticky top-0  z-50 ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}    backdrop-blur-xl  shadow-[0_2px_20px_rgba(0,0,0,0.04)]`}
+    >
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 lg:px-10 py-4">
-
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <figure className="w-10 h-10 rounded-full overflow-hidden  transition duration-300
-                             group-hover:scale-105">
+          <figure
+            className="w-10 h-10 rounded-full overflow-hidden  transition duration-300
+                             group-hover:scale-105"
+          >
             <Image
               src="/planet.png"
               width={40}
@@ -46,9 +59,10 @@ const Navbar = () => {
                 key={index}
                 href={item.path}
                 className={`relative text-[15px] font-medium tracking-wide transition duration-300
-                ${isActive 
-                  ? 'text-blue-700' 
-                  : 'text-gray-600 hover:text-blue-700'
+                ${
+                  isActive
+                    ? 'text-blue-700'
+                    : 'text-gray-600 hover:text-blue-700'
                 }`}
               >
                 {item.name}
@@ -62,6 +76,7 @@ const Navbar = () => {
             )
           })}
         </div>
+        <DarkMode></DarkMode>
 
         {/* Auth Button */}
         <div className="flex items-center gap-4">
@@ -85,7 +100,6 @@ const Navbar = () => {
             </Link>
           )}
         </div>
-
       </div>
     </nav>
   )

@@ -17,7 +17,7 @@ const destinations = [
   { id: 12, title: "Swiss Alps", price: "$3500", image: "/assets/image124.jpg" },
 ];
 
-export default function PopularDestination() {
+ const  PopularDestination=()=> {
   const [active, setActive] = useState(0);
 
   const itemsPerSlide = 4;
@@ -97,3 +97,4 @@ export default function PopularDestination() {
     </section>
   );
 }
+export default PopularDestination;
