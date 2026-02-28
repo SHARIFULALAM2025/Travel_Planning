@@ -187,27 +187,28 @@ const Signup = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-amber-200/50 transition-all transform active:scale-[0.98] mt-4"
+              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-indigo-400/40 transition-all active:scale-[0.98]"
             >
               Sign Up
             </button>
           </form>
-          <div className=" flex items-center ">
-            {/* Left Line */}
-            <div className="grow border-t border-black"></div>
-
-            {/* OR Text */}
-            <span className="shrink mx-4 text-black text-sm font-medium uppercase tracking-wider">
-              Or
+          <div className="  ">
+            
+          {/* Divider */}
+          <div className="flex items-center my-8">
+            <div className="flex-grow border-t border-gray-300"></div>
+            <span className="mx-4 text-sm text-gray-500 uppercase tracking-wider">
+              Or continue with
             </span>
+            <div className="flex-grow border-t border-gray-300"></div>
+          </div>
 
-            {/* Right Line */}
-            <div className="grow border-t border-black"></div>
+            
           </div>
           <div className="">
             <button
               onClick={HandelSocialLogin}
-              className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2  bg-black text-white hover:bg-gray-600"
+              className="w-full py-3 border border-gray-300 rounded-xl flex items-center justify-center gap-3 bg-white text-gray-800 hover:bg-gray-200 transition-all font-medium"
             >
               <Image
                 width={100}
@@ -220,21 +221,16 @@ const Signup = () => {
             </button>
           </div>
           <div className=" flex items-center ">
-            {/* Left Line */}
-            <div className="grow border-t border-black"></div>
 
-            {/* OR Text */}
-            <span className="shrink mx-4 text-black text-sm font-medium uppercase tracking-wider">
-              Or
-            </span>
+
 
             {/* Right Line */}
-            <div className="grow border-t border-black"></div>
+           
           </div>
           <div className="">
             <button
               onClick={HandelGitHubLogin}
-              className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-black"
+              className="w-full mt-4 py-3 bg-black text-white rounded-xl flex items-center justify-center gap-3 hover:bg-gray-900 transition-all font-medium"
             >
               <FaGithub></FaGithub>
               Login with GitHub

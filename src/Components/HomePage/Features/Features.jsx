@@ -1,9 +1,8 @@
-import React from "react";
+"use client";
 import {
   MapPlus,
   Globe2,
   Wallet,
-  MessageSquare,
   Users,
 } from "lucide-react";
 
@@ -27,9 +26,8 @@ const Features = () => {
       title: "Track Budget",
       description: "Monitor expenses and control spending.",
     },
-
     {
-      id: 5,
+      id: 4,
       icon: Users,
       title: "Group Planning",
       description: "Plan trips together with friends.",
@@ -37,53 +35,63 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="py-24 bg-[#f8f8f8]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* Header */}
-        <div className="mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Travel Management Features
-          </h2>
-          <p className="mt-3 text-gray-500">
-            Everything you need to plan and manage your trips efficiently.
-          </p>
-        </div>
+<div className="mb-16 max-w-2xl">
+  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+    Our Features
+  </h2>
+  <p className="mt-4 text-gray-600">
+    Everything you need to plan, organize,
+     and manage your trips
+    efficiently in one powerful platform.
+  </p>
+</div>
 
-        {/* 5 Column Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-
+        {/* Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="group bg-white border border-gray-200 rounded-2xl p-5 
-              text-center transition-all duration-300 
-              hover:shadow-lg hover:-translate-y-1 hover:border-indigo-400"
+              className="group relative bg-white/70 backdrop-blur-lg 
+              border border-white/40 rounded-3xl p-8 text-center
+              shadow-md hover:shadow-2xl 
+              transition-all duration-500 
+              hover:-translate-y-3"
             >
               {/* Icon */}
-              <div className="mb-4 flex justify-center">
-                <div className="w-12 h-12 flex items-center justify-center 
-                rounded-xl bg-indigo-50 group-hover:bg-indigo-600 
-                transition-all duration-300">
+              <div className="mb-6 flex justify-center">
+                <div
+                  className="w-16 h-16 flex items-center justify-center 
+                  rounded-2xl bg-indigo-100 
+                  group-hover:bg-indigo-600 
+                  transition-all duration-500 shadow-md"
+                >
                   <feature.icon
-                    size={22}
-                    className="text-indigo-600 group-hover:text-white transition-all duration-300"
+                    size={28}
+                    className="text-indigo-600 group-hover:text-white transition-all duration-500"
                   />
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="text-sm font-semibold text-gray-900 mb-2">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 {feature.title}
               </h3>
 
               {/* Description */}
-              <p className="text-xs text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 {feature.description}
               </p>
+
+              {/* Subtle Glow Effect */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-indigo-200/20 to-transparent pointer-events-none"></div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

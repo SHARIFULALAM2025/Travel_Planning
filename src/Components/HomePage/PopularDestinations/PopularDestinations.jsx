@@ -1,44 +1,37 @@
-// PopularDestinations.jsx
-import React from 'react';
-import DestinationCard from './DestinationCard';
+"use client";
+import Image from "next/image";
+import { useState } from "react";
 
-const PopularDestinations = () => {
-    const destinations = [
-        {
-            id: 1,
-            image: 'https://i.ibb.co.com/4ZQrhVWS/Adobe-Stock-402537784.avif',
-            location: 'Swiss Alps',
-            country: 'Switzerland',
-            travelType: 'Adventure',
-            rating: 4.9,
-            price: '$400/night',
-            description: 'Majestic mountain peaks with pristine snow-covered slopes.'
-        },
-        {
-            id: 2,
-            image: 'https://i.ibb.co.com/G4SHyy5P/images-15.jpg',
-            location: 'Bali',
-            country: 'Indonesia',
-            travelType: 'Beach',
-            rating: 4.8,
-            price: '$250/night',
-            description: 'Tropical paradise with stunning beaches and rice terraces.'
-        },
-        {
-            id: 3,
-            image: 'https://i.ibb.co.com/KxrZrjKw/images-16.jpg',
-            location: 'Paris',
-            country: 'France',
-            travelType: 'City',
-            rating: 4.7,
-            price: '$300/night',
-            description: 'The city of lights featuring iconic landmarks and romantic streets.'
-        }
-    ];
+const destinations = [
+  { id: 1, title: "Discover India", price: "$2650", image: "/assets/image124.jpg" },
+  { id: 2, title: "Forest Adventure", price: "$1350", image: "/assets/image124.jpg" },
+  { id: 3, title: "China Tour", price: "$1500", image: "/assets/image124.jpg" },
+  { id: 4, title: "Mountain Escape", price: "$2100", image: "/assets/image124.jpg" },
+  { id: 5, title: "Beach Paradise", price: "$1800", image: "/assets/image124.jpg" },
+  { id: 6, title: "Desert Safari", price: "$1400", image: "/assets/image124.jpg" },
+  { id: 7, title: "Tokyo Lights", price: "$3000", image: "/assets/image124.jpg" },
+  { id: 8, title: "Swiss Alps", price: "$3500", image: "/assets/image124.jpg" },
+  { id: 9, title: "Beach Paradise", price: "$1800", image: "/assets/image124.jpg" },
+  { id: 10, title: "Desert Safari", price: "$1400", image: "/assets/image124.jpg" },
+  { id: 11, title: "Tokyo Lights", price: "$3000", image: "/assets/image124.jpg" },
+  { id: 12, title: "Swiss Alps", price: "$3500", image: "/assets/image124.jpg" },
+];
 
-    return (
-        <section className="py-16 bg-white">
-            <div className="max-w-7xl mx-auto px-6">
+export default function PopularDestination() {
+  const [active, setActive] = useState(0);
+
+  const itemsPerSlide = 4;
+  const totalSlides = Math.ceil(destinations.length / itemsPerSlide);
+
+  const startIndex = active * itemsPerSlide;
+  const currentItems = destinations.slice(
+    startIndex,
+    startIndex + itemsPerSlide
+  );
+
+  return (
+    <section className="py-20 bg-[#f8f8f8]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div className="mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
@@ -46,21 +39,61 @@ const PopularDestinations = () => {
           </h2>
           <p className="mt-3 text-gray-500">
             Discover top destinations with all the essential travel info at a glance.
+
           </p>
         </div>
+        {/* Cards */}
+{/* Cards */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  {currentItems.map((item) => (
+    <div
+      key={item.id}
+      className="relative group overflow-hidden rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer bg-white"
+    >
+      {/* Image */}
+      <div className="relative h-[300px] w-full overflow-hidden">
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-cover transition duration-700 group-hover:scale-110"
+        />
+      </div>
 
-                {/* 1-line Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {destinations.map(dest => (
-                        <DestinationCard
-                            key={dest.id}
-                            {...dest}
-                        />
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition duration-500"></div>
 
-export default PopularDestinations;
+      {/* Content */}
+      <div className="absolute bottom-5 left-5 right-5 flex flex-col gap-2">
+
+        {/* Price Badge */}
+        <span className="self-start px-4 py-1 text-sm bg-white/20 backdrop-blur-md text-white rounded-full border border-white/30 shadow">
+          {item.price}
+        </span>
+
+        {/* Title */}
+        <h3 className="text-lg font-semibold text-white tracking-wide">
+          {item.title}
+        </h3>
+
+      </div>
+    </div>
+  ))}
+</div>
+
+        {/* Dots */}
+        <div className="flex justify-center mt-10 gap-3">
+          {Array.from({ length: totalSlides }).map((_, index) => (
+            <span
+              key={index}
+              onClick={() => setActive(index)}
+              className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300
+                ${active === index ? "bg-blue-600 scale-125" : "bg-gray-300"}`}
+            ></span>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}

@@ -1,6 +1,15 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+const images = [
+  "/assets/image121.jpg",
+  "/assets/bannerimage2.jpg",
+  "/assets/bannerimage3.jpg",
+  "/assets/bannerimage4.jpg",
+  "/assets/bannerimage6.jpg",
+
+];
 
 const Banner = () => {
     const [formData, setFormData] = useState({
@@ -8,6 +17,16 @@ const Banner = () => {
         dates: '',
         guests: ''
     });
+
+    const [currentImage, setCurrentImage] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImage(prev => (prev + 1) % images.length);
+        }, 8000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -23,86 +42,91 @@ const Banner = () => {
     };
 
     return (
-        <section
-            className="relative w-full h-[85vh] flex items-center justify-center bg-cover bg-center bg-no-repeat"
-            style={{
-                backgroundImage: `url('https://i.ibb.co.com/TMkbGZ00/exploring-global-travel-destinations-world-map-visual-representation-business-environment-aerial-vie.webp')`
-            }}
-        >
-            {/* Layered overlays */}
-            <div className="absolute inset-0 bg-black/40" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/70 mix-blend-multiply" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(255,255,255,0.03),_transparent_25%)] pointer-events-none" />
+        <section className="relative w-full h-[85vh] flex items-center justify-center overflow-hidden">
+
+            {/* Background slider */}
+            {images.map((img, index) => (
+                <div
+                    key={index}
+                    className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[2000ms] ease-in-out ${
+                        index === currentImage ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    style={{ backgroundImage: `url(${img})` }}
+                />
+            ))}
+
+            {/* Overlays */}
+            <div className="absolute inset-0 bg-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80" />
 
             {/* Content */}
-            <div className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 flex flex-col items-center text-center gap-8">
-                
-                {/* Headline */}
+            <div className="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col items-center text-center gap-10">
+
+                {/* Heading */}
                 <div className="max-w-3xl">
-                    <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight drop-shadow-xl">
-                        Discover Your Next Adventure
+
+ 
+
+                    <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                        Explore the World in{" "}
+                        <span className="text-blue-600">
+                            Style
+                        </span>
                     </h1>
-                    <p className="mt-4 text-lg sm:text-xl text-slate-200/90 max-w-2xl mx-auto font-light leading-relaxed drop-shadow-md">
-                        Plan effortlessly with curated recommendations, smart itineraries, and seamless booking — everything for premium travelers.
-                    </p>
+
+               
+                     <p className="mt-8 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-8 font-light tracking-wide">
+                          Discover <span className="text-blue-600">handpicked destinations</span>, 
+                          seamless planning, and 
+                          <span className="text-white font-medium"> unforgettable journeys</span> —
+                          crafted for travelers who seek meaningful experiences 
+                          and peaceful adventures.
+                     </p>
+
                 </div>
 
                 {/* Search Form */}
                 <form
                     onSubmit={handleSearch}
-                    className="w-full mt-8 bg-white/10 backdrop-blur-2xl border border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col sm:flex-row items-center gap-4"
+                    className="w-full mt-6 bg-white/10 backdrop-blur-xl border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl flex flex-col sm:flex-row items-center gap-4"
                 >
-                    <div className="flex-1 w-full grid grid-cols-1 sm:grid-cols-3 gap-4 items-end">
+                    <div className="flex-1 w-full grid grid-cols-1 sm:grid-cols-3 gap-4">
 
-                        {/* Destination */}
-                        <div className="flex flex-col">
-                            <label className="text-xs text-slate-200/80 mb-1 font-semibold tracking-wide uppercase">Destination</label>
-                            <input
-                                type="text"
-                                name="destination"
-                                placeholder="Where are you going?"
-                                value={formData.destination}
-                                onChange={handleChange}
-                                className="w-full px-5 py-3 rounded-xl bg-white/95 text-slate-900 placeholder-slate-400 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md transition-all"
-                            />
-                        </div>
+                        <input
+                            type="text"
+                            name="destination"
+                            placeholder="Where are you going?"
+                            value={formData.destination}
+                            onChange={handleChange}
+                            className="px-5 py-3 rounded-xl bg-white/95 text-slate-900 placeholder-slate-400 focus:ring-2 focus:ring-blue-600 outline-none shadow-md"
+                        />
 
-                        {/* Dates */}
-                        <div className="flex flex-col">
-                            <label className="text-xs text-slate-200/80 mb-1 font-semibold tracking-wide uppercase">Dates</label>
-                            <input
-                                type="date"
-                                name="dates"
-                                value={formData.dates}
-                                onChange={handleChange}
-                                className="w-full px-5 py-3 rounded-xl bg-white/95 text-slate-900 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md transition-all"
-                            />
-                        </div>
+                        <input
+                            type="date"
+                            name="dates"
+                            value={formData.dates}
+                            onChange={handleChange}
+                            className="px-5 py-3 rounded-xl bg-white/95 text-slate-900 focus:ring-2 focus:ring-blue-600 outline-none shadow-md"
+                        />
 
-                        {/* Guests */}
-                        <div className="flex flex-col">
-                            <label className="text-xs text-slate-200/80 mb-1 font-semibold tracking-wide uppercase">Guests</label>
-                            <input
-                                type="number"
-                                name="guests"
-                                placeholder="Guests"
-                                value={formData.guests}
-                                onChange={handleChange}
-                                className="w-full px-5 py-3 rounded-xl bg-white/95 text-slate-900 border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-400 shadow-md transition-all"
-                            />
-                        </div>
+                        <input
+                            type="number"
+                            name="guests"
+                            placeholder="Guests"
+                            value={formData.guests}
+                            onChange={handleChange}
+                            className="px-5 py-3 rounded-xl bg-white/95 text-slate-900 focus:ring-2 focus:ring-blue-600 outline-none shadow-md"
+                        />
                     </div>
 
-                    {/* Search Button */}
-                    <div className="sm:ml-4 w-full sm:w-auto">
-                        <button
-                            type="submit"
-                            className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-xl hover:shadow-2xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 transform hover:-translate-y-1"
-                        >
-                            Search
-                        </button>
-                    </div>
+                    <button
+                        type="submit"
+                        className="w-full sm:w-auto px-8 py-3 rounded-2xl bg-blue-600 text- font-semibold shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    >
+                        Search
+                    </button>
                 </form>
+
             </div>
         </section>
     );

@@ -1,109 +1,139 @@
-import React from 'react';
-import Link from 'next/link';
-import { Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from 'lucide-react';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image"; // ✅ Added Image
+
+import {
+  Facebook,
+  Instagram,
+  Twitter,
+  Youtube,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 const Footer = () => {
-    const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear();
 
-    const contactItems = [
-        { icon: Mail, href: 'mailto:support@travelmate.com', label: 'Email', text: 'support@travelmate.com', isLink: true },
-        { icon: Phone, href: 'tel:+1234567890', label: 'Phone', text: '+1 (234) 567-890', isLink: true },
-        { icon: MapPin, label: 'Location', text: '123 Travel Street, Adventure City, AC 12345', isLink: false },
-    ];
+  const contactItems = [
+    { icon: Mail, href: "mailto:support@travelmate.com", text: "support@travelmate.com", isLink: true },
+    { icon: Phone, href: "tel:+1234567890", text: "+1 (234) 567-890", isLink: true },
+    { icon: MapPin, text: "123 Travel Street, Adventure City", isLink: false },
+  ];
 
-    const socialLinks = [
-        { icon: Facebook, href: '#', label: 'Facebook', name: 'Facebook' },
-        { icon: Instagram, href: '#', label: 'Instagram', name: 'Instagram' },
-        { icon: Twitter, href: '#', label: 'Twitter', name: 'Twitter' },
-        { icon: Youtube, href: '#', label: 'YouTube', name: 'YouTube' },
-    ];
+  const socialLinks = [
+    { icon: Facebook, href: "#" },
+    { icon: Instagram, href: "#" },
+    { icon: Twitter, href: "#" },
+    { icon: Youtube, href: "#" },
+  ];
 
-    const legalLinks = [
-        { label: 'Privacy Policy', href: '#' },
-        { label: 'Terms of Service', href: '#' },
-    ];
+  return (
+    <footer className="w-full bg-[#f8fafc] border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 lg:px-5 py-16">
 
-    return (
-        <footer className="relative w-full bg-gradient-to-b from-gray-100 to-gray-200 border-t border-gray-300 overflow-hidden shadow-inner">
-            <div className="relative max-w-6xl mx-auto px-2 py-11 z-10">
-                {/* Main Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 sm:gap-16 lg:gap-20 mb-8">
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14">
 
-                    {/* Column 1: About */}
-                    <div className="space-y-6">
-                        <h3 className="text-2xl font-bold text-gray-900 tracking-tight">TravelMate</h3>
-                        <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-light line-clamp-4">
-                            Your ultimate travel companion. Discover hidden gems, plan perfect trips, track budgets, and read authentic reviews from verified travelers around the world.
-                        </p>
+          {/* BRAND */}
+          <div className="space-y-6">
 
-                    </div>
+            {/* Logo + Title */}
+            <div className="flex items-center gap-3">
+              <Image
+                src="/planet.png"   // ✅ your local image path
+                alt="TravelMate Logo"
+                width={40}
+                height={40}
+                className="rounded-lg"
+              />
 
-                    {/* Column 2: Contact */}
-                    <div className="space-y-6">
-                        <h3 className="text-2xl font-bold text-gray-900 tracking-tight">Contact Us</h3>
-                        <div className="space-y-4">
-                            {contactItems.map((contact, index) => {
-                                const Icon = contact.icon;
-                                const content = (
-                                    <div className="flex items-start gap-3 text-gray-700 hover:text-blue-600 transition-all duration-300 group">
-                                        <Icon size={20} className="text-gray-500 group-hover:text-blue-600 transition-all duration-300 flex-shrink-0 mt-0.5 group-hover:scale-110" />
-                                        <span className="text-sm sm:text-base font-light group-hover:translate-x-1 transition-transform duration-300">{contact.text}</span>
-                                    </div>
-                                );
-                                return contact.isLink ? <a key={index} href={contact.href}>{content}</a> : <div key={index}>{content}</div>;
-                            })}
-                        </div>
-                    </div>
-
-                    {/* Column 3: Social Links */}
-                    <div className="space-y-6">
-                        <h3 className="text-2xl font-bold text-gray-900 tracking-tight">Follow Us</h3>
-                        <p className="text-gray-700 text-sm sm:text-base leading-relaxed font-light">
-                            Connect with us for travel tips, inspiration, and exclusive deals.
-                        </p>
-                        <div className="flex flex-wrap gap-4">
-                            {socialLinks.map((social) => {
-                                const Icon = social.icon;
-                                return (
-                                    <a
-                                        key={social.name}
-                                        href={social.href}
-                                        aria-label={social.label}
-                                        className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-200 text-gray-700 hover:bg-gradient-to-br hover:from-blue-600 hover:to-indigo-600 hover:text-white transition-all duration-500 transform hover:scale-125 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-600/30 border border-gray-300 hover:border-blue-500/50"
-                                    >
-                                        <Icon size={20} />
-                                    </a>
-                                );
-                            })}
-                        </div>
-                    </div>
-                </div>
-
-                {/* Divider */}
-                <div className="h-px bg-gray-300 my-4"></div>
-
-                {/* Bottom: Copyright & Legal */}
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-6 sm:gap-8">
-                    <p className="text-gray-600 text-sm sm:text-base font-light text-center sm:text-left">
-                        © {currentYear} TravelMate. All rights reserved.
-                    </p>
-                    <div className="flex flex-wrap items-center justify-center sm:justify-end gap-6 sm:gap-8">
-                        {legalLinks.map((link, index) => (
-                            <div key={index} className="flex items-center gap-6 sm:gap-8">
-                                {index > 0 && <div className="hidden sm:block w-px h-5 bg-gray-400"></div>}
-                                <Link
-                                    href={link.href}
-                                    className="text-gray-600 hover:text-blue-600 text-sm sm:text-base font-light transition-all duration-300 hover:-translate-y-1"
-                                >
-                                    {link.label}
-                                </Link>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+              <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+                TravelMate
+              </h2>
             </div>
-        </footer>
-    );
+
+            <p className="text-gray-600 leading-relaxed max-w-sm">
+              Discover destinations, plan smarter journeys, and explore the
+              world with confidence. Your trusted companion for meaningful travel.
+            </p>
+          </div>
+
+          {/* CONTACT */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-gray-900">
+              Contact
+            </h3>
+
+            <div className="space-y-4">
+              {contactItems.map((c, i) => {
+                const Icon = c.icon;
+                const item = (
+                  <div className="flex items-start gap-3 text-gray-600 hover:text-blue-600 transition">
+                    <Icon size={18} className="mt-0.5" />
+                    <span className="text-sm">{c.text}</span>
+                  </div>
+                );
+
+                return c.isLink ? (
+                  <a key={i} href={c.href}>{item}</a>
+                ) : (
+                  <div key={i}>{item}</div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* SOCIAL */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold text-gray-900">
+              Follow Us
+            </h3>
+
+            <p className="text-gray-600 text-sm max-w-xs">
+              Travel inspiration, deals, and stories — straight to your feed.
+            </p>
+
+            <div className="flex gap-3">
+              {socialLinks.map((s, i) => {
+                const Icon = s.icon;
+                return (
+                  <a
+                    key={i}
+                    href={s.href}
+                    className="w-11 h-11 flex items-center justify-center rounded-xl
+                    bg-white border border-gray-200 text-gray-600
+                    hover:bg-blue-600 hover:text-white hover:border-blue-600
+                    shadow-sm hover:shadow-lg
+                    transition-all duration-300 hover:-translate-y-1"
+                  >
+                    <Icon size={18} />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* DIVIDER */}
+        <div className="h-px bg-gray-200 my-10"></div>
+
+        {/* BOTTOM BAR */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-5 text-sm text-gray-500">
+          <p>© {currentYear} TravelMate. All rights reserved.</p>
+
+          <div className="flex items-center gap-6">
+            <Link href="#" className="hover:text-blue-600 transition">
+              Privacy Policy
+            </Link>
+            <Link href="#" className="hover:text-blue-600 transition">
+              Terms of Service
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

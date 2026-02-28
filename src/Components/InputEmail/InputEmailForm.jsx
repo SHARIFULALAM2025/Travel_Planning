@@ -3,59 +3,119 @@ import { myMailAction } from '@/lib/mailAction';
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import toast from 'react-hot-toast';
+import Link from 'next/link';
 
 const InputEmailForm = () => {
-    const {
-        register,
-        handleSubmit,
 
-        formState: { errors },
-    } = useForm();
-    const handelEmail = async(data) => {
-        const { email } = data;
-        await myMailAction({email});
-        toast.success("check your email please!")
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
+  const handelEmail = async (data) => {
+    const { email } = data;
 
+    try {
+      await myMailAction({ email });
+      toast.success(`Password reset link sent to ${email}`);
+
+      setTimeout(() => {
+        window.location.href = "https://mail.google.com";
+      }, 1200);
+
+    } catch (error) {
+      toast.error("Failed to send reset link!");
     }
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-      <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100">
-        <h1 className="text-2xl font-bold text-gray-900 mb-2 text-center">
-          input email to reset
-        </h1>
+  };
 
-        <form
-          action=""
-          className="space-y-6"
-          onSubmit={handleSubmit(handelEmail)}
-        >
-          <fieldset>
-            <label
-              htmlFor="email"
-              className="block text-sm font-semibold text-gray-700 mb-2"
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+      <div className="w-full max-w-md bg-white shadow-lg rounded-2xl p-8">
+
+        {/* Lock Icon */}
+        <div className="flex justify-center mb-6">
+          <div className="w-14 h-14 flex items-center justify-center bg-blue-100 text-blue-600 rounded-full">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.8"
+              stroke="currentColor"
+              className="w-8 h-8"
             >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0V10.5m-.75 0h10.5a2.25 2.25 0 012.25 2.25v6.75a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 19.5v-6.75A2.25 2.25 0 016.75 10.5z"
+              />
+            </svg>
+          </div>
+        </div>
+
+        {/* Heading */}
+        <h2 className="text-2xl font-bold text-center mb-2 text-gray-800">
+          Forgot Your Password?
+        </h2>
+
+        <p className="text-center text-gray-600 mb-6">
+          Enter your email address and we'll send you a link <br />
+          to reset your password.
+        </p>
+
+        {/* Form */}
+        <form onSubmit={handleSubmit(handelEmail)} className="space-y-4">
+          <div>
+            <label className="text-gray-700 font-medium">
               Email Address
             </label>
+
             <input
-              id="email"
-              {...register('email', { required: true })}
               type="email"
-              placeholder="name@example.com"
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
+              placeholder="Enter your email"
+              {...register('email', { required: true })}
+              className="w-full border rounded-lg px-4 py-3 mt-2 mb-2 focus:outline-none focus:border-blue-400 text-gray-800"
             />
+
             {errors.email && (
-              <span className="text-red-700">This field is required</span>
+              <p className="text-red-600 text-sm">
+                Please enter your email!
+              </p>
             )}
-          </fieldset>
+          </div>
 
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow-md active:transform active:scale-[0.98]"
+            className="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white text-lg rounded-lg transition"
           >
-            Send
+            Send Reset Link
           </button>
         </form>
+
+        {/* Back to login */}
+        <div className="text-center mt-6">
+          <Link
+            href="/login"
+            className="text-gray-600 hover:text-blue-600 flex items-center justify-center gap-1"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.8"
+              stroke="currentColor"
+              className="w-5 h-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 19.5L8.25 12l7.5-7.5"
+              />
+            </svg>
+            Back to Login
+          </Link>
+        </div>
+
       </div>
     </div>
   )

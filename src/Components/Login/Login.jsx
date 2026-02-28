@@ -7,33 +7,28 @@ import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import toast from 'react-hot-toast'
 import { FaGithub } from 'react-icons/fa6'
+import { FcGoogle } from 'react-icons/fc'
+
 const Login = () => {
   const router = useRouter()
-  const HandelSocialLogin = async () => {
-    const res = await signIn('google', { redirect: false })
+
+  const handleSocialLogin = async (provider) => {
+    const res = await signIn(provider, { redirect: false })
     if (res?.error) {
       toast.error('Login Failed!')
     } else {
-      toast.success('sign up successfully!')
+      toast.success('Welcome back!')
       router.push('/')
     }
   }
-   const HandelGitHubLogin = async () => {
-     const res = await signIn('github', { redirect: false })
-     if (res?.error) {
-       toast.error('Login Failed!')
-     } else {
-       toast.success('sign up successfully!')
-       router.push('/')
-     }
-   }
+
   const {
     register,
     handleSubmit,
-
     formState: { errors },
   } = useForm()
-  const handelLogin = async (data) => {
+
+  const handleLogin = async (data) => {
     const result = await signIn('credentials', {
       email: data.email,
       password: data.password,
@@ -41,173 +36,159 @@ const Login = () => {
     })
 
     if (result?.error) {
-      toast.error('Login failed: ' + result.error)
+      toast.error('Invalid credentials')
     } else {
-      toast.success('Login successfully!')
-      router.push("/")
-
-
+      toast.success('Login successful!')
+      router.push('/')
     }
   }
+
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
-      <div className="max-w-5xl w-full bg-white rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
-        <div className="relative hidden md:block bg-blue-400">
+    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-white to-indigo-100 flex items-center justify-center p-5">
+      
+      <div className="w-full max-w-5xl bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 border border-white/40">
+
+        {/* Left Section */}
+        <div className="relative hidden md:block">
           <Image
-            src="/assets/login2.jpg"
-            alt="Workspace inspiration"
+            src="/assets/login.gif"
+            alt="Login Background"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/20 flex flex-col justify-end p-10 text-white">
-            <h2 className="text-4xl font-bold">Welcome Back.</h2>
-            <p className="mt-2 text-lg">The community is waiting for you.</p>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col justify-end p-12 text-white">
+            <h2 className="text-4xl font-bold leading-tight">
+              Welcome Back
+            </h2>
+            <p className="mt-3 text-lg text-gray-200">
+              The community is waiting for you.
+            </p>
           </div>
         </div>
 
-        {/* Right Side: The Login Form */}
-        <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-          <div className="mb-8">
-            <h2 className="text-3xl font-extrabold text-gray-900">Login</h2>
+        {/* Right Section */}
+        <div className="p-10 md:p-14 flex flex-col justify-center">
+
+          <div className="mb-10">
+            <h2 className="text-3xl font-bold text-gray-900">
+              Login
+            </h2>
             <p className="text-gray-500 mt-2">
-              Enter your credentials to access your account.
+              Enter your credentials to access your account
             </p>
           </div>
 
-          <form className="space-y-5" onSubmit={handleSubmit(handelLogin)}>
-            {/* Email Address */}
+          <form className="space-y-6" onSubmit={handleSubmit(handleLogin)}>
+
+            {/* Email */}
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700 mb-1"
-              >
+              <label className="text-sm font-medium text-gray-700">
                 Email Address
               </label>
               <input
                 {...register('email', { required: true })}
                 type="email"
-                placeholder="enter your email"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
+                placeholder="Enter your email"
+                className="mt-2 w-full px-4 py-3 rounded-xl border border-gray-300 
+                           focus:ring-2 focus:ring-indigo-500 focus:border-transparent 
+                          outline-none transition-all 
+                        placeholder:text-gray-400 text-gray-800"
               />
               {errors.email && (
-                <span className="text-red-600">This field is required !</span>
+                <p className="text-red-500 text-sm mt-1">
+                  Email is required
+                </p>
               )}
             </div>
 
             {/* Password */}
             <div>
-              <div className="flex justify-between mb-1">
-                <label
-                  htmlFor="password"
-                  name="password"
-                  className="block text-sm font-medium text-gray-700"
-                >
+              <div className="flex justify-between">
+                <label className="text-sm font-medium text-gray-700">
                   Password
                 </label>
                 <Link
                   href="/reset"
-                  size="sm"
-                  className="text-sm text-blue-600 hover:underline font-medium"
+                  className="text-sm text-indigo-600 hover:underline"
                 >
-                  Forgot password?
+                  Forgot?
                 </Link>
               </div>
+
               <input
                 {...register('password', { required: true })}
                 type="password"
-                placeholder="••••••••"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all"
+                placeholder="Enter your password"
+                className="mt-2 w-full px-4 py-3 rounded-xl border border-gray-300 
+                           focus:ring-2 focus:ring-indigo-500 focus:border-transparent 
+                          outline-none transition-all 
+                        placeholder:text-gray-400 text-gray-800"
               />
               {errors.password && (
-                <span className="text-red-600">This field is required !</span>
+                <p className="text-red-500 text-sm mt-1">
+                  Password is required
+                </p>
               )}
             </div>
 
-            {/* Remember Me Checkbox */}
-            <div className="flex items-center">
-              <input
-                id="remember-me"
-                name="remember-me"
-                type="checkbox"
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded cursor-pointer"
-              />
-              <label
-                htmlFor="remember-me"
-                className="ml-2 block text-sm text-gray-700 cursor-pointer"
-              >
+            {/* Remember */}
+            <div className="flex items-center justify-between text-sm">
+              <label className="flex items-center gap-2 text-gray-600 cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="h-4 w-4 text-blue-600 border-gray-300 rounded"
+                />
                 Remember me
               </label>
             </div>
 
-            {/* Submit Button */}
+            {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-800 text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-blue-200/50 transition-all transform active:scale-[0.98] mt-2"
+              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-indigo-400/40 transition-all active:scale-[0.98]"
             >
               Sign In
             </button>
           </form>
 
-          {/* Social Login Divider (Optional but professional) */}
-          <div className=" flex items-center ">
-            {/* Left Line */}
-            <div className="grow border-t border-black"></div>
-
-            {/* OR Text */}
-            <span className="shrink mx-4 text-black text-sm font-medium uppercase tracking-wider">
-              Or
+          {/* Divider */}
+          <div className="flex items-center my-8">
+            <div className="flex-grow border-t border-gray-300"></div>
+            <span className="mx-4 text-sm text-gray-500 uppercase tracking-wider">
+              Or continue with
             </span>
-
-            {/* Right Line */}
-            <div className="grow border-t border-black"></div>
+            <div className="flex-grow border-t border-gray-300"></div>
           </div>
-          <div className="">
-            <button
-              onClick={HandelSocialLogin}
-              className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 text-white hover:bg-gray-600  bg-black"
-            >
-              <Image
-                width={100}
-                height={20}
-                src="https://www.svgrepo.com/show/475656/google-color.svg"
-                className="w-5"
-                alt="Google"
-              />
-              Login with Google
-            </button>
-          </div>
-          <div className=" flex items-center ">
-                      {/* Left Line */}
-                      <div className="grow border-t border-black"></div>
 
-                      {/* OR Text */}
-                      <span className="shrink mx-4 text-black text-sm font-medium uppercase tracking-wider">
-                        Or
-                      </span>
+          {/* Google */}
+          <button
+            onClick={() => handleSocialLogin('google')}
+            className="w-full py-3 border border-gray-300 rounded-xl flex items-center justify-center gap-3 bg-white text-gray-800 hover:bg-gray-200 transition-all font-medium"
+          >
+            <FcGoogle size={20} />
+            Continue with Google
+          </button>
 
-                      {/* Right Line */}
-                      <div className="grow border-t border-black"></div>
-                    </div>
-                    <div className="">
-                      <button
-                        onClick={HandelGitHubLogin}
-                        className="w-full  py-2 border border-gray-300 rounded-lg flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-black"
-                      >
-                        <FaGithub></FaGithub>
-                        Login with GitHub
-                      </button>
-                    </div>
+          {/* GitHub */}
+          <button
+            onClick={() => handleSocialLogin('github')}
+            className="w-full mt-4 py-3 bg-black text-white rounded-xl flex items-center justify-center gap-3 hover:bg-gray-900 transition-all font-medium"
+          >
+            <FaGithub size={20} />
+            Continue with GitHub
+          </button>
 
-          <p className="text-center text-sm text-gray-600">
-            Don not have an account?{' '}
+          <p className="text-center text-sm text-gray-600 mt-8">
+            Don’t have an account?{' '}
             <Link
               href="/signup"
-              className="text-blue-600 font-semibold hover:underline"
+              className="text-indigo-600 font-semibold hover:underline"
             >
               Create an account
             </Link>
           </p>
+
         </div>
       </div>
     </div>
