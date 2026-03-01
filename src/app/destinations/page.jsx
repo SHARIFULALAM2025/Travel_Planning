@@ -45,6 +45,7 @@ const Destinations = () => {
             style={{
               fontSize: 'clamp(80px, 18vw, 200px)',
               lineHeight: 0.9,
+
               WebkitTextStroke: '0px transparent',
             }}
           >
