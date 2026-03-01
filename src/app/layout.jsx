@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
             />
 
             {/* Footer Full Width */}
-            <Footer />
+            <Footer/>
           </ThemeProvider>
         </AuthProvider>
       </body>

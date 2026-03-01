@@ -1,54 +1,69 @@
 "use client";
 import Image from "next/image";
 import { Star } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const Personalized = () => {
   const cards = [
     {
       id: 1,
-      image: "https://i.ibb.co.com/zT1s8ykw/cb217bfd.avif",
-      category: "Luxury Cabin",
+      image: 'https://i.ibb.co.com/fzjd6SXG/hersection-2.jpg',
+      category: 'Luxury Cabin',
       rating: 4.9,
-      title: "Secluded Lakeview Cabin",
-      price: "$420/night",
+      title: 'Secluded Lakeview Cabin',
+      price: '$420/night',
     },
     {
       id: 2,
-      image: "https://i.ibb.co.com/zT1s8ykw/cb217bfd.avif",
-      category: "Hiking Trip",
+      image: 'https://i.ibb.co.com/zTRCZQ54/herosection-1.jpg',
+      category: 'Hiking Trip',
       rating: 4.8,
-      title: "Guided Alpine Trek",
-      price: "$220/person",
+      title: 'Guided Alpine Trek',
+      price: '$220/person',
     },
     {
       id: 3,
-      image: "https://i.ibb.co.com/zT1s8ykw/cb217bfd.avif",
-      category: "Unique Stay",
+      image: 'https://i.ibb.co.com/Fqjdbng2/heroslider-4.jpg',
+      category: 'Unique Stay',
       rating: 4.7,
-      title: "Cliffside Cave Retreat",
-      price: "$310/night",
+      title: 'Cliffside Cave Retreat',
+      price: '$310/night',
     },
     {
       id: 4,
-      image: "https://i.ibb.co.com/zT1s8ykw/cb217bfd.avif",
-      category: "Beach Escape",
+      image: 'https://i.ibb.co.com/WvGDytnX/herosection-3.jpg',
+      category: 'Beach Escape',
       rating: 4.8,
-      title: "Private Island Retreat",
-      price: "$520/night",
+      title: 'Private Island Retreat',
+      price: '$520/night',
     },
-  ];
+  ]
 
+   const { theme } = useTheme()
+   const [mounted, setMounted] = useState(false)
+
+   useEffect(() => {
+     setMounted(true)
+   }, [])
+
+   if (!mounted) return null
   return (
-    <section className="py-20 bg-[#f8f8f8]">
+    <section
+      className={`py-20 ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'} `}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        
         {/* Header */}
         <div className="mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2
+            className={`${theme == 'dark' ? 'text-white' : 'text-black'} text-3xl sm:text-4xl font-bold `}
+          >
             Personalized For You
           </h2>
-          <p className="mt-3 text-gray-500">
-            Based on your recent interest in{" "}
+          <p
+            className={`mt-3  ${theme == 'dark' ? 'text-white' : 'text-black'}`}
+          >
+            Based on your recent interest in{' '}
             <span className="font-semibold text-indigo-600">
               Mountain Getaways
             </span>
@@ -77,7 +92,6 @@ const Personalized = () => {
 
               {/* Content */}
               <div className="absolute bottom-5 left-5 right-5 flex flex-col gap-2 text-white">
-
                 {/* Category Badge */}
                 <span className="self-start px-4 py-1 text-xs bg-white/20 backdrop-blur-md rounded-full border border-white/30">
                   {card.category}
@@ -90,26 +104,23 @@ const Personalized = () => {
 
                 {/* Price + Rating */}
                 <div className="flex items-center justify-between mt-2">
-                  <span className="text-sm font-medium">
-                    {card.price}
-                  </span>
+                  <span className="text-sm font-medium">{card.price}</span>
 
                   <div className="flex items-center gap-1 bg-white/20 px-3 py-1 rounded-full backdrop-blur-md">
-                    <Star size={14} className="text-yellow-400 fill-yellow-400" />
-                    <span className="text-sm">
-                      {card.rating}
-                    </span>
+                    <Star
+                      size={14}
+                      className="text-yellow-400 fill-yellow-400"
+                    />
+                    <span className="text-sm">{card.rating}</span>
                   </div>
                 </div>
-
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
-  );
+  )
 };
 
 export default Personalized;

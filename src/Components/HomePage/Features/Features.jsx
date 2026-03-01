@@ -1,72 +1,74 @@
-"use client";
-import {
-  MapPlus,
-  Globe2,
-  Wallet,
-  Users,
-} from "lucide-react";
+'use client'
+import { MapPlus, Globe2, Wallet, Users } from 'lucide-react'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 const Features = () => {
   const features = [
     {
       id: 1,
       icon: MapPlus,
-      title: "Create Trips",
-      description: "Create and manage your travel plans easily.",
+      title: 'Create Trips',
+      description: 'Create and manage your travel plans easily.',
     },
     {
       id: 2,
       icon: Globe2,
-      title: "Explore Places",
-      description: "Discover and add new destinations.",
+      title: 'Explore Places',
+      description: 'Discover and add new destinations.',
     },
     {
       id: 3,
       icon: Wallet,
-      title: "Track Budget",
-      description: "Monitor expenses and control spending.",
+      title: 'Track Budget',
+      description: 'Monitor expenses and control spending.',
     },
     {
       id: 4,
       icon: Users,
-      title: "Group Planning",
-      description: "Plan trips together with friends.",
+      title: 'Group Planning',
+      description: 'Plan trips together with friends.',
     },
-  ];
+  ]
+const { theme } = useTheme()
+const [mounted, setMounted] = useState(false)
 
+useEffect(() => {
+  setMounted(true)
+}, [])
+
+if (!mounted) return null
   return (
-    <section className="py-24 bg-[#f8f8f8]">
+    <section className={`py-20 ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-
         {/* Header */}
-<div className="mb-16 max-w-2xl">
-  <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-    Our Features
-  </h2>
-  <p className="mt-4 text-gray-600">
-    Everything you need to plan, organize,
-     and manage your trips
-    efficiently in one powerful platform.
-  </p>
-</div>
+        <div className="mb-16 max-w-2xl">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            Our Features
+          </h2>
+          <p className="mt-4 text-gray-600">
+            Everything you need to plan, organize, and manage your trips
+            efficiently in one powerful platform.
+          </p>
+        </div>
 
         {/* Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="group relative bg-white/70 backdrop-blur-lg 
+              className="group relative bg-white/70 backdrop-blur-lg
               border border-white/40 rounded-3xl p-8 text-center
-              shadow-md hover:shadow-2xl 
-              transition-all duration-500 
+              shadow-md hover:shadow-2xl
+              transition-all duration-500
               hover:-translate-y-3"
             >
               {/* Icon */}
               <div className="mb-6 flex justify-center">
                 <div
-                  className="w-16 h-16 flex items-center justify-center 
-                  rounded-2xl bg-indigo-100 
-                  group-hover:bg-indigo-600 
+                  className="w-16 h-16 flex items-center justify-center
+                  rounded-2xl bg-indigo-100
+                  group-hover:bg-indigo-600
                   transition-all duration-500 shadow-md"
                 >
                   <feature.icon
@@ -91,10 +93,9 @@ const Features = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Features;
+export default Features
