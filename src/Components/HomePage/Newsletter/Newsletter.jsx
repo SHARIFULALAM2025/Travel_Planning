@@ -1,18 +1,29 @@
-"use client";
-import { Mail } from "lucide-react";
+'use client'
+import { Mail } from 'lucide-react'
+import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 
 const Newsletter = () => {
-  return (
-    <section className="py-24 bg-[#f8f8f8]">
-      <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+  return (
+    <section
+      className={`py-20 ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}`}
+    >
+      <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
         {/* Header */}
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
           Join Our Newsletter
         </h2>
         <p className="mt-4 text-gray-600 text-lg">
-          Subscribe to receive our best travel deals, last-minute offers, 
-          and exclusive recommendations directly in your inbox.
+          Subscribe to receive our best travel deals, last-minute offers, and
+          exclusive recommendations directly in your inbox.
         </p>
 
         {/* Input & Button */}
@@ -36,10 +47,9 @@ const Newsletter = () => {
         <p className="mt-4 text-gray-400 text-sm">
           We respect your privacy. Unsubscribe anytime.
         </p>
-
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Newsletter;
+export default Newsletter

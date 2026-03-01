@@ -1,14 +1,21 @@
-"use client";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+'use client'
+import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 
 const LastMinuteOffers = () => {
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+   if (!mounted) return null
   return (
-    <section className="py-24 bg-[#f8f8f8]">
+    <section className={` py-20  ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-
         <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
-
           {/* Background Image */}
           <div className="relative h-[450px] w-full">
             <Image
@@ -25,10 +32,11 @@ const LastMinuteOffers = () => {
           {/* Content */}
           <div className="absolute inset-0 flex items-center">
             <div className="max-w-xl px-8 text-white">
-
               {/* Discount Badge */}
-              <span className="inline-block mb-6 px-4 py-1.5 text-sm font-semibold 
-              bg-yellow-400 text-black rounded-full shadow-lg">
+              <span
+                className="inline-block mb-6 px-4 py-1.5 text-sm font-semibold
+              bg-yellow-400 text-black rounded-full shadow-lg"
+              >
                 🔥 30% OFF Limited Time
               </span>
 
@@ -39,9 +47,9 @@ const LastMinuteOffers = () => {
 
               {/* Description */}
               <p className="mt-6 text-lg text-gray-200 leading-relaxed">
-                Book a memorable tour at a great price! Grab our last-minute 
-                offers and pack your bags for the journey you’ve always dreamed of. 
-                Explore our top recommendations before they’re gone.
+                Book a memorable tour at a great price! Grab our last-minute
+                offers and pack your bags for the journey you’ve always dreamed
+                of. Explore our top recommendations before they’re gone.
               </p>
 
               {/* CTA Button */}
@@ -57,15 +65,12 @@ const LastMinuteOffers = () => {
                   <ArrowRight size={18} />
                 </button>
               </div>
-
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default LastMinuteOffers;
+export default LastMinuteOffers

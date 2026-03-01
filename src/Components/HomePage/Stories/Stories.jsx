@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
 import { ArrowRight, Plus } from "lucide-react";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 const Stories = () => {
   const stories = [
@@ -41,11 +43,17 @@ const Stories = () => {
       tags: ["city", "guide"],
     },
   ];
+const { theme } = useTheme()
+const [mounted, setMounted] = useState(false)
 
+useEffect(() => {
+  setMounted(true)
+}, [])
+
+if (!mounted) return null
   return (
-    <section className="py-20 bg-[#f8f8f8]">
+    <section className={`py-20 ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-14 gap-6">
           <div>
@@ -92,7 +100,6 @@ const Stories = () => {
 
               {/* Content */}
               <div className="absolute bottom-5 left-5 right-5 text-white flex flex-col gap-2">
-
                 {/* Author + Read Time */}
                 <div className="text-xs flex items-center gap-2 opacity-90">
                   <span className="font-semibold">{s.author}</span>
@@ -109,7 +116,7 @@ const Stories = () => {
                   {s.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs bg-white/20 backdrop-blur-md 
+                      className="text-xs bg-white/20 backdrop-blur-md
                       px-3 py-1 rounded-full border border-white/30"
                     >
                       #{tag}
@@ -124,15 +131,13 @@ const Stories = () => {
                     <ArrowRight size={14} />
                   </span>
                 </div>
-
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
-  );
+  )
 };
 
 export default Stories;

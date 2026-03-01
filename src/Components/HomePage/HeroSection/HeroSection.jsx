@@ -17,7 +17,7 @@ const   HeroSection=()=> {
 
   return (
     <section
-      className={`w-full ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}  bg-[#f8f8f8] py-20 px-6 lg:px-20`}
+      className={`w-full ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'} py-20 px-6 lg:px-20`}
     >
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
         {/* LEFT SIDE */}
