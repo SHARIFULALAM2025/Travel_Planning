@@ -1,15 +1,22 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import toast from 'react-hot-toast'
 import { FaGithub } from 'react-icons/fa6'
 import { FcGoogle } from 'react-icons/fc'
+import { IoMdEyeOff } from 'react-icons/io'
+import { IoEye } from 'react-icons/io5'
+import { useTheme } from 'next-themes'
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(true)
+  const handelShowPassword = () => {
+    setShowPassword(!showPassword)
+  }
   const router = useRouter()
 
   const handleSocialLogin = async (provider) => {
@@ -42,12 +49,19 @@ const Login = () => {
       router.push('/')
     }
   }
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-100 via-white to-indigo-100 flex items-center justify-center p-5">
-      
-      <div className="w-full max-w-5xl bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 border border-white/40">
-
+    <div
+      className={`${theme == 'dark' ? 'bg-slate-900' : 'bg-white'} min - h - screen  flex items-center justify-center p-5`}
+    >
+      <div className="w-full max-w-5xl  rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 border border-white/40">
         {/* Left Section */}
         <div className="relative hidden md:block">
           <Image
@@ -58,9 +72,7 @@ const Login = () => {
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col justify-end p-12 text-white">
-            <h2 className="text-4xl font-bold leading-tight">
-              Welcome Back
-            </h2>
+            <h2 className="text-4xl font-bold leading-tight">Welcome Back</h2>
             <p className="mt-3 text-lg text-gray-200">
               The community is waiting for you.
             </p>
@@ -69,62 +81,69 @@ const Login = () => {
 
         {/* Right Section */}
         <div className="p-10 md:p-14 flex flex-col justify-center">
-
           <div className="mb-10">
-            <h2 className="text-3xl font-bold text-gray-900">
-              Login
-            </h2>
-            <p className="text-gray-500 mt-2">
+            <p
+              className={`  font-bold ${theme == 'dark' ? 'text-white' : 'text-black'}`}
+            >
               Enter your credentials to access your account
             </p>
           </div>
 
           <form className="space-y-6" onSubmit={handleSubmit(handleLogin)}>
-
             {/* Email */}
             <div>
-              <label className="text-sm font-medium text-gray-700">
-                Email Address
+              <label
+                className={`block text-sm font-medium ${theme == 'dark' ? 'text-white' : 'text-black'} mb-1`}
+              >
+                Email Address:
               </label>
               <input
                 {...register('email', { required: true })}
                 type="email"
                 placeholder="Enter your email"
-                className="mt-2 w-full px-4 py-3 rounded-xl border border-gray-300 
-                           focus:ring-2 focus:ring-indigo-500 focus:border-transparent 
-                          outline-none transition-all 
-                        placeholder:text-gray-400 text-gray-800"
+                className={`mt-2 w-full px-4 py-3 rounded-xl border border-gray-300
+                           focus:ring-2 focus:ring-indigo-500 focus:border-transparent
+                          outline-none transition-all
+                        placeholder:text-gray-400 text-gray-800  ${theme == 'dark' ? 'text-white' : 'text-black'}`}
               />
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">
-                  Email is required
-                </p>
+                <p className="text-red-500 text-sm mt-1">Email is required</p>
               )}
             </div>
 
             {/* Password */}
-            <div>
+            <div className="relative">
               <div className="flex justify-between">
-                <label className="text-sm font-medium text-gray-700">
-                  Password
-                </label>
-                <Link
-                  href="/reset"
-                  className="text-sm text-indigo-600 hover:underline"
+                <label
+                  className={`block text-sm font-medium ${theme == 'dark' ? 'text-white' : 'text-black'} mb-1`}
                 >
-                  Forgot?
-                </Link>
+                  Password:
+                </label>
               </div>
 
               <input
                 {...register('password', { required: true })}
-                type="password"
+                type={showPassword ? 'password' : 'text'}
                 placeholder="Enter your password"
-                className="mt-2 w-full px-4 py-3 rounded-xl border border-gray-300 
-                           focus:ring-2 focus:ring-indigo-500 focus:border-transparent 
-                          outline-none transition-all 
-                        placeholder:text-gray-400 text-gray-800"
+                className={`mt-2 w-full px-4 py-3 rounded-xl border border-gray-300
+                           focus:ring-2 focus:ring-indigo-500 focus:border-transparent
+                          outline-none transition-all
+                        placeholder:text-gray-400 text-gray-800  ${theme == 'dark' ? 'text-white' : 'text-black'}`}
               />
+              <div
+                onClick={handelShowPassword}
+                className="absolute  top-12 right-6"
+              >
+                {showPassword ? (
+                  <IoMdEyeOff
+                    className={`${theme == 'dark' ? 'text-white' : 'text-black'}`}
+                  />
+                ) : (
+                  <IoEye
+                    className={`${theme == 'dark' ? 'text-white' : 'text-black'}`}
+                  />
+                )}
+              </div>
               {errors.password && (
                 <p className="text-red-500 text-sm mt-1">
                   Password is required
@@ -133,14 +152,13 @@ const Login = () => {
             </div>
 
             {/* Remember */}
-            <div className="flex items-center justify-between text-sm">
-              <label className="flex items-center gap-2 text-gray-600 cursor-pointer">
-                <input
-                  type="checkbox"
-                  className="h-4 w-4 text-blue-600 border-gray-300 rounded"
-                />
-                Remember me
-              </label>
+            <div className=" text-sm text-end">
+              <Link
+                href="/reset"
+                className={`text-sm ${theme == 'dark' ? 'text-white' : 'text-indigo-600'}  hover:underline`}
+              >
+                Forgot Password?
+              </Link>
             </div>
 
             {/* Submit */}
@@ -154,11 +172,13 @@ const Login = () => {
 
           {/* Divider */}
           <div className="flex items-center my-8">
-            <div className="flex-grow border-t border-gray-300"></div>
-            <span className="mx-4 text-sm text-gray-500 uppercase tracking-wider">
+            <div className="grow border-t border-gray-300"></div>
+            <span
+              className={`mx-4 text-sm ${theme == 'dark' ? 'text-white' : 'text-black'} text-gray-500 uppercase tracking-wider`}
+            >
               Or continue with
             </span>
-            <div className="flex-grow border-t border-gray-300"></div>
+            <div className="grow border-t border-gray-300"></div>
           </div>
 
           {/* Google */}
@@ -179,7 +199,9 @@ const Login = () => {
             Continue with GitHub
           </button>
 
-          <p className="text-center text-sm text-gray-600 mt-8">
+          <p
+            className={`text-center text-sm  mt-3  ${theme == 'dark' ? 'text-white' : 'text-black'}`}
+          >
             Don’t have an account?{' '}
             <Link
               href="/signup"
@@ -188,7 +210,6 @@ const Login = () => {
               Create an account
             </Link>
           </p>
-
         </div>
       </div>
     </div>
