@@ -9,8 +9,9 @@ import toast from 'react-hot-toast'
 import { FaGithub } from 'react-icons/fa6'
 import { FcGoogle } from 'react-icons/fc'
 import { IoMdEyeOff } from 'react-icons/io'
-import { IoEye } from 'react-icons/io5'
+import { IoEye, IoMail } from 'react-icons/io5'
 import { useTheme } from 'next-themes'
+import { FaLock } from 'react-icons/fa'
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(true)
@@ -19,8 +20,8 @@ const Login = () => {
   }
   const router = useRouter()
 
-  const handleSocialLogin = async (provider) => {
-    const res = await signIn(provider, { redirect: false })
+  const handleSocialLogin = async () => {
+    const res = await signIn("google", { redirect: false })
     if (res?.error) {
       toast.error('Login Failed!')
     } else {
@@ -57,13 +58,14 @@ const Login = () => {
   }, [])
 
   if (!mounted) return null
+
   return (
     <div
-      className={`${theme == 'dark' ? 'bg-slate-900' : 'bg-white'} min - h - screen  flex items-center justify-center p-5`}
+      className={`${theme == 'dark' ? 'bg-slate-900' : 'bg-white'} min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-10`}
     >
-      <div className="w-full max-w-5xl  rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2 border border-white/40">
-        {/* Left Section */}
-        <div className="relative hidden md:block">
+      <div className="w-full max-w-5xl rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 border border-white/40">
+        {/* Left Section - Hidden on Mobile/Tablet or adjusted height */}
+        <div className="relative h-64 lg:h-auto overflow-hidden">
           <Image
             src="/assets/login.gif"
             alt="Login Background"
@@ -71,136 +73,141 @@ const Login = () => {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col justify-end p-12 text-white">
-            <h2 className="text-4xl font-bold leading-tight">Welcome Back</h2>
-            <p className="mt-3 text-lg text-gray-200">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-12 text-white">
+            <h2 className="text-2xl md:text-4xl font-bold leading-tight">
+              Welcome Back
+            </h2>
+            <p className="mt-2 md:mt-3 text-sm md:text-lg text-gray-200">
               The community is waiting for you.
             </p>
           </div>
         </div>
 
-        {/* Right Section */}
-        <div className="p-10 md:p-14 flex flex-col justify-center">
-          <div className="mb-10">
+        {/* Right Section - Content padding adjusted for small screens */}
+        <div
+          className={`p-6 sm:p-10 md:p-14 flex flex-col justify-center ${theme == 'dark' ? 'bg-slate-800 lg:bg-transparent' : 'bg-white lg:bg-transparent'}`}
+        >
+          <div className="mb-6 md:mb-10">
             <p
-              className={`  font-bold ${theme == 'dark' ? 'text-white' : 'text-black'}`}
+              className={`font-bold text-sm md:text-base ${theme == 'dark' ? 'text-white' : 'text-black'}`}
             >
               Enter your credentials to access your account
             </p>
           </div>
 
-          <form className="space-y-6" onSubmit={handleSubmit(handleLogin)}>
+          <form
+            className="space-y-4 md:space-y-6"
+            onSubmit={handleSubmit(handleLogin)}
+          >
             {/* Email */}
-            <div>
+            <div className="relative">
               <label
                 className={`block text-sm font-medium ${theme == 'dark' ? 'text-white' : 'text-black'} mb-1`}
               >
                 Email Address:
               </label>
-              <input
-                {...register('email', { required: true })}
-                type="email"
-                placeholder="Enter your email"
-                className={`mt-2 w-full px-4 py-3 rounded-xl border border-gray-300
-                           focus:ring-2 focus:ring-indigo-500 focus:border-transparent
-                          outline-none transition-all
-                        placeholder:text-gray-400 text-gray-800  ${theme == 'dark' ? 'text-white' : 'text-black'}`}
-              />
+              <div className="relative">
+                <input
+                  {...register('email', { required: true })}
+                  type="email"
+                  placeholder="Enter your email"
+                  className={`w-full px-4 py-3 pl-10 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all ${theme == 'dark' ? 'bg-slate-700 text-white placeholder-slate-300' : 'bg-white text-black placeholder-gray-400'}`}
+                />
+                <IoMail
+                  className={`absolute top-1/2 -translate-y-1/2 left-3 ${theme == 'dark' ? 'text-white' : 'text-gray-500'}`}
+                />
+              </div>
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">Email is required</p>
+                <p className="text-red-500 text-xs mt-1">Email is required</p>
               )}
             </div>
 
             {/* Password */}
             <div className="relative">
-              <div className="flex justify-between">
-                <label
-                  className={`block text-sm font-medium ${theme == 'dark' ? 'text-white' : 'text-black'} mb-1`}
-                >
-                  Password:
-                </label>
-              </div>
-
-              <input
-                {...register('password', { required: true })}
-                type={showPassword ? 'password' : 'text'}
-                placeholder="Enter your password"
-                className={`mt-2 w-full px-4 py-3 rounded-xl border border-gray-300
-                           focus:ring-2 focus:ring-indigo-500 focus:border-transparent
-                          outline-none transition-all
-                        placeholder:text-gray-400 text-gray-800  ${theme == 'dark' ? 'text-white' : 'text-black'}`}
-              />
-              <div
-                onClick={handelShowPassword}
-                className="absolute  top-12 right-6"
+              <label
+                className={`block text-sm font-medium ${theme == 'dark' ? 'text-white' : 'text-black'} mb-1`}
               >
-                {showPassword ? (
-                  <IoMdEyeOff
-                    className={`${theme == 'dark' ? 'text-white' : 'text-black'}`}
-                  />
-                ) : (
-                  <IoEye
-                    className={`${theme == 'dark' ? 'text-white' : 'text-black'}`}
-                  />
-                )}
+                Password:
+              </label>
+              <div className="relative">
+                <input
+                  {...register('password', { required: true })}
+                  type={showPassword ? 'password' : 'text'}
+                  placeholder="Enter your password"
+                  className={`w-full px-4 py-3 pl-10 pr-12 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all ${theme == 'dark' ? 'bg-slate-700 text-white placeholder-slate-300' : 'bg-white text-black placeholder-gray-400'}`}
+                />
+                <FaLock
+                  className={`absolute top-1/2 -translate-y-1/2 left-3 ${theme == 'dark' ? 'text-white' : 'text-gray-500'}`}
+                />
+                <div
+                  onClick={handelShowPassword}
+                  className="absolute top-1/2 -translate-y-1/2 right-4 cursor-pointer"
+                >
+                  {showPassword ? (
+                    <IoMdEyeOff
+                      className={`${theme == 'dark' ? 'text-white' : 'text-black'}`}
+                    />
+                  ) : (
+                    <IoEye
+                      className={`${theme == 'dark' ? 'text-white' : 'text-black'}`}
+                    />
+                  )}
+                </div>
               </div>
               {errors.password && (
-                <p className="text-red-500 text-sm mt-1">
+                <p className="text-red-500 text-xs mt-1">
                   Password is required
                 </p>
               )}
             </div>
 
-            {/* Remember */}
-            <div className=" text-sm text-end">
+            <div className="text-sm text-end">
               <Link
                 href="/reset"
-                className={`text-sm ${theme == 'dark' ? 'text-white' : 'text-indigo-600'}  hover:underline`}
+                className={`text-xs md:text-sm ${theme == 'dark' ? 'text-indigo-400' : 'text-indigo-600'} hover:underline`}
               >
                 Forgot Password?
               </Link>
             </div>
 
-            {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl shadow-lg hover:shadow-indigo-400/40 transition-all active:scale-[0.98]"
+              className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl shadow-lg transition-all active:scale-[0.98]"
             >
               Sign In
             </button>
           </form>
 
           {/* Divider */}
-          <div className="flex items-center my-8">
+          <div className="flex items-center my-6 md:my-8">
             <div className="grow border-t border-gray-300"></div>
             <span
-              className={`mx-4 text-sm ${theme == 'dark' ? 'text-white' : 'text-black'} text-gray-500 uppercase tracking-wider`}
+              className={`mx-4 text-[10px] md:text-sm ${theme == 'dark' ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wider`}
             >
               Or continue with
             </span>
             <div className="grow border-t border-gray-300"></div>
           </div>
 
-          {/* Google */}
-          <button
-            onClick={() => handleSocialLogin('google')}
-            className="w-full py-3 border border-gray-300 rounded-xl flex items-center justify-center gap-3 bg-white text-gray-800 hover:bg-gray-200 transition-all font-medium"
-          >
-            <FcGoogle size={20} />
-            Continue with Google
-          </button>
+          {/* Social Buttons */}
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={() => handleSocialLogin('google')}
+              className="w-full py-3 border border-gray-300 rounded-xl flex items-center justify-center gap-3 bg-white text-gray-800 hover:bg-gray-50 transition-all font-medium text-sm md:text-base"
+            >
+              <FcGoogle size={20} /> Continue with Google
+            </button>
 
-          {/* GitHub */}
-          <button
-            onClick={() => handleSocialLogin('github')}
-            className="w-full mt-4 py-3 bg-black text-white rounded-xl flex items-center justify-center gap-3 hover:bg-gray-900 transition-all font-medium"
-          >
-            <FaGithub size={20} />
-            Continue with GitHub
-          </button>
+            <button
+              onClick={() => handleSocialLogin('github')}
+              className="w-full py-3 bg-black text-white rounded-xl flex items-center justify-center gap-3 hover:bg-gray-900 transition-all font-medium text-sm md:text-base"
+            >
+              <FaGithub size={20} /> Continue with GitHub
+            </button>
+          </div>
 
           <p
-            className={`text-center text-sm  mt-3  ${theme == 'dark' ? 'text-white' : 'text-black'}`}
+            className={`text-center text-xs md:text-sm mt-6 ${theme == 'dark' ? 'text-white' : 'text-black'}`}
           >
             Don’t have an account?{' '}
             <Link
