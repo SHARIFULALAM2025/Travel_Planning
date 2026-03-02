@@ -26,11 +26,11 @@ const Signup = () => {
   const router = useRouter()
 
   const HandelSocialLogin = async () => {
-    const res = await signIn('google', { callbackUrl: '/?login=success' })
+    const res = await signIn('google', { callbackUrl: '/',redirect:true })
     if (res?.error) {
       toast.error('Login Failed!')
     } else {
-      
+
       router.push('/')
     }
   }
