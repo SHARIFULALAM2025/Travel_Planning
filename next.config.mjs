@@ -14,6 +14,10 @@ const nextConfig = {
       protocol: 'https',
       hostname: 'www.svgrepo.com',
     },
+    {
+      protocol: 'https',
+      hostname: 'lh3.googleusercontent.com',
+    },
   ],
   },
 };
