@@ -26,24 +26,19 @@ const Signup = () => {
   const router = useRouter()
 
   const HandelSocialLogin = async () => {
-    const res = await signIn('google', { callbackUrl: '/',redirect:true })
-    if (res?.error) {
-      toast.error('Login Failed!')
-    } else {
+    sessionStorage.setItem("loginSuccess","true")
+     await signIn('google', {
+      callbackUrl: '/'
+    })
 
-      router.push('/')
-    }
   }
 
-  const HandelGitHubLogin = async () => {
-    const res = await signIn('github', { redirect: false })
-    if (res?.error) {
-      toast.error('Login Failed!')
-    } else {
-      toast.success('sign up successfully!')
-      router.push('/')
-    }
-  }
+   const HandelGitHubLogin = async () => {
+     sessionStorage.setItem('loginSuccess', 'true')
+     await signIn('github', {
+       callbackUrl: 'https://travel-planning-ivory.vercel.app',
+     })
+   }
 
   const {
     register,

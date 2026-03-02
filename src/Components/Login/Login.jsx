@@ -20,15 +20,20 @@ const Login = () => {
   }
   const router = useRouter()
 
-  const handleSocialLogin = async () => {
-    const res = await signIn("google", { redirect: false })
-    if (res?.error) {
-      toast.error('Login Failed!')
-    } else {
-      toast.success('Welcome back!')
-      router.push('/')
-    }
+  const HandelSocialLogin = async () => {
+      sessionStorage.setItem("loginSuccess","true")
+       await signIn('google', {
+        callbackUrl: '/'
+      })
+
   }
+
+ const HandelGitHubLogin = async () => {
+   sessionStorage.setItem('loginSuccess', 'true')
+   await signIn('github', {
+     callbackUrl: 'https://travel-planning-ivory.vercel.app',
+   })
+ }
 
   const {
     register,
@@ -192,14 +197,14 @@ const Login = () => {
           {/* Social Buttons */}
           <div className="flex flex-col gap-3">
             <button
-              onClick={() => handleSocialLogin('google')}
+              onClick={() => HandelSocialLogin('google')}
               className="w-full py-3 border border-gray-300 rounded-xl flex items-center justify-center gap-3 bg-white text-gray-800 hover:bg-gray-50 transition-all font-medium text-sm md:text-base"
             >
               <FcGoogle size={20} /> Continue with Google
             </button>
 
             <button
-              onClick={() => handleSocialLogin('github')}
+              onClick={() => HandelGitHubLogin('github')}
               className="w-full py-3 bg-black text-white rounded-xl flex items-center justify-center gap-3 hover:bg-gray-900 transition-all font-medium text-sm md:text-base"
             >
               <FaGithub size={20} /> Continue with GitHub
