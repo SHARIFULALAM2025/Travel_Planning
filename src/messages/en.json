@@ -1,8 +1,17 @@
 {
   "Navbar": {
     "logo_text": "Travel",
-    "title": "MATE"
+    "title": "MATE",
+    "home": "Home",
+    "explore": "Explore",
+    "reviews": "Reviews",
+    "blog": "Blog",
+    "plan_trip": "Plan Trip",
+    "my_trips": "My Trips",
+    "signup-button": "Sign Up",
+    "Log-Out":"Log Out"
   },
+
   "signupPage": {
     "login-text": "Create Account",
     "login-h1": " Start your journey with us.",
@@ -39,5 +48,9 @@
     "passwordForgot":"Forgot Password?",
     "side-text1":"Welcome Back",
     "side-text2":"The community is waiting for you"
-  }
+  },
+"banner":{
+  "title":"Your Dream Trip, Our Plan",
+  "des":"Every corner of the world is now at your fingertips. Choose your favorite destination today."
+}
 }

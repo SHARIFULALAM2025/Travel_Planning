@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import React, { useState, useEffect } from 'react';
 
 const images = [
@@ -12,6 +13,7 @@ const images = [
 ];
 
 const Banner = () => {
+  const t = useTranslations('banner')
     const [formData, setFormData] = useState({
         destination: '',
         dates: '',
@@ -63,21 +65,13 @@ const Banner = () => {
         {/* Content */}
         <div className="relative z-10 w-full max-w-6xl mx-auto px-6 flex flex-col items-center text-center gap-10">
           {/* Heading */}
-          <div className="max-w-3xl">
+          <div className="max-w-6xl">
             <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Explore the World in <span className="text-blue-600">Style</span>
+              {t('title')}
             </h1>
 
             <p className="mt-8 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-8 font-light tracking-wide">
-              Discover{' '}
-              <span className="text-blue-600">handpicked destinations</span>,
-              seamless planning, and
-              <span className="text-white font-medium">
-                {' '}
-                unforgettable journeys
-              </span>{' '}
-              — crafted for travelers who seek meaningful experiences and
-              peaceful adventures.
+             {t("des")}
             </p>
           </div>
 

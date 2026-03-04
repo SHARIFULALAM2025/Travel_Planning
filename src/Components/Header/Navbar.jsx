@@ -14,6 +14,7 @@ import { BsGlobe } from 'react-icons/bs'
 import { BsX } from 'react-icons/bs'
 import { MyLanguages } from './Language'
 import { useRouter } from 'next/navigation'
+import { GiCommercialAirplane } from 'react-icons/gi'
 
 const Navbar = () => {
 
@@ -104,21 +105,30 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* 3. Desktop Navigation (Centered only on Desktop) */}
-          {/* 'md:flex-[2] md:justify-center' ব্যবহার করা হয়েছে আইটেমগুলো মাঝখানে আনতে */}
+          {/* 3. Desktop Navigation */}
           <div className="hidden md:flex items-center justify-center gap-8 md:flex-[2]">
             {navItems.map((item, index) => {
               const fullPath = `/${locale}${item.path}`
               const isActive = pathname === fullPath
+
               return (
                 <Link
                   key={index}
                   href={fullPath}
-                  className={`relative text-[15px] font-medium transition duration-300 ${
+                  // 'group' ক্লাসটি এখানে খুব জরুরি আইকন কন্ট্রোল করার জন্য
+                  className={`group relative text-[15px] font-medium py-2 transition duration-300 ${
                     isActive ? 'text-blue-600' : 'hover:text-blue-600'
                   }`}
                 >
-                  {item.name}
+                  {/* হোভার আইকন: বিমান */}
+                  <span className="absolute -top-1 left-1/2 -translate-x-1/2 -rotate-25 opacity-0 group-hover:opacity-100 group-hover:-top-2 transition-all duration-300 text-blue-500">
+                    <GiCommercialAirplane size={18} />
+                  </span>
+
+                  {/* টেক্সট */}
+                  {t(item.name)}
+
+                  {/* এক্টিভ বর্ডার লাইন */}
                   {isActive && (
                     <motion.div
                       layoutId="activeTab"
@@ -139,7 +149,7 @@ const Navbar = () => {
             <div className="">
               <button
                 onClick={() => setIsOpen(true)}
-                className="group flex items-center gap-2 px-3 py-2 rounded-xl border border-gray-200 backdrop-blur-md hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 shadow-sm active:scale-95"
+                className="group hidden md:flex items-center  gap-2 px-3 py-2.5 rounded-xl border border-gray-200 backdrop-blur-md hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 shadow-sm active:scale-95"
               >
                 {/* আইকন কন্টেইনার */}
                 <div className="relative">
@@ -199,7 +209,6 @@ const Navbar = () => {
                             {MyLanguages.map((item) => (
                               <div
                                 key={item.code}
-                                // ইউজার যে ভাষা ক্লিক করবে
                                 onClick={() => changeLanguage(item.code)}
                                 className={`p-2 rounded-lg transition hover:bg-blue-100 dark:hover:bg-gray-800 hover:cursor-pointer ${
                                   locale === item.code
@@ -267,7 +276,7 @@ const Navbar = () => {
                         onClick={handleSignOut}
                         className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20"
                       >
-                        Logout
+                        {t('Log-Out')}
                       </button>
                     </motion.div>
                   )}
@@ -278,7 +287,7 @@ const Navbar = () => {
                 href={`/${locale}/signup`}
                 className="px-3 py-1.5 text-xs rounded-md sm:px-4 sm:py-2 sm:text-sm md:px-5 md:py-2.5 md:text-base md:rounded-lg bg-blue-600 text-white font-medium shadow-sm hover:bg-blue-700 transition duration-300 inline-block text-center whitespace-nowrap"
               >
-                Sign Up
+                {t('signup-button')}
               </Link>
             )}
           </div>
@@ -308,18 +317,43 @@ const Navbar = () => {
                     onClick={() => setIsNavOpen(false)}
                     className={`text-lg font-medium ${pathname === fullPath ? 'text-blue-600' : ''}`}
                   >
-                    {item.name}
+                    {t(item.name)}
                   </Link>
                 )
               })}
               <div className="pt-4 border-t flex justify-between items-center">
                 <DarkMode />
+                <button
+                  onClick={() => setIsOpen(true)}
+                  className="group flex items-center gap-2 px-3 py-2 rounded-xl border border-gray-200 backdrop-blur-md hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 shadow-sm active:scale-95"
+                >
+                  {/* আইকন কন্টেইনার */}
+                  <div className="relative">
+                    <BsGlobe
+                      className={`${theme == 'dark' ? 'text-white' : 'text-black'} group-hover:text-blue-600 transition-colors duration-300`}
+                      size={20}
+                    />
+
+                    {/* ইন্ডিকেটর আইকনটি এখন গ্লোবাল আইকনের উপরে */}
+                    <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500 border border-white"></span>
+                    </span>
+                  </div>
+
+                  {/* ল্যাঙ্গুয়েজ টেক্সট */}
+                  <span
+                    className={`text-xs ${theme == 'dark' ? 'text-white' : 'text-black'} font-semibold text-black group-hover:text-blue-700 uppercase tracking-wide`}
+                  >
+                    {MyLanguages.find((lang) => lang.code === locale)?.label}
+                  </span>
+                </button>
                 {session?.user && (
                   <button
                     onClick={handleSignOut}
                     className="text-red-500 font-bold"
                   >
-                    Logout
+                    {t('Log-Out')}
                   </button>
                 )}
               </div>
