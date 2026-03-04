@@ -1,6 +1,7 @@
 import Explore from '@/Components/Explore_DestinationPages/Explore/Explore';
 import Featured from '@/Components/Explore_DestinationPages/Featured/Featured';
 import HeroExplore from '@/Components/Explore_DestinationPages/HeroUi/HeroExplore';
+import InActiveExplore from '@/Components/Explore_DestinationPages/InteractiveExplore/InActiveExplore';
 import SearchDestination from '@/Components/Explore_DestinationPages/SearchDestination/SearchDestination';
 import React from 'react';
 
@@ -11,6 +12,7 @@ const Destnations = () => {
       <SearchDestination></SearchDestination>
       <Featured></Featured>
       <Explore></Explore>
+      <InActiveExplore></InActiveExplore>
     </div>
   );
 };
