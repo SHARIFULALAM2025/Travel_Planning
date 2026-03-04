@@ -12,28 +12,37 @@ import { IoMdEyeOff } from 'react-icons/io'
 import { IoEye, IoMail } from 'react-icons/io5'
 import { useTheme } from 'next-themes'
 import { FaLock } from 'react-icons/fa'
+import { useTranslations } from 'next-intl'
 
 const Login = () => {
+  const t = useTranslations('loginPage')
   const [showPassword, setShowPassword] = useState(true)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const signupImage = [
+    'https://i.ibb.co.com/SXchBqdh/Study-abroad-pana.png',
+    'https://i.ibb.co.com/Z1wCXj7D/Globalization-bro.png',
+    'https://i.ibb.co.com/RG28Hb6L/Trip-amico.png',
+    'https://i.ibb.co.com/G3tYVpgM/Travel-insurance-cuate.png',
+    'https://i.ibb.co.com/gLq21Gn6/Hotel-Booking-amico.png',
+  ]
   const handelShowPassword = () => {
     setShowPassword(!showPassword)
   }
   const router = useRouter()
 
   const HandelSocialLogin = async () => {
-      sessionStorage.setItem("loginSuccess","true")
-       await signIn('google', {
-        callbackUrl: '/'
-      })
-
+    sessionStorage.setItem('loginSuccess', 'true')
+    await signIn('google', {
+      callbackUrl: '/',
+    })
   }
 
- const HandelGitHubLogin = async () => {
-   sessionStorage.setItem('loginSuccess', 'true')
-   await signIn('github', {
-     callbackUrl: 'https://travel-planning-ivory.vercel.app',
-   })
- }
+  const HandelGitHubLogin = async () => {
+    sessionStorage.setItem('loginSuccess', 'true')
+    await signIn('github', {
+      callbackUrl: 'https://travel-planning-ivory.vercel.app',
+    })
+  }
 
   const {
     register,
@@ -62,6 +71,16 @@ const Login = () => {
     setMounted(true)
   }, [])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === signupImage.length - 1 ? 0 : prevIndex + 1
+      )
+    },3000)
+
+    return () => clearInterval(interval) // Cleanup on unmount
+  }, [])
+
   if (!mounted) return null
 
   return (
@@ -72,18 +91,18 @@ const Login = () => {
         {/* Left Section - Hidden on Mobile/Tablet or adjusted height */}
         <div className="relative h-64 lg:h-auto overflow-hidden">
           <Image
-            src="/assets/login.gif"
+            src={signupImage[currentImageIndex]}
             alt="Login Background"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-12 text-white">
-            <h2 className="text-2xl md:text-4xl font-bold leading-tight">
-              Welcome Back
+          <div className="absolute top-1/2 left-8 text-black">
+            <h2 className="text-2xl md:text-5xl -rotate-45 font-bold leading-tight bg-gradient-to-r from-pink-500 via-green-500 to-indigo-600 bg-clip-text text-transparent">
+              {t('side-text1')}
             </h2>
-            <p className="mt-2 md:mt-3 text-sm md:text-lg text-gray-200">
-              The community is waiting for you.
+            <p className="mt-2 md:mt-3 -rotate-45 text-sm md:text-3xl md:font-bold bg-gradient-to-r from-teal-500 via-pink-500  to-green-700 bg-clip-text text-transparent">
+              {t('side-text2')}
             </p>
           </div>
         </div>
@@ -92,11 +111,16 @@ const Login = () => {
         <div
           className={`p-6 sm:p-10 md:p-14 flex flex-col justify-center ${theme == 'dark' ? 'bg-slate-800 lg:bg-transparent' : 'bg-white lg:bg-transparent'}`}
         >
-          <div className="mb-6 md:mb-10">
-            <p
-              className={`font-bold text-sm md:text-base ${theme == 'dark' ? 'text-white' : 'text-black'}`}
+          <div className="mb-6 md:mb-10 space-y-2">
+            <h1
+              className={`font-bold text-center md:text-3xl  ${theme == 'dark' ? 'text-white' : 'text-black'}`}
             >
-              Enter your credentials to access your account
+              {t('login-h1')}
+            </h1>
+            <p
+              className={`font-bold text-center text-xs md:text-xl ${theme == 'dark' ? 'text-white' : 'text-black'}`}
+            >
+              {t('login-h2')}
             </p>
           </div>
 
@@ -109,13 +133,13 @@ const Login = () => {
               <label
                 className={`block text-sm font-medium ${theme == 'dark' ? 'text-white' : 'text-black'} mb-1`}
               >
-                Email Address:
+                {t('email-address')}
               </label>
               <div className="relative">
                 <input
                   {...register('email', { required: true })}
                   type="email"
-                  placeholder="Enter your email"
+                  placeholder={t('placeholder-email')}
                   className={`w-full px-4 py-3 pl-10 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all ${theme == 'dark' ? 'bg-slate-700 text-white placeholder-slate-300' : 'bg-white text-black placeholder-gray-400'}`}
                 />
                 <IoMail
@@ -132,13 +156,13 @@ const Login = () => {
               <label
                 className={`block text-sm font-medium ${theme == 'dark' ? 'text-white' : 'text-black'} mb-1`}
               >
-                Password:
+                {t('password')}
               </label>
               <div className="relative">
                 <input
                   {...register('password', { required: true })}
                   type={showPassword ? 'password' : 'text'}
-                  placeholder="Enter your password"
+                  placeholder={t('placeholder-password')}
                   className={`w-full px-4 py-3 pl-10 pr-12 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all ${theme == 'dark' ? 'bg-slate-700 text-white placeholder-slate-300' : 'bg-white text-black placeholder-gray-400'}`}
                 />
                 <FaLock
@@ -171,7 +195,7 @@ const Login = () => {
                 href="/reset"
                 className={`text-xs md:text-sm ${theme == 'dark' ? 'text-indigo-400' : 'text-indigo-600'} hover:underline`}
               >
-                Forgot Password?
+                {t('passwordForgot')}
               </Link>
             </div>
 
@@ -179,7 +203,7 @@ const Login = () => {
               type="submit"
               className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl shadow-lg transition-all active:scale-[0.98]"
             >
-              Sign In
+              {t('login-button')}
             </button>
           </form>
 
@@ -189,7 +213,7 @@ const Login = () => {
             <span
               className={`mx-4 text-[10px] md:text-sm ${theme == 'dark' ? 'text-gray-400' : 'text-gray-500'} uppercase tracking-wider`}
             >
-              Or continue with
+              {t('text-h1')}
             </span>
             <div className="grow border-t border-gray-300"></div>
           </div>
@@ -200,26 +224,27 @@ const Login = () => {
               onClick={() => HandelSocialLogin('google')}
               className="w-full py-3 border border-gray-300 rounded-xl flex items-center justify-center gap-3 bg-white text-gray-800 hover:bg-gray-50 transition-all font-medium text-sm md:text-base"
             >
-              <FcGoogle size={20} /> Continue with Google
+              <FcGoogle size={20} /> {t('google-button')}
             </button>
 
             <button
               onClick={() => HandelGitHubLogin('github')}
               className="w-full py-3 bg-black text-white rounded-xl flex items-center justify-center gap-3 hover:bg-gray-900 transition-all font-medium text-sm md:text-base"
             >
-              <FaGithub size={20} /> Continue with GitHub
+              <FaGithub size={20} />
+              {t('github-button')}
             </button>
           </div>
 
           <p
             className={`text-center text-xs md:text-sm mt-6 ${theme == 'dark' ? 'text-white' : 'text-black'}`}
           >
-            Don’t have an account?{' '}
+            {t('text-p')}
             <Link
               href="/signup"
-              className="text-indigo-600 font-semibold hover:underline"
+              className="text-indigo-600 ml-2 font-semibold hover:underline"
             >
-              Create an account
+              {t('signupText')}
             </Link>
           </p>
         </div>

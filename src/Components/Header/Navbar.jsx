@@ -9,8 +9,22 @@ import DarkMode from '../DarkMode/DarkMode'
 import { useTheme } from 'next-themes'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { useLocale, useTranslations } from 'next-intl'
+import { BsGlobe } from 'react-icons/bs'
+import { BsX } from 'react-icons/bs'
+import { MyLanguages } from './Language'
+import { useRouter } from 'next/navigation'
 
 const Navbar = () => {
+
+  const locale = useLocale()
+  const t = useTranslations('Navbar')
+  console.log('Current Locale:', locale)
+  console.log('Logo Text:', t('logo_text'))
+  console.log('Title:', t('title'))
+  const router = useRouter()
+
+  const [isOpen, setIsOpen] = useState(false)
   const { data: session } = useSession()
   const pathname = usePathname()
   const { theme } = useTheme()
@@ -22,14 +36,35 @@ const Navbar = () => {
     setMounted(true)
   }, [])
 
+  useEffect(() => {
+    console.log('Locale changed to:', locale)
+  }, [locale])
+
   const handleSignOut = () => {
-    signOut({ callbackUrl: '/signup' })
+    signOut({ callbackUrl: `/${locale}/signup` })
   }
 
   if (!mounted) return null
 
   const settings = ['Profile', 'Account', 'Dashboard']
 
+  const changeLanguage = (newLocale) => {
+    const segments = pathname.split('/').filter(Boolean)
+
+    const currentLocales = ['bn', 'en']
+
+    if (currentLocales.includes(segments[0])) {
+      segments[0] = newLocale
+    } else {
+      segments.unshift(newLocale)
+    }
+
+    const newPath = `/${segments.join('/')}`
+
+    // Force a full page reload to ensure translations update
+    window.location.href = newPath
+    setIsOpen(false)
+  }
   return (
     <nav
       className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -51,7 +86,7 @@ const Navbar = () => {
           {/* 2. Logo Section */}
           {/* Desktop-এ এটিকে বামে রাখার জন্য 'md:flex-1' যোগ করা হয়েছে */}
           <div className="md:flex-1 flex justify-center md:justify-start">
-            <Link href="/" className="flex items-center gap-3 group">
+            <Link href={`/${locale}`} className="flex items-center gap-3 group">
               <figure className="relative w-9 h-9 rounded-full overflow-hidden transition duration-300 group-hover:scale-110">
                 <Image
                   src="/planet.png"
@@ -61,8 +96,10 @@ const Navbar = () => {
                 />
               </figure>
               <span className="font-bold text-xl tracking-tight uppercase">
-                <span className="text-emerald-600">Travel</span>
-                <span className="text-slate-700 dark:text-slate-300">Mate</span>
+                <span className="text-emerald-600">{t('logo_text')}</span>
+                <span className="text-slate-700 dark:text-slate-300">
+                  {t('title')}
+                </span>
               </span>
             </Link>
           </div>
@@ -71,11 +108,12 @@ const Navbar = () => {
           {/* 'md:flex-[2] md:justify-center' ব্যবহার করা হয়েছে আইটেমগুলো মাঝখানে আনতে */}
           <div className="hidden md:flex items-center justify-center gap-8 md:flex-[2]">
             {navItems.map((item, index) => {
-              const isActive = pathname === item.path
+              const fullPath = `/${locale}${item.path}`
+              const isActive = pathname === fullPath
               return (
                 <Link
                   key={index}
-                  href={item.path}
+                  href={fullPath}
                   className={`relative text-[15px] font-medium transition duration-300 ${
                     isActive ? 'text-blue-600' : 'hover:text-blue-600'
                   }`}
@@ -97,6 +135,94 @@ const Navbar = () => {
           <div className="flex items-center justify-end gap-4 md:flex-1">
             <div className="hidden sm:block">
               <DarkMode />
+            </div>
+            <div className="">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="group flex items-center gap-2 px-3 py-2 rounded-xl border border-gray-200 backdrop-blur-md hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 shadow-sm active:scale-95"
+              >
+                {/* আইকন কন্টেইনার */}
+                <div className="relative">
+                  <BsGlobe
+                    className={`${theme == 'dark' ? 'text-white' : 'text-black'} group-hover:text-blue-600 transition-colors duration-300`}
+                    size={20}
+                  />
+
+                  {/* ইন্ডিকেটর আইকনটি এখন গ্লোবাল আইকনের উপরে */}
+                  <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500 border border-white"></span>
+                  </span>
+                </div>
+
+                {/* ল্যাঙ্গুয়েজ টেক্সট */}
+                <span
+                  className={`text-xs ${theme == 'dark' ? 'text-white' : 'text-black'} font-semibold text-black group-hover:text-blue-700 uppercase tracking-wide`}
+                >
+                  {MyLanguages.find((lang) => lang.code === locale)?.label}
+                </span>
+              </button>
+              <AnimatePresence>
+                {isOpen && (
+                  <>
+                    {/* ব্যাকড্রপ (ঝাপসা কালো পর্দা) */}
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      onClick={() => setIsOpen(false)}
+                      className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[999]"
+                    />
+
+                    {/* ড্রয়ার কন্টেন্ট (উপর থেকে নামবে) */}
+                    <motion.div
+                      initial={{ y: '-100%' }}
+                      animate={{ y: 0 }}
+                      exit={{ y: '-100%' }}
+                      transition={{
+                        type: 'spring',
+                        damping: 25,
+                        stiffness: 200,
+                      }}
+                      className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 z-[1000] shadow-2xl rounded-b-[1rem] border-b border-blue-100"
+                    >
+                      <div className="relative">
+                        <div className="p-2">
+                          <h2 className="text-5xl text-center font-semibold text-gray-800 dark:text-white">
+                            Select Language
+                          </h2>
+                          <p className="text-gray-100 text-xl text-center ">
+                            Choose your preferred language for TravelMate
+                          </p>
+                          <hr></hr>
+                          <div className="grid md:grid-cols-5 grid-cols-2 gap-2 pt-5">
+                            {MyLanguages.map((item) => (
+                              <div
+                                key={item.code}
+                                // ইউজার যে ভাষা ক্লিক করবে
+                                onClick={() => changeLanguage(item.code)}
+                                className={`p-2 rounded-lg transition hover:bg-blue-100 dark:hover:bg-gray-800 hover:cursor-pointer ${
+                                  locale === item.code
+                                    ? 'text-blue-600 font-semibold'
+                                    : ''
+                                }`}
+                              >
+                                {item.label}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <button
+                          onClick={() => setIsOpen(false)}
+                          className="p-2 hover:bg-gray-100 border border-red-700 absolute top-0 right-0 dark:hover:bg-gray-800 rounded-full transition-colors"
+                        >
+                          <BsX size={32} className="text-gray-100" />
+                        </button>
+                      </div>
+                    </motion.div>
+                  </>
+                )}
+              </AnimatePresence>
             </div>
 
             {session?.user ? (
@@ -129,7 +255,7 @@ const Navbar = () => {
                       {settings.map((setting) => (
                         <Link
                           key={setting}
-                          href={`/${setting.toLowerCase()}`}
+                          href={`/${locale}/${setting.toLowerCase()}`}
                           className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-slate-700"
                           onClick={() => setIsUserMenuOpen(false)}
                         >
@@ -149,7 +275,7 @@ const Navbar = () => {
               </div>
             ) : (
               <Link
-                href="/signup"
+                href={`/${locale}/signup`}
                 className="px-3 py-1.5 text-xs rounded-md sm:px-4 sm:py-2 sm:text-sm md:px-5 md:py-2.5 md:text-base md:rounded-lg bg-blue-600 text-white font-medium shadow-sm hover:bg-blue-700 transition duration-300 inline-block text-center whitespace-nowrap"
               >
                 Sign Up
@@ -173,16 +299,19 @@ const Navbar = () => {
             }`}
           >
             <div className="flex flex-col p-4 space-y-4">
-              {navItems.map((item, index) => (
-                <Link
-                  key={index}
-                  href={item.path}
-                  onClick={() => setIsNavOpen(false)}
-                  className={`text-lg font-medium ${pathname === item.path ? 'text-blue-600' : ''}`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item, index) => {
+                const fullPath = `/${locale}${item.path}`
+                return (
+                  <Link
+                    key={index}
+                    href={fullPath}
+                    onClick={() => setIsNavOpen(false)}
+                    className={`text-lg font-medium ${pathname === fullPath ? 'text-blue-600' : ''}`}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              })}
               <div className="pt-4 border-t flex justify-between items-center">
                 <DarkMode />
                 {session?.user && (
