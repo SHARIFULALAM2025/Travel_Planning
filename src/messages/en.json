@@ -1,0 +1,43 @@
+{
+  "Navbar": {
+    "logo_text": "Travel",
+    "title": "MATE"
+  },
+  "signupPage": {
+    "login-text": "Create Account",
+    "login-h1": " Start your journey with us.",
+    "name": "Full Name:",
+    "email-address": "Email Address:",
+    "password": "Password:",
+    "profile": "Profile Picture:",
+    "placeholder-email": "Enter Your Email..",
+    "placeholder-name": "Enter Your name ..",
+    "placeholder-password": "Enter Your Password..",
+    "signup-button": "Sign Up",
+    "google-button": "Login with Google",
+    "github-button": "Login with GitHub",
+    "text-p":" Already have an account?",
+    "login-button":"Log In ",
+    "text-h1":"OR Continue With",
+    "side-text1":"Let the new adventure begin!",
+    "side-text2":"Join our community today and get ready to explore the world"
+
+  },
+  "loginPage":{
+    "login-h1": "Log In",
+    "login-h2": "to continue to TravelMate",
+    "email-address": "Email Address:",
+    "password": "Password:",
+    "placeholder-email": "Enter Your Email..",
+    "placeholder-password": "Enter Your Password..",
+    "google-button": "Login with Google",
+    "github-button": "Login with GitHub",
+    "text-p": " Already have an account?",
+    "login-button": "Log In ",
+    "text-h1": "OR Continue With",
+    "signupText":"Sign Up",
+    "passwordForgot":"Forgot Password?",
+    "side-text1":"Welcome Back",
+    "side-text2":"The community is waiting for you"
+  }
+}

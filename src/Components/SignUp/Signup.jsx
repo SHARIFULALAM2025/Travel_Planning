@@ -11,19 +11,47 @@ import toast from 'react-hot-toast'
 import { FaLock } from 'react-icons/fa6'
 import { IoMail } from 'react-icons/io5'
 import { FaUserTie } from 'react-icons/fa'
-import { useRouter } from 'next/navigation' // router missing ছিল ইমপোর্টে
+
 
 import { FaGithub } from 'react-icons/fa6'
 import { useTheme } from 'next-themes'
 import { IoEye } from 'react-icons/io5'
 import { IoMdEyeOff } from 'react-icons/io'
+import { useTranslations } from 'next-intl'
 
 const Signup = () => {
+  const t = useTranslations('signupPage')
+   const { theme } = useTheme()
+   const [mounted, setMounted] = useState(false)
   const [showPassword, setShowPassword] = useState(true)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const signupImage = [
+    'https://i.ibb.co.com/SXchBqdh/Study-abroad-pana.png',
+    'https://i.ibb.co.com/G3tYVpgM/Travel-insurance-cuate.png',
+    'https://i.ibb.co.com/gLq21Gn6/Hotel-Booking-amico.png',
+    'https://i.ibb.co.com/Z1wCXj7D/Globalization-bro.png',
+    'https://i.ibb.co.com/RG28Hb6L/Trip-amico.png',
+  ]
+
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === signupImage.length - 1 ? 0 : prevIndex + 1
+      )
+    }, 3000)
+
+    return () => clearInterval(interval) // Cleanup on unmount
+  }, [])
   const handelShowPassword = () => {
     setShowPassword(!showPassword)
   }
-  const router = useRouter()
+
 
   const HandelSocialLogin = async () => {
     sessionStorage.setItem("loginSuccess","true")
@@ -81,32 +109,32 @@ const Signup = () => {
     }
   }
 
-  const { theme } = useTheme()
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
   if (!mounted) return null
+
 
   return (
     <div
-      className={`min-h-screen ${theme == 'dark' ? 'bg-slate-900' : 'bg-slate-50'} flex items-center justify-center p-4 sm:p-6`}
+      className={`min-h-screen ${theme == 'dark' ? 'bg-slate-900' : 'bg-slate-50'} flex items-center justify-center p-3 sm:p-5`}
     >
       <div className="max-w-5xl w-full rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 border border-white/10">
         {/* Left Side: Visual/Branding - Mobile এ hidden থেকে tablet/laptop এ আসবে */}
-        <div className="relative h-64 lg:h-auto overflow-hidden  bg-blue-400">
+        <div
+          className={`relative h-64 lg:h-auto overflow-hidden  ${theme == 'dark' ? 'bg-slate-800' : 'bg-slate-50 opacity-200'}`}
+        >
           <Image
-            src="/assets/signup.png"
+            src={signupImage[currentImageIndex]} //image show one by one per 20 second
             alt="Workspace inspiration"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/30 flex flex-col justify-end p-10 text-white">
-            <h2 className="text-4xl font-bold">Elevate your workflow.</h2>
-            <p className="mt-2 text-lg">Join 10k+ professionals today.</p>
+          <div className="absolute top-1/2  space-y-4 left-8 text-black">
+            <h2 className="text-2xl md:text-4xl -rotate-45 font-bold leading-tight bg-gradient-to-r from-pink-500 via-green-500 to-indigo-600 bg-clip-text text-transparent">
+              {t('side-text1')}
+            </h2>
+            <p className="mt-2 md:mt-3 -rotate-45 text-sm md:text-3xl md:font-bold bg-gradient-to-r from-teal-500 via-pink-500  to-green-700 bg-clip-text text-transparent">
+              {t('side-text2')}
+            </p>
           </div>
         </div>
 
@@ -118,12 +146,12 @@ const Signup = () => {
             <h2
               className={`text-2xl sm:text-3xl font-extrabold ${theme == 'dark' ? 'text-white' : 'text-gray-900'} text-center md:text-left`}
             >
-              Create Account
+              {t('login-text')}
             </h2>
             <p
               className={`mt-2 text-sm sm:text-base font-medium ${theme == 'dark' ? 'text-slate-300' : 'text-gray-600'} text-center md:text-left`}
             >
-              Start your journey with us.
+              {t('login-h1')}
             </p>
           </div>
 
@@ -137,13 +165,13 @@ const Signup = () => {
                 htmlFor="fullName"
                 className={`block text-sm font-medium ${theme == 'dark' ? 'text-white' : 'text-black'} mb-1`}
               >
-                Full Name:
+                {t('name')}
               </label>
               <div className="relative">
                 <input
                   id="fullName"
                   type="text"
-                  placeholder="Your name"
+                  placeholder={t('placeholder-name')}
                   className={`w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all ${theme == 'dark' ? 'bg-slate-700 text-white placeholder-slate-400' : 'bg-white text-black placeholder-gray-400'}`}
                   {...register('name', { required: true })}
                 />
@@ -164,14 +192,14 @@ const Signup = () => {
                 htmlFor="email"
                 className={`block text-sm font-medium ${theme == 'dark' ? 'text-white' : 'text-black'} mb-1`}
               >
-                Email Address:
+                {t('email-address')}
               </label>
               <div className="relative">
                 <input
                   id="email"
                   {...register('email', { required: true })}
                   type="email"
-                  placeholder="you@email.com"
+                  placeholder={t('placeholder-email')}
                   className={`w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all ${theme == 'dark' ? 'bg-slate-700 text-white placeholder-slate-400' : 'bg-white text-black placeholder-gray-400'}`}
                 />
                 <IoMail
@@ -190,14 +218,14 @@ const Signup = () => {
               <label
                 className={`block text-sm font-medium ${theme == 'dark' ? 'text-white' : 'text-black'} mb-1`}
               >
-                Password:
+                {t('password')}
               </label>
               <div className="relative">
                 <input
                   id="password"
                   {...register('password', { required: true })}
                   type={showPassword ? 'password' : 'text'}
-                  placeholder="Enter password"
+                  placeholder={t('placeholder-password')}
                   className={`w-full px-4 py-3 pl-10 pr-12 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none transition-all ${theme == 'dark' ? 'bg-slate-700 text-white placeholder-slate-400' : 'bg-white text-black placeholder-gray-400'}`}
                 />
                 <FaLock
@@ -230,7 +258,7 @@ const Signup = () => {
               <label
                 className={`block text-sm font-medium ${theme == 'dark' ? 'text-white' : 'text-black'} mb-1`}
               >
-                Profile Picture
+                {t('profile')}
               </label>
               <input
                 type="file"
@@ -248,7 +276,7 @@ const Signup = () => {
               type="submit"
               className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-xl shadow-lg transition-all active:scale-[0.98]"
             >
-              Sign Up
+              {t('signup-button')}
             </button>
           </form>
 
@@ -258,7 +286,7 @@ const Signup = () => {
             <span
               className={`mx-4 text-xs text-gray-500 uppercase tracking-wider`}
             >
-              Or continue with
+              {t('text-h1')}
             </span>
             <div className="grow border-t border-gray-300"></div>
           </div>
@@ -274,25 +302,25 @@ const Signup = () => {
                 src="https://www.svgrepo.com/show/475656/google-color.svg"
                 alt="Google"
               />
-              Login with Google
+              {t('google-button')}
             </button>
             <button
               onClick={HandelGitHubLogin}
               className="w-full py-2.5 bg-black text-white rounded-xl flex items-center justify-center gap-3 hover:bg-gray-900 transition-all font-medium text-sm sm:text-base"
             >
-              <FaGithub size={20} /> Login with GitHub
+              <FaGithub size={20} /> {t('github-button')}
             </button>
           </div>
 
           <p
-            className={`text-center text-sm mt-8 ${theme == 'dark' ? 'text-slate-300' : 'text-gray-600'}`}
+            className={`text-center  text-sm mt-8 ${theme == 'dark' ? 'text-slate-300' : 'text-gray-600'}`}
           >
-            Already have an account?{' '}
+            {t('text-p')}
             <Link
               href="/login"
-              className="text-blue-600 font-semibold hover:underline"
+              className="text-blue-600 ml-2 font-semibold hover:underline"
             >
-              Log in
+              {t('login-button')}
             </Link>
           </p>
         </div>
