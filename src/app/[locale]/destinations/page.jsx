@@ -1,3 +1,4 @@
+import Explore from '@/Components/Explore_DestinationPages/Explore/Explore';
 import Featured from '@/Components/Explore_DestinationPages/Featured/Featured';
 import HeroExplore from '@/Components/Explore_DestinationPages/HeroUi/HeroExplore';
 import SearchDestination from '@/Components/Explore_DestinationPages/SearchDestination/SearchDestination';
@@ -9,6 +10,7 @@ const Destnations = () => {
       <HeroExplore></HeroExplore>
       <SearchDestination></SearchDestination>
       <Featured></Featured>
+      <Explore></Explore>
     </div>
   );
 };
