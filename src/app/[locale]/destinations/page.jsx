@@ -1,3 +1,4 @@
+import CallToAction from '@/Components/Explore_DestinationPages/CallToAction/CallToAction';
 import Explore from '@/Components/Explore_DestinationPages/Explore/Explore';
 import Featured from '@/Components/Explore_DestinationPages/Featured/Featured';
 import HeroExplore from '@/Components/Explore_DestinationPages/HeroUi/HeroExplore';
@@ -13,6 +14,7 @@ const Destnations = () => {
       <Featured></Featured>
       <Explore></Explore>
       <InActiveExplore></InActiveExplore>
+      <CallToAction></CallToAction>
     </div>
   );
 };
