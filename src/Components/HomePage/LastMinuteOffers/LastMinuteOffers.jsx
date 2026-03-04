@@ -10,6 +10,7 @@ const LastMinuteOffers = () => {
   useEffect(() => {
     setMounted(true)
   }, [])
+  //offrt
 
    if (!mounted) return null
   return (
