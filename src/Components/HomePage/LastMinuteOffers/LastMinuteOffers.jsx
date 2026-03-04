@@ -13,13 +13,15 @@ const LastMinuteOffers = () => {
 
    if (!mounted) return null
   return (
-    <section className={` py-20  ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}`}>
+    <section
+      className={` py-20  ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}`}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl shadow-2xl group">
           {/* Background Image */}
           <div className="relative h-[450px] w-full">
             <Image
-              src="https://i.ibb.co.com/39j802bV/Hidden-Lake-Lookout27-min-scaled.webp"
+              src="https://i.ibb.co.com/qMVwbLNQ/salmen-bejaoui-q-Wl-Ty3-Ca-WKk-unsplash.jpg"
               alt="Last Minute Offer"
               fill
               className="object-cover transition duration-700 group-hover:scale-105"
