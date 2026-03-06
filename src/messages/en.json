@@ -8,6 +8,7 @@
     "blog": "Blog",
     "plan_trip": "Plan Trip",
     "my_trips": "My Trips",
+    "Contact":"Contact",
     "signup-button": "Sign Up",
     "Log-Out":"Log Out"
   },
@@ -52,5 +53,30 @@
 "banner":{
   "title":"Your Dream Trip, Our Plan",
   "des":"Every corner of the world is now at your fingertips. Choose your favorite destination today."
+},
+"contactInfo":{
+  "info": "Information:",
+  "des": "Brendan Fraser, renowned actor of the silver screen, has taken on a new as a tour guide, leveraging his passion for adventure",
+  "phone": "01829197321",
+  "email_l": "sharifullinkdin2025@gmail.com",
+  "address": "1224-Uttara, DHAKA",
+  "title": "Let's Connect And Get To Know Each Other",
+  "description": "Brendan Fraser, renowned actor of the silver screen, has taken on a new role as a tour guide, leveraging his passion",
+  "remained": "Save my name, email, and website in this browser for the next time I comment.",
+  "button": "SEND MESSAGE",
+  "comment": "Comment",
+  "web": "Comment:",
+  "phoneText": "Phone:",
+  "website": "Website:",
+  "webLink": "www.travelmate.com",
+  "email_2": "Email:",
+  "address_1": "Address:",
+  "name": "Name:",
+  "placeholderName": "Enter Your Name..",
+  "placeholderEmail": "Enter Your Email..",
+  "placeholderWeb": "Enter Your Website Link..",
+  "placeholderComment": "Enter Your Comment..",
+  "errorMessage":"This field is required",
+  "message":"Message sent successfully!"
 }
 }
