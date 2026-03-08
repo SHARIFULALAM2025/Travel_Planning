@@ -8,9 +8,9 @@
     "blog": "Blog",
     "plan_trip": "Plan Trip",
     "my_trips": "My Trips",
-    "Contact":"Contact",
+    "Contact": "Contact",
     "signup-button": "Sign Up",
-    "Log-Out":"Log Out"
+    "Log-Out": "Log Out"
   },
 
   "signupPage": {
@@ -26,14 +26,13 @@
     "signup-button": "Sign Up",
     "google-button": "Login with Google",
     "github-button": "Login with GitHub",
-    "text-p":" Already have an account?",
-    "login-button":"Log In ",
-    "text-h1":"OR Continue With",
-    "side-text1":"Let the new adventure begin!",
-    "side-text2":"Join our community today and get ready to explore the world"
-
+    "text-p": " Already have an account?",
+    "login-button": "Log In ",
+    "text-h1": "OR Continue With",
+    "side-text1": "Let the new adventure begin!",
+    "side-text2": "Join our community today and get ready to explore the world"
   },
-  "loginPage":{
+  "loginPage": {
     "login-h1": "Log In",
     "login-h2": "to continue to TravelMate",
     "email-address": "Email Address:",
@@ -45,38 +44,62 @@
     "text-p": " Already have an account?",
     "login-button": "Log In ",
     "text-h1": "OR Continue With",
-    "signupText":"Sign Up",
-    "passwordForgot":"Forgot Password?",
-    "side-text1":"Welcome Back",
-    "side-text2":"The community is waiting for you"
+    "signupText": "Sign Up",
+    "passwordForgot": "Forgot Password?",
+    "side-text1": "Welcome Back",
+    "side-text2": "The community is waiting for you"
   },
-"banner":{
-  "title":"Your Dream Trip, Our Plan",
-  "des":"Every corner of the world is now at your fingertips. Choose your favorite destination today."
-},
-"contactInfo":{
-  "info": "Information:",
-  "des": "Brendan Fraser, renowned actor of the silver screen, has taken on a new as a tour guide, leveraging his passion for adventure",
-  "phone": "01829197321",
-  "email_l": "sharifullinkdin2025@gmail.com",
-  "address": "1224-Uttara, DHAKA",
-  "title": "Let's Connect And Get To Know Each Other",
-  "description": "Brendan Fraser, renowned actor of the silver screen, has taken on a new role as a tour guide, leveraging his passion",
-  "remained": "Save my name, email, and website in this browser for the next time I comment.",
-  "button": "SEND MESSAGE",
-  "comment": "Comment",
-  "web": "Comment:",
-  "phoneText": "Phone:",
-  "website": "Website:",
-  "webLink": "www.travelmate.com",
-  "email_2": "Email:",
-  "address_1": "Address:",
-  "name": "Name:",
-  "placeholderName": "Enter Your Name..",
-  "placeholderEmail": "Enter Your Email..",
-  "placeholderWeb": "Enter Your Website Link..",
-  "placeholderComment": "Enter Your Comment..",
-  "errorMessage":"This field is required",
-  "message":"Message sent successfully!"
-}
+  "banner": {
+    "title": "Your Dream Trip, Our Plan",
+    "des": "Every corner of the world is now at your fingertips. Choose your favorite destination today."
+  },
+  "contactInfo": {
+    "info": "Information:",
+    "des": "Brendan Fraser, renowned actor of the silver screen, has taken on a new as a tour guide, leveraging his passion for adventure",
+    "phone": "01829197321",
+    "email_l": "sharifullinkdin2025@gmail.com",
+    "address": "1224-Uttara, DHAKA",
+    "title": "Let's Connect And Get To Know Each Other",
+    "description": "Brendan Fraser, renowned actor of the silver screen, has taken on a new role as a tour guide, leveraging his passion",
+    "remained": "Save my name, email, and website in this browser for the next time I comment.",
+    "button": "SEND MESSAGE",
+    "comment": "Comment",
+    "web": "Comment:",
+    "phoneText": "Phone:",
+    "website": "Website:",
+    "webLink": "www.travelmate.com",
+    "email_2": "Email:",
+    "address_1": "Address:",
+    "name": "Name:",
+    "placeholderName": "Enter Your Name..",
+    "placeholderEmail": "Enter Your Email..",
+    "placeholderWeb": "Enter Your Website Link..",
+    "placeholderComment": "Enter Your Comment..",
+    "errorMessage": "This field is required",
+    "message": "Message sent successfully!"
+  },
+  "blogsData": {
+    "items": [
+      {
+        "id": 1,
+        "category": "Adventure",
+        "title": "The perfect vacation come true with our travel agency",
+        "excerpt": "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries but also the leap into electronic typesetting when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries but also the leap into electronic typesetting",
+        "author": "Sajid Khan",
+        "date": "Oct 12, 2025",
+        "readTime": "5 min read",
+        "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+      },
+      {
+        "id": 2,
+        "category": "Travel Tips",
+        "title": "The perfect vacation come true with our Travel Agency",
+        "excerpt": "when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries but also the leap into electronic typesetting",
+        "author": "Nabila Joy",
+        "date": "Sep 28, 2025",
+        "readTime": "8 min read",
+        "image": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80"
+      }
+    ]
+  }
 }
