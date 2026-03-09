@@ -101,5 +101,54 @@
         "image": "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=80"
       }
     ]
+  },
+  "travelBook":{
+    "item":[
+      {
+        "id":1,
+        "title":"Vatican Museums Sistine Chapel Skip the Line",
+        "location":"Street Bintage,Veins City, italy",
+        "review":"5 Reviews",
+        "share":"share",
+        "wishlist":"Add to wishlist",
+        "image":[
+          "https://i.ibb.co.com/LdWvGwK8/dino-reichmuth-A5r-CN8626-Ck-unsplash.jpg",
+          "https://i.ibb.co.com/Q30YX3mP/felix-rostig-Um-V2wr-Vbq8-unsplash.jpg",
+          "https://i.ibb.co.com/XG8QvKq/neom-e-OWabm-CNEdg-unsplash.jpg",
+          "https://i.ibb.co.com/DfZfk5VW/pietro-de-grandi-T7-K4a-EPo-GGk-unsplash.jpg"
+
+        ],
+        "day":"Duration4 days",
+        "Type Adventure":"",
+        "people":"Group Size50 People",
+        "from":"From",
+        "person":"Person",
+        "about":"About This Tour",
+        "text":"isiting Stonehenge, Bath, and Windsor Castle in one day is next to impossible. Designed specifically for lers with limited time in London, this tour allows you to check off a range of southern England‘s are l attractions in just one day by eliminating the hassle of traveling between each one independently. Travel by comfortable coach and witness your guide bring each.",
+        "trip":"Trip Highlights",
+        "trip1":"Tour the city with a licensed NYC tour guide, who",
+        "trip2":"Explore with a guide to delve deeper into the history",
+        "trip3":"Great for history buffs and travelers with limited time",
+        "include":"Included/Exclude",
+        "include1":"Pick and Drop Service",
+        "include2":"1 Meal Per Day",
+        "include3":"Cruise Dinner & Music Event",
+        "include4":"Visit 7 Best Places",
+        "exclude1":"Gratuities",
+        "exclude2":"Return airport and round trip transfers.",
+        "exclude3":"Luxury air-conditioned coach",
+        "exclude4":"Tickets",
+        "tour":"Tour Plan",
+        "plan":"Castle in one day is next to impossible. Designed specifically for trave arelimited time in London ws you to check off a range of southern England‘s are historical",
+        "day1":"London to Amsterdam",
+        "text1":"Trade Center is the seventh tallest building in the world and the tallest building in the w hemisph ere. This skyscraper standst view of New York City. From here, you have awesome Manhattan the Statue of Liberty, Brooklyn, Staten Island,",
+        "day2":"the stature liberty,Ellis island, the tenement museum and a food tour",
+        "text2":"Trade Center is the seventh tallest building in the world and the tallest building in the w hemisph ere. This skyscraper standst view of New York City. From here, you have awesome Manhattan the Statue of Liberty, Brooklyn, Staten Island,",
+        "text3":"Trade Center is the seventh tallest building in the world and the tallest building in the w hemisph ere. This skyscraper standst view of New York City. From here, you have awesome Manhattan the Statue of Liberty, Brooklyn, Staten Island,",
+        "day3":"Empire state building,cheisea market,the High Line & hudson yards"
+
+      }
+    ]
   }
+
 }
