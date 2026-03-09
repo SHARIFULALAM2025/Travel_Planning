@@ -1,5 +1,6 @@
 'use client'
 
+import Container from '@/Components/Container/Container'
 import Banner from '@/Components/HomePage/Banner/Banner'
 import ChooseTour from '@/Components/HomePage/ChooseTour/ChooseTour'
 import Features from '@/Components/HomePage/Features/Features'
@@ -28,15 +29,17 @@ export default function Home() {
 
   return (
     <div>
-      <Banner />
-      <HeroSection />
-      <PopularDestinations />
-      <Personalized />
-      <LastMinuteOffers />
-      <ChooseTour />
-      <Stories />
-      <Features />
-      <Newsletter />
+      <Container>
+        <Banner />
+        <HeroSection />
+        <PopularDestinations />
+        <Personalized />
+        <LastMinuteOffers />
+        <ChooseTour />
+        <Stories />
+        <Features />
+        <Newsletter />
+      </Container>
     </div>
   )
 }

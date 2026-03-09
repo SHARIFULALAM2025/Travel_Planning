@@ -10,6 +10,7 @@ import ThemeProvider from '@/Components/ThemeProvider/ThemeProvider'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { Hind_Siliguri } from 'next/font/google'
+import Container from '@/Components/Container/Container'
 
 
 
@@ -55,7 +56,9 @@ export default async function RootLayout({ children, params }) {
                   duration: 5000,
                 }}
               />
-              <Footer />
+              <Container>
+                <Footer />
+              </Container>
             </ThemeProvider>
           </AuthProvider>
         </NextIntlClientProvider>
