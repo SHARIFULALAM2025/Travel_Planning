@@ -119,7 +119,7 @@
 
         ],
         "day":"Duration4 days",
-        "Type Adventure":"",
+        "Type":"Type Adventure",
         "people":"Group Size50 People",
         "from":"From",
         "person":"Person",
@@ -139,13 +139,29 @@
         "exclude3":"Luxury air-conditioned coach",
         "exclude4":"Tickets",
         "tour":"Tour Plan",
+        "map":"https://i.ibb.co.com/7tyD04Pt/Captfyhure.png",
         "plan":"Castle in one day is next to impossible. Designed specifically for trave arelimited time in London ws you to check off a range of southern England‘s are historical",
         "day1":"London to Amsterdam",
         "text1":"Trade Center is the seventh tallest building in the world and the tallest building in the w hemisph ere. This skyscraper standst view of New York City. From here, you have awesome Manhattan the Statue of Liberty, Brooklyn, Staten Island,",
         "day2":"the stature liberty,Ellis island, the tenement museum and a food tour",
         "text2":"Trade Center is the seventh tallest building in the world and the tallest building in the w hemisph ere. This skyscraper standst view of New York City. From here, you have awesome Manhattan the Statue of Liberty, Brooklyn, Staten Island,",
         "text3":"Trade Center is the seventh tallest building in the world and the tallest building in the w hemisph ere. This skyscraper standst view of New York City. From here, you have awesome Manhattan the Statue of Liberty, Brooklyn, Staten Island,",
-        "day3":"Empire state building,cheisea market,the High Line & hudson yards"
+        "day3":"Empire state building,cheisea market,the High Line & hudson yards",
+        "Location":"Location",
+        "textLocation":"Castle in one day is next to impossible. Designed specifically for trave arelimited time in London, this tour ws you to check off a range of southern England‘s are historical.",
+        "customer":"Castle in one day is next to impossible. Designed specifically for trave arelimited time in London, this tour ws you to check off a range of southern England‘s are historical",
+        "reviews":"2 Reviews",
+        "profile":[
+          "https://i.ibb.co.com/6hKRVc9/michael-dam-m-EZ3-Po-FGs-k-unsplash.jpg",
+          "https://i.ibb.co.com/TD7GhG7X/craig-mckay-jm-URdhtm7-Ng-unsplash.jpg"
+        ],
+        "name":"Ronald Richards",
+        "date":"20 Mar, 2023 . 4:00 Pm",
+        "comment":"Castle in one day is next to impossible. Designed specifically for trave areli areafol time in London, this tour allou to check off a range of southern day is next together impossible. Designed speciEngland.",
+        "replay":"Reply",
+        "range":["Location", "Amenities", "Services", "Price", "Rooms"]
+
+
 
       }
     ]
