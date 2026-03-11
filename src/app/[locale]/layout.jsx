@@ -11,6 +11,7 @@ import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { Hind_Siliguri } from 'next/font/google'
 import Container from '@/Components/Container/Container'
+import TanstackProvider from '@/Components/ThemeProvider/TanstackProvider'
 
 
 
@@ -44,24 +45,26 @@ export default async function RootLayout({ children, params }) {
       <body
         className={`${locale === 'bn' ? hindSiliguri.className : geistSans.className} antialiased w-full min-h-screen`}
       >
-        <NextIntlClientProvider messages={messages} locale={locale}>
-          <AuthProvider>
-            <ThemeProvider>
-              <Navbar key={locale} />
-              <main className="w-full min-h-screen">{children}</main>
-              <Toaster
-                position="top-right"
-                reverseOrder={false}
-                toastOptions={{
-                  duration: 5000,
-                }}
-              />
-              <Container>
-                <Footer />
-              </Container>
-            </ThemeProvider>
-          </AuthProvider>
-        </NextIntlClientProvider>
+        <TanstackProvider>
+          <NextIntlClientProvider messages={messages} locale={locale}>
+            <AuthProvider>
+              <ThemeProvider>
+                <Navbar key={locale} />
+                <main className="w-full min-h-screen">{children}</main>
+                <Toaster
+                  position="top-right"
+                  reverseOrder={false}
+                  toastOptions={{
+                    duration: 5000,
+                  }}
+                />
+                <Container>
+                  <Footer />
+                </Container>
+              </ThemeProvider>
+            </AuthProvider>
+          </NextIntlClientProvider>
+        </TanstackProvider>
       </body>
     </html>
   )

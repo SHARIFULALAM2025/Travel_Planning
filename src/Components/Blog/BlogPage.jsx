@@ -5,12 +5,23 @@ import { motion } from 'framer-motion'
 import { FaRegClock, FaUser, FaCalendarAlt } from 'react-icons/fa'
 import { FaArrowRight } from 'react-icons/fa6'
 import Link from 'next/link'
-import { useTranslations } from 'next-intl'
+import { useLocale,  } from 'next-intl'
 import Container from '../Container/Container'
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
 
 const BlogPage = () => {
-  const t = useTranslations('blogsData')
-  const blogs=t.raw("items") || []
+  // const t = useTranslations('blogsData')
+  // const blogs = t.raw("items") || []
+   const locale = useLocale()
+    const { data: blogs = [] } = useQuery({
+      queryKey: ['All Blog', locale],
+      queryFn: async () => {
+        const res = await axios.get('http://localhost:5000/AllBlog')
+        return res.data
+      },
+    })
+console.log(blogs);
 
   return (
     <Container>
@@ -19,9 +30,9 @@ const BlogPage = () => {
           <div className="max-w-7xl mx-auto">
             {/* Blog Card Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
-              {blogs.map((blog) => (
+              {blogs?.map((blog) => (
                 <motion.article
-                  key={blog.id}
+                  key={blog._id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -31,8 +42,8 @@ const BlogPage = () => {
                   {/* Image Container */}
                   <div className="relative h-60 w-full overflow-hidden">
                     <Image
-                      src={blog.image}
-                      alt={blog.title}
+                      src={blog.image[0]}
+                      alt={blog.title?.[locale]}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -42,30 +53,30 @@ const BlogPage = () => {
                   <div className="p-6 flex flex-col flex-grow">
                     {/* Meta Info */}
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
-                      {blog.title}
+                      {blog.title?.[locale]}
                     </h3>
                     <div className="flex flex-wrap items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400 mb-4">
                       <div className="flex items-center gap-1.5">
                         <FaUser className="text-blue-500" />
-                        <span>{blog.author}</span>
+                        <span>{blog.author?.[locale]}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <FaCalendarAlt className="text-blue-500" />
-                        <span>{blog.date}</span>
+                        <span>{blog.date?.[locale]}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <FaRegClock className="text-blue-500" />
-                        <span>{blog.readTime}</span>
+                        <span>{blog.readTime?.[locale]}</span>
                       </div>
                     </div>
 
                     <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 line-clamp-3">
-                      {blog.excerpt}
+                      {blog.excerpt?.[locale]}
                     </p>
 
                     {/* Footer Action */}
                     <div className="mt-auto pt-6 border-t border-slate-100 dark:border-slate-800">
-                      <Link href={`/blog/${blog.id}`}>
+                      <Link href={`/blog/${blog._id}`}>
                         <motion.button
                           initial="rest"
                           whileHover="hover"
@@ -160,14 +171,14 @@ const BlogPage = () => {
               <div className="space-y-6">
                 {blogs.map((post) => (
                   <div
-                    key={post.id}
+                    key={post._id}
                     className="group flex gap-4 items-start cursor-pointer"
                   >
                     {/* Small Thumbnail */}
                     <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg">
                       <Image
-                        src={post.image}
-                        alt={post.title}
+                        src={post.image[0]}
+                        alt={post.title?.[locale]}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-110"
                       />
@@ -176,11 +187,11 @@ const BlogPage = () => {
                     {/* Post Info */}
                     <div className="flex flex-col gap-1">
                       <h5 className="text-sm font-bold text-slate-800 dark:text-slate-200 line-clamp-2 group-hover:text-blue-600 transition-colors duration-200">
-                        {post.title}
+                        {post.title?.[locale]}
                       </h5>
                       <div className="flex items-center gap-2 text-[10px] text-slate-500">
                         <FaCalendarAlt className="text-blue-500" />
-                        <span>{post.date}</span>
+                        <span>{post.date?.[locale]}</span>
                       </div>
                     </div>
                   </div>
