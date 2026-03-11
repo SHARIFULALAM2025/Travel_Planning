@@ -1,23 +1,39 @@
 'use client'
 
-import React from 'react'
+import React, { use } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FaArrowRight } from 'react-icons/fa'
 import Link from 'next/link'
+import { useLocale } from 'next-intl'
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
 
-const SingleBlog = ({ currentBlog }) => {
-  // Safety check to prevent errors if data hasn't loaded yet
+const SingleBlog = ({ params }) => {
+  const resolvedParams = use(params)
+  const id = resolvedParams.id
+  const locale = useLocale()
+  const { data: blogs = []} = useQuery({
+    queryKey: ['All Blog', locale],
+    queryFn: async () => {
+      const res = await axios.get('http://localhost:5000/AllBlog')
+      return res.data
+    },
+  })
+
+
+  const currentBlog = blogs.find((item) => item._id === id)
+
   if (!currentBlog) return <div className="p-10 text-center">Loading...</div>
-
+console.log(currentBlog)
   return (
     <div className="container mx-auto px-4 py-10">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center   rounded-3xl overflow-hidden shadow-xl ">
         {/* Image Section */}
         <div className="w-full lg:w-1/2 h-[300px] md:h-[450px] relative">
           <Image
-            src={currentBlog.image}
-            alt={currentBlog.title}
+            src={currentBlog.image[0]}
+            alt={currentBlog.title?.[locale]}
             fill
             className="object-cover rounded-lg"
             priority // Fast loading for the main blog image
@@ -31,15 +47,15 @@ const SingleBlog = ({ currentBlog }) => {
           </span>
 
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-6 leading-tight">
-            {currentBlog.title}
+            {currentBlog.title?.[locale]}
           </h2>
 
           <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8">
-            {currentBlog.excerpt}
+            {currentBlog.excerpt?.[locale]}
           </p>
 
           <div className="flex items-center gap-6 pt-6 border-t border-slate-100 dark:border-slate-800">
-            <Link href={`/blog/${currentBlog.id}/book`}>
+            <Link href={`/blog/${currentBlog._id}/book`}>
               <motion.button
                 button
                 initial="rest"

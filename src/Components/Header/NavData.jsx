@@ -40,20 +40,14 @@ export const navItems = [
   //  Private (Only when logged in)
   {
     id: 5,
-    name: 'plan_trip',
-    path: '/plan',
+    name: 'Shop',
+    path: '/shop',
     icon: <MapIcon></MapIcon>,
     access: 'private',
   },
+
   {
     id: 6,
-    name: 'my_trips',
-    path: '/myTrips',
-    icon: <LuggageIcon></LuggageIcon>,
-    access: 'private',
-  },
-  {
-    id: 7,
     name: 'Contact',
     path: '/contact',
     icon: <LuggageIcon></LuggageIcon>,
