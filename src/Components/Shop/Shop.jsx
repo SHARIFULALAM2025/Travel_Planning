@@ -21,7 +21,9 @@ const Shop = () => {
   const { data: product = [] } = useQuery({
     queryKey: ['All Product', locale],
     queryFn: async () => {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/productAll`)
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/productAll`
+      )
       return res.data
     },
   })
@@ -40,11 +42,10 @@ if (!mounted) {
     <Container>
       <section className={`${theme === 'dark' ? 'bg-slate-900 text-white' : 'text-slate-900 bg-white'} grid gap-6 grid-cols-1 lg:grid-cols-12 py-6`}>
 
-        {/* Sidebar (Aside) - Mobile এ উপরে থাকবে, Desktop এ পাশে */}
         <aside className={`${theme === 'dark' ? 'bg-slate-900 text-white' : 'text-slate-900 bg-white'} col-span-1 lg:col-span-3`}>
           <div className="lg:sticky lg:top-24 space-y-8">
 
-            {/* Search Widget */}
+
             <div className="relative">
               <h4 className={`text-lg font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                 Search
@@ -115,7 +116,7 @@ if (!mounted) {
                 </div>
                 <h2 className="font-bold text-blue-600">${item?.price?.[locale]}</h2>
 
-                {/* Action Buttons - Desktop এ হোভার করলে আসবে, Mobile এ সবসময় থাকবে না কিন্তু ছোট ডিভাইসে সহজে ট্যাপ করা যাবে */}
+              
                 <div className="absolute flex flex-col gap-2 top-3 right-3 lg:opacity-0 lg:group-hover:opacity-100 lg:translate-x-5 lg:group-hover:translate-x-0 transition-all duration-300">
                   <button className="p-3 bg-white/80 dark:bg-slate-700 text-black dark:text-white shadow-md rounded-full hover:bg-blue-600 hover:text-white transition-colors">
                     <FaHeart size={14} />
