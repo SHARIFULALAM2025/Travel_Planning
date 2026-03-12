@@ -1,18 +1,24 @@
 'use client'
 import React from 'react'
 import Container from '../Container/Container'
-import { FaArrowRight } from 'react-icons/fa'
+import { FaArrowRight, FaStar } from 'react-icons/fa'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
+import { FaCartPlus } from 'react-icons/fa'
+import { IoEye } from 'react-icons/io5'
+import { FaHeart } from 'react-icons/fa'
+import Link from 'next/link'
 
 const Shop = () => {
   const locale = useLocale()
   const { data: product = [] } = useQuery({
     queryKey: ['All Product', locale],
     queryFn: async () => {
-      const res = await axios.get('http://localhost:5000/productAll')
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/productAll`
+      )
       return res.data
     },
   })
@@ -62,9 +68,54 @@ const Shop = () => {
             </div>
           </div>
         </aside>
-        <div className="col-span-9">{product?.map((item, index) => <div key={index} className='p-5'>
-          <Image src={item.image[0]} width={200} height={200} alt="product" className="" />
-        </div>)}</div>
+        <div className="col-span-9 grid grid-cols-3">
+          {product?.map((item, index) => (
+            <div
+              key={index}
+              className="p-5 bg-gray-400 rounded-xl relative group overflow-hidden"
+            >
+              <Image
+                src={item?.image[0]}
+                width={200}
+                height={200}
+                alt="product"
+                className="rounded-xl mx-auto"
+              />
+              <h1 className="">{item?.title?.[locale]}</h1>
+              <div className="flex gap-2">
+                <div className="flex text-slate-200  gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar
+                      key={i}
+                      size={16}
+                      className="hover:text-amber-400 cursor-pointer"
+                    />
+                  ))}
+                </div>
+                <div className=" text-xs">{item?.review?.[locale]}</div>
+              </div>
+              <h1 className="">price:${item?.price?.[locale]}</h1>
+              <div
+                className="  absolute flex flex-col gap-2 top-3 right-3
+    opacity-0 group-hover:opacity-100
+    translate-x-5 group-hover:translate-x-0
+    transition-all duration-300"
+              >
+                <div className="p-3 bg-gray-300 rounded-full">
+                  <FaHeart className="text-black" />
+                </div>
+                <div className="p-3 bg-gray-300 rounded-full">
+                  <FaCartPlus className="text-black" />
+                </div>
+                <Link href={`/shop/${item._id}`}>
+                  <div className="p-3 bg-gray-300 rounded-full">
+                    <IoEye className="text-black" />
+                  </div>
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </Container>
   )
