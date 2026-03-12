@@ -110,12 +110,12 @@ const ViewDetails = ({ params }) => {
           ${currentProduct.price?.[locale]}
         </div>
 
-        <div className="prose prose-sm text-gray-600 border-l-4 border-blue-50 pl-4 py-1">
+        <div className="prose prose-sm text-gray-100 border-l-4 border-blue-50 pl-4 py-1">
           <p>{currentProduct.des?.[locale]}</p>
         </div>
 
         <div className="space-y-3">
-          <label className="text-xs font-bold uppercase tracking-widest text-gray-500">
+          <label className="text-xs font-bold uppercase tracking-widest text-gray-100">
             Quantity
           </label>
           <input
