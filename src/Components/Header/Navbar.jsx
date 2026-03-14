@@ -16,8 +16,10 @@ import { MyLanguages } from './Language'
 import { useRouter } from 'next/navigation'
 import { GiCommercialAirplane } from 'react-icons/gi'
 import Container from '../Container/Container'
-import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
+import { IoTrashOutline } from 'react-icons/io5'
+import toast from 'react-hot-toast'
 
 const Navbar = () => {
   const locale = useLocale()
@@ -26,8 +28,9 @@ const Navbar = () => {
   console.log('Logo Text:', t('logo_text'))
   console.log('Title:', t('title'))
   const router = useRouter()
-
+  const queryClient = useQueryClient()
   const [isOpen, setIsOpen] = useState(false)
+  const [isCardOpen, setIsCardOpen] = useState(false)
   const { data: session } = useSession()
   const pathname = usePathname()
   const { theme } = useTheme()
@@ -35,18 +38,43 @@ const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
   //card
-    const { data: card = [] } = useQuery({
-      queryKey: ['AllCard', locale],
-      queryFn: async () => {
-        const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/allCard`
-        )
-        return res.data
-      },
-     
-    })
+  const { data: card = [] } = useQuery({
+    queryKey: ['AllCard', locale, session?.user?.email],
+    queryFn: async () => {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/allCard/${session?.user?.email}`
+      )
+      return res.data
+    },
+    enabled: !!session?.user?.email,
+  })
 
-  //
+  //handelDelete
+  const { mutate: deleteItem } = useMutation({
+    mutationFn: async (id) => {
+      const res = await axios.delete(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/removeCard/${id}`
+      )
+      return res.data
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries(['AllCard'])
+
+      toast.success('Item removed successfully')
+    },
+    onError: (error) => {
+      toast.error('Error deleting item:', error)
+    },
+  })
+  const handelDelete = (id) => {
+    deleteItem(id)
+  }
+  // total price
+  let totalPrice = 0
+  for (const item of card) {
+    const element = parseFloat(item?.price?.[locale])
+    totalPrice += element;
+  }
 
   useEffect(() => {
     setMounted(true)
@@ -175,19 +203,100 @@ const Navbar = () => {
                 <DarkMode />
               </div>
               {session?.user && (
-                <Link
-                  href={`/${locale}/cart`}
-                  className="relative p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full transition-colors group"
+                <div
+                  className="relative"
+                  onMouseEnter={() => setIsCardOpen(true)}
+                  onMouseLeave={() => setIsCardOpen(false)}
                 >
-                  <BsCart3
-                    size={22}
-                    className="text-gray-700 dark:text-gray-200 group-hover:text-blue-600"
-                  />
+                  <button className="relative p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full transition-colors group">
+                    <BsCart3
+                      size={22}
+                      className="text-gray-700 dark:text-gray-200 group-hover:text-blue-600"
+                    />
+                    <span className="absolute top-0 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-blue-600 text-[10px] text-white">
+                      {card?.length}
+                    </span>
+                  </button>
 
-                  <span className="absolute top-0 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-blue-600 text-[10px] text-white">
-                    {card.length}
-                  </span>
-                </Link>
+                  {/* Hover Dropdown */}
+                  <AnimatePresence>
+                    {isCardOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 15, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 15, scale: 0.95 }}
+                        className="absolute right-0 mt-2 w-80 bg-white dark:bg-slate-800 shadow-2xl rounded-xl overflow-hidden border dark:border-slate-700 z-[100]"
+                      >
+                        <div className="p-4 border-b dark:border-slate-700 flex justify-between items-center">
+                          <h3 className="font-bold text-sm">
+                            My Cart ({card.length})
+                          </h3>
+                          <Link
+                            href={`/${locale}/cart`}
+                            className="text-blue-600 text-xs hover:underline"
+                          >
+                            View All
+                          </Link>
+                        </div>
+
+                        <div className="max-h-[300px] overflow-y-auto custom-scrollbar">
+                          {card.length > 0 ? (
+                            card.map((item, index) => (
+                              <div
+                                key={index}
+                                className="p-3 flex gap-3 hover:bg-gray-50 dark:hover:bg-slate-700/50 transition-colors border-b last:border-0 dark:border-slate-700"
+                              >
+                                <div className="relative w-12 h-12 rounded-lg overflow-hidden flex-shrink-0">
+                                  <Image
+                                    src={
+                                      item.image || '/placeholder-travel.jpg'
+                                    }
+                                    fill
+                                    className="object-cover"
+                                    alt={item.title?.[locale]}
+                                  />
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <h4 className="text-sm font-semibold truncate dark:text-gray-200">
+                                    {item.title?.[locale]}
+                                  </h4>
+                                  <p className="text-blue-600 font-bold text-xs mt-1">
+                                    ${item.price?.[locale]}
+                                  </p>
+                                </div>
+                                <div
+                                  onClick={() => handelDelete(item._id)}
+                                  className="  "
+                                >
+                                  <IoTrashOutline className="" />
+                                </div>
+                              </div>
+                            ))
+                          ) : (
+                            <div className="p-8 text-center text-gray-500 text-sm">
+                              Your cart is empty
+                            </div>
+                          )}
+                        </div>
+                        <hr className="bg-white" />
+                        <div className="flex justify-between p-3">
+                          <h1 className="">Total:</h1>
+                          <h2 className="">${totalPrice.toFixed(2)}</h2>
+                        </div>
+                        {card.length > 0 && (
+                          <div className="p-3 bg-gray-50 dark:bg-slate-900/50">
+                            <Link
+                              href={`/${locale}/checkout`}
+                              className="block w-full py-2 bg-blue-600 text-white text-center rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+                            >
+                              Checkout Now
+                            </Link>
+                          </div>
+                        )}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               )}
               <div className="">
                 <button
