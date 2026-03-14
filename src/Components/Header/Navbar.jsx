@@ -10,15 +10,16 @@ import { useTheme } from 'next-themes'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { useLocale, useTranslations } from 'next-intl'
-import { BsGlobe } from 'react-icons/bs'
+import { BsCart3, BsGlobe } from 'react-icons/bs'
 import { BsX } from 'react-icons/bs'
 import { MyLanguages } from './Language'
 import { useRouter } from 'next/navigation'
 import { GiCommercialAirplane } from 'react-icons/gi'
 import Container from '../Container/Container'
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
 
 const Navbar = () => {
-
   const locale = useLocale()
   const t = useTranslations('Navbar')
   console.log('Current Locale:', locale)
@@ -33,6 +34,19 @@ const Navbar = () => {
   const [mounted, setMounted] = useState(false)
   const [isNavOpen, setIsNavOpen] = useState(false)
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
+  //card
+    const { data: card = [] } = useQuery({
+      queryKey: ['AllCard', locale],
+      queryFn: async () => {
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/allCard`
+        )
+        return res.data
+      },
+     
+    })
+
+  //
 
   useEffect(() => {
     setMounted(true)
@@ -114,42 +128,44 @@ const Navbar = () => {
 
             {/* 3. Desktop Navigation */}
             <div className="hidden md:flex items-center justify-center gap-8 md:flex-[2]">
-              {navItems.filter(item => {
-                if (item.access==="private") {
-                  return !!session?.user
-                }
-                return true
-              }).map((item, index) => {
-                const fullPath = `/${locale}${item.path}`
-                const isActive = pathname === fullPath
+              {navItems
+                .filter((item) => {
+                  if (item.access === 'private') {
+                    return !!session?.user
+                  }
+                  return true
+                })
+                .map((item, index) => {
+                  const fullPath = `/${locale}${item.path}`
+                  const isActive = pathname === fullPath
 
-                return (
-                  <Link
-                    key={index}
-                    href={fullPath}
-                    // 'group' ক্লাসটি এখানে খুব জরুরি আইকন কন্ট্রোল করার জন্য
-                    className={`group relative text-[15px] font-medium py-2 transition duration-300 ${
-                      isActive ? 'text-blue-600' : 'hover:text-blue-600'
-                    }`}
-                  >
-                    {/* হোভার আইকন: বিমান */}
-                    <span className="absolute -top-1 left-1/2 -translate-x-1/2 -rotate-25 opacity-0 group-hover:opacity-100 group-hover:-top-2 transition-all duration-300 text-blue-500">
-                      <GiCommercialAirplane size={18} />
-                    </span>
+                  return (
+                    <Link
+                      key={index}
+                      href={fullPath}
+                      // 'group' ক্লাসটি এখানে খুব জরুরি আইকন কন্ট্রোল করার জন্য
+                      className={`group relative text-[15px] font-medium py-2 transition duration-300 ${
+                        isActive ? 'text-blue-600' : 'hover:text-blue-600'
+                      }`}
+                    >
+                      {/* হোভার আইকন: বিমান */}
+                      <span className="absolute -top-1 left-1/2 -translate-x-1/2 -rotate-25 opacity-0 group-hover:opacity-100 group-hover:-top-2 transition-all duration-300 text-blue-500">
+                        <GiCommercialAirplane size={18} />
+                      </span>
 
-                    {/* টেক্সট */}
-                    {t(item.name)}
+                      {/* টেক্সট */}
+                      {t(item.name)}
 
-                    {/* এক্টিভ বর্ডার লাইন */}
-                    {isActive && (
-                      <motion.div
-                        layoutId="activeTab"
-                        className="absolute -bottom-1 left-0 w-full h-[2px] bg-blue-600"
-                      />
-                    )}
-                  </Link>
-                )
-              })}
+                      {/* এক্টিভ বর্ডার লাইন */}
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeTab"
+                          className="absolute -bottom-1 left-0 w-full h-[2px] bg-blue-600"
+                        />
+                      )}
+                    </Link>
+                  )
+                })}
             </div>
 
             {/* 4. Right Side Actions */}
@@ -158,6 +174,21 @@ const Navbar = () => {
               <div className="hidden sm:block">
                 <DarkMode />
               </div>
+              {session?.user && (
+                <Link
+                  href={`/${locale}/cart`}
+                  className="relative p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full transition-colors group"
+                >
+                  <BsCart3
+                    size={22}
+                    className="text-gray-700 dark:text-gray-200 group-hover:text-blue-600"
+                  />
+
+                  <span className="absolute top-0 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-blue-600 text-[10px] text-white">
+                    {card.length}
+                  </span>
+                </Link>
+              )}
               <div className="">
                 <button
                   onClick={() => setIsOpen(true)}
