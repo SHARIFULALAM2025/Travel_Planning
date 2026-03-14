@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Container from '../Container/Container'
 import { FaArrowRight, FaStar, FaCartPlus, FaHeart } from 'react-icons/fa'
-import { QueryClient, useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import {  useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
@@ -11,9 +11,11 @@ import Link from 'next/link'
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 import { useTheme } from 'next-themes'
 import toast from 'react-hot-toast'
+import { useSession } from 'next-auth/react'
 
 const Shop = () => {
   const { theme } = useTheme()
+  const {data:session}=useSession()
   const [currentPage, setCurrentPage] = useState(1)
   const [mounted, setMounted] = useState(false)
   const itemsPerPage = 6
@@ -65,7 +67,10 @@ const Shop = () => {
       title: selectedProduct.title,
       price: selectedProduct.price,
       image: selectedProduct.image[0],
+      email:session?.user?.email
     }
+    console.log(cartData)
+
 
     mutate(cartData)
   }
