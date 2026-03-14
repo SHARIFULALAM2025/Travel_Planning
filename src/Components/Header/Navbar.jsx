@@ -114,7 +114,12 @@ const Navbar = () => {
 
             {/* 3. Desktop Navigation */}
             <div className="hidden md:flex items-center justify-center gap-8 md:flex-[2]">
-              {navItems.map((item, index) => {
+              {navItems.filter(item => {
+                if (item.access==="private") {
+                  return !!session?.user
+                }
+                return true
+              }).map((item, index) => {
                 const fullPath = `/${locale}${item.path}`
                 const isActive = pathname === fullPath
 
