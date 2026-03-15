@@ -284,7 +284,13 @@ const Navbar = () => {
                           <h2 className="">${totalPrice.toFixed(2)}</h2>
                         </div>
                         {card.length > 0 && (
-                          <div className="p-3 bg-gray-50 dark:bg-slate-900/50">
+                          <div className="p-3 bg-gray-50 space-y-2 dark:bg-slate-900/50">
+                            <Link
+                              href={`/${locale}/cart`}
+                              className="block w-full py-2 bg-black text-white text-center rounded-lg text-sm font-medium hover:bg-gray-700 transition-colors"
+                            >
+                              Shopping Cart
+                            </Link>
                             <Link
                               href={`/${locale}/checkout`}
                               className="block w-full py-2 bg-blue-600 text-white text-center rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
