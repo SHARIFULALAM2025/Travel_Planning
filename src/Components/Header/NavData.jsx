@@ -53,4 +53,11 @@ export const navItems = [
     icon: <LuggageIcon></LuggageIcon>,
     access: 'private',
   },
+  {
+    id: 7,
+    name: 'Wishlist',
+    path: '/wishlist',
+    icon: <LuggageIcon></LuggageIcon>,
+    access: 'private',
+  },
 ]
