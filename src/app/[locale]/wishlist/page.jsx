@@ -1,11 +1,12 @@
+import Wishlist from '@/Components/Wishlist/Wishlist';
 import React from 'react';
 
-const wishlist = () => {
+const wishlistPage = () => {
     return (
       <div>
-        <h2 className="">wishlist</h2>
+        <Wishlist></Wishlist>
       </div>
     )
 };
 
-export default wishlist;
+export default wishlistPage

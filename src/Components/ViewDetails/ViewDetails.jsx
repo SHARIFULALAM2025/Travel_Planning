@@ -30,7 +30,7 @@ const ViewDetails = ({ params }) => {
     defaultValues: {
       name: '',
       email: '',
-      image: ""
+      image: '',
     },
   })
 
@@ -39,7 +39,7 @@ const ViewDetails = ({ params }) => {
       reset({
         name: session?.user?.name || '',
         email: session?.user?.email || '',
-        image: session?.user?.image || ''
+        image: session?.user?.image || '',
       })
     }
   }, [session, reset])
@@ -53,7 +53,7 @@ const ViewDetails = ({ params }) => {
       return res.data
     },
     onSuccess: () => {
-      toast.success('Your review has been submitted.', 'success');
+      toast.success('Your review has been submitted.', 'success')
       queryClient.invalidateQueries({ queryKey: ['reviews', id] })
       reset()
       setStar(0)
@@ -108,6 +108,67 @@ const ViewDetails = ({ params }) => {
 
   const currentProduct = allProducts.find((item) => item._id === id)
   const [mainImage, setMainImage] = useState('')
+
+  // cart
+  const { mutate } = useMutation({
+    mutationFn: async (cartInfo) => {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/cart-data`,
+        cartInfo
+      )
+      return res.data
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['AllCard', locale] })
+      toast.success('Product added to cart')
+    },
+    onError: () => {
+      toast.error('Failed to add product')
+    },
+  })
+
+  const handelCart = () => {
+    const cartData = {
+      productId: currentProduct._id,
+      title: currentProduct.title,
+      price: currentProduct.price,
+      image: currentProduct.image[0],
+      email: session?.user?.email,
+    }
+
+    mutate(cartData)
+  }
+
+  //
+  //wishlist
+  const {mutate: addToWishlist } = useMutation({
+    mutationFn: async (cartInfo) => {
+      const res = await axios.post(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/wishlist`,
+        cartInfo
+      )
+      return res.data
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['AllWishlist', locale] })
+      toast.success('Product added to wishlist')
+    },
+    onError: () => {
+      toast.error('Failed to add wishlist')
+    },
+  })
+  const handelWishlist = () => {
+    const cartData = {
+      productId: currentProduct._id,
+      title: currentProduct.title,
+      price: currentProduct.price,
+      image: currentProduct.image[0],
+      email: session?.user?.email,
+    }
+    addToWishlist(cartData)
+  }
+
+  //
 
   useEffect(() => {
     if (currentProduct?.image?.length > 0) {
@@ -222,11 +283,15 @@ const ViewDetails = ({ params }) => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
-            <button className="flex-[2] flex items-center justify-center gap-3 px-8 py-3 sm:py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 active:scale-[0.98] transition-all shadow-lg">
+            <button
+              onClick={handelCart}
+              className="flex-[2] flex items-center justify-center gap-3 px-8 py-3 sm:py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 active:scale-[0.98] transition-all shadow-lg"
+            >
               <FaCartPlus size={18} />
               ADD TO CART
             </button>
             <button
+              onClick={handelWishlist}
               className={`flex-1 flex items-center justify-center gap-2 p-3 sm:p-4 border border-gray-200 ${theme === 'dark' ? 'text-white hover:bg-slate-800' : 'text-black hover:bg-red-50 hover:text-red-500'} rounded-xl transition-all`}
             >
               <FaHeart size={18} />
@@ -313,7 +378,6 @@ const ViewDetails = ({ params }) => {
                   currentProduct?.type1,
                   currentProduct?.type2,
                   currentProduct?.type3,
-                  
                 ].map(
                   (type, i) =>
                     type?.[locale] && (
