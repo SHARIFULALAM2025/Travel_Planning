@@ -57,6 +57,41 @@ const ShoppingCart = () => {
     totalPrice += element
   }
   const TotalAmount = totalPrice + AllTotalPrice
+  //
+  const handlePayment = async () => {
+    
+    const paymentData = {
+      price: TotalAmount,
+      customerName: session?.user?.name || 'Anonymous',
+      email: session?.user?.email,
+      phone: '01700000000',
+      address: 'Dhaka, Bangladesh',
+      productName: card.map((item) => item.name).join(', '),
+    }
+
+    try {
+      const response = await fetch('http://localhost:5000/init', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(paymentData),
+      })
+
+      const data = await response.json()
+
+      if (data?.url) {
+        window.location.replace(data.url)
+      } else {
+        toast.error('Failed to initialize payment.')
+      }
+    } catch (error) {
+      console.error('Payment Error:', error)
+      toast.error('Something went wrong!')
+    }
+  }
+
+  //
   if (isLoading)
     return <div className="py-20 text-center font-bold">Loading Cart...</div>
 
@@ -145,8 +180,8 @@ const ShoppingCart = () => {
                       </div>
                     </div>
 
-                    <Link
-                      href={`/${locale}/checkout`}
+                    <button
+                      onClick={handlePayment}
                       className={`block w-full mt-8 py-4 text-center rounded-2xl font-bold text-white transition-all shadow-lg shadow-blue-500/20 ${
                         card.length > 0
                           ? 'bg-blue-600 hover:bg-blue-700'
@@ -154,7 +189,7 @@ const ShoppingCart = () => {
                       }`}
                     >
                       Proceed to Checkout
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>
