@@ -69,11 +69,40 @@ const Shop = () => {
       image: selectedProduct.image[0],
       email:session?.user?.email
     }
-    console.log(cartData)
+    
 
 
     mutate(cartData)
   }
+  // wishlist
+   const {mutate: addToWishlist } = useMutation({
+      mutationFn: async (cartInfo) => {
+        const res = await axios.post(
+          `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/wishlist`,
+          cartInfo
+        )
+        return res.data
+      },
+      onSuccess: () => {
+        queryClient.invalidateQueries({ queryKey: ['AllWishlist', locale] })
+        toast.success('Product added to wishlist')
+      },
+      onError: () => {
+        toast.error('Failed to add wishlist')
+      },
+    })
+  const handelWishlist = (id) => {
+      const currentProduct=product.find(item=>item._id===id)
+      const cartData = {
+        productId: currentProduct._id,
+        title: currentProduct.title,
+        price: currentProduct.price,
+        image: currentProduct.image[0],
+        email: session?.user?.email,
+      }
+      addToWishlist(cartData)
+    }
+  //
   if (!mounted) {
     return null
   }
@@ -175,7 +204,10 @@ const Shop = () => {
                 </h2>
 
                 <div className="absolute flex flex-col gap-2 top-3 right-3 lg:opacity-0 lg:group-hover:opacity-100 lg:translate-x-5 lg:group-hover:translate-x-0 transition-all duration-300">
-                  <button className="p-3 bg-white/80 dark:bg-slate-700 text-black dark:text-white shadow-md rounded-full hover:bg-blue-600 hover:text-white transition-colors">
+                  <button
+                    onClick={()=>handelWishlist(item._id)}
+                    className="p-3 bg-white/80 dark:bg-slate-700 text-black dark:text-white shadow-md rounded-full hover:bg-blue-600 hover:text-white transition-colors"
+                  >
                     <FaHeart size={14} />
                   </button>
                   <button
