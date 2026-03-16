@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import Container from '../Container/Container'
 import { FaArrowRight, FaStar, FaCartPlus, FaHeart } from 'react-icons/fa'
-import {  useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
@@ -15,17 +15,17 @@ import { useSession } from 'next-auth/react'
 
 const Shop = () => {
   const { theme } = useTheme()
-  const {data:session}=useSession()
+  const { data: session } = useSession()
   const [currentPage, setCurrentPage] = useState(1)
   const [mounted, setMounted] = useState(false)
   const itemsPerPage = 6
   const locale = useLocale()
-   const queryClient = useQueryClient()
+  const queryClient = useQueryClient()
   const { data: product = [] } = useQuery({
     queryKey: ['All Product', locale],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/productAll`
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/productAll`
       )
       return res.data
     },
@@ -43,13 +43,12 @@ const Shop = () => {
   const { mutate } = useMutation({
     mutationFn: async (cartInfo) => {
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/cart-data`,
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/cart-data`,
         cartInfo
       )
       return res.data
     },
     onSuccess: () => {
-
       queryClient.invalidateQueries({ queryKey: ['AllCard', locale] })
       toast.success('Product added to cart')
     },
@@ -57,7 +56,6 @@ const Shop = () => {
       toast.error('Failed to add product')
     },
   })
-
 
   const handelCart = (id) => {
     const selectedProduct = product.find((item) => item._id === id)
@@ -67,10 +65,9 @@ const Shop = () => {
       title: selectedProduct.title,
       price: selectedProduct.price,
       image: selectedProduct.image[0],
-      email:session?.user?.email
+      email: session?.user?.email,
     }
     
-
 
     mutate(cartData)
   }

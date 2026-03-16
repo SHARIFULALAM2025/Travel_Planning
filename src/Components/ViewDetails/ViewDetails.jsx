@@ -47,7 +47,7 @@ const ViewDetails = ({ params }) => {
   const { mutateAsync, isPending } = useMutation({
     mutationFn: async (newReview) => {
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/review`,
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/review`,
         newReview
       )
       return res.data
@@ -89,7 +89,7 @@ const ViewDetails = ({ params }) => {
     queryKey: ['products', locale],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/productAll`
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/productAll`
       )
       return res.data
     },
@@ -99,7 +99,7 @@ const ViewDetails = ({ params }) => {
     queryKey: ['reviews', id],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/allReview/${id}`
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/allReview/${id}`
       )
       return res.data
     },
@@ -113,7 +113,7 @@ const ViewDetails = ({ params }) => {
   const { mutate } = useMutation({
     mutationFn: async (cartInfo) => {
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/cart-data`,
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/cart-data`,
         cartInfo
       )
       return res.data
@@ -141,10 +141,10 @@ const ViewDetails = ({ params }) => {
 
   //
   //wishlist
-  const {mutate: addToWishlist } = useMutation({
+  const { mutate: addToWishlist } = useMutation({
     mutationFn: async (cartInfo) => {
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/wishlist`,
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/wishlist`,
         cartInfo
       )
       return res.data

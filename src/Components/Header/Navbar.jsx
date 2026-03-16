@@ -42,7 +42,7 @@ const Navbar = () => {
     queryKey: ['AllCard', locale, session?.user?.email],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/allCard/${session?.user?.email}`
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/allCard/${session?.user?.email}`
       )
       return res.data
     },
@@ -53,7 +53,7 @@ const Navbar = () => {
   const { mutate: deleteItem } = useMutation({
     mutationFn: async (id) => {
       const res = await axios.delete(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/removeCard/${id}`
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/removeCard/${id}`
       )
       return res.data
     },
@@ -76,38 +76,40 @@ const Navbar = () => {
     TotalAmount += element
   }
   //
-   const handlePayment = async () => {
+  const handlePayment = async () => {
+    const paymentData = {
+      price: TotalAmount,
+      customerName: session?.user?.name || 'Anonymous',
+      email: session?.user?.email,
+      phone: '01700000000',
+      address: 'Dhaka, Bangladesh',
+      productName: card.map((item) => item.name).join(', '),
+    }
 
-      const paymentData = {
-        price: TotalAmount,
-        customerName: session?.user?.name || 'Anonymous',
-        email: session?.user?.email,
-        phone: '01700000000',
-        address: 'Dhaka, Bangladesh',
-        productName: card.map((item) => item.name).join(', '),
-      }
-
-      try {
-        const response = await fetch('http://localhost:5000/init', {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/init`,
+        {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(paymentData),
-        })
-
-        const data = await response.json()
-
-        if (data?.url) {
-          window.location.replace(data.url)
-        } else {
-          toast.error('Failed to initialize payment.')
         }
-      } catch (error) {
-        console.error('Payment Error:', error)
-        toast.error('Something went wrong!')
+      )
+
+      const data = await response.json()
+
+      if (data?.url) {
+        window.location.replace(data.url)
+      } else {
+        toast.error('Failed to initialize payment.')
       }
+    } catch (error) {
+      console.error('Payment Error:', error)
+      toast.error('Something went wrong!')
     }
+  }
   //
 
   useEffect(() => {

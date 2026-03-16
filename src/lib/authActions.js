@@ -6,7 +6,7 @@ export const loginUser = async (payload) => {
     try {
 
         const response = await axios.post(
-            `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/login-user`,
+            `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/login-user`,
             { email }
         )
 
