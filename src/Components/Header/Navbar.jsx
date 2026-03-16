@@ -70,11 +70,45 @@ const Navbar = () => {
     deleteItem(id)
   }
   // total price
-  let totalPrice = 0
+  let TotalAmount = 0
   for (const item of card) {
     const element = parseFloat(item?.price?.[locale])
-    totalPrice += element;
+    TotalAmount += element
   }
+  //
+   const handlePayment = async () => {
+
+      const paymentData = {
+        price: TotalAmount,
+        customerName: session?.user?.name || 'Anonymous',
+        email: session?.user?.email,
+        phone: '01700000000',
+        address: 'Dhaka, Bangladesh',
+        productName: card.map((item) => item.name).join(', '),
+      }
+
+      try {
+        const response = await fetch('http://localhost:5000/init', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(paymentData),
+        })
+
+        const data = await response.json()
+
+        if (data?.url) {
+          window.location.replace(data.url)
+        } else {
+          toast.error('Failed to initialize payment.')
+        }
+      } catch (error) {
+        console.error('Payment Error:', error)
+        toast.error('Something went wrong!')
+      }
+    }
+  //
 
   useEffect(() => {
     setMounted(true)
@@ -281,7 +315,7 @@ const Navbar = () => {
                         <hr className="bg-white" />
                         <div className="flex justify-between p-3">
                           <h1 className="">Total:</h1>
-                          <h2 className="">${totalPrice.toFixed(2)}</h2>
+                          <h2 className="">${TotalAmount.toFixed(2)}</h2>
                         </div>
                         {card.length > 0 && (
                           <div className="p-3 bg-gray-50 space-y-2 dark:bg-slate-900/50">
@@ -291,12 +325,12 @@ const Navbar = () => {
                             >
                               Shopping Cart
                             </Link>
-                            <Link
-                              href={`/${locale}/checkout`}
+                            <button
+                              onClick={handlePayment}
                               className="block w-full py-2 bg-blue-600 text-white text-center rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
                             >
                               Checkout Now
-                            </Link>
+                            </button>
                           </div>
                         )}
                       </motion.div>
