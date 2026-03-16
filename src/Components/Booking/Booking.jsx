@@ -12,20 +12,18 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 
 const Booking = ({ params }) => {
-
- const resolvedParams = use(params)
+  const resolvedParams = use(params)
   const id = resolvedParams.id
   const locale = useLocale()
-  const { data: blogs = []} = useQuery({
+  const { data: blogs = [] } = useQuery({
     queryKey: ['All Blog', locale],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/AllBlog`
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/AllBlog`
       )
       return res.data
     },
   })
-
 
   const currentBlog = blogs.find((item) => item._id === id)
   const [open, setOpen] = useState(null)
@@ -435,7 +433,7 @@ const Booking = ({ params }) => {
               </div> */}
             </div>
 
-             <div className="lg:col-span-4">
+            <div className="lg:col-span-4">
               <div className="sticky top-24 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl p-6">
                 <h1 className="text-xl font-black mb-6 flex items-center gap-2 dark:text-white uppercase tracking-tighter">
                   <Calendar className="text-blue-600" /> Book This Tour

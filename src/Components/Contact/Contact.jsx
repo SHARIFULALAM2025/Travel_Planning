@@ -21,12 +21,12 @@ const Contact = () => {
   const handelForm = async (data) => {
     try {
       const res = await axios.post(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/message`,
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/message`,
         data
       )
 
       if (res.data?.insertedId || res.status === 200 || res.status === 201) {
-        toast.success(t("message"))
+        toast.success(t('message'))
         reset()
       }
     } catch (error) {

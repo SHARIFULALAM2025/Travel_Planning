@@ -13,21 +13,20 @@ const SingleBlog = ({ params }) => {
   const resolvedParams = use(params)
   const id = resolvedParams.id
   const locale = useLocale()
-  const { data: blogs = []} = useQuery({
+  const { data: blogs = [] } = useQuery({
     queryKey: ['All Blog', locale],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/AllBlog`
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/AllBlog`
       )
       return res.data
     },
   })
 
-
   const currentBlog = blogs.find((item) => item._id === id)
 
   if (!currentBlog) return <div className="p-10 text-center">Loading...</div>
-console.log(currentBlog)
+  console.log(currentBlog)
   return (
     <div className="container mx-auto px-4 py-10">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center   rounded-3xl overflow-hidden shadow-xl ">

@@ -8,7 +8,7 @@ export const UpdatePassword = async ({ newPassword, token }) => {
         const salt = await bcrypt.genSalt(10);
         const passwordHashed = await bcrypt.hash(newPassword, salt);
 
-        const response = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/update-password`, {
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/update-password`, {
             token,
             passwordHashed
         });

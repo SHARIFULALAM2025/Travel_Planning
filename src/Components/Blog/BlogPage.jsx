@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { FaRegClock, FaUser, FaCalendarAlt } from 'react-icons/fa'
 import { FaArrowRight } from 'react-icons/fa6'
 import Link from 'next/link'
-import { useLocale,  } from 'next-intl'
+import { useLocale } from 'next-intl'
 import Container from '../Container/Container'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
@@ -13,17 +13,17 @@ import axios from 'axios'
 const BlogPage = () => {
   // const t = useTranslations('blogsData')
   // const blogs = t.raw("items") || []
-   const locale = useLocale()
-    const { data: blogs = [] } = useQuery({
-      queryKey: ['All Blog', locale],
-      queryFn: async () => {
-        const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/AllBlog`
-        )
-        return res.data
-      },
-    })
-console.log(blogs);
+  const locale = useLocale()
+  const { data: blogs = [] } = useQuery({
+    queryKey: ['All Blog', locale],
+    queryFn: async () => {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/AllBlog`
+      )
+      return res.data
+    },
+  })
+  console.log(blogs)
 
   return (
     <Container>

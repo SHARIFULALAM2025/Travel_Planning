@@ -6,12 +6,12 @@ import { nanoid } from 'nanoid'
 export const myMailAction = async ({ email }) => {
     try {
         const response = await axios.get(
-            `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/reset/${email}`
+            `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/reset/${email}`
         );
         const token = nanoid(32)
         console.log(token);
         const transporter = nodemailer.createTransport({
-            service:"gmail",
+            service: "gmail",
 
             auth: {
                 user: `${process.env.EMAIL_USER}`,
@@ -27,7 +27,7 @@ export const myMailAction = async ({ email }) => {
         });
         console.log("Message sent: %s", info.messageId);
         //save token in db
-        await axios.post(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/store-reset-token`, {
+        await axios.post(`${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/store-reset-token`, {
             email,
             token
         });

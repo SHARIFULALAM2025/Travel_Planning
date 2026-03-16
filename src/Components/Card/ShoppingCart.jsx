@@ -22,7 +22,7 @@ const ShoppingCart = () => {
     queryKey: ['AllCard', locale, session?.user?.email],
     queryFn: async () => {
       const res = await axios.get(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/allCard/${session?.user?.email}`
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/allCard/${session?.user?.email}`
       )
       return res.data
     },
@@ -33,7 +33,7 @@ const ShoppingCart = () => {
   const { mutate: deleteItem } = useMutation({
     mutationFn: async (id) => {
       await axios.delete(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/removeCard/${id}`
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/removeCard/${id}`
       )
     },
     onSuccess: () => {
@@ -59,7 +59,6 @@ const ShoppingCart = () => {
   const TotalAmount = totalPrice + AllTotalPrice
   //
   const handlePayment = async () => {
-    
     const paymentData = {
       price: TotalAmount,
       customerName: session?.user?.name || 'Anonymous',
@@ -70,13 +69,16 @@ const ShoppingCart = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/init', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(paymentData),
-      })
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/init`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(paymentData),
+        }
+      )
 
       const data = await response.json()
 
