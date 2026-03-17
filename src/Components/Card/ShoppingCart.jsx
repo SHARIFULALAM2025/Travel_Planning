@@ -58,40 +58,90 @@ const ShoppingCart = () => {
   }
   const TotalAmount = totalPrice + AllTotalPrice
   //
+  // const handlePayment = async () => {
+  //   const paymentData = {
+  //     price: TotalAmount,
+  //     customerName: session?.user?.name || 'Anonymous',
+  //     email: session?.user?.email,
+  //     phone: '01700000000',
+  //     address: 'Dhaka, Bangladesh',
+  //     productName: card.map((item) => item.title?.[locale]).join(' ').substring(0, 150),
+
+  //   }
+  //   try {
+  //     const response = await fetch(
+  //       `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/init`,
+  //       {
+  //         method: 'POST',
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //         },
+  //         body: JSON.stringify(paymentData),
+  //       }
+  //     )
+
+  //     const data = await response.json()
+
+  //     if (data?.url) {
+  //       window.location.replace(data.url)
+  //     } else {
+  //       toast.error('Failed to initialize payment.')
+  //     }
+  //   } catch (error) {
+  //     console.error('Payment Error:', error)
+  //     toast.error('Something went wrong!')
+  //   }
+  // }
+  const [updateQuantity, setUpdateQuantity] = useState({})
+  const handleIncomingQuantity = (id,qty) => {
+  setUpdateQuantity(prev => ({
+    ...prev,
+    [id]: qty
+  }));
+};
   const handlePayment = async () => {
-    const paymentData = {
-      price: TotalAmount,
-      customerName: session?.user?.name || 'Anonymous',
-      email: session?.user?.email,
-      phone: '01700000000',
-      address: 'Dhaka, Bangladesh',
-      productName: card.map((item) => item.title?.[locale]).join(' ').substring(0, 150),
-      
-    }
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/init`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(paymentData),
-        }
-      )
 
-      const data = await response.json()
 
-      if (data?.url) {
-        window.location.replace(data.url)
-      } else {
-        toast.error('Failed to initialize payment.')
+  const cartItems = card.map((item) => ({
+    name: item.title?.[locale],
+    price: parseFloat(item.price?.[locale]),
+
+     quantity:updateQuantity[item._id] || 1
+  }));
+
+  const paymentData = {
+    total_amount: TotalAmount,
+    customerName: session?.user?.name || 'Anonymous',
+    email: session?.user?.email,
+    phone: '01700000000',
+    address: 'Dhaka, Bangladesh',
+    items: cartItems,
+  };
+
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/init`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(paymentData),
       }
-    } catch (error) {
-      console.error('Payment Error:', error)
-      toast.error('Something went wrong!')
+    );
+
+    const data = await response.json();
+
+    if (response.ok && data?.url) {
+      window.location.replace(data.url);
+    } else {
+      // ব্যাকএন্ড থেকে আসা এরর মেসেজ দেখালে সুবিধা হবে
+      toast.error(data.message || 'Failed to initialize payment.');
+      console.error("Backend Error:", data);
     }
+  } catch (error) {
+    console.error('Payment Error:', error);
+    toast.error('Something went wrong!');
   }
+};
 
   //
   if (isLoading)
@@ -126,6 +176,7 @@ const ShoppingCart = () => {
                       <CardItem
                         key={item._id}
                         item={item}
+                        onSendQuantity={handleIncomingQuantity}
                         handelDelete={handelDelete}
                         locale={locale}
                         updateGlobalTotal={updateGlobalTotal}

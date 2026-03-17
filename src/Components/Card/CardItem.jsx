@@ -2,21 +2,23 @@ import { Minus, Plus, Trash2 } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
-const CardItem = ({ item, handelDelete, locale, updateGlobalTotal }) => {
+const CardItem = ({ item, handelDelete, locale, updateGlobalTotal,onSendQuantity }) => {
   const [plusValue, setPlusValue] = useState(1)
   const unitPrice = parseFloat(item.price?.[locale])
   const handelPlus = () => {
-    let x = 1
-    let plus = x + plusValue
+
+    const plus = plusValue + 1;
       setPlusValue(plus)
-      updateGlobalTotal(unitPrice)
+    updateGlobalTotal(unitPrice)
+    onSendQuantity(item._id,plus)
   }
   const handelMinus = () => {
-    let x = 1
+
     if (plusValue > 1) {
-      let Minus = plusValue - x
+      const  Minus = plusValue - 1
         setPlusValue(Minus)
-         updateGlobalTotal(-unitPrice)
+      updateGlobalTotal(-unitPrice)
+      onSendQuantity(item._id,Minus)
     }
   }
   return (

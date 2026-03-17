@@ -76,43 +76,48 @@ const Navbar = () => {
     TotalAmount += element
   }
   //
-  const handlePayment = async () => {
-    const paymentData = {
-      price: TotalAmount,
-      customerName: session?.user?.name || 'Anonymous',
-      email: session?.user?.email,
-      phone: '01700000000',
-      address: 'Dhaka, Bangladesh',
-      productName: card.map((item) => item.title?.[locale]).join(' ').substring(0, 150),
-      
-    }
-    console.log(paymentData);
+   const handlePayment = async () => {
 
+  const cartItems = card.map((item) => ({
+    name: item.title?.[locale],
+    price: parseFloat(item.price?.[locale]),
 
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/init`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(paymentData),
-        }
-      )
+     quantity:updateQuantity[item._id]
+  }));
 
-      const data = await response.json()
+  const paymentData = {
+    total_amount: TotalAmount,
+    customerName: session?.user?.name || 'Anonymous',
+    email: session?.user?.email,
+    phone: '01700000000',
+    address: 'Dhaka, Bangladesh',
+    items: cartItems,
+  };
 
-      if (data?.url) {
-        window.location.replace(data.url)
-      } else {
-        toast.error('Failed to initialize payment.')
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/init`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(paymentData),
       }
-    } catch (error) {
-      console.error('Payment Error:', error)
-      toast.error('Something went wrong!')
+    );
+
+    const data = await response.json();
+
+    if (response.ok && data?.url) {
+      window.location.replace(data.url);
+    } else {
+      
+      toast.error(data.message || 'Failed to initialize payment.');
+      console.error("Backend Error:", data);
     }
+  } catch (error) {
+    console.error('Payment Error:', error);
+    toast.error('Something went wrong!');
   }
+};
   //
 
   useEffect(() => {
