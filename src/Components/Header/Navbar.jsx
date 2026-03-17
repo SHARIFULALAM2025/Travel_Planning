@@ -83,8 +83,11 @@ const Navbar = () => {
       email: session?.user?.email,
       phone: '01700000000',
       address: 'Dhaka, Bangladesh',
-      productName: card.map((item) => item.name).join(', '),
+      productName: card.map((item) => item.title?.[locale]).join(' ').substring(0, 150),
+      
     }
+    console.log(paymentData);
+
 
     try {
       const response = await fetch(
@@ -247,7 +250,7 @@ const Navbar = () => {
                   <button className="relative p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full transition-colors group">
                     <BsCart3
                       size={22}
-                      className="text-gray-700 dark:text-gray-200 group-hover:text-blue-600"
+                      className={`${theme==="dark"?"text-white":"text-black"} group-hover:text-blue-600`}
                     />
                     <span className="absolute top-0 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-blue-600 text-[10px] text-white">
                       {card?.length}

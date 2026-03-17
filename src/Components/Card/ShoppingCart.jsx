@@ -65,9 +65,9 @@ const ShoppingCart = () => {
       email: session?.user?.email,
       phone: '01700000000',
       address: 'Dhaka, Bangladesh',
-      productName: card.map((item) => item.name).join(', '),
+      productName: card.map((item) => item.title?.[locale]).join(' ').substring(0, 150),
+      
     }
-
     try {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/init`,
