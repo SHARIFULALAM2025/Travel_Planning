@@ -1,3 +1,4 @@
+//import Signup from '@/Components/SignUp/Signup';
 import Signup from '@/Components/SignUp/Signup';
 import React from 'react';
 
