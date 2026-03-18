@@ -1,17 +1,28 @@
 'use client'
 import React, { useState } from 'react'
+
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Home, ChevronLeft, Menu, Search, Bell, LogOut } from 'lucide-react'
 import { DashboardLink } from '../DashboardPath'
-
+import { useQuery } from '@tanstack/react-query'
+import { useSession } from 'next-auth/react'
+import axios from 'axios'
 
 const Dashboard = ({ children }) => {
+  const { data: session } = useSession()
   const [open, setOpen] = useState(true)
   const pathname = usePathname()
-
-
-  const role = 'admin'
+  const { data: role } = useQuery({
+    queryKey: ['role', ],
+    queryFn: async () => {
+      const { data } = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/users/role/${session.user?.email}`
+      )
+      return data.role
+    },
+  })
+  console.log(role);
 
 
   const filteredLinks = DashboardLink.filter((item) => item.role.includes(role))
@@ -20,22 +31,22 @@ const Dashboard = ({ children }) => {
     <div className="flex h-screen bg-[#F3F4F6] text-slate-900 font-sans">
       <aside
         className={`fixed inset-y-0 left-0 bg-white border-r border-slate-200 z-50 transition-all duration-300 ease-in-out shadow-sm
-        ${open ? 'w-[260px]' : 'w-[80px]'}`}
+        ${open ? 'w-[200px]' : 'w-[70px]'}`}
       >
         {/* Drawer Header */}
-        <div className="flex items-center h-16 px-4 border-b border-slate-100 justify-between">
+        <div className="flex items-center h-12 px-4 border-b border-slate-100 justify-between">
           {open && (
             <div className="p-3">
               <Link
                 href="/"
-                className={`flex items-center p-3 rounded-xl hover:bg-slate-100 transition-all group ${!open && 'justify-center'}`}
+                className={`flex items-center rounded-xl hover:bg-slate-100 transition-all group ${!open && 'justify-center'}`}
               >
                 <Home
-                  className="text-slate-400 group-hover:text-blue-600"
-                  size={22}
+                  className="text-slate-400  group-hover:text-blue-600"
+                  size={12}
                 />
                 {open && (
-                  <span className="ml-3 font-medium text-slate-600">
+                  <span className=" ml-1 text-xs text-slate-600">
                     Back to Site
                   </span>
                 )}
@@ -58,7 +69,7 @@ const Dashboard = ({ children }) => {
               <Link
                 key={index}
                 href={item.path}
-                className={`flex items-center p-3 rounded-xl transition-all group relative
+                className={`flex items-center p-0.5 text-xs rounded-sm transition-all group relative
                   ${isActive ? 'bg-blue-50 text-blue-600' : 'text-slate-500 hover:bg-slate-50'}
                   ${!open && 'justify-center'}`}
               >
@@ -89,10 +100,10 @@ const Dashboard = ({ children }) => {
       {/* --- Main Content Area --- */}
       <div
         className={`flex flex-col flex-1 transition-all duration-300 ease-in-out
-        ${open ? 'ml-[260px]' : 'ml-[80px]'}`}
+        ${open ? 'ml-[200px]' : 'ml-[70px]'}`}
       >
         {/* Top Navbar */}
-        <header className="h-16 bg-white/80 backdrop-blur-md border-b border-slate-200 px-6 flex items-center justify-between sticky top-0 z-40">
+        <header className="h-12 bg-white/80 backdrop-blur-md border-b border-slate-200 px-6 flex items-center justify-between sticky top-0 z-40">
           <div className="flex items-center gap-4">
             <h2 className="text-lg font-bold text-slate-700">
               Dashboard Overview
