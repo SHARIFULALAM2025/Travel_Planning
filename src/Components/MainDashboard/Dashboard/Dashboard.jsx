@@ -3,29 +3,21 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Home, ChevronLeft, Menu, Search, Bell, LogOut } from 'lucide-react'
+import { DashboardLink } from '../DashboardPath'
 
-// এই কম্পোনেন্টে children রিসিভ করতে হবে
+
 const Dashboard = ({ children }) => {
   const [open, setOpen] = useState(true)
-  const pathname = usePathname() // বর্তমান পাথ ট্র্যাক করার জন্য
+  const pathname = usePathname()
 
-  // আপনার কাঙ্ক্ষিত রোল লজিক
+
   const role = 'admin'
-  const DashboardLink = [
-    {
-      name: 'Overview',
-      path: '/dashboard', // আপনার ফোল্ডার স্ট্রাকচার অনুযায়ী পাথ ঠিক করুন
-      icon: <Home size={22} />,
-      role: ['admin', 'user'],
-    },
-    // এখানে আপনার বাকি লিঙ্কগুলো যোগ করুন
-  ]
+
 
   const filteredLinks = DashboardLink.filter((item) => item.role.includes(role))
 
   return (
     <div className="flex h-screen bg-[#F3F4F6] text-slate-900 font-sans">
-      {/* --- Sidebar (Drawer) --- */}
       <aside
         className={`fixed inset-y-0 left-0 bg-white border-r border-slate-200 z-50 transition-all duration-300 ease-in-out shadow-sm
         ${open ? 'w-[260px]' : 'w-[80px]'}`}
@@ -33,9 +25,22 @@ const Dashboard = ({ children }) => {
         {/* Drawer Header */}
         <div className="flex items-center h-16 px-4 border-b border-slate-100 justify-between">
           {open && (
-            <span className="font-bold text-xl ml-2 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              ADMIN PANEL
-            </span>
+            <div className="p-3">
+              <Link
+                href="/"
+                className={`flex items-center p-3 rounded-xl hover:bg-slate-100 transition-all group ${!open && 'justify-center'}`}
+              >
+                <Home
+                  className="text-slate-400 group-hover:text-blue-600"
+                  size={22}
+                />
+                {open && (
+                  <span className="ml-3 font-medium text-slate-600">
+                    Back to Site
+                  </span>
+                )}
+              </Link>
+            </div>
           )}
           <button
             onClick={() => setOpen(!open)}
@@ -45,29 +50,10 @@ const Dashboard = ({ children }) => {
           </button>
         </div>
 
-        {/* Back to Home Section */}
-        <div className="p-3">
-          <Link
-            href="/"
-            className={`flex items-center p-3 rounded-xl hover:bg-slate-100 transition-all group ${!open && 'justify-center'}`}
-          >
-            <Home
-              className="text-slate-400 group-hover:text-blue-600"
-              size={22}
-            />
-            {open && (
-              <span className="ml-3 font-medium text-slate-600">
-                Back to Site
-              </span>
-            )}
-          </Link>
-          <div className="mt-2 border-t border-slate-100" />
-        </div>
-
         {/* Navigation Links */}
-        <nav className="flex-1 px-3 space-y-1 overflow-y-auto custom-scrollbar">
+        <nav className="flex-1 px-3 space-y-1 ">
           {filteredLinks.map((item, index) => {
-            const isActive = pathname === item.path // usePathname ব্যবহার করে একটিভ পাথ চেক
+            const isActive = pathname === item.path
             return (
               <Link
                 key={index}
@@ -134,10 +120,7 @@ const Dashboard = ({ children }) => {
 
         {/* Dynamic Page Content */}
         <main className="p-6 md:p-10">
-          <div className="animate-in fade-in duration-500">
-            {/* Next.js-এ Outlet-এর বদলে children ব্যবহার হয় */}
-            {children}
-          </div>
+          <div className="animate-in fade-in duration-500">{children}</div>
         </main>
       </div>
     </div>
