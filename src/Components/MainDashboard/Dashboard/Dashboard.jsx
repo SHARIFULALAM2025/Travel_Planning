@@ -22,7 +22,7 @@ const Dashboard = ({ children }) => {
       return data.role
     },
   })
-  console.log(role);
+
 
 
   const filteredLinks = DashboardLink.filter((item) => item.role.includes(role))

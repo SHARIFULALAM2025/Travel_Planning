@@ -6,7 +6,7 @@ export const DashboardLink = [
     name: 'My Profile',
     path: '/myProfile',
     icon: <HomeFilled size={12} />,
-    role: [ 'user'],
+    role: ['user'],
   },
   {
     id: 2,
@@ -20,6 +20,13 @@ export const DashboardLink = [
     name: 'All User',
     path: '/user',
     icon: <HomeFilled size={12} />,
-    role: ['admin', 'user'],
+    role: ['admin'],
+  },
+  {
+    id: 4,
+    name: 'My Order',
+    path: '/order',
+    icon: <HomeFilled size={12} />,
+    role: ['admin','user'],
   },
 ]

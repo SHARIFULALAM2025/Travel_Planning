@@ -102,10 +102,10 @@ const ShoppingCart = () => {
   const handlePayment = async () => {
 
 
-  const cartItems = card.map((item) => ({
+    const cartItems = card.map((item) => ({
+    id:item._id,
     name: item.title?.[locale],
     price: parseFloat(item.price?.[locale]),
-
      quantity:updateQuantity[item._id] || 1
   }));
 
