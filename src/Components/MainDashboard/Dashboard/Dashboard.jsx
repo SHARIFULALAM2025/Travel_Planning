@@ -130,7 +130,7 @@ const Dashboard = ({ children }) => {
         </header>
 
         {/* Dynamic Page Content */}
-        <main className="p-6 md:p-10">
+        <main className="">
           <div className="animate-in fade-in duration-500">{children}</div>
         </main>
       </div>

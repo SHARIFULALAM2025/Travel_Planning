@@ -11,6 +11,7 @@ import Link from 'next/link'
 import toast from 'react-hot-toast'
 import CardItem from './CardItem'
 import { ArrowLeft } from 'lucide-react'
+import moment from 'moment'
 
 const ShoppingCart = () => {
   const locale = useLocale()
@@ -116,7 +117,8 @@ const ShoppingCart = () => {
     phone: '01700000000',
     address: 'Dhaka, Bangladesh',
     items: cartItems,
-  };
+    date: moment().format('MMMM Do YYYY, h:mm:ss a'),
+  }
 
   try {
     const response = await fetch(
