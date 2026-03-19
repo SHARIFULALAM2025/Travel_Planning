@@ -34,7 +34,7 @@ const MyOrder = () => {
           key={order._id}
           className=""
         >
-          {/* 1. Header: Order & Customer Info */}
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 bg-gray-50 border-b border-gray-200">
             <div>
               <h2 className="text-sm font-bold text-gray-500 uppercase mb-2">

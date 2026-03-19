@@ -109,7 +109,7 @@ const Navbar = () => {
     if (response.ok && data?.url) {
       window.location.replace(data.url);
     } else {
-      
+
       toast.error(data.message || 'Failed to initialize payment.');
       console.error("Backend Error:", data);
     }
@@ -134,7 +134,7 @@ const Navbar = () => {
 
   if (!mounted) return null
 
-  const settings = ['Profile', 'Account', 'Dashboard']
+  const settings = ['myProfile', 'dashboard']
 
   const changeLanguage = (newLocale) => {
     const segments = pathname.split('/').filter(Boolean)
@@ -175,7 +175,7 @@ const Navbar = () => {
             </div>
 
             {/* 2. Logo Section */}
-            {/* Desktop-এ এটিকে বামে রাখার জন্য 'md:flex-1' যোগ করা হয়েছে */}
+
             <div className="md:flex-1 flex justify-center md:justify-start">
               <Link
                 href={`/${locale}`}
@@ -183,7 +183,7 @@ const Navbar = () => {
               >
                 <figure className="relative w-9 h-9 rounded-full overflow-hidden transition duration-300 group-hover:scale-110">
                   <Image
-                    src="/planet.png"
+                    src="/profile.png"
                     fill
                     alt="logo"
                     className="object-cover"
@@ -215,20 +215,20 @@ const Navbar = () => {
                     <Link
                       key={index}
                       href={fullPath}
-                      // 'group' ক্লাসটি এখানে খুব জরুরি আইকন কন্ট্রোল করার জন্য
+
                       className={`group relative text-[15px] font-medium py-2 transition duration-300 ${
                         isActive ? 'text-blue-600' : 'hover:text-blue-600'
                       }`}
                     >
-                      {/* হোভার আইকন: বিমান */}
+
                       <span className="absolute -top-1 left-1/2 -translate-x-1/2 -rotate-25 opacity-0 group-hover:opacity-100 group-hover:-top-2 transition-all duration-300 text-blue-500">
                         <GiCommercialAirplane size={18} />
                       </span>
 
-                      {/* টেক্সট */}
+
                       {t(item.name)}
 
-                      {/* এক্টিভ বর্ডার লাইন */}
+
                       {isActive && (
                         <motion.div
                           layoutId="activeTab"
@@ -241,7 +241,7 @@ const Navbar = () => {
             </div>
 
             {/* 4. Right Side Actions */}
-            {/* Desktop-এ ডানপাশে ফিক্সড রাখার জন্য 'md:flex-1' যোগ করা হয়েছে */}
+
             <div className="flex items-center justify-end gap-4 md:flex-1">
               <div className="hidden sm:block">
                 <DarkMode />
@@ -353,21 +353,21 @@ const Navbar = () => {
                   onClick={() => setIsOpen(true)}
                   className="group hidden md:flex items-center  gap-2 px-3 py-2.5 rounded-xl border border-gray-200 backdrop-blur-md hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 shadow-sm active:scale-95"
                 >
-                  {/* আইকন কন্টেইনার */}
+
                   <div className="relative">
                     <BsGlobe
                       className={`${theme == 'dark' ? 'text-white' : 'text-black'} group-hover:text-blue-600 transition-colors duration-300`}
                       size={20}
                     />
 
-                    {/* ইন্ডিকেটর আইকনটি এখন গ্লোবাল আইকনের উপরে */}
+
                     <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500 border border-white"></span>
                     </span>
                   </div>
 
-                  {/* ল্যাঙ্গুয়েজ টেক্সট */}
+
                   <span
                     className={`text-xs ${theme == 'dark' ? 'text-white' : 'text-black'} font-semibold text-black group-hover:text-blue-700 uppercase tracking-wide`}
                   >
@@ -377,7 +377,7 @@ const Navbar = () => {
                 <AnimatePresence>
                   {isOpen && (
                     <>
-                      {/* ব্যাকড্রপ (ঝাপসা কালো পর্দা) */}
+
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -386,7 +386,7 @@ const Navbar = () => {
                         className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[999]"
                       />
 
-                      {/* ড্রয়ার কন্টেন্ট (উপর থেকে নামবে) */}
+
                       <motion.div
                         initial={{ y: '-100%' }}
                         animate={{ y: 0 }}
@@ -466,7 +466,7 @@ const Navbar = () => {
                         {settings.map((setting) => (
                           <Link
                             key={setting}
-                            href={`/${locale}/${setting.toLowerCase()}`}
+                            href={`/${locale}/${setting}`}
                             className="block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-slate-700"
                             onClick={() => setIsUserMenuOpen(false)}
                           >
@@ -529,21 +529,21 @@ const Navbar = () => {
                     onClick={() => setIsOpen(true)}
                     className="group flex items-center gap-2 px-3 py-2 rounded-xl border border-gray-200 backdrop-blur-md hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 shadow-sm active:scale-95"
                   >
-                    {/* আইকন কন্টেইনার */}
+
                     <div className="relative">
                       <BsGlobe
                         className={`${theme == 'dark' ? 'text-white' : 'text-black'} group-hover:text-blue-600 transition-colors duration-300`}
                         size={20}
                       />
 
-                      {/* ইন্ডিকেটর আইকনটি এখন গ্লোবাল আইকনের উপরে */}
+
                       <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500 border border-white"></span>
                       </span>
                     </div>
 
-                    {/* ল্যাঙ্গুয়েজ টেক্সট */}
+
                     <span
                       className={`text-xs ${theme == 'dark' ? 'text-white' : 'text-black'} font-semibold text-black group-hover:text-blue-700 uppercase tracking-wide`}
                     >

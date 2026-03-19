@@ -8,6 +8,7 @@ import { DashboardLink } from '../DashboardPath'
 import { useQuery } from '@tanstack/react-query'
 import { useSession } from 'next-auth/react'
 import axios from 'axios'
+import Image from 'next/image'
 
 const Dashboard = ({ children }) => {
   const { data: session } = useSession()
@@ -123,15 +124,28 @@ const Dashboard = ({ children }) => {
               <Bell size={20} />
               <span className="absolute top-2 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
             </button>
-            <div className="h-9 w-9 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold border border-indigo-200">
-              S
+            <div className="h-9 w-9 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold border border-indigo-200 overflow-hidden">
+              {session?.user?.image ? (
+                <Image
+                  src={session.user.image}
+                  alt="profile image"
+                  width={40}
+                  height={40}
+                  className="object-cover"
+                />
+              ) : (
+                /* Fallback: Material Icon or Initial */
+                <span className="text-sm uppercase">
+                  {session?.user?.name?.charAt(0) || 'U'}
+                </span>
+              )}
             </div>
           </div>
         </header>
 
         {/* Dynamic Page Content */}
         <main className="">
-          <div className="animate-in fade-in duration-500">{children}</div>
+          <div className="bg-white">{children}</div>
         </main>
       </div>
     </div>
