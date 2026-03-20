@@ -6,6 +6,8 @@ import Image from 'next/image'
 import React, { useState, useEffect, useRef } from 'react'
 import { FaMapMarkerAlt, FaUserFriends } from 'react-icons/fa'
 import { popularDestinations } from './Data'
+import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/navigation'
 
 const images = [
   '/assets/image121.jpg',
@@ -15,13 +17,25 @@ const images = [
   '/assets/bannerimage6.jpg',
 ]
 
-const Banner = () => {
+const Banner = ({allData}) => {
   const t = useTranslations('banner')
   const [currentImage, setCurrentImage] = useState(0)
   const [mounted, setMounted] = useState(false)
   const [showGuestDropdown, setShowGuestDropdown] = useState(false)
-  const [guests, setGuests] = useState({ rooms: 1, adults: 2, children: 0 })
   const dropdownRef = useRef(null)
+  const today = new Date().toISOString().split('T')[0]
+  // 1. React Hook Form Initialization
+  const { register, handleSubmit, setValue, watch } = useForm({
+    defaultValues: {
+      location: '',
+      checkIn: '',
+      checkOut: '',
+      guests: { rooms: 1, adults: 2, children: 0 },
+    },
+  })
+
+  // 2. Watch guest state for UI display
+  const watchedGuests = watch('guests')
 
   useEffect(() => {
     setMounted(true)
@@ -41,9 +55,21 @@ const Banner = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
+  // 3. Updated Guest Input Handler for RHF
   const handleInputChange = (type, value) => {
     const val = parseInt(value) || 0
-    setGuests((prev) => ({ ...prev, [type]: val < 0 ? 0 : val }))
+    const finalVal = val < 0 ? 0 : val
+    setValue(`guests.${type}`, finalVal)
+  }
+  const router = useRouter()
+  // 4. Final Search Handler
+  const handleSearch = (data) => {
+    const totalGuests =
+      Number(data.guests.adults) + Number(data.guests.children)
+
+    const queryString = `location=${data.location}&checkIn=${data.checkIn}&checkOut=${data.checkOut}&guests=${totalGuests}&rooms=${data.guests.rooms}`
+
+    router.push(`/search?${queryString}`)
   }
 
   const avatars = [
@@ -59,7 +85,7 @@ const Banner = () => {
 
   return (
     <section className="relative w-full min-h-[90vh] lg:h-[85vh] flex items-center justify-center overflow-visible py-10 lg:py-0">
-      {/* Background slider */}
+      {/* Background slider code */}
       {images.map((img, index) => (
         <div
           key={index}
@@ -74,7 +100,7 @@ const Banner = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/80" />
 
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
-        {/* Heading Section */}
+        {/* Heading Section code... */}
         <div className="mb-8 lg:mb-10">
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
             {t('title')}
@@ -84,7 +110,7 @@ const Banner = () => {
           </p>
         </div>
 
-        {/* Social Proof & SVG Arrow Section */}
+        {/* Social Proof */}
         <div className="relative mb-12 flex items-center">
           <div className="flex -space-x-3 mr-4">
             {avatars.map((url, i) => (
@@ -99,145 +125,135 @@ const Banner = () => {
               5k+
             </div>
           </div>
-
           <div className="text-white text-left">
             <h3 className="underline decoration-2 underline-offset-4 font-bold text-lg leading-tight">
               35k People Booked <br /> Dream Place
             </h3>
           </div>
-
-          {/* SVG Arrow - Only visible on Large Screens */}
-          <div className="absolute -right-32 top-0 hidden lg:block w-32 h-20 pointer-events-none">
-            <svg
-              width="100%"
-              height="100%"
-              viewBox="0 0 120 80"
-              fill="none"
-              className="stroke-white/80"
-            >
-              <path
-                d="M5 10 C 50 10, 80 30, 95 70"
-                strokeDasharray="5 5"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <path
-                d="M88 62 L95 70 L103 62"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
         </div>
 
-        {/* Main Search Bar Container */}
-        <div className="bg-white dark:bg-slate-800 rounded-3xl lg:rounded-full p-2 shadow-2xl flex flex-col lg:flex-row items-center w-full max-w-5xl relative transition-colors duration-300">
-          {/* Location */}
-          <div className="flex flex-[1.5] flex-col border-b lg:border-b-0 lg:border-r border-gray-100 dark:border-gray-700 w-full py-3 lg:py-0 px-6">
-            <label className="text-[10px] text-indigo-600 dark:text-indigo-400 font-bold text-left uppercase">
-              Location
-            </label>
-            <div className="flex items-center text-gray-800 dark:text-gray-200">
-              <FaMapMarkerAlt className="mr-2 text-gray-400 shrink-0" />
-              <select className="bg-transparent outline-none text-sm font-semibold w-full cursor-pointer dark:text-white">
-                <option value="" className="dark:bg-slate-800">
-                  Select Destination
-                </option>
-                {popularDestinations.map((dest, index) => (
-                  <option
-                    key={index}
-                    value={dest}
-                    className="dark:bg-slate-800"
-                  >
-                    {dest}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          {/* Dates Section (Mobile Responsive) */}
-          <div className="flex flex-1 flex-row w-full lg:contents">
-            <div className="flex-1 flex flex-col border-r border-b lg:border-b-0 lg:border-r border-gray-100 dark:border-gray-700 py-3 lg:py-0 px-6">
+        {/* --- Updated Form Section --- */}
+        <form
+          onSubmit={handleSubmit(handleSearch)}
+          className="w-full max-w-5xl"
+        >
+          <div className="bg-white dark:bg-slate-800 rounded-3xl lg:rounded-full p-2 shadow-2xl flex flex-col lg:flex-row items-center w-full relative transition-colors duration-300">
+            {/* Location */}
+            <div className="flex flex-[1.5] flex-col border-b lg:border-b-0 lg:border-r border-gray-100 dark:border-gray-700 w-full py-3 lg:py-0 px-6">
               <label className="text-[10px] text-indigo-600 dark:text-indigo-400 font-bold text-left uppercase">
-                Check In
+                Location
               </label>
-              <input
-                type="date"
-                className="bg-transparent text-sm text-gray-800 dark:text-white font-semibold outline-none w-full dark:[color-scheme:dark]"
-              />
-            </div>
-            <div className="flex-1 flex flex-col border-b lg:border-b-0 lg:border-r border-gray-100 dark:border-gray-700 py-3 lg:py-0 px-6">
-              <label className="text-[10px] text-indigo-600 dark:text-indigo-400 font-bold text-left uppercase">
-                Check Out
-              </label>
-              <input
-                type="date"
-                className="bg-transparent text-sm text-gray-800 dark:text-white font-semibold outline-none w-full dark:[color-scheme:dark]"
-              />
-            </div>
-          </div>
-
-          {/* Guest Selector */}
-          <div
-            className="flex flex-1 flex-col w-full py-3 lg:py-0 px-6 cursor-pointer relative lg:border-r lg:border-gray-100 lg:dark:border-gray-700"
-            onClick={() => setShowGuestDropdown(!showGuestDropdown)}
-            ref={dropdownRef}
-          >
-            <label className="text-[10px] text-indigo-600 dark:text-indigo-400 font-bold text-left uppercase">
-              Guest
-            </label>
-            <div className="flex items-center text-gray-800 dark:text-gray-200">
-              <FaUserFriends className="mr-2 text-gray-400 shrink-0" />
-              <span className="font-semibold text-xs truncate">
-                {guests.adults + guests.children} Guests
-              </span>
-              <IoChevronDownOutline className="ml-auto" />
-            </div>
-
-            {/* Guest Dropdown */}
-            {showGuestDropdown && (
-              <div
-                className="absolute top-full left-0 mt-4 w-full sm:w-72 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-6 z-[999] border border-gray-100 dark:border-gray-700"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="flex flex-col gap-4">
-                  {['rooms', 'adults', 'children'].map((type) => (
-                    <div
-                      key={type}
-                      className="flex justify-between items-center"
-                    >
-                      <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">
-                        {type}
-                      </label>
-                      <input
-                        type="number"
-                        min={type === 'children' ? '0' : '1'}
-                        value={guests[type]}
-                        onChange={(e) =>
-                          handleInputChange(type, e.target.value)
-                        }
-                        className="w-16 border rounded p-1 text-center dark:bg-slate-900 dark:text-white dark:border-gray-600"
-                      />
-                    </div>
-                  ))}
-                </div>
-                <button
-                  onClick={() => setShowGuestDropdown(false)}
-                  className="w-full mt-6 bg-indigo-600 text-white py-2 rounded-xl font-bold"
+              <div className="flex items-center text-gray-800 dark:text-gray-200">
+                <FaMapMarkerAlt className="mr-2 text-gray-400 shrink-0" />
+                <select
+                  {...register('location', { required: true })}
+                  className="bg-transparent outline-none text-sm font-semibold w-full cursor-pointer dark:text-white"
                 >
-                  Ok
-                </button>
+                  <option value="" className="dark:bg-slate-800">
+                    Select Destination
+                  </option>
+                  {popularDestinations.map((dest, index) => (
+                    <option
+                      key={index}
+                      value={dest}
+                      className="dark:bg-slate-800"
+                    >
+                      {dest}
+                    </option>
+                  ))}
+                </select>
               </div>
-            )}
-          </div>
+            </div>
 
-          {/* Search Button */}
-          <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-4 rounded-2xl lg:rounded-full flex items-center justify-center gap-2 transition-all font-bold shadow-lg m-2 w-[95%] lg:w-auto">
-            Search <IoSearch size={20} />
-          </button>
-        </div>
+            {/* Dates */}
+            <div className="flex flex-1 flex-row w-full lg:contents">
+              <div className="flex-1 flex flex-col border-r border-b lg:border-b-0 lg:border-r border-gray-100 dark:border-gray-700 py-3 lg:py-0 px-6">
+                <label className="text-[10px] text-indigo-600 dark:text-indigo-400 font-bold text-left uppercase">
+                  Check In
+                </label>
+                <input
+                  type="date"
+                  min={today}
+                  {...register('checkIn', { required: true })}
+                  className="bg-transparent text-sm text-gray-800 dark:text-white font-semibold outline-none w-full dark:[color-scheme:dark]"
+                />
+              </div>
+              <div className="flex-1 flex flex-col border-b lg:border-b-0 lg:border-r border-gray-100 dark:border-gray-700 py-3 lg:py-0 px-6">
+                <label className="text-[10px] text-indigo-600 dark:text-indigo-400 font-bold text-left uppercase">
+                  Check Out
+                </label>
+                <input
+                  min={allData?.checkIn || today}
+                  type="date"
+                  {...register('checkOut', { required: true })}
+                  className="bg-transparent text-sm text-gray-800 dark:text-white font-semibold outline-none w-full dark:[color-scheme:dark]"
+                />
+              </div>
+            </div>
+
+            {/* Guest Selector */}
+            <div
+              className="flex flex-1 flex-col w-full py-3 lg:py-0 px-6 cursor-pointer relative lg:border-r lg:border-gray-100 lg:dark:border-gray-700"
+              onClick={() => setShowGuestDropdown(!showGuestDropdown)}
+              ref={dropdownRef}
+            >
+              <label className="text-[10px] text-indigo-600 dark:text-indigo-400 font-bold text-left uppercase">
+                Guest
+              </label>
+              <div className="flex items-center text-gray-800 dark:text-gray-200">
+                <FaUserFriends className="mr-2 text-gray-400 shrink-0" />
+                <span className="font-semibold text-xs truncate">
+                  {watchedGuests.adults + watchedGuests.children} Guests
+                </span>
+                <IoChevronDownOutline className="ml-auto" />
+              </div>
+
+              {showGuestDropdown && (
+                <div
+                  className="absolute top-full left-0 mt-4 w-full sm:w-72 bg-white dark:bg-slate-800 rounded-2xl shadow-2xl p-6 z-[999] border border-gray-100 dark:border-gray-700"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="flex flex-col gap-4">
+                    {['rooms', 'adults', 'children'].map((type) => (
+                      <div
+                        key={type}
+                        className="flex justify-between items-center"
+                      >
+                        <label className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase">
+                          {type}
+                        </label>
+                        <input
+                          type="number"
+                          min={type === 'children' ? '0' : '1'}
+                          value={watchedGuests[type]}
+                          onChange={(e) =>
+                            handleInputChange(type, e.target.value)
+                          }
+                          className="w-16 border rounded p-1 text-center dark:bg-slate-900 dark:text-white dark:border-gray-600"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setShowGuestDropdown(false)}
+                    className="w-full mt-6 bg-indigo-600 text-white py-2 rounded-xl font-bold"
+                  >
+                    Ok
+                  </button>
+                </div>
+              )}
+            </div>
+
+            {/* Search Button */}
+            <button
+              type="submit"
+              className="bg-indigo-600 hover:bg-indigo-700 text-white px-10 py-4 rounded-2xl lg:rounded-full flex items-center justify-center gap-2 transition-all font-bold shadow-lg m-2 w-[95%] lg:w-auto"
+            >
+              Search <IoSearch size={20} />
+            </button>
+          </div>
+        </form>
       </div>
     </section>
   )
