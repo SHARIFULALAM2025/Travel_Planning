@@ -215,25 +215,30 @@ const Navbar = () => {
                     <Link
                       key={index}
                       href={fullPath}
-
                       className={`group relative text-[15px] font-medium py-2 transition duration-300 ${
                         isActive ? 'text-blue-600' : 'hover:text-blue-600'
                       }`}
                     >
-
                       <span className="absolute -top-1 left-1/2 -translate-x-1/2 -rotate-25 opacity-0 group-hover:opacity-100 group-hover:-top-2 transition-all duration-300 text-blue-500">
                         <GiCommercialAirplane size={18} />
                       </span>
 
-
                       {t(item.name)}
 
-
+                     
                       {isActive && (
-                        <motion.div
-                          layoutId="activeTab"
-                          className="absolute -bottom-1 left-0 w-full h-[2px] bg-blue-600"
-                        />
+                        <div className="absolute -bottom-1 left-0 w-full flex flex-col items-center">
+
+                          <motion.div
+                            layoutId="activeArrow"
+                            className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-b-[5px] border-b-blue-600"
+                          />
+
+                          <motion.div
+                            layoutId="activeTab"
+                            className="w-full h-[2px] bg-blue-600"
+                          />
+                        </div>
                       )}
                     </Link>
                   )
