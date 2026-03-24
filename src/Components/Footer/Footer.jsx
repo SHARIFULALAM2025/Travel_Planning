@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import {
   FaFacebookF,
   FaInstagram,
@@ -13,10 +14,32 @@ import {
 } from 'react-icons/fa'
 import { IoLocationSharp } from 'react-icons/io5'
 import Container from '../Container/Container'
+import { useLocale, useTranslations } from 'next-intl'
+import { GiCommercialAirplane } from 'react-icons/gi'
+import { navItems } from '../Header/NavData'
+import { useSession } from 'next-auth/react'
+import { usePathname } from 'next/navigation'
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
 
 const Footer = () => {
+  const { data: session } = useSession()
+  const pathname = usePathname()
   const [mounted, setMounted] = useState(false)
   const currentYear = new Date().getFullYear()
+  const locale = useLocale()
+  const t = useTranslations('Navbar')
+  const foot = useTranslations('footer')
+const { data: paymentImg = [] } = useQuery({
+  queryKey: ['All img', ],
+  queryFn: async () => {
+    const res = await axios.get(
+      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/all-pay-img`
+    )
+    return res.data
+  },
+})
+  console.log(paymentImg)
 
   useEffect(() => {
     setMounted(true)
@@ -52,37 +75,77 @@ const Footer = () => {
   if (!mounted) return null
 
   return (
-    <Container>
-      <footer className="w-full border-t bg-white transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <footer className="w-full border-t bg-white transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950">
+      <Container>
+        <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
           {/* MAIN CONTENT GRID */}
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
             {/* BRAND SECTION */}
-            <div className="flex flex-col space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-blue-600 p-1">
+            <div className="flex flex-col space-y-5">
+              <Link
+                href={`/${locale}`}
+                className="flex items-center gap-3 group"
+              >
+                <figure className="relative w-10 h-10 rounded-xl overflow-hidden shadow-md transition duration-300 group-hover:scale-110">
                   <Image
                     src="/profile.png"
-                    alt="TravelMate Logo"
                     fill
-                    className="object-contain p-1 invert brightness-0"
+                    alt="logo"
+                    className="object-cover"
                   />
+                </figure>
+                <div className="flex flex-col">
+                  <span className="font-bold text-xl tracking-tight uppercase italic text-blue-600">
+                    {t('logo_text')} {t('title')}
+                  </span>
+                  <span className="text-[10px] font-medium tracking-[2px] text-slate-500 uppercase">
+                    Your Travel Partner
+                  </span>
                 </div>
-                <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-                  Travel<span className="text-blue-600">Mate</span>
-                </h2>
-              </div>
-              <p className="max-w-sm text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                Discover destinations, plan smarter journeys, and explore the
-                world with confidence. Your trusted companion for meaningful
-                travel and unforgettable memories.
+              </Link>
+              <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                {foot('foot_text')}
               </p>
+            </div>
+
+            {/* QUICK LINKS SECTION */}
+            <div className="flex flex-col space-y-6">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white border-b border-blue-600 w-max pb-1">
+                Quick Explore
+              </h3>
+              <nav className="flex flex-col space-y-3">
+                {navItems
+                  .filter((item) =>
+                    item.access === 'private' ? !!session?.user : true
+                  )
+                  .map((item, index) => {
+                    const fullPath = `/${locale}${item.path}`
+                    const isActive = pathname === fullPath
+                    return (
+                      <Link
+                        key={index}
+                        href={fullPath}
+                        className={`group flex items-center gap-2 text-[15px] font-medium transition duration-300 ${
+                          isActive
+                            ? 'text-blue-600'
+                            : 'hover:text-blue-600 text-slate-600 dark:text-slate-400'
+                        }`}
+                      >
+                        <GiCommercialAirplane
+                          className={`transition-transform duration-300 ${isActive ? 'rotate-45 scale-110' : 'opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:rotate-45'}`}
+                          size={14}
+                        />
+                        {t(item.name)}
+                      </Link>
+                    )
+                  })}
+              </nav>
             </div>
 
             {/* CONTACT SECTION */}
             <div className="flex flex-col space-y-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-                Get in Touch
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white border-b border-blue-600 w-max pb-1">
+                Contact Us
               </h3>
               <ul className="space-y-4">
                 {contactItems.map((item, i) => {
@@ -97,7 +160,6 @@ const Footer = () => {
                       </span>
                     </div>
                   )
-
                   return (
                     <li key={i}>
                       {item.isLink ? (
@@ -113,23 +175,24 @@ const Footer = () => {
 
             {/* SOCIAL SECTION */}
             <div className="flex flex-col space-y-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white">
-                Follow Our Journey
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white border-b border-blue-600 w-max pb-1">
+                Newsletter
               </h3>
               <p className="text-sm text-slate-600 dark:text-slate-400">
-                Join our community for travel tips and exclusive deals.
+                Subscribe to get latest travel updates and offers.
               </p>
               <div className="flex gap-3">
                 {socialLinks.map((social, i) => {
                   const Icon = social.icon
                   return (
-                    <a
+                    <motion.a
                       key={i}
+                      whileHover={{ y: -5 }}
                       href={social.href}
-                      className={`flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:text-white hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 ${social.color}`}
+                      className={`flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-all duration-300 hover:text-white dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 ${social.color}`}
                     >
                       <Icon size={16} />
-                    </a>
+                    </motion.a>
                   )
                 })}
               </div>
@@ -137,28 +200,61 @@ const Footer = () => {
           </div>
 
           {/* DIVIDER */}
-          <div className="mt-16 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent dark:via-slate-800"></div>
+          <div className=" mb-5 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent "></div>
+          <div className="bg-[#00041a] text-white p-6 flex flex-col md:flex-row items-center gap-4 ">
+            {/* Left Side: Label */}
+            <div className="md:border-r border-slate-100 pr-6 flex items-center justify-center h-full">
+              <span className="text-blue-400 font-semibold whitespace-nowrap">
+                Pay With
+              </span>
+            </div>
 
+            {/* Center Side: Payment Logos Grid */}
+            <div className="flex-1 grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-11 gap-3">
+              {paymentImg[0]?.image?.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-white p-1 rounded-md flex items-center justify-center h-10 w-full transition-transform hover:scale-105"
+                >
+                  <Image
+                    src={item}
+                    width={40}
+                    height={25}
+                    alt={`Payment Partner ${index}`}
+                    className="object-contain max-h-full"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Right Side: SSLCommerz Verified */}
+            <div className="md:border-l border-slate-200 pl-6 flex flex-col items-center justify-center gap-1">
+              <span className="text-[10px] text-slate-400 uppercase tracking-widest">
+                Verified By
+              </span>
+              <div className="bg-[#002244] border border-blue-500/30 p-1 px-3 rounded text-[10px] font-bold text-white">
+                SSLCOMMERZ
+              </div>
+            </div>
+          </div>
+          <div className=" mt-5 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent "></div>
           {/* BOTTOM BAR */}
           <div className="mt-8 flex flex-col items-center justify-between gap-6 md:flex-row">
-            <p className="text-xs text-slate-500 dark:text-slate-500">
-              © {currentYear} TravelMate. Designed for the modern explorer.
+            <p className="text-xs text-slate-500">
+              © {currentYear} TravelMate. Crafted by Shariful Alam.
             </p>
-            <div className="flex items-center gap-8 text-xs font-medium text-slate-600 dark:text-slate-400">
-              <Link href="#" className="transition hover:text-blue-600">
+            <div className="flex items-center gap-6 text-xs font-medium text-slate-600 dark:text-slate-400">
+              <Link href="#" className="hover:text-blue-600 transition">
                 Privacy Policy
               </Link>
-              <Link href="#" className="transition hover:text-blue-600">
+              <Link href="#" className="hover:text-blue-600 transition">
                 Terms of Service
-              </Link>
-              <Link href="#" className="transition hover:text-blue-600">
-                Cookie Policy
               </Link>
             </div>
           </div>
         </div>
-      </footer>
-    </Container>
+      </Container>
+    </footer>
   )
 }
 
