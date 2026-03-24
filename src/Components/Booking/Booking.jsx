@@ -578,3 +578,6 @@ const Booking = ({ params }) => {
 }
 
 export default Booking
+
+
+

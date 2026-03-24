@@ -12,6 +12,8 @@ import { FaPlaneDeparture } from 'react-icons/fa'
 import { useTheme } from 'next-themes'
 import { GoIssueClosed } from 'react-icons/go'
 import { RxCross2 } from 'react-icons/rx'
+import { ChevronDown } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from '@mui/icons-material'
 
 const SingleDestination = ({ destId, tourId }) => {
   const locale = useLocale()
@@ -26,6 +28,14 @@ const SingleDestination = ({ destId, tourId }) => {
       return res.data
     },
   })
+  const [open, setOpen] = useState(0)
+
+  const toggle = (index) => {
+    setOpen(open === index ? null : index)
+  }
+
+
+  const [currentSlide, setCurrentSlide] = useState(0)
 
   if (isLoading)
     return (
@@ -111,11 +121,9 @@ const SingleDestination = ({ destId, tourId }) => {
                         : 'text-gray-400 hover:text-gray-600'
                     }`}
                   >
-                    {tab === 'Details'
-                      ? 'Product Details'
-                      : tab === 'Specs'
-                        ? 'Specification'
-                        : 'Reviews'}
+                    {/* Simplified Logic: Render the tab name directly */}
+                    {tab}
+
                     {activeTab === index && (
                       <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transition-all duration-300" />
                     )}
@@ -210,165 +218,235 @@ const SingleDestination = ({ destId, tourId }) => {
                         ))}
                     </ul>
                   </div>
-                </div>
-              )}
-
-              {/* {activeTab === 1 && (
-                <div className="animate-in fade-in slide-in-from-bottom-2 duration-500 overflow-x-auto">
-                  <table
-                    className={`w-full text-left border ${theme === 'dark' ? 'border-slate-800' : 'border-gray-200'}`}
-                  >
-                    <tbody className="text-sm md:text-base">
-                      {[
-                        {
-                          label: 'Brand',
-                          value:
-                            currentProduct?.brand?.[locale] || 'Travel Luggage',
-                        },
-                        {
-                          label: 'Color',
-                          value: currentProduct?.color?.[locale] || 'Sky',
-                        },
-                        {
-                          label: 'Material',
-                          value:
-                            currentProduct?.material?.[locale] || 'Plastic',
-                        },
-                        {
-                          label: 'Capacity',
-                          value:
-                            currentProduct?.capacity?.[locale] || '20 Ounces',
-                        },
-                        {
-                          label: 'Recommended Uses',
-                          value: currentProduct?.uses?.[locale] || 'Water',
-                        },
-                      ].map((row, idx) => (
-                        <tr
-                          key={idx}
-                          className={`border-b ${theme === 'dark' ? 'border-slate-800' : 'border-gray-200'}`}
-                        >
-                          <td
-                            className={`py-3 px-4 md:py-4 md:px-6 font-bold w-1/2 sm:w-1/3 ${theme === 'dark' ? 'text-white bg-slate-800/50' : 'text-black bg-gray-50'}`}
-                          >
-                            {row.label}:
-                          </td>
-                          <td
-                            className={`py-3 px-4 md:py-4 md:px-6 ${theme === 'dark' ? 'text-slate-300' : 'text-gray-600'}`}
-                          >
-                            {row.value}
-                          </td>
-                        </tr>
+                  <hr className="mt-2" />
+                  <h1 className="">
+                    {tourDetails.what_to_expect_title?.[locale]}
+                  </h1>
+                  <p className="">{tourDetails.description_1?.[locale]}</p>
+                  <ul className="grid grid-cols-1 gap-3">
+                    {Array.isArray(tourDetails?.expect?.[locale]) &&
+                      tourDetails.expect[locale].map((item, i) => (
+                        <li key={i} className="flex items-center gap-3 group">
+                          <GoIssueClosed />
+                          {item}
+                        </li>
                       ))}
-                    </tbody>
-                  </table>
-                </div>
-              )} */}
-
-              {/* {activeTab === 2 && (
-                <div className="animate-in fade-in slide-in-from-bottom-2 duration-500 space-y-8 md:space-y-12">
-                  <div className="max-w-4xl">
-                    <h3
-                      className={`text-lg md:text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-black'} mb-2`}
-                    >
-                      Customer Reviews
-                    </h3>
-
-                    <div className="space-y-6 md:space-y-8 mt-6">
-                      {review.map((item, index) => (
+                  </ul>
+                  <div>
+                    <div className="space-y-3">
+                      {[1, 2, 3, 4, 5].map((num) => (
                         <div
-                          key={index}
-                          className="flex flex-col sm:flex-row gap-4 md:gap-6 pb-6 border-b last:border-none dark:border-slate-800"
+                          key={num}
+                          className="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden transition-all"
                         >
-                          <div className="flex-shrink-0">
-                            <div className="w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden border-2 border-slate-100">
-                              <Image
-                                src={item.image}
-                                alt="User"
-                                width={64}
-                                height={64}
-                                className="object-cover"
-                              />
+                          <button
+                            onClick={() => toggle(num)}
+                            className="flex items-center justify-between w-full p-5 text-left bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+                          >
+                            <div className="flex gap-4 items-center">
+                              <span className="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">
+                                Day-{num}
+                              </span>
+                              <span className="font-bold text-slate-700 dark:text-slate-200">
+                                {/* Dynamic key access for Title */}
+                                {tourDetails?.[`day_${num}_title`]?.[locale]}
+                              </span>
                             </div>
-                          </div>
-                          <div className="flex-1 space-y-2">
-                            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-                              <div className="flex items-center gap-3">
-                                <h4 className="font-bold text-sm md:text-base">
-                                  {item.name}
-                                </h4>
-                                <span className="text-[10px] md:text-xs text-blue-500">
-                                  {item.timestamp}
-                                </span>
-                              </div>
-                              <div className="flex text-amber-500 gap-0.5">
-                                {[...Array(item.rating || 0)].map((_, i) => (
-                                  <FaStar key={i} size={12} />
-                                ))}
-                              </div>
+                            <ChevronDown
+                              className={`w-5 h-5 text-slate-400 transition-transform ${open === num ? 'rotate-180' : ''}`}
+                            />
+                          </button>
+                          {open === num && (
+                            <div className="p-5 bg-slate-50 dark:bg-slate-800/30 text-slate-600 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 leading-relaxed italic">
+                              {/* Dynamic key access for Description */}
+                              {tourDetails?.[`day_${num}_desc`]?.[locale]}
                             </div>
-                            <p
-                              className={`text-sm md:text-base leading-relaxed ${theme === 'dark' ? 'text-slate-300' : 'text-gray-600'}`}
-                            >
-                              {item.message}
-                            </p>
-                          </div>
+                          )}
                         </div>
                       ))}
                     </div>
-
-                    <div className="mt-12 bg-gray-50 dark:bg-slate-800/50 p-6 md:p-8 rounded-2xl">
-                      <h3 className="text-lg font-bold mb-6">Write a Review</h3>
-                      <form
-                        onSubmit={handleSubmit(handelReview)}
-                        className="space-y-4 md:space-y-6"
-                      >
-                        <div className="flex items-center gap-4">
-                          <span className="text-sm font-bold">
-                            Your Rating:
-                          </span>
-                          <div className="flex text-amber-500 gap-1">
-                            {[1, 2, 3, 4, 5].map((val) => (
-                              <FaStar
-                                key={val}
-                                onClick={() => setStar(val)}
-                                className={`cursor-pointer size-5 md:size-6 ${val <= star ? 'text-amber-400' : 'text-slate-300'}`}
-                              />
-                            ))}
-                          </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                          <input
-                            {...register('name')}
-                            readOnly
-                            className={`w-full p-3 md:p-4 rounded-xl border ${theme === 'dark' ? 'bg-slate-900 border-slate-700' : 'bg-white border-gray-200'}`}
-                          />
-                          <input
-                            {...register('email')}
-                            readOnly
-                            className={`w-full p-3 md:p-4 rounded-xl border ${theme === 'dark' ? 'bg-slate-900 border-slate-700' : 'bg-white border-gray-200'}`}
-                          />
-                        </div>
-
-                        <textarea
-                          rows={4}
-                          {...register('message', { required: true })}
-                          placeholder="Write Your Detailed Experience *"
-                          className={`w-full p-3 md:p-4 rounded-xl border resize-none ${theme === 'dark' ? 'bg-slate-900 border-slate-700' : 'bg-white border-gray-200'}`}
-                        />
-
-                        <button
-                          type="submit"
-                          className="w-full sm:w-auto px-10 py-4 bg-blue-600 text-white font-bold rounded-xl shadow-lg hover:bg-blue-700 transition-all"
+                  </div>
+                  <div className="">
+                    <figure className="relative w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800">
+                      <Image
+                        src={tourDetails?.map}
+                        alt="Tour Route Map"
+                        width={1200} // Add your preferred width
+                        height={800} // Add your preferred height
+                        className="w-full h-auto object-cover"
+                        priority // Ensures the map loads quickly when the tab is clicked
+                      />
+                    </figure>
+                  </div>
+                  <div className="animate-in fade-in duration-500">
+                    <div className="relative aspect-video rounded-2xl overflow-hidden group">
+                      {tourDetails?.slide?.map((img, idx) => (
+                        <div
+                          key={idx}
+                          className={`absolute inset-0 transition-opacity duration-500 ${currentSlide === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
                         >
-                          SUBMIT REVIEW
-                        </button>
-                      </form>
+                          <Image
+                            src={img}
+                            alt={`Slide ${idx}`}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      ))}
+
+                      <button
+                        onClick={() =>
+                          setCurrentSlide((prev) =>
+                            prev === 0 ? tourDetails.slide.length - 1 : prev - 1
+                          )
+                        }
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/30 backdrop-blur-md rounded-full text-white hover:bg-white/50"
+                      >
+                        <ChevronLeft />
+                      </button>
+                      <button
+                        onClick={() =>
+                          setCurrentSlide((prev) =>
+                            prev === tourDetails.slide.length - 1 ? 0 : prev + 1
+                          )
+                        }
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/30 backdrop-blur-md rounded-full text-white hover:bg-white/50"
+                      >
+                        <ChevronRight />
+                      </button>
+                    </div>
+                    {/* Thumbnails */}
+                    <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
+                      {tourDetails?.slide?.map((img, idx) => (
+                        <div
+                          key={idx}
+                          onClick={() => setCurrentSlide(idx)}
+                          className={`relative w-20 h-20 flex-shrink-0 cursor-pointer rounded-lg overflow-hidden border-2 transition-all ${currentSlide === idx ? 'border-blue-600 scale-95' : 'border-transparent'}`}
+                        >
+                          <Image
+                            src={img}
+                            alt="thumb"
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>
-              )} */}
+              )}
+
+              {activeTab === 1 && (
+                <div className="animate-in fade-in slide-in-from-bottom-2 duration-500 overflow-x-auto">
+                  <div>
+                    <div className="space-y-3">
+                      {[1, 2, 3, 4, 5].map((num) => (
+                        <div
+                          key={num}
+                          className="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden transition-all"
+                        >
+                          <button
+                            onClick={() => toggle(num)}
+                            className="flex items-center justify-between w-full p-5 text-left bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors"
+                          >
+                            <div className="flex gap-4 items-center">
+                              <span className="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">
+                                Day-{num}
+                              </span>
+                              <span className="font-bold text-slate-700 dark:text-slate-200">
+                                {/* Dynamic key access for Title */}
+                                {tourDetails?.[`day_${num}_title`]?.[locale]}
+                              </span>
+                            </div>
+                            <ChevronDown
+                              className={`w-5 h-5 text-slate-400 transition-transform ${open === num ? 'rotate-180' : ''}`}
+                            />
+                          </button>
+                          {open === num && (
+                            <div className="p-5 bg-slate-50 dark:bg-slate-800/30 text-slate-600 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 leading-relaxed italic">
+                              {/* Dynamic key access for Description */}
+                              {tourDetails?.[`day_${num}_desc`]?.[locale]}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {activeTab === 2 && (
+                <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
+                  <figure className="relative w-full overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800">
+                    <Image
+                      src={tourDetails?.map}
+                      alt="Tour Route Map"
+                      width={1200} // Add your preferred width
+                      height={800} // Add your preferred height
+                      className="w-full h-auto object-cover"
+                      priority // Ensures the map loads quickly when the tab is clicked
+                    />
+                  </figure>
+                </div>
+              )}
+
+              {activeTab === 3 && (
+                <div className="animate-in fade-in duration-500">
+                  <div className="relative aspect-video rounded-2xl overflow-hidden group">
+                    {tourDetails?.slide?.map((img, idx) => (
+                      <div
+                        key={idx}
+                        className={`absolute inset-0 transition-opacity duration-500 ${currentSlide === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                      >
+                        <Image
+                          src={img}
+                          alt={`Slide ${idx}`}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+
+                    <button
+                      onClick={() =>
+                        setCurrentSlide((prev) =>
+                          prev === 0 ? tourDetails.slide.length - 1 : prev - 1
+                        )
+                      }
+                      className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/30 backdrop-blur-md rounded-full text-white hover:bg-white/50"
+                    >
+                      <ChevronLeft />
+                    </button>
+                    <button
+                      onClick={() =>
+                        setCurrentSlide((prev) =>
+                          prev === tourDetails.slide.length - 1 ? 0 : prev + 1
+                        )
+                      }
+                      className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 bg-white/30 backdrop-blur-md rounded-full text-white hover:bg-white/50"
+                    >
+                      <ChevronRight />
+                    </button>
+                  </div>
+                  {/* Thumbnails */}
+                  <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
+                    {tourDetails?.slide?.map((img, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => setCurrentSlide(idx)}
+                        className={`relative w-20 h-20 flex-shrink-0 cursor-pointer rounded-lg overflow-hidden border-2 transition-all ${currentSlide === idx ? 'border-blue-600 scale-95' : 'border-transparent'}`}
+                      >
+                        <Image
+                          src={img}
+                          alt="thumb"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
