@@ -12,7 +12,7 @@ import { FaPlaneDeparture } from 'react-icons/fa'
 import { useTheme } from 'next-themes'
 import { GoIssueClosed } from 'react-icons/go'
 import { RxCross2 } from 'react-icons/rx'
-import { ChevronDown } from 'lucide-react'
+import { Calendar1Icon, ChevronDown } from 'lucide-react'
 import { ChevronLeft, ChevronRight } from '@mui/icons-material'
 
 const SingleDestination = ({ destId, tourId }) => {
@@ -34,7 +34,6 @@ const SingleDestination = ({ destId, tourId }) => {
     setOpen(open === index ? null : index)
   }
 
-
   const [currentSlide, setCurrentSlide] = useState(0)
 
   if (isLoading)
@@ -46,7 +45,7 @@ const SingleDestination = ({ destId, tourId }) => {
     return <div className="p-10 text-center">Tour Not Found!</div>
 
   return (
-    <main className="max-w-7xl mx-auto">
+    <main className="">
       {/* Image Section */}
       <div className="relative w-full h-[450px] overflow-hidden rounded-sm shadow-lg">
         <Image
@@ -108,7 +107,7 @@ const SingleDestination = ({ destId, tourId }) => {
             </div>
           </div>
           {/* --- Tab Section --- */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 md:mt-12 mb-20">
+          <div className="">
             <div className="flex border-b border-gray-200 overflow-x-auto no-scrollbar gap-4 sm:gap-8">
               {['Details', 'Itinerary', 'Map', 'Photos', 'Review'].map(
                 (tab, index) => (
@@ -132,7 +131,7 @@ const SingleDestination = ({ destId, tourId }) => {
               )}
             </div>
 
-            <div className="py-6 md:py-8 min-h-[200px] leading-relaxed">
+            <div className=" min-h-[200px] leading-relaxed">
               {activeTab === 0 && (
                 <div className="animate-in fade-in slide-in-from-bottom-2 duration-500">
                   <h2
@@ -471,7 +470,143 @@ const SingleDestination = ({ destId, tourId }) => {
               <h2 className="text-2xl p-3.5 font-bold text-white bg-blue-500 ">
                 $1,250
               </h2>
-              {/* <hr className=" border-red-400/50 w-full mt-7" /> */}
+              <div className="lg:col-span-4">
+                <div className="sticky top-24 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800  shadow-2xl p-6">
+                  <h1 className="text-xl font-black mb-6 flex items-center gap-2 dark:text-white uppercase tracking-tighter">
+                    <Calendar1Icon className="text-blue-600" /> Book This Tour
+                  </h1>
+
+                  <div className="space-y-6">
+                    <div>
+                      <label className="block text-xs font-bold text-slate-400 uppercase mb-2">
+                        Select Date
+                      </label>
+                      <input
+                        type="date"
+                        className="w-full p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 dark:text-white focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <h2 className="text-xs font-bold text-slate-400 uppercase">
+                        Select Time
+                      </h2>
+                      <div className="grid grid-cols-2 gap-3">
+                        {['12:00', '19:00'].map((time) => (
+                          <label
+                            key={time}
+                            className="flex items-center justify-center gap-2 p-3 border dark:border-slate-800 rounded-xl cursor-pointer hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all dark:text-white"
+                          >
+                            <input
+                              type="radio"
+                              name="tourTime"
+                              className="w-4 h-4 accent-blue-600"
+                            />
+                            <span className="font-medium">{time}</span>
+                          </label>
+                        ))}
+                      </div>
+                    </div>
+
+                    <hr className="dark:border-slate-800" />
+
+                    <div className="space-y-4">
+                      <h1 className="text-xs font-bold text-slate-400 uppercase">
+                        Tickets
+                      </h1>
+                      <div className="space-y-3">
+                        <div className="flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl">
+                          <h1 className="text-sm font-medium dark:text-slate-200">
+                            Adult (14+ years) $20
+                          </h1>
+                          <input
+                            min={0}
+                            type="number"
+                            defaultValue={0}
+                            className="w-16 p-1 border rounded-md dark:bg-slate-700 dark:border-slate-600 dark:text-white text-center"
+                          />
+                        </div>
+                        <div className="flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl">
+                          <h1 className="text-sm font-medium dark:text-slate-200">
+                            Youth (13-17 years) $20
+                          </h1>
+                          <input
+                            min={0}
+                            type="number"
+                            defaultValue={0}
+                            className="w-16 p-1 border rounded-md dark:bg-slate-700 dark:border-slate-600 dark:text-white text-center"
+                          />
+                        </div>
+                        <div className="flex justify-between items-center bg-slate-50 dark:bg-slate-800/50 p-3 rounded-xl">
+                          <h1 className="text-sm font-medium dark:text-slate-200">
+                            Children (13-17 years) $15
+                          </h1>
+                          <input
+                            min={0}
+                            type="number"
+                            defaultValue={0}
+                            className="w-16 p-1 border rounded-md dark:bg-slate-700 dark:border-slate-600 dark:text-white text-center"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <hr className="dark:border-slate-800" />
+
+                    <div className="space-y-3">
+                      <h1 className="text-xs font-bold text-slate-400 uppercase">
+                        Add Extra:
+                      </h1>
+                      <div className="flex justify-between items-center text-sm dark:text-slate-300">
+                        <div className="flex gap-2">
+                          <input
+                            type="checkbox"
+                            className="w-4 h-4 accent-blue-600"
+                          />
+                          <h1>Service per booking</h1>
+                        </div>
+                        <span className="font-bold">$30.00</span>
+                      </div>
+                      <div className="flex justify-between items-center text-sm dark:text-slate-300">
+                        <div className="flex gap-2">
+                          <input
+                            type="checkbox"
+                            className="w-4 h-4 accent-blue-600"
+                          />
+                          <h1>Service per person</h1>
+                        </div>
+                        <span className="font-bold">$20.00</span>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2 pt-4">
+                      <div className="flex justify-between text-sm dark:text-slate-400">
+                        <h1>Adult Total:</h1>
+                        <h1 className="font-bold">$15.00</h1>
+                      </div>
+                      <div className="flex justify-between text-sm dark:text-slate-400">
+                        <h1>Youth Total:</h1>
+                        <h1 className="font-bold">$20.00</h1>
+                      </div>
+                    </div>
+
+                    <hr className="dark:border-slate-800" />
+
+                    <div className="flex justify-between items-center">
+                      <h1 className="text-lg font-bold dark:text-white">
+                        Total Cost:
+                      </h1>
+                      <h1 className="text-2xl font-black text-blue-600">
+                        $300.00
+                      </h1>
+                    </div>
+
+                    <button className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-2xl font-bold text-lg shadow-lg shadow-blue-200 dark:shadow-none transition-all transform hover:-translate-y-1 active:scale-95">
+                      Book Now
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </aside>
