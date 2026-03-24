@@ -24,8 +24,8 @@ export const navItems = [
   },
   {
     id: 3,
-    name: 'reviews',
-    path: '/reviews',
+    name: 'Destination',
+    path: '/destination',
     icon: <RateReviewIcon></RateReviewIcon>,
     access: 'public',
   },
