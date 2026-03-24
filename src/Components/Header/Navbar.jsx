@@ -24,9 +24,7 @@ import toast from 'react-hot-toast'
 const Navbar = () => {
   const locale = useLocale()
   const t = useTranslations('Navbar')
-  console.log('Current Locale:', locale)
-  console.log('Logo Text:', t('logo_text'))
-  console.log('Title:', t('title'))
+
   const router = useRouter()
   const queryClient = useQueryClient()
   const [isOpen, setIsOpen] = useState(false)
@@ -190,8 +188,8 @@ const Navbar = () => {
                   />
                 </figure>
                 <span className="font-bold text-xl tracking-tight uppercase">
-                  <span className="text-emerald-600">{t('logo_text')}</span>
-                  <span className="text-slate-700 dark:text-slate-300">
+                  <span className="text-blue-600 italic">{t('logo_text')}</span>
+                  <span className="text-blue-600 italic ">
                     {t('title')}
                   </span>
                 </span>
@@ -225,10 +223,8 @@ const Navbar = () => {
 
                       {t(item.name)}
 
-                     
                       {isActive && (
                         <div className="absolute -bottom-1 left-0 w-full flex flex-col items-center">
-
                           <motion.div
                             layoutId="activeArrow"
                             className="w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-b-[5px] border-b-blue-600"
@@ -260,7 +256,7 @@ const Navbar = () => {
                   <button className="relative p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full transition-colors group">
                     <BsCart3
                       size={22}
-                      className={`${theme==="dark"?"text-white":"text-black"} group-hover:text-blue-600`}
+                      className={`${theme === 'dark' ? 'text-white' : 'text-black'} group-hover:text-blue-600`}
                     />
                     <span className="absolute top-0 right-0 flex h-4 w-4 items-center justify-center rounded-full bg-blue-600 text-[10px] text-white">
                       {card?.length}
@@ -358,20 +354,17 @@ const Navbar = () => {
                   onClick={() => setIsOpen(true)}
                   className="group hidden md:flex items-center  gap-2 px-3 py-2.5 rounded-xl border border-gray-200 backdrop-blur-md hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 shadow-sm active:scale-95"
                 >
-
                   <div className="relative">
                     <BsGlobe
                       className={`${theme == 'dark' ? 'text-white' : 'text-black'} group-hover:text-blue-600 transition-colors duration-300`}
                       size={20}
                     />
 
-
                     <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500 border border-white"></span>
                     </span>
                   </div>
-
 
                   <span
                     className={`text-xs ${theme == 'dark' ? 'text-white' : 'text-black'} font-semibold text-black group-hover:text-blue-700 uppercase tracking-wide`}
@@ -382,7 +375,6 @@ const Navbar = () => {
                 <AnimatePresence>
                   {isOpen && (
                     <>
-
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -390,7 +382,6 @@ const Navbar = () => {
                         onClick={() => setIsOpen(false)}
                         className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[999]"
                       />
-
 
                       <motion.div
                         initial={{ y: '-100%' }}
@@ -534,20 +525,17 @@ const Navbar = () => {
                     onClick={() => setIsOpen(true)}
                     className="group flex items-center gap-2 px-3 py-2 rounded-xl border border-gray-200 backdrop-blur-md hover:bg-blue-50 hover:border-blue-200 transition-all duration-300 shadow-sm active:scale-95"
                   >
-
                     <div className="relative">
                       <BsGlobe
                         className={`${theme == 'dark' ? 'text-white' : 'text-black'} group-hover:text-blue-600 transition-colors duration-300`}
                         size={20}
                       />
 
-
                       <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-blue-500 border border-white"></span>
                       </span>
                     </div>
-
 
                     <span
                       className={`text-xs ${theme == 'dark' ? 'text-white' : 'text-black'} font-semibold text-black group-hover:text-blue-700 uppercase tracking-wide`}

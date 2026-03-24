@@ -1,7 +1,7 @@
 {
   "Navbar": {
     "logo_text": "Travel",
-    "title": "MATE",
+    "title": " Tour",
     "home": "Home",
     "explore": "Explore",
     "Destination": "Destination",
@@ -78,6 +78,9 @@
     "placeholderComment": "Enter Your Comment..",
     "errorMessage": "This field is required",
     "message": "Message sent successfully!"
+  },
+  "footer":{
+    "foot_text":"Travel is not just about moving from one place to another; it is about gathering new experiences and building timeless memories. Travel Tour is committed to turning those dreams into reality. From safe journeys and comfortable stays to making every moment unforgettable—we are right by your side. Let’s explore the world together."
   }
 
 }
