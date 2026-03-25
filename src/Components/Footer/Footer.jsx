@@ -4,10 +4,12 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import PersonalInjuryIcon from '@mui/icons-material/PersonalInjury'
+
 import {
   FaFacebookF,
-  FaInstagram,
-  FaTwitter,
+
   FaYoutube,
   FaEnvelope,
   FaPhoneAlt,
@@ -21,7 +23,7 @@ import { useSession } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-
+import XIcon from '@mui/icons-material/X'
 const Footer = () => {
   const { data: session } = useSession()
   const pathname = usePathname()
@@ -48,28 +50,44 @@ const { data: paymentImg = [] } = useQuery({
   const contactItems = [
     {
       icon: FaEnvelope,
-      href: 'mailto:support@travelmate.com',
-      text: 'support@travelmate.com',
+      href: 'sharifullinkdin2025@gmail.com',
+      text: 'sharifullinkdin2025@gmail.com',
       isLink: true,
     },
     {
       icon: FaPhoneAlt,
-      href: 'tel:+1234567890',
-      text: '+1 (234) 567-890',
+      href: 'mob:- 01829197321',
+      text: 'mob:- 01829197321',
       isLink: true,
     },
     {
       icon: IoLocationSharp,
-      text: '123 Travel Street, Adventure City',
+      text: '1230 Uttara-Dhaka  Bangladesh',
       isLink: false,
     },
   ]
 
   const socialLinks = [
-    { icon: FaFacebookF, href: '#', color: 'hover:bg-blue-600' },
-    { icon: FaInstagram, href: '#', color: 'hover:bg-pink-600' },
-    { icon: FaTwitter, href: '#', color: 'hover:bg-sky-500' },
-    { icon: FaYoutube, href: '#', color: 'hover:bg-red-600' },
+    {
+      icon: FaFacebookF,
+      href: 'https://www.facebook.com/profile.php?id=61577170528426',
+      color: 'hover:bg-blue-600',
+    },
+    {
+      icon: LinkedInIcon,
+      href: 'https://www.linkedin.com/in/sharifulalam-dev',
+      color: 'hover:bg-pink-600',
+    },
+    {
+      icon: PersonalInjuryIcon,
+      href: 'https://sharifulalam.vercel.app/',
+      color: 'hover:bg-sky-500',
+    },
+    {
+      icon: FaYoutube,
+      href: 'https://www.youtube.com/@THEBANGLADESHTIMES-x4k',
+      color: 'hover:bg-red-600',
+    },
   ]
 
   if (!mounted) return null
@@ -98,19 +116,19 @@ const { data: paymentImg = [] } = useQuery({
                   <span className="font-bold text-xl tracking-tight uppercase italic text-blue-600">
                     {t('logo_text')} {t('title')}
                   </span>
-                  <span className="text-[10px] font-medium tracking-[2px] text-slate-500 uppercase">
+                  <span className="text-[10px] font-medium tracking-[2px] text-blue-600 uppercase">
                     Your Travel Partner
                   </span>
                 </div>
               </Link>
-              <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              <p className="text-sm leading-relaxed text-white">
                 {foot('foot_text')}
               </p>
             </div>
 
             {/* QUICK LINKS SECTION */}
             <div className="flex flex-col space-y-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white border-b border-blue-600 w-max pb-1">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-white border-b border-blue-600 w-max pb-1">
                 Quick Explore
               </h3>
               <nav className="flex flex-col space-y-3">
@@ -128,7 +146,7 @@ const { data: paymentImg = [] } = useQuery({
                         className={`group flex items-center gap-2 text-[15px] font-medium transition duration-300 ${
                           isActive
                             ? 'text-blue-600'
-                            : 'hover:text-blue-600 text-slate-600 dark:text-slate-400'
+                            : 'hover:text-blue-600 text-white'
                         }`}
                       >
                         <GiCommercialAirplane
@@ -144,7 +162,7 @@ const { data: paymentImg = [] } = useQuery({
 
             {/* CONTACT SECTION */}
             <div className="flex flex-col space-y-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white border-b border-blue-600 w-max pb-1">
+              <h3 className="text-sm font-bold uppercase tracking-wider  text-white border-b border-blue-600 w-max pb-1">
                 Contact Us
               </h3>
               <ul className="space-y-4">
@@ -152,10 +170,10 @@ const { data: paymentImg = [] } = useQuery({
                   const Icon = item.icon
                   const content = (
                     <div className="flex items-center gap-4 group cursor-pointer">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-slate-100 text-slate-600 transition-colors group-hover:bg-blue-600 group-hover:text-white dark:bg-slate-800 dark:text-slate-400">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg  text-white transition-colors group-hover:bg-blue-600 group-hover:text-white ">
                         <Icon size={16} />
                       </div>
-                      <span className="text-sm text-slate-600 transition-colors group-hover:text-blue-600 dark:text-slate-400 dark:group-hover:text-blue-400">
+                      <span className="text-sm  transition-colors group-hover:text-blue-600 text-white dark:group-hover:text-blue-400">
                         {item.text}
                       </span>
                     </div>
@@ -175,10 +193,10 @@ const { data: paymentImg = [] } = useQuery({
 
             {/* SOCIAL SECTION */}
             <div className="flex flex-col space-y-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 dark:text-white border-b border-blue-600 w-max pb-1">
+              <h3 className="text-sm font-bold uppercase tracking-wider  text-white border-b border-blue-600 w-max pb-1">
                 Newsletter
               </h3>
-              <p className="text-sm text-slate-600 dark:text-slate-400">
+              <p className="text-sm text-white">
                 Subscribe to get latest travel updates and offers.
               </p>
               <div className="flex gap-3">
@@ -189,7 +207,7 @@ const { data: paymentImg = [] } = useQuery({
                       key={i}
                       whileHover={{ y: -5 }}
                       href={social.href}
-                      className={`flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-all duration-300 hover:text-white dark:border-slate-800 dark:bg-slate-900 dark:text-slate-400 ${social.color}`}
+                      className={`flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white  shadow-sm transition-all duration-300 hover:text-white dark:border-slate-800 dark:bg-slate-900 text-white ${social.color}`}
                     >
                       <Icon size={16} />
                     </motion.a>
@@ -240,10 +258,10 @@ const { data: paymentImg = [] } = useQuery({
           <div className=" mt-5 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent "></div>
           {/* BOTTOM BAR */}
           <div className="mt-8 flex flex-col items-center justify-between gap-6 md:flex-row">
-            <p className="text-xs text-slate-500">
-              © {currentYear} TravelMate. Crafted by Shariful Alam.
+            <p className="text-xs text-white">
+              © {currentYear} Travel Tour. Crafted by Shariful Alam.
             </p>
-            <div className="flex items-center gap-6 text-xs font-medium text-slate-600 dark:text-slate-400">
+            <div className="flex items-center gap-6 text-xs font-medium text-white">
               <Link href="#" className="hover:text-blue-600 transition">
                 Privacy Policy
               </Link>
