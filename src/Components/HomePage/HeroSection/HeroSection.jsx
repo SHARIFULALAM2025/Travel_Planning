@@ -17,7 +17,7 @@ const   HeroSection=()=> {
 
   return (
     <section
-      className={`w-full ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'} py-20 px-6 lg:px-20`}
+      className={`w-full ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'} py-3`}
     >
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
         {/* LEFT SIDE */}
@@ -50,19 +50,19 @@ const   HeroSection=()=> {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           <span className="text-blue-600 font-semibold tracking-widest uppercase">
             Discover Yourself
           </span>
 
           <h1
-            className={`text-4xl lg:text-5xl font-bold ${theme == 'dark' ? 'text-white' : 'text-black'}  text-gray-800 leading-tight`}
+            className={`text-4xl lg:text-3xl font-bold ${theme == 'dark' ? 'text-white' : 'text-black'}  text-gray-800 leading-tight`}
           >
-            A Simply Perfect <br />
-            <span className="text-blue-600">Place To Get Lost</span>
+            A Simply Perfect
+            <span className="text-blue-600"> Place To Get Lost</span>
           </h1>
 
-          <div className="w-20 h-1 bg-blue-600 rounded"></div>
+          <div className=" w-30 border-b border-blue-600 rounded"></div>
 
           <p
             className={`text-gray-600 text-lg ${theme == 'dark' ? 'text-white' : 'text-black'} leading-relaxed`}
