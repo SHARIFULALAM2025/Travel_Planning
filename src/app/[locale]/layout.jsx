@@ -20,7 +20,7 @@ const geistSans = Geist({
 })
 
 export const metadata = {
-  title: 'TravelMate',
+  title: 'Travel Tour',
   description: 'Your Ultimate Travel Companion',
 }
 

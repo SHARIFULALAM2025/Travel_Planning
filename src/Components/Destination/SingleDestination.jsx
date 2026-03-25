@@ -427,7 +427,7 @@ const SingleDestination = ({ destId, tourId }) => {
                       <ChevronRight />
                     </button>
                   </div>
-                  {/* Thumbnails */}
+                  
                   <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
                     {tourDetails?.slide?.map((img, idx) => (
                       <div
