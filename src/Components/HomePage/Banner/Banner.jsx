@@ -84,7 +84,7 @@ const Banner = ({allData}) => {
   if (!mounted) return null
 
   return (
-    <section className="relative w-full min-h-[90vh] lg:h-[85vh] flex items-center justify-center overflow-visible py-10 lg:py-0">
+    <section className="relative w-full min-h-[90vh] lg:h-[85vh] flex items-center justify-center overflow-visible py-3">
       {/* Background slider code */}
       {images.map((img, index) => (
         <div

@@ -1,104 +1,126 @@
-"use client";
-import { useTheme } from "next-themes";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+'use client'
+import { useTheme } from 'next-themes'
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import EastIcon from '@mui/icons-material/East'
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
+import { useLocale } from 'next-intl'
+import { IoIosArrowForward } from 'react-icons/io'
+import Link from 'next/link'
+import { SiGooglemaps } from 'react-icons/si'
 
-const destinations = [
-  { id: 1, title: "Discover India", price: "$2650", image: "/assets/image124.jpg" },
-  { id: 2, title: "Forest Adventure", price: "$1350", image: "/assets/image124.jpg" },
-  { id: 3, title: "China Tour", price: "$1500", image: "/assets/image124.jpg" },
-  { id: 4, title: "Mountain Escape", price: "$2100", image: "/assets/image124.jpg" },
-  { id: 5, title: "Beach Paradise", price: "$1800", image: "/assets/image124.jpg" },
-  { id: 6, title: "Desert Safari", price: "$1400", image: "/assets/image124.jpg" },
-  { id: 7, title: "Tokyo Lights", price: "$3000", image: "/assets/image124.jpg" },
-  { id: 8, title: "Swiss Alps", price: "$3500", image: "/assets/image124.jpg" },
-  { id: 9, title: "Beach Paradise", price: "$1800", image: "/assets/image124.jpg" },
-  { id: 10, title: "Desert Safari", price: "$1400", image: "/assets/image124.jpg" },
-  { id: 11, title: "Tokyo Lights", price: "$3000", image: "/assets/image124.jpg" },
-  { id: 12, title: "Swiss Alps", price: "$3500", image: "/assets/image124.jpg" },
-];
+const PopularDestination = () => {
+  const locale = useLocale()
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
- const  PopularDestination=()=> {
-  const [active, setActive] = useState(0);
+  const { data: destinations = [], isLoading } = useQuery({
+    queryKey: ['All-des', locale],
+    queryFn: async () => {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/all-destination`
+      )
+      return res.data
+    },
+  })
 
-  const itemsPerSlide = 4;
-  const totalSlides = Math.ceil(destinations.length / itemsPerSlide);
-
-  const startIndex = active * itemsPerSlide;
-  const currentItems = destinations.slice(
-    startIndex,
-    startIndex + itemsPerSlide
-   );
-    const { theme } = useTheme()
-      const [mounted, setMounted] = useState(false)
-useEffect(() => {
+  useEffect(() => {
     setMounted(true)
   }, [])
 
   if (!mounted) return null
+
   return (
-    <section className={` py-20 ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        {/* Header */}
-        <div className="mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Popular Destinations
-          </h2>
-          <p className="mt-3 text-gray-500">
-            Discover top destinations with all the essential travel info at a
-            glance.
-          </p>
-        </div>
-        {/* Cards */}
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {currentItems.map((item) => (
-            <div
-              key={item.id}
-              className="relative group overflow-hidden rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer bg-white"
-            >
-              {/* Image */}
-              <div className="relative h-[300px] w-full overflow-hidden">
+    <section
+      className={`${theme === 'dark' ? 'bg-slate-950' : 'bg-gray-50'} mt-2 px-4`}
+    >
+      {/* Section Header */}
+      <div className="text-center space-y-2 mb-8">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
+          Top <span className="text-blue-600">Destinations</span>
+        </h2>
+        <p
+          className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'} text-lg leading-relaxed`}
+        >
+          Explore our top destinations voted by more than 100,000+ customers
+          around the world.
+        </p>
+        <Link
+          href="/destination"
+          className="inline-flex items-center gap-2 text-blue-600 font-bold text-lg hover:underline transition-all group"
+        >
+          View All Destinations
+          <EastIcon className="group-hover:translate-x-2 transition-transform" />
+        </Link>
+      </div>
+
+      {/* Grid Layout - 4 Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {isLoading
+          ? [1, 2, 3, 4].map((n) => (
+              <div
+                key={n}
+                className="h-[400px] bg-gray-800 animate-pulse rounded-2xl"
+              />
+            ))
+          : destinations.slice(0, 4).map((item, index) => (
+              <div
+                key={index}
+                className="group relative h-[400px] w-full overflow-hidden rounded-xl shadow-2xl cursor-pointer bg-slate-800"
+              >
+                {/* Image */}
                 <Image
                   src={item.image}
-                  alt={item.title}
+                  alt={item.location?.[locale]}
                   fill
-                  className="object-cover transition duration-700 group-hover:scale-110"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10" />
+
+                {/* Content Container */}
+                
+                <div className="absolute inset-x-0 bottom-0 p-6 z-20 transition-all duration-500 transform lg:group-hover:-translate-y-2">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2 text-blue-400">
+                      <SiGooglemaps className="w-4 h-4" />
+                      <span className="text-xs font-semibold uppercase tracking-widest">
+                        Explore
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white leading-tight">
+                      {item.location?.[locale]}
+                    </h3>
+                  </div>
+
+                  {/* Animated Button/Link */}
+
+                  <div className="mt-4 overflow-hidden transition-all duration-500 h-10 opacity-100 lg:h-0 lg:opacity-0 lg:group-hover:h-10 lg:group-hover:opacity-100">
+                    <Link
+                      href={`/destination/${item._id}`}
+                      className="w-full py-2 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-colors"
+                    >
+                      View All TOUR
+                      <IoIosArrowForward />
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+                {/* Tour Count Badge */}
+                <div className="absolute top-4 right-4 bg-yellow-300 backdrop-blur-md px-3 py-1 rounded-xl border border-white/20 z-20">
+                  <span className="text-sm font-medium text-black italic">
+                    {item.tours?.[locale]}
+                  </span>
+                </div>
               </div>
-
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition duration-500"></div>
-
-              {/* Content */}
-              <div className="absolute bottom-5 left-5 right-5 flex flex-col gap-2">
-                {/* Price Badge */}
-                <span className="self-start px-4 py-1 text-sm bg-white/20 backdrop-blur-md text-white rounded-full border border-white/30 shadow">
-                  {item.price}
-                </span>
-
-                {/* Title */}
-                <h3 className="text-lg font-semibold text-white tracking-wide">
-                  {item.title}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Dots */}
-        <div className="flex justify-center mt-10 gap-3">
-          {Array.from({ length: totalSlides }).map((_, index) => (
-            <span
-              key={index}
-              onClick={() => setActive(index)}
-              className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300
-                ${active === index ? 'bg-blue-600 scale-125' : 'bg-gray-300'}`}
-            ></span>
-          ))}
-        </div>
+            ))}
       </div>
     </section>
   )
 }
-export default PopularDestination;
+
+export default PopularDestination
