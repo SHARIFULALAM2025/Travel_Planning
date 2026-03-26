@@ -1,143 +1,191 @@
-"use client";
-import Image from "next/image";
-import { ArrowRight, Plus } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+'use client'
+
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
+import { useLocale } from 'next-intl'
+import { useTheme } from 'next-themes'
+import Image from 'next/image'
+import { useEffect, useState, useCallback, useMemo } from 'react'
+import { FaStar } from 'react-icons/fa'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const Stories = () => {
-  const stories = [
-    {
-      id: 1,
-      image:
-        "https://i.ibb.co.com/39j802bV/Hidden-Lake-Lookout27-min-scaled.webp",
-      author: "Emily Carter",
-      readTime: "6 min read",
-      title: "A Weekend in the Mountains",
-      tags: ["mountains", "weekend"],
-    },
-    {
-      id: 2,
-      image:
-        "https://i.ibb.co.com/39j802bV/Hidden-Lake-Lookout27-min-scaled.webp",
-      author: "Liam Nguyen",
-      readTime: "4 min read",
-      title: "Hidden Alpine Trails",
-      tags: ["hiking", "alpine"],
-    },
-    {
-      id: 3,
-      image:
-        "https://i.ibb.co.com/39j802bV/Hidden-Lake-Lookout27-min-scaled.webp",
-      author: "Sophia Lee",
-      readTime: "5 min read",
-      title: "Coastal Escape Guide",
-      tags: ["beach", "travel"],
-    },
-    {
-      id: 4,
-      image:
-        "https://i.ibb.co.com/39j802bV/Hidden-Lake-Lookout27-min-scaled.webp",
-      author: "Daniel Kim",
-      readTime: "7 min read",
-      title: "City Adventure Tips",
-      tags: ["city", "guide"],
-    },
-  ];
-const { theme } = useTheme()
-const [mounted, setMounted] = useState(false)
+  const { theme } = useTheme()
+  const locale = useLocale()
+  const [mounted, setMounted] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [itemsVisible, setItemsVisible] = useState(3)
 
-useEffect(() => {
-  setMounted(true)
-}, [])
 
-if (!mounted) return null
+  const { data: comments = [], isLoading } = useQuery({
+    queryKey: ['All comment', locale],
+    queryFn: async () => {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/all-comments`
+      )
+      return res.data
+    },
+  })
+
+  
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) setItemsVisible(1)
+      else if (window.innerWidth < 1280) setItemsVisible(2)
+      else setItemsVisible(3)
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+
+  const maxIndex = useMemo(() => {
+    return Math.max(0, comments.length - itemsVisible)
+  }, [comments.length, itemsVisible])
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
+  }, [maxIndex])
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1))
+  }
+
+
+  useEffect(() => {
+    if (comments.length === 0) return
+    const timer = setInterval(nextSlide, 5000)
+    return () => clearInterval(timer)
+  }, [nextSlide, comments.length])
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
+  const bgStyle =
+    theme === 'dark'
+      ? {
+          backgroundColor: '#0F172A',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+        }
+      : {
+          backgroundColor: '#FFFFFF',
+        }
+
   return (
-    <section className={`py-20 ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-14 gap-6">
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Traveler Stories
-            </h2>
-            <p className="mt-3 text-gray-500">
-              Real experiences shared by our travel community.
-            </p>
-          </div>
+    <section
+      style={bgStyle}
+      className="py-20 px-4 transition-colors duration-300 overflow-hidden"
+    >
+      <div className="max-w-[1440px] mx-auto relative group">
 
-          <button
-            className="inline-flex items-center gap-2 px-5 py-2.5
-            rounded-xl text-sm font-semibold
-            bg-indigo-600 text-white
-            shadow-md hover:shadow-xl
-            hover:bg-indigo-700
-            transition-all duration-300 hover:-translate-y-1"
+        <div className="text-center mb-16">
+          <h2
+            className={`text-4xl md:text-5xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
           >
-            <Plus size={16} />
-            Share Your Story
-          </button>
+            What our customers are{' '}
+            <span className="font-light">saying about us</span>
+          </h2>
         </div>
 
-        {/* Overlay Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stories.map((s) => (
-            <div
-              key={s.id}
-              className="relative group overflow-hidden rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 cursor-pointer"
+
+        {comments.length > itemsVisible && (
+          <>
+            <button
+              onClick={prevSlide}
+              className="absolute -left-2 md:-left-6 top-[60%] -translate-y-1/2 z-30 p-3 bg-white dark:bg-slate-800 rounded-full shadow-xl hover:bg-blue-600 hover:text-white transition-all active:scale-90"
             >
-              {/* Image */}
-              <div className="relative h-[320px] w-full overflow-hidden">
-                <Image
-                  src={s.image}
-                  alt={s.title}
-                  fill
-                  className="object-cover transition duration-700 group-hover:scale-110"
-                />
-              </div>
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute -right-2 md:-right-6 top-[60%] -translate-y-1/2 z-30 p-3 bg-white dark:bg-slate-800 rounded-full shadow-xl hover:bg-blue-600 hover:text-white transition-all active:scale-90"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </>
+        )}
 
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-90 group-hover:opacity-100 transition duration-500"></div>
 
-              {/* Content */}
-              <div className="absolute bottom-5 left-5 right-5 text-white flex flex-col gap-2">
-                {/* Author + Read Time */}
-                <div className="text-xs flex items-center gap-2 opacity-90">
-                  <span className="font-semibold">{s.author}</span>
-                  <span>• {s.readTime}</span>
+        {isLoading ? (
+          <div className="flex justify-center py-20">Loading stories...</div>
+        ) : (
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{
+                transform: `translateX(-${currentIndex * (100 / itemsVisible)}%)`,
+              }}
+            >
+              {comments.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="px-3"
+                  style={{ minWidth: `${100 / itemsVisible}%` }}
+                >
+                  <div
+                    className={`p-8 h-[350px] bg-white dark:bg-slate-800 rounded-3xl shadow-sm border border-gray-100 dark:border-slate-700 relative flex flex-col justify-between`}
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center gap-4">
+                          <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-blue-100">
+                            <Image
+                              src={item?.image || '/default-avatar.png'}
+                              alt="user"
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                          <div>
+                            <h4 className="font-bold dark:text-white">
+                              {item?.name?.[locale]}
+                            </h4>
+                            <p className="text-xs text-white line-clamp-1">
+                              {item?.email?.[locale]}
+                            </p>
+                          </div>
+                        </div>
+                        <div className="flex text-yellow-400 gap-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <FaStar
+                              key={i}
+                              size={14}
+                              className={
+                                i < parseInt(item?.rating?.[locale] || 5)
+                                  ? 'fill-current'
+                                  : 'text-gray-200'
+                              }
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      <p className="text-gray-600 dark:text-white leading-relaxed italic line-clamp-6">
+                        “{item?.comment?.[locale]}”
+                      </p>
+                    </div>
+
+
+                    <div className="flex justify-center gap-1.5 mt-4">
+                      {[...Array(maxIndex + 1)].map((_, i) => (
+                        <div
+                          key={i}
+                          className={`h-1.5 rounded-full transition-all ${currentIndex === i ? 'w-6 bg-blue-600' : 'w-1.5 bg-gray-300 dark:bg-gray-600'}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-lg font-semibold leading-snug">
-                  {s.title}
-                </h3>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mt-1">
-                  {s.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs bg-white/20 backdrop-blur-md
-                      px-3 py-1 rounded-full border border-white/30"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Read Button */}
-                <div className="mt-3">
-                  <span className="inline-flex items-center gap-2 text-sm font-medium">
-                    Read Story
-                    <ArrowRight size={14} />
-                  </span>
-                </div>
-              </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        )}
       </div>
     </section>
   )
-};
+}
 
-export default Stories;
+export default Stories
