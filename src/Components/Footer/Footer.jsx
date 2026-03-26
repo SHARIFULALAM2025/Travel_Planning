@@ -7,13 +7,7 @@ import { motion } from 'framer-motion'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import PersonalInjuryIcon from '@mui/icons-material/PersonalInjury'
 
-import {
-  FaFacebookF,
-
-  FaYoutube,
-  FaEnvelope,
-  FaPhoneAlt,
-} from 'react-icons/fa'
+import { FaFacebookF, FaYoutube, FaEnvelope, FaPhoneAlt } from 'react-icons/fa'
 import { IoLocationSharp } from 'react-icons/io5'
 import Container from '../Container/Container'
 import { useLocale, useTranslations } from 'next-intl'
@@ -23,25 +17,35 @@ import { useSession } from 'next-auth/react'
 import { usePathname } from 'next/navigation'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
-import XIcon from '@mui/icons-material/X'
+import { useTheme } from 'next-themes'
+
 const Footer = () => {
   const { data: session } = useSession()
+  const { theme } = useTheme()
   const pathname = usePathname()
   const [mounted, setMounted] = useState(false)
   const currentYear = new Date().getFullYear()
   const locale = useLocale()
   const t = useTranslations('Navbar')
   const foot = useTranslations('footer')
-const { data: paymentImg = [] } = useQuery({
-  queryKey: ['All img', ],
-  queryFn: async () => {
-    const res = await axios.get(
-      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/all-pay-img`
-    )
-    return res.data
-  },
-})
-  console.log(paymentImg)
+  const { data: paymentImg = [] } = useQuery({
+    queryKey: ['All img'],
+    queryFn: async () => {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/all-pay-img`
+      )
+      return res.data
+    },
+  })
+  const bgStyle =
+    theme === 'dark'
+      ? {
+          backgroundColor: '#0F172A',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+        }
+      : {
+          backgroundColor: '#00041a',
+        }
 
   useEffect(() => {
     setMounted(true)
@@ -93,8 +97,11 @@ const { data: paymentImg = [] } = useQuery({
   if (!mounted) return null
 
   return (
-    <footer className="w-full border-t bg-white transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950">
-      <Container>
+    <Container>
+      <footer
+        style={bgStyle}
+        className="w-full border-t bg-white transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950"
+      >
         <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
           {/* MAIN CONTENT GRID */}
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
@@ -219,7 +226,10 @@ const { data: paymentImg = [] } = useQuery({
 
           {/* DIVIDER */}
           <div className=" mb-5 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent "></div>
-          <div className="bg-[#00041a] text-white p-6 flex flex-col md:flex-row items-center gap-4 ">
+          <div
+            style={bgStyle}
+            className="bg-[#00041a] text-white p-6 flex flex-col md:flex-row items-center gap-4 "
+          >
             {/* Left Side: Label */}
             <div className="md:border-r border-slate-100 pr-6 flex items-center justify-center h-full">
               <span className="text-blue-400 font-semibold whitespace-nowrap">
@@ -271,8 +281,8 @@ const { data: paymentImg = [] } = useQuery({
             </div>
           </div>
         </div>
-      </Container>
-    </footer>
+      </footer>
+    </Container>
   )
 }
 
