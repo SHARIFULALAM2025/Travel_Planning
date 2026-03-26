@@ -1,91 +1,147 @@
 'use client'
 
-import { Plane, Ship, Mountain, PawPrint, Sun } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import { useRouter } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
+import axios from 'axios'
+import { useSession } from 'next-auth/react'
 
-const tours = [
-  { name: 'Self-Guided', icon: Plane, link: '/tours/self-guided' },
-  { name: 'Cruises', icon: Ship, link: '/tours/cruises' },
-  { name: 'Adventure', icon: Mountain, link: '/tours/adventure' },
-  { name: 'Wildlife', icon: PawPrint, link: '/tours/wildlife' },
-  { name: 'Seaside', icon: Sun, link: '/tours/seaside' },
-]
+import { useLocale } from 'next-intl'
+import { useTheme } from 'next-themes'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+
+import { useEffect, useState } from 'react'
+import { FaCartPlus, FaHeart, FaStar } from 'react-icons/fa'
+import { IoEye } from 'react-icons/io5'
 
 const ChooseTour = () => {
-  const router = useRouter()
-const { theme } = useTheme()
-const [mounted, setMounted] = useState(false)
+  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)
+const {data:session}=useSession()
+  const itemsPerPage = 4
+  const locale = useLocale()
+const router=useRouter()
+  const { data: product = [] } = useQuery({
+    queryKey: ['All Product', locale],
+    queryFn: async () => {
+      const res = await axios.get(
+        `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/productAll`
+      )
+      return res.data
+    },
+  })
 
-useEffect(() => {
-  setMounted(true)
-}, [])
+  const lastIndex = currentPage * itemsPerPage
+  const firstIndex = lastIndex - itemsPerPage
+  const currentProducts = product.slice(firstIndex, lastIndex)
 
-if (!mounted) return null
+
+  const handelWishlist = (id) => console.log('Added to wishlist', id)
+  const handelCart = (id) => console.log('Added to cart', id)
+const handleProtectedAction = (actionType, id) => {
+  if (!session) {
+
+    router.push('/signup')
+    return
+  }
+
+
+  if (actionType === 'wishlist') console.log('Added to wishlist', id)
+  if (actionType === 'cart') console.log('Added to cart', id)
+}
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
   return (
-    <section className={`py-20 ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        {/* HEADER same as Stories */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-14 gap-6">
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Choose Your Tour
-            </h2>
-            <p className="mt-3 text-gray-500 max-w-xl">
-              Find your next travel adventure and explore journeys crafted for
-              every traveler — from wildlife expeditions to seaside escapes.
-            </p>
-          </div>
-        </div>
+    <section
+      className={`py-3 ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}`}
+    >
+      <div className="text-center mb-12 px-4">
+        <h2
+          className={`text-3xl md:text-5xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+        >
+          Gear Up for Your <span className="text-blue-600">Next Adventure</span>
+        </h2>
+        <p
+          className={`max-w-2xl mx-auto text-sm md:text-base opacity-80 ${theme === 'dark' ? 'text-gray-300' : 'text-slate-600'}`}
+        >
+          Don’t just travel, travel right. Explore our curated collection of
+          premium travel essentials designed for the modern explorer.
+        </p>
+      </div>
+      <div className="max-w-[1440px] mx-auto px-4">
+        {/* Responsive Grid:
+            Mobile: 1, Tablet: 2, Laptop: 3, Desktop(XL): 4
+        */}
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {currentProducts?.map((item, index) => (
+            <div
+              key={index}
+              className={`p-5 ${theme === 'dark' ? 'bg-slate-800' : 'bg-gray-100'} rounded-xl relative group overflow-hidden shadow-sm transition-all duration-300`}
+            >
+              <div className="h-40 w-full relative">
+                <Image
+                  src={item?.image?.[0]}
+                  fill
+                  alt="product"
+                  className="rounded-xl object-contain mx-auto"
+                />
+              </div>
 
-        {/* Icons */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-12 text-center">
-          {tours.map((tour, i) => {
-            const Icon = tour.icon
-
-            return (
-              <button
-                key={i}
-                onClick={() => router.push(tour.link)}
-                className="group flex flex-col items-center text-center
-  px-6 py-7 rounded-2xl bg-white  border-gray-200
-  shadow-sm hover:shadow-xl
-  transition-all duration-300 hover:-translate-y-2"
+              <h1
+                className={`mt-3 font-semibold line-clamp-1 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
               >
-                {/* Icon container */}
-                <div
-                  className="w-16 h-16 flex items-center justify-center
-    rounded-full bg-gray-50  border-gray-200
-    group-hover:bg-blue-600 group-hover:border-blue-600
-    transition duration-300"
-                >
-                  <Icon
-                    size={30}
-                    strokeWidth={1.8}
-                    className="text-gray-700 group-hover:text-white transition"
-                  />
+                {item?.title?.[locale]}
+              </h1>
+
+              <div className="flex items-center gap-2 my-2">
+                <div className="flex text-amber-400">
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar key={i} size={14} />
+                  ))}
                 </div>
-
-                {/* Label */}
                 <span
-                  className="mt-4 font-semibold text-gray-800 text-lg
-    group-hover:text-blue-700 transition"
+                  className={`${theme === 'dark' ? 'text-gray-300' : 'text-slate-600'} text-xs opacity-70`}
                 >
-                  {tour.name}
+                  {item?.review?.[locale]}
                 </span>
+              </div>
 
-                {/* subtle underline animation */}
-                <div
-                  className="mt-2 h-[2px] w-0 bg-blue-600
-  group-hover:w-8 transition-all duration-300 rounded-full"
-                ></div>
-              </button>
-            )
-          })}
+              <h2 className="font-bold text-blue-600">
+                ${item?.price?.[locale]}
+              </h2>
+
+              {/* Action Buttons */}
+              <div className="absolute flex flex-col gap-2 top-3 right-3 lg:opacity-0 lg:group-hover:opacity-100 lg:translate-x-5 lg:group-hover:translate-x-0 transition-all duration-300">
+                <button
+                  onClick={() => handleProtectedAction('wishlist', item._id)}
+                  className="p-3 bg-white/80 dark:bg-slate-700 text-black dark:text-white shadow-md rounded-full hover:bg-blue-600 hover:text-white transition-colors"
+                >
+                  <FaHeart size={14} />
+                </button>
+                <button
+                  onClick={() => handleProtectedAction('cart', item._id)}
+                  className="p-3 bg-white/80 dark:bg-slate-700 text-black dark:text-white shadow-md rounded-full hover:bg-blue-600 hover:text-white transition-colors"
+                >
+                  <FaCartPlus size={14} />
+                </button>
+                <Link
+                  href={session ? `/shop/${item._id}` : '/signup'}
+                  className="p-3 bg-white/80 dark:bg-slate-700 text-black dark:text-white shadow-md rounded-full hover:bg-blue-600 hover:text-white transition-colors"
+                >
+                  <IoEye size={14} />
+                </Link>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   )
 }
+
 export default ChooseTour
