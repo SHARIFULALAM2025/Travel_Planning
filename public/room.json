@@ -1,0 +1,2068 @@
+[
+  {
+    "title": {
+      "en": "Standard Deluxe",
+      "bn": "স্ট্যান্ডার্ড ডিলাক্স"
+    },
+    "review": {
+      "en": "Review",
+      "bn": "রিভিউ"
+    },
+    "reviewValue": {
+      "en": "5",
+      "bn": "৫"
+    },
+    "bed": {
+      "en": "2 King Beds",
+      "bn": "২টি কিং বেড"
+    },
+    "guest": {
+      "en": "Max: 6 Guests",
+      "bn": "সর্বোচ্চ: ৬ জন অতিথি"
+    },
+    "sqm": {
+      "en": "45 sqm",
+      "bn": "৪৫ বর্গমিটার"
+    },
+    "city": {
+      "en": "City View",
+      "bn": "শহরের দৃশ্য"
+    },
+    "price": {
+      "en": "5000",
+      "bn": "৫০০০"
+    },
+    "night": {
+      "en": "per night",
+      "bn": "প্রতি রাতে"
+    },
+    "hotelDes": {
+      "en": "Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown",
+      "bn": "বহুদূরে, শব্দ-পাহাড়ের আড়ালে, ভোকালিয়া এবং কনসোনান্টিয়া দেশগুলো থেকে অনেক দূরে, বাস করে অন্ধ পাঠ্যগুলো। তারা আলাদাভাবে বাস করে বুকমার্কসগ্রোভ-এ, ঠিক সেম্যান্টিকস নামক এক বিশাল ভাষার মহাসাগরের উপকূলে। ডুডেন নামের একটি ছোট নদী তাদের পাশ দিয়ে বয়ে যায় এবং তাদের প্রয়োজনীয় রেগেলিয়ালিয়া সরবরাহ করে। এটি একটি স্বর্গীয় দেশ, যেখানে বাক্যের ভাজা অংশগুলো আপনার মুখে উড়ে আসে। এমনকি সর্বশক্তিমান পয়েন্টটিং-এরও এই অন্ধ পাঠ্যগুলোর উপর কোনো নিয়ন্ত্রণ নেই; এটি প্রায় এক বানান-বিবর্জিত জীবন। তবে একদিন লরেম ইপসাম নামের একটি ছোট অন্ধ পাঠ্য ব্যাকরণের দূরবর্তী জগতের উদ্দেশ্যে যাত্রা করার সিদ্ধান্ত নিল।বিগ অক্সমক্স তাকে এমনটা করতে বারণ করেছিল, কারণ সেখানে ছিল হাজার হাজার দুষ্ট কমা, বুনো প্রশ্নবোধক চিহ্ন এবং ধূর্ত সেমিকোলন, কিন্তু ছোট্ট অন্ধ পাঠ্যটি শোনেনি। সে তার সাতটি ভার্সালিয়া গুছিয়ে নিল, তার আদ্যক্ষরটি বেল্টে রাখল এবং পথে রওনা দিল। যখন সে ইতালীয় পর্বতমালার প্রথম পাহাড়গুলোতে পৌঁছাল, তখন সে তার নিজ শহরের দিগন্তরেখার দিকে শেষবারের মতো ফিরে তাকাল।"
+    },
+    "amenaties": {
+      "en": "Room Amenities",
+      "bn": "রুমের সুযোগ-সুবিধা"
+    },
+    "roomAmenaties": {
+      "en": [
+        "TV",
+        "Free Wifi",
+        "Safe",
+        "None Smoking",
+        "Air Conditioning",
+        "Heater",
+        "Phone",
+        "Hair Dryer"
+      ],
+      "bn": [
+        "টিভি",
+        "ফ্রি ওয়াইফাই",
+        "সেফটি লকার",
+        "ধূমপান মুক্ত",
+        "এয়ার কন্ডিশনিং",
+        "হিটার",
+        "ফোন",
+        "হেয়ার ড্রায়ার"
+      ]
+    },
+    "HotelAmenities": {
+      "en": "Hotel Amenities",
+      "bn": "হোটেলের সুযোগ-সুবিধা"
+    },
+    "hotelAmenaties": {
+      "en": [
+        "Gym",
+        "Parking",
+        "Spa",
+        "Restaurant",
+        "Room Service",
+        "Swimming Pool",
+        "24 Hour Concierge",
+        "In-house Laundry"
+      ],
+      "bn": [
+        "জিম",
+        "পার্কিং",
+        "স্পা",
+        "রেস্টুরেন্ট",
+        "রুম সার্ভিস",
+        "সুইমিং পুল",
+        "২৪ ঘণ্টা কনসিয়ার্জ",
+        "ইন-হাউস লন্ড্রি"
+      ]
+    },
+    "rule": {
+      "en": "Hotel Rules",
+      "bn": "হোটেলের নিয়মকানুন"
+    },
+    "hotelRule": {
+      "en": [
+        "Smoking not allowed",
+        "Pets not allowed",
+        "Swimming pool closed from 8.00pm - 6.00am"
+      ],
+      "bn": [
+        "ধূমপান নিষেধ",
+        "পোষা প্রাণী অনুমতি নেই",
+        "সুইমিং পুল রাত ৮:০০ টা থেকে সকাল ৬:০০ টা পর্যন্ত বন্ধ থাকে"
+      ]
+    },
+    "image":[
+    "https://i.ibb.co.com/Jwc4GNtT/point3d-commercial-imaging-ltd-oxe-CZrodz78-unsplash.jpg",
+    "https://i.ibb.co.com/8LzpYYvKpoint3d-commercial-imaging-ltd-5-BV56-Sdv-Lmo-unsplash.jpg",
+    "https://i.ibb.co.com/JWJcKBsn/andrew-neel-B4r-EJ09-Puo-unsplash.jpg",
+    "https://i.ibb.co.com/Gvbhm5mB/roberto-nickson-emqn-SQw-QQDo-unsplash.jpg",
+    "https://i.ibb.co.com/kVDr67BN/mark-champs-Id2-IIl1j-OB0-unsplash.jpg"
+  ],
+    "related":[
+      {
+        "title": {
+          "en": "Rustic Mountain Cabin",
+          "bn": "রাস্টিক মাউন্টেন কেবিন"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.9", "bn": "৪.৯" },
+        "bed": {
+          "en": "1 Queen Bed & 2 Bunk Beds",
+          "bn": "১টি কুইন বেড এবং ২টি বাঙ্ক বেড"
+        },
+        "guest": { "en": "Max: 4 Guests", "bn": "সর্বোচ্চ: ৪ জন অতিথি" },
+        "sqm": { "en": "70 sqm", "bn": "৭০ বর্গমিটার" },
+        "city": { "en": "Mountain Range", "bn": "পাহাড়ের সারি" },
+        "price": { "en": "9500", "bn": "৯৫০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Experience a cozy retreat in our log cabin. Features a stone fireplace and panoramic windows to enjoy the snowy peaks and pine forests. Perfect for adventure seekers and nature lovers.",
+          "bn": "আমাদের কাঠের কেবিনে এক আরামদায়ক নির্জনতা উপভোগ করুন। এতে রয়েছে পাথরের ফায়ারপ্লেস এবং তুষারাবৃত পাহাড় ও পাইন বন দেখার জন্য বড় জানালা। অ্যাডভেঞ্চার প্রিয় এবং প্রকৃতি প্রেমীদের জন্য এটি আদর্শ।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Fireplace",
+            "Private Balcony",
+            "Heated Floors",
+            "Coffee Station",
+            "Extra Blankets"
+          ],
+          "bn": [
+            "ফায়ারপ্লেস",
+            "ব্যক্তিগত বারান্দা",
+            "হিটেড ফ্লোর",
+            "কফি স্টেশন",
+            "অতিরিক্ত কম্বল"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": ["Hiking Trails", "Bonfire Area", "Ski Storage", "Restaurant"],
+          "bn": [
+            "হাইকিং ট্রেইল",
+            "বনফায়ার এরিয়া",
+            "স্কি স্টোরেজ",
+            "রেস্টুরেন্ট"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "No open fires outside",
+            "Dispose trash in bins",
+            "Check-out at 10 AM"
+          ],
+          "bn": [
+            "বাইরে আগুন জ্বালানো নিষেধ",
+            "নির্দিষ্ট স্থানে ময়লা ফেলুন",
+            "সকাল ১০টায় চেক-আউট"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/Wp7grw9q/christian-lambert-vm-IWr0-Nnp-CQ-unsplash.jpg"
+        ]
+      },
+      {
+        "title": { "en": "Royal Heritage Suite", "bn": "রয়্যাল হেরিটেজ সুইট" },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "5.0", "bn": "৫.০" },
+        "bed": { "en": "1 Imperial King Bed", "bn": "১টি ইম্পেরিয়াল কিং বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "110 sqm", "bn": "১১০ বর্গমিটার" },
+        "city": { "en": "Palace Garden", "bn": "প্রাসাদ বাগান" },
+        "price": { "en": "28000", "bn": "২৮০০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Step back in time with our Heritage Suite, decorated with antique furniture and handcrafted carpets. Experience the grandeur of royalty with modern-day luxury services.",
+          "bn": "অ্যান্টিক আসবাবপত্র এবং হাতে বোনা কার্পেট দিয়ে সাজানো আমাদের হেরিটেজ সুইটে রাজকীয় আভিজাত্য অনুভব করুন। আধুনিক বিলাসিতার পাশাপাশি এখানে পাবেন ইতিহাসের ছোঁয়া।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Antique Furniture",
+            "Silk Linens",
+            "Chandelier",
+            "Butler Call",
+            "Fruit Basket"
+          ],
+          "bn": [
+            "অ্যান্টিক আসবাবপত্র",
+            "সিল্কের চাদর",
+            "ঝাড়বাতি",
+            "বাটলার কল",
+            "ফলের ঝুড়ি"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": ["Museum Access", "Fine Dining", "Tea Lounge", "Valet Parking"],
+          "bn": [
+            "মিউজিয়াম অ্যাক্সেস",
+            "ফাইন ডাইনিং",
+            "টি লাউঞ্জ",
+            "ভ্যালেট পার্কিং"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "Dress code in lobby",
+            "Professional photos need permit",
+            "No pets"
+          ],
+          "bn": [
+            "লবিতে ড্রেস কোড প্রযোজ্য",
+            "পেশাদার ছবির জন্য অনুমতি প্রয়োজন",
+            "পোষা প্রাণী নিষেধ"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/PsrGt5Rf/bilderboken-rlw-E8f8an-Oc-unsplash.jpg"
+        ]
+      },
+      {
+        "title": { "en": "Smart Capsule Room", "bn": "স্মার্ট ক্যাপসুল রুম" },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.3", "bn": "৪.৩" },
+        "bed": { "en": "1 Single Bunk", "bn": "১টি সিঙ্গেল বাঙ্ক" },
+        "guest": { "en": "Max: 1 Guest", "bn": "সর্বোচ্চ: ১ জন অতিথি" },
+        "sqm": { "en": "12 sqm", "bn": "১২ বর্গমিটার" },
+        "city": { "en": "Cyber City", "bn": "সাইবার সিটি" },
+        "price": { "en": "1800", "bn": "১৮০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Minimalist and high-tech, our smart capsule rooms are designed for the modern solo traveler. Control lighting and temperature directly from your smartphone.",
+          "bn": "মিনিমালিস্ট এবং হাই-টেক সুবিধার এই স্মার্ট ক্যাপসুল রুমগুলো আধুনিক একক ভ্রমণকারীদের জন্য ডিজাইন করা। আপনার স্মার্টফোন থেকেই লাইটিং এবং তাপমাত্রা নিয়ন্ত্রণ করতে পারবেন।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "App-Controlled Lights",
+            "USB Ports",
+            "Noise-Cancelling Walls",
+            "Privacy Curtain"
+          ],
+          "bn": [
+            "অ্যাপ-নিয়ন্ত্রিত আলো",
+            "ইউএসবি পোর্ট",
+            "নয়েজ-ক্যানসেলিং দেয়াল",
+            "প্রাইভেসি কার্টেন"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Shared Workspace",
+            "Vending Machine",
+            "Laundry Service",
+            "Free Wifi"
+          ],
+          "bn": [
+            "শেয়ারড ওয়ার্কস্পেস",
+            "ভেন্ডিং মেশিন",
+            "লন্ড্রি সার্ভিস",
+            "ফ্রি ওয়াইফাই"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "Silence after 11 PM",
+            "No food inside capsule",
+            "Use lockers for bags"
+          ],
+          "bn": [
+            "রাত ১১টার পর নীরবতা",
+            "ক্যাপসুলের ভেতর খাবার নিষেধ",
+            "ব্যাগের জন্য লকার ব্যবহার করুন"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/ds5BPh3j/vojtech-bruzek-Yrxr3bs-Pd-S0-unsplash.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "title": { "en": "Ocean View Suite", "bn": "ওশান ভিউ সুইট" },
+    "review": { "en": "Review", "bn": "রিভিউ" },
+    "reviewValue": { "en": "4.8", "bn": "৪.৮" },
+    "bed": { "en": "1 Super King Bed", "bn": "১টি সুপার কিং বেড" },
+    "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+    "sqm": { "en": "60 sqm", "bn": "৬০ বর্গমিটার" },
+    "city": { "en": "Sea Side", "bn": "সমুদ্রের ধার" },
+    "price": { "en": "8500", "bn": "৮৫০০" },
+    "night": { "en": "per night", "bn": "প্রতি রাতে" },
+    "hotelDes": {
+      "en": "Experience the sound of waves from your balcony in this premium Ocean View Suite. Designed for couples seeking a romantic getaway with high-end furniture and a private jacuzzi.",
+      "bn": "প্রিমিয়াম ওশান ভিউ সুইটের বারান্দা থেকে সমুদ্রের ঢেউয়ের শব্দ উপভোগ করুন। দম্পতিদের রোমান্টিক ভ্রমণের জন্য ডিজাইন করা এই রুমে রয়েছে দামী আসবাবপত্র এবং প্রাইভেট জাকুজি।"
+    },
+    "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+    "roomAmenaties": {
+      "en": ["Smart TV", "Mini Bar", "Coffee Maker", "Balcony", "Bathtub"],
+      "bn": ["স্মার্ট টিভি", "মিনি বার", "কফি মেকার", "বারান্দা", "বাথটাব"]
+    },
+    "HotelAmenities": { "en": "Hotel Amenities", "bn": "হোটেলের সুযোগ-সুবিধা" },
+    "hotelAmenaties": {
+      "en": ["Private Beach", "Bar", "Spa", "Infinity Pool"],
+      "bn": ["প্রাইভেট বিচ", "বার", "স্পা", "ইনফিনিটি পুল"]
+    },
+    "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+    "hotelRule": {
+      "en": ["No parties allowed", "Check-in at 2 PM"],
+      "bn": ["পার্টি করা নিষেধ", "চেক-ইন দুপুর ২টা"]
+    },
+    "image": [
+    "https://i.ibb.co.com/SXcYx3Sb/olexandr-ignatov-w72a24br-INI-unsplash.jpg",
+    "https://i.ibb.co.com/ddwqVRZ/rod-long-2-P-ifaet-Dm0-unsplash.jpg",
+    "https://i.ibb.co.com/N2bY8QZf/isaac-quesada-xc4oxg-Ab-Dmw-unsplash.jpg",
+    "https://i.ibb.co.com/v4HbRHBK/frames-for-your-heart-Fqqi-Av-Jejto-unsplash.jpg",
+    "https://i.ibb.co.com/RTx6R5yz/kenny-eliason-i-Aftd-Icgp-Fc-unsplash.jpg"
+  ],
+    "related":[
+      {
+        "title": {
+          "en": "Underwater Glass Suite",
+          "bn": "আন্ডারওয়াটার গ্লাস সুইট"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "5.0", "bn": "৫.০" },
+        "bed": {
+          "en": "1 California King Bed",
+          "bn": "১টি ক্যালিফোর্নিয়া কিং বেড"
+        },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "90 sqm", "bn": "৯০ বর্গমিটার" },
+        "city": { "en": "Marine Life View", "bn": "সামুদ্রিক জীবনের দৃশ্য" },
+        "price": { "en": "45000", "bn": "৪৫০০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Sleep beneath the ocean surface in our exclusive glass-walled suite. Witness the mesmerizing dance of corals and exotic fish right from your bed. A once-in-a-lifetime experience of deep-sea luxury.",
+          "bn": "আমাদের এক্সক্লুসিভ কাঁচের দেয়াল ঘেরা সুইটে সমুদ্রের তলদেশে রাত কাটান। বিছানায় শুয়েই প্রবাল এবং বিদেশি মাছের মোহনীয় খেলা উপভোগ করুন। গভীর সমুদ্রের বিলাসিতার এক অনন্য অভিজ্ঞতা।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "360 Glass Walls",
+            "Automated Blinds",
+            "Submarine Lighting",
+            "Ocean-safe Toiletries"
+          ],
+          "bn": [
+            "৩৬০ ডিগ্রি কাঁচের দেয়াল",
+            "অটোমেটেড ব্লাইন্ডস",
+            "সাবমেরিন লাইটিং",
+            "সমুদ্র-বান্ধব প্রসাধন"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Scuba Diving",
+            "Marine Lab",
+            "Underwater Restaurant",
+            "Boat Transfer"
+          ],
+          "bn": [
+            "স্কুবা ডাইভিং",
+            "মেরিন ল্যাব",
+            "আন্ডারওয়াটার রেস্টুরেন্ট",
+            "বোট ট্রান্সফার"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "No tapping on glass",
+            "Strict eco-policy",
+            "Check-in via Boat only"
+          ],
+          "bn": [
+            "কাঁচের ওপর টোকা দেওয়া নিষেধ",
+            "কঠোর পরিবেশ নীতি",
+            "শুধুমাত্র নৌকায় চেক-ইন সম্ভব"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/ds5BPh3j/vojtech-bruzek-Yrxr3bs-Pd-S0-unsplash.jpg"
+        ]
+      },
+      {
+        "title": {
+          "en": "Desert Glamping Tent",
+          "bn": "ডেজার্ট গ্ল্যাম্পিং টেন্ট"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.6", "bn": "৪.৬" },
+        "bed": { "en": "2 Queen Floor Beds", "bn": "২টি কুইন ফ্লোর বেড" },
+        "guest": { "en": "Max: 4 Guests", "bn": "সর্বোচ্চ: ৪ জন অতিথি" },
+        "sqm": { "en": "40 sqm", "bn": "৪০ বর্গমিটার" },
+        "city": { "en": "Sand Dunes", "bn": "বালিয়াড়ির দৃশ্য" },
+        "price": { "en": "7800", "bn": "৭৮০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Experience the magic of the desert in our luxury glamping tents. Enjoy star-gazing by the campfire and traditional hospitality under the vast open sky of the golden dunes.",
+          "bn": "আমাদের বিলাসবহুল গ্ল্যাম্পিং তাঁবুতে মরুভূমির জাদু অনুভব করুন। আগুনের পাশে বসে তারা দেখা এবং সোনালী বালিয়াড়ির বিশাল আকাশের নিচে ঐতিহ্যবাহী আতিথেয়তা উপভোগ করুন।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Portable AC",
+            "Bohemian Decor",
+            "Solar Power",
+            "Outdoor Shower"
+          ],
+          "bn": [
+            "পোর্টেবল এসি",
+            "বোহেমিয়ান সাজসজ্জা",
+            "সৌর শক্তি",
+            "আউটডোর শাওয়ার"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Camel Trekking",
+            "Stargazing Deck",
+            "BBQ Grill",
+            "Local Music"
+          ],
+          "bn": [
+            "উট ভ্রমণ",
+            "স্টারগেজিং ডেক",
+            "বারবিকিউ গ্রিল",
+            "আঞ্চলিক সংগীত"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "Keep tent zipped",
+            "Conserve water",
+            "No smoking near fabric"
+          ],
+          "bn": [
+            "তাঁবুর জিপ লাগিয়ে রাখুন",
+            "পানির অপচয় করবেন না",
+            "তাঁবুর কাপড়ের কাছে ধূমপান নিষেধ"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/jPSs6RJg/visualsofdana-T5p-L6ci-En-I-unsplash.jpg"
+        ]
+      },
+      {
+        "title": {
+          "en": "Modern Treehouse Hideaway",
+          "bn": "মডার্ন ট্রি-হাউস হাইডওয়ে"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.8", "bn": "৪.৮" },
+        "bed": { "en": "1 Loft King Bed", "bn": "১টি লফট কিং বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "30 sqm", "bn": "৩০ বর্গমিটার" },
+        "city": { "en": "Forest Canopy", "bn": "বনের উপরিভাগ" },
+        "price": { "en": "11500", "bn": "১১৫০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Nestled high among the ancient oaks, this modern treehouse offers a peaceful retreat with bird-eye views of the forest. Features a hanging deck and minimalist design.",
+          "bn": "প্রাচীন ওক গাছের মগডালে অবস্থিত এই আধুনিক ট্রি-হাউসটি বনের পাখির চোখের দৃশ্যসহ এক শান্ত নির্জনতা প্রদান করে। এতে একটি ঝুলন্ত ডেক এবং মিনিমালিস্ট ডিজাইন রয়েছে।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Hanging Net Bed",
+            "Binoculars",
+            "Sky Lights",
+            "Organic Tea Bar"
+          ],
+          "bn": [
+            "ঝুলন্ত নেট বেড",
+            "বাইনোকুলার",
+            "স্কাই লাইটস",
+            "অর্গানিক টি বার"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": ["Nature Walks", "Bird Watching", "Library", "Zen Garden"],
+          "bn": ["প্রকৃতি ভ্রমণ", "পাখি দেখা", "লাইব্রেরি", "জেন গার্ডেন"]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "Weight limit applies",
+            "No loud music",
+            "Do not feed wildlife"
+          ],
+          "bn": [
+            "ওজন সীমা প্রযোজ্য",
+            "উচ্চস্বরে গান নিষেধ",
+            "বন্যপ্রাণীকে খাবার দেবেন না"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/7t2p6R37/valeriia-bugaiova-p-PHge-Hz1uk-unsplash.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "title": {
+      "en": "Executive Business Room",
+      "bn": "এক্সিকিউটিভ বিজনেস রুম"
+    },
+    "review": { "en": "Review", "bn": "রিভিউ" },
+    "reviewValue": { "en": "4.5", "bn": "৪.৫" },
+    "bed": { "en": "1 Queen Bed", "bn": "১টি কুইন বেড" },
+    "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+    "sqm": { "en": "35 sqm", "bn": "৩৫ বর্গমিটার" },
+    "city": { "en": "Business District", "bn": "বিজনেস ডিস্ট্রিক্ট" },
+    "price": { "en": "4200", "bn": "৪২০০" },
+    "night": { "en": "per night", "bn": "প্রতি রাতে" },
+    "hotelDes": {
+      "en": "Tailored for business travelers, this room offers a high-speed dedicated workspace and ergonomic chair to ensure productivity during your trip.",
+      "bn": "ব্যবসায়িক ভ্রমণকারীদের জন্য বিশেষভাবে তৈরি এই রুমে হাই-স্পিড ওয়ার্কস্পেস এবং এরগনোমিক চেয়ার রয়েছে যা আপনার কাজের গতি বজায় রাখতে সাহায্য করবে।"
+    },
+    "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+    "roomAmenaties": {
+      "en": [
+        "Work Desk",
+        "High-speed Internet",
+        "Ironing Facilities",
+        "Intercom"
+      ],
+      "bn": ["কাজের টেবিল", "হাই-স্পিড ইন্টারনেট", "ইস্ত্রি সুবিধা", "ইন্টারকম"]
+    },
+    "HotelAmenities": { "en": "Hotel Amenities", "bn": "হোটেলের সুযোগ-সুবিধা" },
+    "hotelAmenaties": {
+      "en": ["Meeting Rooms", "Business Center", "Airport Shuttle"],
+      "bn": ["মিটিং রুম", "বিজনেস সেন্টার", "এয়ারপোর্ট শাটল"]
+    },
+    "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+    "hotelRule": {
+      "en": ["ID required at check-in", "Quiet hours after 10 PM"],
+      "bn": [
+        "চেক-ইনের সময় আইডি কার্ড প্রয়োজন",
+        "রাত ১০টার পর নীরবতা বজায় রাখুন"
+      ]
+    },
+    "image":[
+    "https://i.ibb.co.com/MD3XdCdW/roberto-nickson-emqn-SQw-QQDo-unsplash.jpg",
+    "https://i.ibb.co.com/N2t2FkB7/bernard-hermant-c4-Ccpa8s-Ml-I-unsplash.jpg",
+    "https://i.ibb.co.com/tw4DL7MC/spacejoy-um-AXne-H4-Gh-A-unsplash.jpg",
+    "https://i.ibb.co.com/PJP4Ntj/kara-eads-L7-Ew-Hkq1-B2s-unsplash.jpg",
+    "https://i.ibb.co.com/wr3p9G1t/kam-idris-Hq-HX3-LBN18-unsplash.jpg"
+  ],
+    "related":[
+      {
+        "title": { "en": "Arctic Glass Igloo", "bn": "আর্কটিক গ্লাস ইগ্লু" },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.9", "bn": "৪.৯" },
+        "bed": { "en": "2 Twin Beds", "bn": "২টি টুইন বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "25 sqm", "bn": "২৫ বর্গমিটার" },
+        "city": { "en": "Northern Lights View", "bn": "অরোরা বা মেরুজ্যোতি" },
+        "price": { "en": "18000", "bn": "১৮০০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Experience the magic of the Arctic under a thermal glass roof. Watch the Northern Lights dance across the sky from the comfort of your warm bed. A perfect blend of extreme nature and cozy luxury.",
+          "bn": "থার্মাল গ্লাস ছাদের নিচে উত্তর মেরুর জাদু অনুভব করুন। আপনার আরামদায়ক বিছানায় শুয়ে আকাশজুড়ে মেরুজ্যোতির খেলা দেখুন। চরম প্রকৃতি এবং বিলাসবহুল আরামের এক নিখুঁত সংমিশ্রণ।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Thermal Glass Roof",
+            "Heated Beds",
+            "USB Charging",
+            "Designer Blankets",
+            "Luxury Fur Decor"
+          ],
+          "bn": [
+            "থার্মাল গ্লাস ছাদ",
+            "উষ্ণ বিছানা",
+            "ইউএসবি চার্জিং",
+            "ডিজাইনার কম্বল",
+            "বিলাসবহুল ফার ডেকোর"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": ["Ice Bar", "Reindeer Safari", "Sauna", "Snowmobile Rental"],
+          "bn": ["আইস বার", "রেনডিয়ার সাফারি", "সনা", "স্নোমোবাইল ভাড়া"]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "Wear thermal gear outside",
+            "No flash photography in lobby",
+            "Check-out at 11 AM"
+          ],
+          "bn": [
+            "বাইরে থার্মাল পোশাক পরুন",
+            "লবিতে ফ্ল্যাশ ফটোগ্রাফি নিষেধ",
+            "সকাল ১১টায় চেক-আউট"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/Wp7grw9q/christian-lambert-vm-IWr0-Nnp-CQ-unsplash.jpg"
+        ]
+      },
+      {
+        "title": { "en": "Luxury Safari Tent", "bn": "লাক্সারি সাফারি টেন্ট" },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.7", "bn": "৪.৭" },
+        "bed": { "en": "1 King Bed", "bn": "১টি কিং বেড" },
+        "guest": { "en": "Max: 3 Guests", "bn": "সর্বোচ্চ: ৩ জন অতিথি" },
+        "sqm": { "en": "55 sqm", "bn": "৫৫ বর্গমিটার" },
+        "city": { "en": "Wilderness View", "bn": "বন্য প্রকৃতির দৃশ্য" },
+        "price": { "en": "13500", "bn": "১৩৫০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Immerse yourself in the wild without sacrificing comfort. Our safari tents feature polished wooden floors, canvas walls, and a large deck to watch wildlife roaming freely near the watering hole.",
+          "bn": "আরাম বিসর্জন না দিয়েই বন্য পরিবেশে নিজেকে নিমজ্জিত করুন। আমাদের সাফারি তাঁবুতে রয়েছে পালিশ করা কাঠের মেঝে এবং একটি বড় ডেক, যেখান থেকে আপনি বন্যপ্রাণীদের অবাধ বিচরণ দেখতে পাবেন।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Canvas Walls",
+            "Private Deck",
+            "Antique Fan",
+            "En-suite Bathroom",
+            "Mini Safe"
+          ],
+          "bn": [
+            "ক্যানভাস দেয়াল",
+            "ব্যক্তিগত ডেক",
+            "অ্যান্টিক ফ্যান",
+            "সংযুক্ত বাথরুম",
+            "মিনি সেফ"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Guided Safari",
+            "Bonfire Dinner",
+            "Infinity Pool",
+            "24/7 Ranger"
+          ],
+          "bn": [
+            "গাইডেড সাফারি",
+            "বনফায়ার ডিনার",
+            "ইনফিনিটি পুল",
+            "২৪/৭ রেঞ্জার"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "Do not leave food outside",
+            "Keep noise low at night",
+            "Stay within fenced area"
+          ],
+          "bn": [
+            "বাইরে খাবার ফেলে রাখবেন না",
+            "রাতে শব্দ কম করুন",
+            "বেষ্টনী এলাকার ভেতরে থাকুন"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/PsrGt5Rf/bilderboken-rlw-E8f8an-Oc-unsplash.jpg"
+        ]
+      },
+      {
+        "title": {
+          "en": "Skyline Penthouse with Pool",
+          "bn": "স্কাইলাইন পেন্টহাউস উইথ পুল"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "5.0", "bn": "৫.০" },
+        "bed": { "en": "3 Master King Beds", "bn": "৩টি মাস্টার কিং বেড" },
+        "guest": { "en": "Max: 10 Guests", "bn": "সর্বোচ্চ: ১০ জন অতিথি" },
+        "sqm": { "en": "250 sqm", "bn": "২৫০ বর্গমিটার" },
+        "city": { "en": "360 City View", "bn": "৩৬০ ডিগ্রি শহরের দৃশ্য" },
+        "price": { "en": "65000", "bn": "৬৫০০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "The pinnacle of urban luxury. This massive penthouse features a private infinity pool overlooking the city, a private cinema, and a full-sized kitchen for the ultimate group stay or party.",
+          "bn": "শহুরে বিলাসিতার সর্বোচ্চ শিখর। এই বিশাল পেন্টহাউসে রয়েছে ব্যক্তিগত ইনফিনিটি পুল, একটি নিজস্ব সিনেমা হল এবং বড় গ্রুপের থাকার জন্য পূর্ণাঙ্গ রান্নাঘর।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Private Pool",
+            "Home Theater",
+            "Wine Cellar",
+            "Gourmet Kitchen",
+            "Luxury Linens"
+          ],
+          "bn": [
+            "ব্যক্তিগত পুল",
+            "হোম থিয়েটার",
+            "ওয়াইন সেলার",
+            "গুরমেট রান্নাঘর",
+            "বিলাসবহুল বিছানা"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": ["Helipad", "Private Chef", "Luxury Car Service", "Spa Access"],
+          "bn": [
+            "হেলিপ্যাড",
+            "ব্যক্তিগত শেফ",
+            "বিলাসবহুল গাড়ি সেবা",
+            "স্পা অ্যাক্সেস"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "Security deposit required",
+            "No professional filming without permit",
+            "Check-in at 3 PM"
+          ],
+          "bn": [
+            "সিকিউরিটি ডিপোজিট আবশ্যক",
+            "অনুমতি ছাড়া পেশাদার শুটিং নিষেধ",
+            "বিকাল ৩টায় চেক-ইন"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/ds5BPh3j/vojtech-bruzek-Yrxr3bs-Pd-S0-unsplash.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "title": { "en": "Family Superior", "bn": "ফ্যামিলি সুপিরিয়র" },
+    "review": { "en": "Review", "bn": "রিভিউ" },
+    "reviewValue": { "en": "4.9", "bn": "৪.৯" },
+    "bed": { "en": "3 Double Beds", "bn": "৩টি ডাবল বেড" },
+    "guest": { "en": "Max: 8 Guests", "bn": "সর্বোচ্চ: ৮ জন অতিথি" },
+    "sqm": { "en": "80 sqm", "bn": "৮০ বর্গমিটার" },
+    "city": { "en": "Garden View", "bn": "বাগানের দৃশ্য" },
+    "price": { "en": "12000", "bn": "১২০০০" },
+    "night": { "en": "per night", "bn": "প্রতি রাতে" },
+    "hotelDes": {
+      "en": "Spacious enough for large families, the Family Superior offers interconnected rooms and a large balcony overlooking our botanical garden.",
+      "bn": "বড় পরিবারের জন্য যথেষ্ট প্রশস্ত এই ফ্যামিলি সুপিরিয়র রুমে ইন্টারকানেক্টেড রুম এবং বোটানিক্যাল গার্ডেন দেখার জন্য বড় বারান্দা রয়েছে।"
+    },
+    "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+    "roomAmenaties": {
+      "en": ["Large Fridge", "Microwave", "Sofa Set", "Extra Linens"],
+      "bn": ["বড় ফ্রিজ", "মাইক্রোওয়েভ", "সোফা সেট", "অতিরিক্ত বিছানার চাদর"]
+    },
+    "HotelAmenities": { "en": "Hotel Amenities", "bn": "হোটেলের সুযোগ-সুবিধা" },
+    "hotelAmenaties": {
+      "en": ["Kids Play Area", "BBQ Pit", "Free Breakfast"],
+      "bn": ["বাচ্চাদের খেলার জায়গা", "বারবিকিউ পিট", "ফ্রি ব্রেকফাস্ট"]
+    },
+    "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+    "hotelRule": {
+      "en": ["No outside food allowed", "Kids must be supervised"],
+      "bn": ["বাইরের খাবার আনা নিষেধ", "বাচ্চাদের তত্ত্বাবধানে রাখতে হবে"]
+    },
+    "image": [
+      "https://i.ibb.co.com/Wp7grw9q/christian-lambert-vm-IWr0-Nnp-CQ-unsplash.jpg"
+    ],
+    "related":[
+      {
+        "title": {
+          "en": "Historic Lighthouse Suite",
+          "bn": "ঐতিহাসিক লাইটহাউস সুইট"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.9", "bn": "৪.৯" },
+        "bed": { "en": "1 Circular King Bed", "bn": "১টি বৃত্তাকার কিং বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "40 sqm", "bn": "৪০ বর্গমিটার" },
+        "city": { "en": "360° Ocean View", "bn": "৩৬০° সমুদ্রের দৃশ্য" },
+        "price": { "en": "22000", "bn": "২২০০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Stay in a restored 19th-century lighthouse. Perched on a rocky cliff, this suite offers unmatched views of the crashing waves and the endless horizon. Experience the solitude and charm of maritime history.",
+          "bn": "উনিশ শতকের একটি সংস্কারকৃত লাইটহাউসে অবস্থান করুন। পাথুরে পাহাড়ের চূড়ায় অবস্থিত এই সুইটটি আছড়ে পড়া ঢেউ এবং অন্তহীন দিগন্তের অতুলনীয় দৃশ্য প্রদান করে। সামুদ্রিক ইতিহাসের নির্জনতা এবং কমনীয়তা অনুভব করুন।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Spiral Staircase",
+            "Binoculars",
+            "Stone Walls",
+            "Copper Bathtub",
+            "Vintage Radio"
+          ],
+          "bn": [
+            "প্যাঁচানো সিঁড়ি",
+            "বাইনোকুলার",
+            "পাথরের দেয়াল",
+            "তামার বাথটাব",
+            "ভিন্টেজ রেডিও"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Private Path",
+            "Seafood Dining",
+            "Boat Excursions",
+            "Free Wifi"
+          ],
+          "bn": [
+            "ব্যক্তিগত পথ",
+            "সামুদ্রিক খাবার",
+            "বোট ভ্রমণ",
+            "ফ্রি ওয়াইফাই"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "Climbing required",
+            "No high heels on stairs",
+            "Strong winds expected"
+          ],
+          "bn": [
+            "সিঁড়ি বেয়ে ওঠা আবশ্যক",
+            "সিঁড়িতে হিল জুতা নিষেধ",
+            "প্রবল বাতাসের সম্ভাবনা"
+          ]
+        },
+        "image":[
+    "https://i.ibb.co.com/67bw8vJ2/rktkn-ss-Oty-GE8-Cy-E-unsplash.jpg",
+    "https://i.ibb.co.com/qFDZMgST/alexandra-gorn-JIUjvqe2-ZHg-unsplash.jpg",
+    "https://i.ibb.co.com/tw8fmzMn/deborah-cortelazzi-g-REqu-CUXQLI-unsplash.jpg",
+    "https://i.ibb.co.com/1tSNptdw/michael-oxendine-GHCVUt-BECu-Y-unsplash.jpg",
+    "https://i.ibb.co.com/VcprmSfF/hans-eiskonen-Pot-GJds-W06k-unsplash.jpg"
+  ]
+      },
+      {
+        "title": {
+          "en": "Luxury Floating Villa",
+          "bn": "বিলাসবহুল ফ্লোটিং ভিলা"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.8", "bn": "৪.৮" },
+        "bed": { "en": "2 Queen Beds", "bn": " ২টি কুইন বেড" },
+        "guest": { "en": "Max: 4 Guests", "bn": "সর্বোচ্চ: ৪ জন অতিথি" },
+        "sqm": { "en": "120 sqm", "bn": "১২০ বর্গমিটার" },
+        "city": { "en": "Lagoon View", "bn": "লেগুন ভিউ" },
+        "price": { "en": "32000", "bn": "৩২০০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "A modern masterpiece floating on turquoise waters. This villa features glass floors to watch the fish beneath you and a private net hammock over the water for ultimate relaxation.",
+          "bn": "নীলাভ স্বচ্ছ পানির ওপর ভাসমান এক আধুনিক স্থাপত্য। এই ভিলার নিচের মাছ দেখার জন্য এতে রয়েছে কাঁচের মেঝে এবং পানির ঠিক ওপরে আরাম করার জন্য একটি নেট হ্যামক।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Glass Floor Panel",
+            "Overwater Hammock",
+            "Sun Deck",
+            "Paddle Boards",
+            "Mini Bar"
+          ],
+          "bn": [
+            "কাঁচের মেঝে প্যানেল",
+            "ওভার-ওয়াটার হ্যামক",
+            "সান ডেক",
+            "প্যাডেল বোর্ড",
+            "মিনি বার"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": ["Coral Snorkeling", "Private Jetty", "Room Service", "Butler"],
+          "bn": ["কোরাল স্নরকেলিং", "ব্যক্তিগত জেটি", "রুম সার্ভিস", "বাটলার"]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "Wear life jackets on deck",
+            "No diving from balcony",
+            "No littering in water"
+          ],
+          "bn": [
+            "ডেকে লাইফ জ্যাকেট পরুন",
+            "বারান্দা থেকে ঝাঁপ দেওয়া নিষেধ",
+            "পানিতে ময়লা ফেলা নিষেধ"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/7t2p6R37/valeriia-bugaiova-p-PHge-Hz1uk-unsplash.jpg"
+        ]
+      },
+      {
+        "title": {
+          "en": "Zen Monastery Guestroom",
+          "bn": "জেন মনেস্ট্রি গেস্টরুম"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.6", "bn": "৪.৬" },
+        "bed": { "en": "1 Tatami Floor Bed", "bn": "১টি তাতামি ফ্লোর বেড" },
+        "guest": { "en": "Max: 1 Guest", "bn": "সর্বোচ্চ: ১ জন অতিথি" },
+        "sqm": { "en": "18 sqm", "bn": "১৮ বর্গমিটার" },
+        "city": { "en": "Zen Garden", "bn": "জেন গার্ডেন" },
+        "price": { "en": "3500", "bn": "৩৫০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Find your inner peace in this minimalist guestroom. Located within a quiet temple complex, the room focuses on silence, natural materials, and mindfulness, away from all digital distractions.",
+          "bn": "এই মিনিমালিস্ট রুমে খুঁজে নিন আপনার মনের শান্তি। একটি শান্ত মন্দির প্রাঙ্গণে অবস্থিত এই রুমটি নীরবতা, প্রাকৃতিক উপকরণ এবং সচেতনতার ওপর গুরুত্ব দেয়, যেখানে থাকবে না কোনো ডিজিটাল বিড়ম্বনা।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Meditation Mat",
+            "Tea Ceremony Kit",
+            "Shoji Screens",
+            "Incense Sticks",
+            "Natural Linens"
+          ],
+          "bn": [
+            "ধ্যান করার ম্যাট",
+            "চা পানের কিট",
+            "শোজি স্ক্রিন",
+            "আগরবাতি",
+            "প্রাকৃতিক বিছানার চাদর"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Vegetarian Meals",
+            "Morning Rituals",
+            "Library",
+            "Zen Garden"
+          ],
+          "bn": [
+            "নিরামিষ খাবার",
+            "সকালের ধর্মীয় অনুষ্ঠান",
+            "লাইব্রেরি",
+            "জেন গার্ডেন"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "No electronic devices",
+            "Absolute silence after 8 PM",
+            "Only vegetarian food"
+          ],
+          "bn": [
+            "ইলেকট্রনিক ডিভাইস নিষেধ",
+            "রাত ৮টার পর পূর্ণ নীরবতা",
+            "শুধুমাত্র নিরামিষ খাবার"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/ds5BPh3j/vojtech-bruzek-Yrxr3bs-Pd-S0-unsplash.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "title": { "en": "Honeymoon Luxury", "bn": "হানিমুন লাক্সারি" },
+    "review": { "en": "Review", "bn": "রিভিউ" },
+    "reviewValue": { "en": "5", "bn": "৫" },
+    "bed": { "en": "1 Round King Bed", "bn": "১টি গোল কিং বেড" },
+    "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+    "sqm": { "en": "55 sqm", "bn": "৫৫ বর্গমিটার" },
+    "city": { "en": "Mountain View", "bn": "পাহাড়ের দৃশ্য" },
+    "price": { "en": "15000", "bn": "১৫০০০" },
+    "night": { "en": "per night", "bn": "প্রতি রাতে" },
+    "hotelDes": {
+      "en": "Celebrate your love in our specially decorated Honeymoon suite. Includes complimentary wine and a personalized dinner setup under the stars.",
+      "bn": "আমাদের বিশেষ সাজানো হানিমুন সুইটে আপনাদের ভালোবাসা উদযাপন করুন। সাথে থাকছে কমপ্লিমেন্টারি ওয়াইন এবং তারার নিচে ডিনার সেটআপ।"
+    },
+    "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+    "roomAmenaties": {
+      "en": [
+        "Flowers & Decoration",
+        "Sound System",
+        "Luxury Bathrobes",
+        "Scented Candles"
+      ],
+      "bn": [
+        "ফুলের সাজসজ্জা",
+        "সাউন্ড সিস্টেম",
+        "বিলাসবহুল বাথরোব",
+        "সুগন্ধি মোমবাতি"
+      ]
+    },
+    "HotelAmenities": { "en": "Hotel Amenities", "bn": "হোটেলের সুযোগ-সুবিধা" },
+    "hotelAmenaties": {
+      "en": ["Candlelight Dinner", "Couples Massage", "Valet Parking"],
+      "bn": ["ক্যান্ডেল লাইট ডিনার", "কাপল মাসাজ", "ভ্যালেট পার্কিং"]
+    },
+    "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+    "hotelRule": {
+      "en": ["Advance booking required", "Noise level restricted"],
+      "bn": ["অ্যাডভান্স বুকিং প্রয়োজন", "শোরগোল করা নিষেধ"]
+    },
+    "image": [
+      "https://i.ibb.co.com/PsrGt5Rf/bilderboken-rlw-E8f8an-Oc-unsplash.jpg"
+    ],
+    "related":[
+      {
+        "title": {
+          "en": "Vintage Train Carriage",
+          "bn": "ভিন্টেজ ট্রেন ক্যারিয়েজ"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.7", "bn": "৪.৭" },
+        "bed": { "en": "2 Pullman Berths", "bn": "২টি পুলম্যান বার্থ" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "28 sqm", "bn": "২৮ বর্গমিটার" },
+        "city": { "en": "Countryside View", "bn": "গ্রাম্য দৃশ্য" },
+        "price": { "en": "8500", "bn": "৮৫০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Experience a journey through time in this restored 1920s train carriage. Nestled on a private track, it offers a romantic and nostalgic stay with mahogany wood interiors and velvet seating.",
+          "bn": "১৯২০-এর দশকের একটি সংস্কারকৃত ট্রেনের বগিতে সময়ের মধ্য দিয়ে এক যাত্রা অনুভব করুন। একটি ব্যক্তিগত ট্র্যাকে অবস্থিত এই কামরাটি মেহগনি কাঠের ইন্টেরিয়র এবং ভেলভেট আসনের সাথে একটি রোমান্টিক এবং নস্টালজিক পরিবেশ প্রদান করে।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Mahogany Interior",
+            "Velvet Seats",
+            "Vintage Lamps",
+            "Coffee Nook",
+            "Gramophone"
+          ],
+          "bn": [
+            "মেহগনি ইন্টেরিয়র",
+            "ভেলভেট আসন",
+            "ভিন্টেজ ল্যাম্প",
+            "কফি কর্নার",
+            "গ্রামোফোন"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Railway Dining Car",
+            "Bicycle Rental",
+            "Stargazing Deck",
+            "Bonfire"
+          ],
+          "bn": [
+            "রেলওয়ে ডাইনিং কার",
+            "সাইকেল ভাড়া",
+            "স্টারগেজিং ডেক",
+            "বনফায়ার"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "No smoking inside carriage",
+            "Strict quiet hours",
+            "Keep windows locked at night"
+          ],
+          "bn": [
+            "বগির ভেতরে ধূমপান নিষেধ",
+            "কঠোর নীরবতার সময়",
+            "রাতে জানালা লক করে রাখুন"
+          ]
+        },
+        "image": [
+    "https://i.ibb.co.com/qMFY6Xzw/andy-vult-zw-Zpdho-Tb-U0-unsplash.jpg",
+    "https://i.ibb.co.com/4n8JKzgL/lotus-design-n-print-Wgk-A3-CSFrjc-unsplash.jpg",
+    "https://i.ibb.co.com/ds5BPh3j/vojtech-bruzek-Yrxr3bs-Pd-S0-unsplash.jpg",
+    "https://i.ibb.co.com/jPSs6RJg/visualsofdana-T5p-L6ci-En-I-unsplash.jpg",
+    "https://i.ibb.co.com/7t2p6R37/valeriia-bugaiova-p-PHge-Hz1uk-unsplash.jpg"
+  ]
+      },
+      {
+        "title": { "en": "Wilderness Eco-Lodge", "bn": "ওয়াইল্ডারনেস ইকো-লজ" },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.5", "bn": "৪.৫" },
+        "bed": { "en": "1 Bamboo King Bed", "bn": "১টি বাঁশের কিং বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "42 sqm", "bn": "৪২ বর্গমিটার" },
+        "city": { "en": "Forest Interior View", "bn": "বনের ভেতরের দৃশ্য" },
+        "price": { "en": "5500", "bn": "৫৫০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Reconnect with nature in our fully sustainable eco-lodge. Built with local bamboo and stone, this room uses 100% solar energy and offers a true off-grid experience in the heart of the jungle.",
+          "bn": "আমাদের সম্পূর্ণ টেকসই ইকো-লজে প্রকৃতির সাথে পুনরায় সংযোগ স্থাপন করুন। স্থানীয় বাঁশ এবং পাথর দিয়ে তৈরি এই রুমটি ১০০% সৌরশক্তি ব্যবহার করে এবং জঙ্গলের গভীরে এক অনন্য অফ-গ্রিড অভিজ্ঞতা প্রদান করে।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Solar Power",
+            "Rainwater Shower",
+            "Natural Mosquito Net",
+            "Eco-friendly Soap"
+          ],
+          "bn": [
+            "সৌর শক্তি",
+            "বৃষ্টির পানির শাওয়ার",
+            "প্রাকৃতিক মশারি",
+            "পরিবেশবান্ধব সাবান"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Organic Farm",
+            "Yoga Pavilion",
+            "Nature Guide",
+            "Spring Pool"
+          ],
+          "bn": [
+            "অর্গানিক ফার্ম",
+            "যোগব্যায়াম প্যাভিলিয়ন",
+            "প্রকৃতি গাইড",
+            "ঝরনার পানিযুক্ত পুল"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "No plastic allowed",
+            "Strict waste separation",
+            "Turn off lights by 10 PM"
+          ],
+          "bn": [
+            "প্লাস্টিক আনা নিষেধ",
+            "কঠোর বর্জ্য পৃথকীকরণ নীতি",
+            "রাত ১০টার মধ্যে লাইট বন্ধ করুন"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/PsrGt5Rf/bilderboken-rlw-E8f8an-Oc-unsplash.jpg"
+        ]
+      },
+      {
+        "title": {
+          "en": "Industrial Urban Loft",
+          "bn": "ইন্ডাস্ট্রিয়াল আরবান লফট"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.8", "bn": "৪.৮" },
+        "bed": { "en": "1 Modern Queen Bed", "bn": "১টি মডার্ন কুইন বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "55 sqm", "bn": "৫৫ বর্গমিটার" },
+        "city": { "en": "Skyscraper View", "bn": "গগনচুম্বী দালানের দৃশ্য" },
+        "price": { "en": "12500", "bn": "১২৫০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "A chic urban space featuring exposed brick walls, high ceilings, and floor-to-ceiling windows. Located in the trendiest part of the city, perfect for creative minds and city explorers.",
+          "bn": "উন্মুক্ত ইটের দেয়াল, উঁচু ছাদ এবং বিশাল জানালা বিশিষ্ট একটি চমৎকার আরবান স্পেস। শহরের সবচেয়ে আধুনিক এলাকায় অবস্থিত এই রুমটি সৃজনশীল মানুষ এবং শহর ভ্রমণকারীদের জন্য উপযুক্ত।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Exposed Brick Walls",
+            "Smart Home System",
+            "Work Studio",
+            "Espresso Machine"
+          ],
+          "bn": [
+            "ব্রিক ওয়াল ইন্টেরিয়র",
+            "স্মার্ট হোম সিস্টেম",
+            "ওয়ার্ক স্টুডিও",
+            "এসপ্রেসো মেশিন"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Rooftop Bar",
+            "Co-working Space",
+            "Fitness Center",
+            "Art Gallery"
+          ],
+          "bn": [
+            "রুফটপ বার",
+            "কো-ওয়ার্কিং স্পেস",
+            "ফিটনেস সেন্টার",
+            "আর্ট গ্যালারি"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "Electronic check-in only",
+            "No pets above 10kg",
+            "Check-out at 12 PM"
+          ],
+          "bn": [
+            "শুধুমাত্র ইলেকট্রনিক চেক-ইন",
+            "১০ কেজির ওপরের পোষা প্রাণী নিষেধ",
+            "দুপুর ১২টায় চেক-আউট"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/ds5BPh3j/vojtech-bruzek-Yrxr3bs-Pd-S0-unsplash.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "title": { "en": "Budget Comfort", "bn": "বাজেট কমফোর্ট" },
+    "review": { "en": "Review", "bn": "রিভিউ" },
+    "reviewValue": { "en": "4.2", "bn": "৪.২" },
+    "bed": { "en": "1 Single Bed", "bn": "১টি সিঙ্গেল বেড" },
+    "guest": { "en": "Max: 1 Guest", "bn": "সর্বোচ্চ: ১ জন অতিথি" },
+    "sqm": { "en": "20 sqm", "bn": "২০ বর্গমিটার" },
+    "city": { "en": "Internal View", "bn": "অভ্যন্তরীণ দৃশ্য" },
+    "price": { "en": "2500", "bn": "২৫০০" },
+    "night": { "en": "per night", "bn": "প্রতি রাতে" },
+    "hotelDes": {
+      "en": "A compact and clean room for solo travelers on a budget. Includes all basic amenities to make your stay hassle-free.",
+      "bn": "বাজেট সচেতন একক ভ্রমণকারীদের জন্য একটি ছোট ও পরিষ্কার রুম। আপনার অবস্থান ঝামেলামুক্ত করতে এতে সব মৌলিক সুবিধা রয়েছে।"
+    },
+    "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+    "roomAmenaties": {
+      "en": ["Fan/AC", "Free Wifi", "Electric Kettle", "Clean Towels"],
+      "bn": [
+        "ফ্যান/এসি",
+        "ফ্রি ওয়াইফাই",
+        "ইলেক্ট্রিক কেটলি",
+        "পরিষ্কার তোয়ালে"
+      ]
+    },
+    "HotelAmenities": { "en": "Hotel Amenities", "bn": "হোটেলের সুযোগ-সুবিধা" },
+    "hotelAmenaties": {
+      "en": ["Shared Lounge", "Vending Machine", "24/7 Security"],
+      "bn": ["শেয়ারড লাউঞ্জ", "ভেন্ডিং মেশিন", "২৪/৭ নিরাপত্তা"]
+    },
+    "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+    "hotelRule": {
+      "en": ["Early check-out extra charge", "No guests allowed in room"],
+      "bn": ["দ্রুত চেক-আউটে চার্জ প্রযোজ্য", "রুমে অতিথি আনা নিষেধ"]
+    },
+    "image": [
+    "https://i.ibb.co.com/Wp7grw9q/christian-lambert-vm-IWr0-Nnp-CQ-unsplash.jpg",
+    "https://i.ibb.co.com/PsrGt5Rf/bilderboken-rlw-E8f8an-Oc-unsplash.jpg",
+    "https://i.ibb.co.com/Jwc4GNtT/point3d-commercial-imaging-ltd-oxe-CZrodz78-unsplash.jpg",
+    "https://i.ibb.co.com/SXcYx3Sb/olexandr-ignatov-w72a24br-INI-unsplash.jpg",
+    "https://i.ibb.co.com/MD3XdCdW/roberto-nickson-emqn-SQw-QQDo-unsplash.jpg"
+  ],
+    "related":[
+      {
+        "title": {
+          "en": "Luxury Floating Houseboat",
+          "bn": "বিলাসবহুল ভাসমান হাউসবোট"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.8", "bn": "৪.৮" },
+        "bed": { "en": "2 Queen Beds", "bn": "২টি কুইন বেড" },
+        "guest": { "en": "Max: 4 Guests", "bn": "সর্বোচ্চ: ৪ জন অতিথি" },
+        "sqm": { "en": "65 sqm", "bn": "৬৫ বর্গমিটার" },
+        "city": { "en": "River Side View", "bn": "নদীর ধারের দৃশ্য" },
+        "price": { "en": "14000", "bn": "১৪০০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Experience the tranquility of living on water in our hand-carved wooden houseboat. Float along the serene backwaters while enjoying traditional hospitality and a private deck for sunset views.",
+          "bn": "আমাদের হাতে খোদাই করা কাঠের হাউসবোটে পানির ওপর বসবাসের প্রশান্তি অনুভব করুন। শান্ত নদীর জলে ভাসতে ভাসতে ঐতিহ্যবাহী আতিথেয়তা এবং সূর্যাস্ত দেখার জন্য একটি ব্যক্তিগত ডেক উপভোগ করুন।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Wooden Interior",
+            "Private Balcony",
+            "Smart TV",
+            "Mini Fridge",
+            "Air Purifier"
+          ],
+          "bn": [
+            "কাঠের ইন্টেরিয়র",
+            "ব্যক্তিগত বারান্দা",
+            "স্মার্ট টিভি",
+            "মিনি ফ্রিজ",
+            "এয়ার পিউরিফায়ার"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Fishing Deck",
+            "Boat Ride",
+            "Local Cuisine",
+            "Sunbathing Area"
+          ],
+          "bn": [
+            "মাছ ধরার ডেক",
+            "নৌকা ভ্রমণ",
+            "আঞ্চলিক খাবার",
+            "সানবাথিং এরিয়া"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "No littering in water",
+            "Life jacket required on deck",
+            "Quiet hours after 9 PM"
+          ],
+          "bn": [
+            "পানিতে ময়লা ফেলা নিষেধ",
+            "ডেকে লাইফ জ্যাকেট পরা বাধ্যতামূলক",
+            "রাত ৯টার পর নীরবতা"
+          ]
+        },
+        "image": [
+    "https://i.ibb.co.com/Wp7grw9q/christian-lambert-vm-IWr0-Nnp-CQ-unsplash.jpg",
+    "https://i.ibb.co.com/PsrGt5Rf/bilderboken-rlw-E8f8an-Oc-unsplash.jpg",
+    "https://i.ibb.co.com/Jwc4GNtT/point3d-commercial-imaging-ltd-oxe-CZrodz78-unsplash.jpg",
+    "https://i.ibb.co.com/SXcYx3Sb/olexandr-ignatov-w72a24br-INI-unsplash.jpg",
+    "https://i.ibb.co.com/MD3XdCdW/roberto-nickson-emqn-SQw-QQDo-unsplash.jpg"
+  ]
+      },
+      {
+        "title": {
+          "en": "Underground Cave Suite",
+          "bn": "আন্ডারগ্রাউন্ড কেভ সুইট"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.9", "bn": "৪.৯" },
+        "bed": { "en": "1 King Bed", "bn": "১টি কিং বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "50 sqm", "bn": "৫০ বর্গমিটার" },
+        "city": { "en": "Mountain Interior", "bn": "পাহাড়ের অভ্যন্তর" },
+        "price": { "en": "18500", "bn": "১৮৫০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "A unique architectural marvel carved directly into a natural stone cliff. This suite stays naturally cool and offers a mystical atmosphere with modern luxury, including a cave-embedded hot tub.",
+          "bn": "প্রাকৃতিক পাথরের পাহাড় খোদাই করে তৈরি এক অনন্য স্থাপত্য। এই সুইটটি প্রাকৃতিকভাবে শীতল থাকে এবং এতে রয়েছে একটি আধুনিক লাক্সারি হট টাব যা গুহার ভেতর এমবেড করা।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Natural Stone Walls",
+            "Cave Jacuzzi",
+            "Ambient Lighting",
+            "Bluetooth Speakers"
+          ],
+          "bn": [
+            "প্রাকৃতিক পাথরের দেয়াল",
+            "কেভ জাকুজি",
+            "অ্যাম্বিয়েন্ট লাইটিং",
+            "ব্লুটুথ স্পিকার"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": ["Spa & Wellness", "Wine Tasting", "Fine Dining", "Valet"],
+          "bn": [
+            "স্পা ও ওয়েলনেস",
+            "ওয়াইন টেস্টিং",
+            "ফাইন ডাইনিং",
+            "ভ্যালেট পার্কিং"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "Advance booking only",
+            "No pets allowed",
+            "Strictly no smoking"
+          ],
+          "bn": [
+            "শুধুমাত্র অ্যাডভান্স বুকিং",
+            "পোষা প্রাণী নিষেধ",
+            "ধূমপান সম্পূর্ণ নিষেধ"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/7t2p6R37/valeriia-bugaiova-p-PHge-Hz1uk-unsplash.jpg"
+        ]
+      },
+      {
+        "title": {
+          "en": "Minimalist Glass Villa",
+          "bn": "মিনিমালিস্ট গ্লাস ভিলা"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.6", "bn": "৪.৬" },
+        "bed": {
+          "en": "1 California King Bed",
+          "bn": "১টি ক্যালিফোর্নিয়া কিং বেড"
+        },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "85 sqm", "bn": "৮৫ বর্গমিটার" },
+        "city": { "en": "Forest Edge View", "bn": "বনের ধারের দৃশ্য" },
+        "price": { "en": "21000", "bn": "২১০০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Live in transparency with our all-glass villa. Surrounded by lush greenery, this architectural gem blurs the line between indoor luxury and outdoor nature. High privacy glass ensures complete seclusion.",
+          "bn": "আমাদের সম্পূর্ণ কাঁচের ভিলায় স্বচ্ছতার মাঝে বসবাস করুন। চারদিকে সবুজে ঘেরা এই ভিলাটি ইনডোর বিলাসিতা এবং বাইরের প্রকৃতির মাঝের দেয়াল মুছে দেয়। হাই-প্রাইভেসি গ্লাস আপনার পূর্ণ গোপনীয়তা নিশ্চিত করবে।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Glass Walls",
+            "Smart Curtains",
+            "Outdoor Rain Shower",
+            "Coffee Lounge"
+          ],
+          "bn": [
+            "কাঁচের দেয়াল",
+            "স্মার্ট কার্টেন",
+            "আউটডোর রেইন শাওয়ার",
+            "কফি লাউঞ্জ"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Private Pool",
+            "Yoga Deck",
+            "Organic Breakfast",
+            "Bicycle Rental"
+          ],
+          "bn": [
+            "ব্যক্তিগত পুল",
+            "যোগব্যায়াম ডেক",
+            "অর্গানিক ব্রেকফাস্ট",
+            "সাইকেল ভাড়া"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "Do not touch exterior glass",
+            "No outdoor flash at night",
+            "Eco-friendly disposal"
+          ],
+          "bn": [
+            "বাইরের কাঁচে স্পর্শ নিষেধ",
+            "রাতে ফ্ল্যাশ লাইট ব্যবহার নিষেধ",
+            "পরিবেশবান্ধব বর্জ্য নিষ্কাশন"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/ds5BPh3j/vojtech-bruzek-Yrxr3bs-Pd-S0-unsplash.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "title": {
+      "en": "Penthouse Presidential",
+      "bn": "পেন্টহাউস প্রেসিডেন্সিয়াল"
+    },
+    "review": { "en": "Review", "bn": "রিভিউ" },
+    "reviewValue": { "en": "5", "bn": "৫" },
+    "bed": { "en": "2 Master King Beds", "bn": "২টি মাস্টার কিং বেড" },
+    "guest": { "en": "Max: 4 Guests", "bn": "সর্বোচ্চ: ৪ জন অতিথি" },
+    "sqm": { "en": "150 sqm", "bn": "১৫০ বর্গমিটার" },
+    "city": { "en": "Panoramic View", "bn": "প্যানোরামিক দৃশ্য" },
+    "price": { "en": "35000", "bn": "৩৫০০০" },
+    "night": { "en": "per night", "bn": "প্রতি রাতে" },
+    "hotelDes": {
+      "en": "The ultimate luxury experience on the top floor. This suite features a private library, a grand piano, and 360-degree views of the entire city.",
+      "bn": "সর্বোচ্চ তলায় আভিজাত্যের চরম অভিজ্ঞতা। এই সুইটে রয়েছে ব্যক্তিগত লাইব্রেরি, একটি গ্র্যান্ড পিয়ানো এবং পুরো শহরের ৩৬০-ডিগ্রি ভিউ।"
+    },
+    "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+    "roomAmenaties": {
+      "en": [
+        "Private Kitchen",
+        "Butler Service",
+        "Home Theater",
+        "Wine Cellar"
+      ],
+      "bn": [
+        "ব্যক্তিগত রান্নাঘর",
+        "বাটলার সার্ভিস",
+        "হোম থিয়েটার",
+        "ওয়াইন সেলার"
+      ]
+    },
+    "HotelAmenities": { "en": "Hotel Amenities", "bn": "হোটেলের সুযোগ-সুবিধা" },
+    "hotelAmenaties": {
+      "en": ["Helipad Access", "Luxury Chauffeur", "Rooftop Bar"],
+      "bn": ["হেলিপ্যাড অ্যাক্সেস", "বিলাসবহুল গাড়ি সেবা", "রুফটপ বার"]
+    },
+    "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+    "hotelRule": {
+      "en": ["Check-out by 11 AM", "Security screening required"],
+      "bn": ["সকাল ১১টার মধ্যে চেক-আউট", "নিরাপত্তা স্ক্রিনিং আবশ্যক"]
+    },
+    "image":[
+    "https://i.ibb.co.com/67bw8vJ2/rktkn-ss-Oty-GE8-Cy-E-unsplash.jpg",
+    "https://i.ibb.co.com/qMFY6Xzw/andy-vult-zw-Zpdho-Tb-U0-unsplash.jpg",
+    "https://i.ibb.co.com/RTx6R5yz/kenny-eliason-i-Aftd-Icgp-Fc-unsplash.jpg",
+    "https://i.ibb.co.com/v4HbRHBK/frames-for-your-heart-Fqqi-Av-Jejto-unsplash.jpg",
+    "https://i.ibb.co.com/ddwqVRZ/rod-long-2-P-ifaet-Dm0-unsplash.jpg"
+  ],
+    "related":[
+      {
+        "title": { "en": "Luxury Desert Dome", "bn": "লাক্সারি ডেজার্ট ডোম" },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.8", "bn": "৪.৮" },
+        "bed": { "en": "1 King Bed", "bn": "১টি কিং বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "45 sqm", "bn": "৪৫ বর্গমিটার" },
+        "city": { "en": "Starlit Desert View", "bn": "তারাময় মরুভূমির দৃশ্য" },
+        "price": { "en": "16500", "bn": "১৬৫০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Stay in a futuristic geodesic dome in the heart of the desert. Features a transparent ceiling panel for stargazing from your bed and a private deck to enjoy the golden sunset dunes.",
+          "bn": "মরুভূমির মাঝখানে একটি ফিউচারিস্টিক জিওডেসিক ডোমে অবস্থান করুন। এতে রয়েছে স্বচ্ছ ছাদ যা দিয়ে বিছানায় শুয়েই তারা দেখা যায় এবং সোনালী সূর্যাস্ত উপভোগ করার জন্য একটি ব্যক্তিগত ডেক।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Star-view Roof",
+            "Climate Control",
+            "Private Telescope",
+            "Solar Power",
+            "Plush Seating"
+          ],
+          "bn": [
+            "তারা দেখার ছাদ",
+            "ক্লাইমেট কন্ট্রোল",
+            "ব্যক্তিগত টেলিস্কোপ",
+            "সৌর শক্তি",
+            "আরামদায়ক আসন"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": ["Camel Safari", "Bedouin Dinner", "Sand Boarding", "Fire Pit"],
+          "bn": ["উট সাফারি", "বেদুইন ডিনার", "স্যান্ড বোর্ডিং", "ফায়ার পিট"]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "No sand inside dome",
+            "Water conservation active",
+            "Check-in via 4x4 only"
+          ],
+          "bn": [
+            "ডোমের ভেতর বালু আনা নিষেধ",
+            "পানির সীমিত ব্যবহার প্রযোজ্য",
+            "শুধুমাত্র ৪x৪ গাড়িতে চেক-ইন সম্ভব"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/Wp7grw9q/christian-lambert-vm-IWr0-Nnp-CQ-unsplash.jpg"
+        ]
+      },
+      {
+        "title": {
+          "en": "Traditional Japanese Ryokan",
+          "bn": "ঐতিহ্যবাহী জাপানি রিওকান"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.9", "bn": "৪.৯" },
+        "bed": { "en": "2 Futon Beds", "bn": " ২টি ফুটন বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "35 sqm", "bn": "৩৫ বর্গমিটার" },
+        "city": { "en": "Kyoto Garden View", "bn": "কিয়োটো গার্ডেন ভিউ" },
+        "price": { "en": "19000", "bn": "১৯০০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Immerse yourself in Japanese culture with our traditional Ryokan suite. Experience sliding Shoji doors, Tatami mat flooring, and a private Hinoki wood soaking tub for deep relaxation.",
+          "bn": "আমাদের ঐতিহ্যবাহী রিওকান সুইটের মাধ্যমে জাপানি সংস্কৃতিতে নিজেকে নিমজ্জিত করুন। স্লাইডিং শোজি দরজা, তাতামি ম্যাট ফ্লোরিং এবং গভীর প্রশান্তির জন্য হিনোকি কাঠের ব্যক্তিগত বাথটাবের অভিজ্ঞতা নিন।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Tatami Floor",
+            "Yukata Robes",
+            "Tea Ceremony Set",
+            "Hinoki Bathtub",
+            "Shoji Screens"
+          ],
+          "bn": [
+            "তাতামি ফ্লোর",
+            "ইউকাতা পোশাক",
+            "চা পানের কিট",
+            "হিনোকি বাথটাব",
+            "শোজি স্ক্রিন"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Public Onsen",
+            "Zen Garden",
+            "Traditional Breakfast",
+            "Tea Lounge"
+          ],
+          "bn": [
+            "পাবলিক অনসেন",
+            "জেন গার্ডেন",
+            "ঐতিহ্যবাহী ব্রেকফাস্ট",
+            "টি লাউঞ্জ"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "No shoes on Tatami",
+            "Quiet hours strictly observed",
+            "Tattoo policy for Onsen"
+          ],
+          "bn": [
+            "তাতামির ওপর জুতা নিষেধ",
+            "কঠোর নীরবতা পালনীয়",
+            "অনসেনে ট্যাটু সংক্রান্ত নীতি"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/PsrGt5Rf/bilderboken-rlw-E8f8an-Oc-unsplash.jpg"
+        ]
+      },
+      {
+        "title": {
+          "en": "Industrial Container House",
+          "bn": "ইন্ডাস্ট্রিয়াল কন্টেইনার হাউস"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.4", "bn": "৪.৪" },
+        "bed": { "en": "1 Double Bed", "bn": "১টি ডাবল বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "30 sqm", "bn": "৩০ বর্গমিটার" },
+        "city": { "en": "Port Side View", "bn": "বন্দর এলাকার দৃশ্য" },
+        "price": { "en": "4000", "bn": "৪০০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Stay in a creatively repurposed shipping container turned into a modern living space. Features industrial-chic decor, smart storage solutions, and a rooftop terrace overlooking the bustling harbor.",
+          "bn": "সৃজনশীলভাবে তৈরি একটি শিপিং কন্টেইনারে থাকুন যা এখন আধুনিক লিভিং স্পেস। এতে রয়েছে ইন্ডাস্ট্রিয়াল-চিক ডেকোর, স্মার্ট স্টোরেজ এবং বন্দর দেখার জন্য একটি রুফটপ টেরেস।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Compact Kitchen",
+            "Smart Lighting",
+            "AC/Heater",
+            "Foldable Desk",
+            "High-speed Wifi"
+          ],
+          "bn": [
+            "ছোট রান্নাঘর",
+            "স্মার্ট লাইটিং",
+            "এসি/হিটার",
+            "ফোল্ডেবল ডেস্ক",
+            "হাই-স্পিড ওয়াইফাই"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Co-working Space",
+            "Vending Machine",
+            "Laundromat",
+            "Bike Storage"
+          ],
+          "bn": [
+            "কো-ওয়ার্কিং স্পেস",
+            "ভেন্ডিং মেশিন",
+            "লন্ড্রি সুবিধা",
+            "সাইকেল স্টোরেজ"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "No heavy cooking",
+            "Max 2 visitors allowed",
+            "Check-out by 10 AM"
+          ],
+          "bn": [
+            "ভারী রান্না করা নিষেধ",
+            "সর্বোচ্চ ২ জন ভিজিটর",
+            "সকাল ১০টায় চেক-আউট"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/ds5BPh3j/vojtech-bruzek-Yrxr3bs-Pd-S0-unsplash.jpg"
+        ]
+      }
+    ]
+  },
+  {
+    "title": {
+      "en": "Studio Garden Apartment",
+      "bn": "স্টুডিও গার্ডেন অ্যাপার্টমেন্ট"
+    },
+    "review": {
+      "en": "Review",
+      "bn": "রিভিউ"
+    },
+    "reviewValue": {
+      "en": "4.7",
+      "bn": "৪.৭"
+    },
+    "bed": {
+      "en": "1 Queen Bed & 1 Sofa Bed",
+      "bn": "১টি কুইন বেড এবং ১টি সোফা বেড"
+    },
+    "guest": {
+      "en": "Max: 3 Guests",
+      "bn": "সর্বোচ্চ: ৩ জন অতিথি"
+    },
+    "sqm": {
+      "en": "50 sqm",
+      "bn": "৫০ বর্গমিটার"
+    },
+    "city": {
+      "en": "Private Garden View",
+      "bn": "ব্যক্তিগত বাগানের দৃশ্য"
+    },
+    "price": {
+      "en": "6500",
+      "bn": "৬৫০০"
+    },
+    "night": {
+      "en": "per night",
+      "bn": "প্রতি রাতে"
+    },
+    "hotelDes": {
+      "en": "Escape the city hustle in our Studio Garden Apartment. This ground-floor unit features a private fenced garden where you can enjoy your morning coffee surrounded by lush greenery and peace.",
+      "bn": "শহরের কোলাহল থেকে দূরে আমাদের স্টুডিও গার্ডেন অ্যাপার্টমেন্টে সময় কাটান। নিচতলার এই ইউনিটে রয়েছে একটি ব্যক্তিগত ঘেরা বাগান, যেখানে আপনি সবুজের মাঝে শান্ত পরিবেশে সকালের কফি উপভোগ করতে পারবেন।"
+    },
+    "amenaties": {
+      "en": "Room Amenities",
+      "bn": "রুমের সুযোগ-সুবিধা"
+    },
+    "roomAmenaties": {
+      "en": [
+        "Kitchenette",
+        "Washing Machine",
+        "Outdoor Seating",
+        "Free Wifi",
+        "Smart TV",
+        "Coffee Maker"
+      ],
+      "bn": [
+        "ছোট রান্নাঘর",
+        "ওয়াশিং মেশিন",
+        "আউটডোর সিটিং",
+        "ফ্রি ওয়াইফাই",
+        "স্মার্ট টিভি",
+        "কফি মেকার"
+      ]
+    },
+    "HotelAmenities": {
+      "en": "Hotel Amenities",
+      "bn": "হোটেলের সুযোগ-সুবিধা"
+    },
+    "hotelAmenaties": {
+      "en": [
+        "Library",
+        "Organic Cafe",
+        "Bicycle Rental",
+        "Yoga Deck",
+        "24 Hour Security"
+      ],
+      "bn": [
+        "লাইব্রেরি",
+        "অর্গানিক ক্যাফে",
+        "সাইকেল ভাড়া",
+        "যোগব্যায়াম ডেক",
+        "২৪ ঘণ্টা নিরাপত্তা"
+      ]
+    },
+    "rule": {
+      "en": "Hotel Rules",
+      "bn": "হোটেলের নিয়মকানুন"
+    },
+    "hotelRule": {
+      "en": [
+        "No loud music after 9 PM",
+        "Eco-friendly waste disposal",
+        "No smoking in the garden"
+      ],
+      "bn": [
+        "রাত ৯টার পর উচ্চস্বরে গান বাজানো নিষেধ",
+        "পরিবেশবান্ধব বর্জ্য নিষ্কাশন",
+        "বাগানে ধূমপান নিষেধ"
+      ]
+    },
+    "image": [
+    "https://i.ibb.co.com/1tSNptdw/michael-oxendine-GHCVUt-BECu-Y-unsplash.jpg",
+    "https://i.ibb.co.com/tw4DL7MC/spacejoy-um-AXne-H4-Gh-A-unsplash.jpg",
+    "https://i.ibb.co.com/PJP4Ntj/kara-eads-L7-Ew-Hkq1-B2s-unsplash.jpg",
+    "https://i.ibb.co.com/qFDZMgST/alexandra-gorn-JIUjvqe2-ZHg-unsplash.jpg",
+    "https://i.ibb.co.com/N2t2FkB7/bernard-hermant-c4-Ccpa8s-Ml-I-unsplash.jpg"
+  ],
+    "related":[
+      {
+        "title": { "en": "Luxury Desert Dome", "bn": "লাক্সারি ডেজার্ট ডোম" },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.8", "bn": "৪.৮" },
+        "bed": { "en": "1 King Bed", "bn": "১টি কিং বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "45 sqm", "bn": "৪৫ বর্গমিটার" },
+        "city": { "en": "Starlit Desert View", "bn": "তারাময় মরুভূমির দৃশ্য" },
+        "price": { "en": "16500", "bn": "১৬৫০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Stay in a futuristic geodesic dome in the heart of the desert. Features a transparent ceiling panel for stargazing from your bed and a private deck to enjoy the golden sunset dunes.",
+          "bn": "মরুভূমির মাঝখানে একটি ফিউচারিস্টিক জিওডেসিক ডোমে অবস্থান করুন। এতে রয়েছে স্বচ্ছ ছাদ যা দিয়ে বিছানায় শুয়েই তারা দেখা যায় এবং সোনালী সূর্যাস্ত উপভোগ করার জন্য একটি ব্যক্তিগত ডেক।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Star-view Roof",
+            "Climate Control",
+            "Private Telescope",
+            "Solar Power",
+            "Plush Seating"
+          ],
+          "bn": [
+            "তারা দেখার ছাদ",
+            "ক্লাইমেট কন্ট্রোল",
+            "ব্যক্তিগত টেলিস্কোপ",
+            "সৌর শক্তি",
+            "আরামদায়ক আসন"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": ["Camel Safari", "Bedouin Dinner", "Sand Boarding", "Fire Pit"],
+          "bn": ["উট সাফারি", "বেদুইন ডিনার", "স্যান্ড বোর্ডিং", "ফায়ার পিট"]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "No sand inside dome",
+            "Water conservation active",
+            "Check-in via 4x4 only"
+          ],
+          "bn": [
+            "ডোমের ভেতর বালু আনা নিষেধ",
+            "পানির সীমিত ব্যবহার প্রযোজ্য",
+            "শুধুমাত্র ৪x৪ গাড়িতে চেক-ইন সম্ভব"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/Wp7grw9q/christian-lambert-vm-IWr0-Nnp-CQ-unsplash.jpg"
+        ]
+      },
+      {
+        "title": {
+          "en": "Traditional Japanese Ryokan",
+          "bn": "ঐতিহ্যবাহী জাপানি রিওকান"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.9", "bn": "৪.৯" },
+        "bed": { "en": "2 Futon Beds", "bn": " ২টি ফুটন বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "35 sqm", "bn": "৩৫ বর্গমিটার" },
+        "city": { "en": "Kyoto Garden View", "bn": "কিয়োটো গার্ডেন ভিউ" },
+        "price": { "en": "19000", "bn": "১৯০০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Immerse yourself in Japanese culture with our traditional Ryokan suite. Experience sliding Shoji doors, Tatami mat flooring, and a private Hinoki wood soaking tub for deep relaxation.",
+          "bn": "আমাদের ঐতিহ্যবাহী রিওকান সুইটের মাধ্যমে জাপানি সংস্কৃতিতে নিজেকে নিমজ্জিত করুন। স্লাইডিং শোজি দরজা, তাতামি ম্যাট ফ্লোরিং এবং গভীর প্রশান্তির জন্য হিনোকি কাঠের ব্যক্তিগত বাথটাবের অভিজ্ঞতা নিন।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Tatami Floor",
+            "Yukata Robes",
+            "Tea Ceremony Set",
+            "Hinoki Bathtub",
+            "Shoji Screens"
+          ],
+          "bn": [
+            "তাতামি ফ্লোর",
+            "ইউকাতা পোশাক",
+            "চা পানের কিট",
+            "হিনোকি বাথটাব",
+            "শোজি স্ক্রিন"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Public Onsen",
+            "Zen Garden",
+            "Traditional Breakfast",
+            "Tea Lounge"
+          ],
+          "bn": [
+            "পাবলিক অনসেন",
+            "জেন গার্ডেন",
+            "ঐতিহ্যবাহী ব্রেকফাস্ট",
+            "টি লাউঞ্জ"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "No shoes on Tatami",
+            "Quiet hours strictly observed",
+            "Tattoo policy for Onsen"
+          ],
+          "bn": [
+            "তাতামির ওপর জুতা নিষেধ",
+            "কঠোর নীরবতা পালনীয়",
+            "অনসেনে ট্যাটু সংক্রান্ত নীতি"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/PsrGt5Rf/bilderboken-rlw-E8f8an-Oc-unsplash.jpg"
+        ]
+      },
+      {
+        "title": {
+          "en": "Industrial Container House",
+          "bn": "ইন্ডাস্ট্রিয়াল কন্টেইনার হাউস"
+        },
+        "review": { "en": "Review", "bn": "রিভিউ" },
+        "reviewValue": { "en": "4.4", "bn": "৪.৪" },
+        "bed": { "en": "1 Double Bed", "bn": "১টি ডাবল বেড" },
+        "guest": { "en": "Max: 2 Guests", "bn": "সর্বোচ্চ: ২ জন অতিথি" },
+        "sqm": { "en": "30 sqm", "bn": "৩০ বর্গমিটার" },
+        "city": { "en": "Port Side View", "bn": "বন্দর এলাকার দৃশ্য" },
+        "price": { "en": "4000", "bn": "৪০০০" },
+        "night": { "en": "per night", "bn": "প্রতি রাতে" },
+        "hotelDes": {
+          "en": "Stay in a creatively repurposed shipping container turned into a modern living space. Features industrial-chic decor, smart storage solutions, and a rooftop terrace overlooking the bustling harbor.",
+          "bn": "সৃজনশীলভাবে তৈরি একটি শিপিং কন্টেইনারে থাকুন যা এখন আধুনিক লিভিং স্পেস। এতে রয়েছে ইন্ডাস্ট্রিয়াল-চিক ডেকোর, স্মার্ট স্টোরেজ এবং বন্দর দেখার জন্য একটি রুফটপ টেরেস।"
+        },
+        "amenaties": { "en": "Room Amenities", "bn": "রুমের সুযোগ-সুবিধা" },
+        "roomAmenaties": {
+          "en": [
+            "Compact Kitchen",
+            "Smart Lighting",
+            "AC/Heater",
+            "Foldable Desk",
+            "High-speed Wifi"
+          ],
+          "bn": [
+            "ছোট রান্নাঘর",
+            "স্মার্ট লাইটিং",
+            "এসি/হিটার",
+            "ফোল্ডেবল ডেস্ক",
+            "হাই-স্পিড ওয়াইফাই"
+          ]
+        },
+        "HotelAmenities": {
+          "en": "Hotel Amenities",
+          "bn": "হোটেলের সুযোগ-সুবিধা"
+        },
+        "hotelAmenaties": {
+          "en": [
+            "Co-working Space",
+            "Vending Machine",
+            "Laundromat",
+            "Bike Storage"
+          ],
+          "bn": [
+            "কো-ওয়ার্কিং স্পেস",
+            "ভেন্ডিং মেশিন",
+            "লন্ড্রি সুবিধা",
+            "সাইকেল স্টোরেজ"
+          ]
+        },
+        "rule": { "en": "Hotel Rules", "bn": "হোটেলের নিয়মকানুন" },
+        "hotelRule": {
+          "en": [
+            "No heavy cooking",
+            "Max 2 visitors allowed",
+            "Check-out by 10 AM"
+          ],
+          "bn": [
+            "ভারী রান্না করা নিষেধ",
+            "সর্বোচ্চ ২ জন ভিজিটর",
+            "সকাল ১০টায় চেক-আউট"
+          ]
+        },
+        "image": [
+          "https://i.ibb.co.com/ds5BPh3j/vojtech-bruzek-Yrxr3bs-Pd-S0-unsplash.jpg"
+        ]
+      }
+    ]
+  }
+
+
+]
+
