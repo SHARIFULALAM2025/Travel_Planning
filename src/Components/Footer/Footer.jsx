@@ -100,9 +100,9 @@ const Footer = () => {
     <Container>
       <footer
         style={bgStyle}
-        className="w-full border-t bg-white transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950"
+        className="w-full border-t bg-white transition-colors  duration-300 dark:border-slate-800 dark:bg-slate-950"
       >
-        <div className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <div className="mx-auto max-w-7xl px-4 md:py-16 py-3 lg:px-8">
           {/* MAIN CONTENT GRID */}
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
             {/* BRAND SECTION */}
