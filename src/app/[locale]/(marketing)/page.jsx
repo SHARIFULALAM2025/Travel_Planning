@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <div>
       <Container>
-        <Banner />
+       <Banner />
         <HeroSection />
         <PopularDestinations />
         <Personalized />

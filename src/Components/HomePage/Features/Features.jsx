@@ -1,97 +1,120 @@
-'use client'
-import { MapPlus, Globe2, Wallet, Users } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+"use client"
+import React from 'react'
+import Image from 'next/image'
+import { Briefcase, MapPin, ShieldCheck, Star, Users } from 'lucide-react'
 
 const Features = () => {
   const features = [
     {
-      id: 1,
-      icon: MapPlus,
-      title: 'Create Trips',
-      description: 'Create and manage your travel plans easily.',
+      title: 'Curated Tours',
+      description:
+        'Only the best destinations and experiences, selected just for you.',
+      icon: <Briefcase className="w-6 h-6 text-[#0f2a47]" />,
+      bgColor: 'bg-blue-50',
     },
     {
-      id: 2,
-      icon: Globe2,
-      title: 'Explore Places',
-      description: 'Discover and add new destinations.',
+      title: 'Guides Near You',
+      description:
+        'Get the best value with fair, transparent pricing and no hidden costs.',
+      icon: <MapPin className="w-6 h-6 text-[#0f2a47]" />,
+      bgColor: 'bg-green-50',
     },
     {
-      id: 3,
-      icon: Wallet,
-      title: 'Track Budget',
-      description: 'Monitor expenses and control spending.',
-    },
-    {
-      id: 4,
-      icon: Users,
-      title: 'Group Planning',
-      description: 'Plan trips together with friends.',
+      title: 'Safety Knowledge',
+      description:
+        'Safe and simple payments for a stress-free booking experience.',
+      icon: <ShieldCheck className="w-6 h-6 text-[#0f2a47]" />,
+      bgColor: 'bg-yellow-50',
     },
   ]
-const { theme } = useTheme()
-const [mounted, setMounted] = useState(false)
 
-useEffect(() => {
-  setMounted(true)
-}, [])
-
-if (!mounted) return null
   return (
-    <section className={`py-20 ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'}`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        {/* Header */}
-        <div className="mb-16 max-w-2xl">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Our Features
-          </h2>
-          <p className="mt-4 text-gray-600">
-            Everything you need to plan, organize, and manage your trips
-            efficiently in one powerful platform.
-          </p>
+    <section className="relative bg-white py-16 px-4 md:px-8 lg:px-16 overflow-hidden">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        {/* Left Content Side */}
+        <div className="z-10">
+          <header className="mb-10">
+            <div className="flex items-center gap-2 text-[#72a334] font-bold text-sm uppercase tracking-wider mb-3">
+              <span className="w-2 h-2 rotate-45 bg-[#72a334]"></span>
+              Why Aventour
+            </div>
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#0f2a47] leading-tight mb-4">
+              Your Trusted Travel Partner
+            </h2>
+            <p className="text-gray-500 text-lg">
+              Guiding you to unforgettable experiences across the world's
+              wonders.
+            </p>
+          </header>
+
+          {/* Top 3 Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+            {features.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div
+                  className={`${item.bgColor} w-12 h-12 rounded-xl flex items-center justify-center mb-4`}
+                >
+                  {item.icon}
+                </div>
+                <h3 className="font-bold text-[#0f2a47] text-lg mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-500 leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom 2 Stats Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5">
+              <div className="bg-slate-100 p-3 rounded-full">
+                <Users className="w-8 h-8 text-[#0f2a47]" />
+              </div>
+              <div>
+                <div className="text-3xl font-black text-[#0f2a47]">15+</div>
+                <p className="font-bold text-[#0f2a47] text-sm">
+                  Years Experience
+                </p>
+                <p className="text-xs text-gray-400">
+                  Trusted travel expertise since 2010.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-5">
+              <div className="bg-slate-100 p-3 rounded-full">
+                <Star className="w-8 h-8 text-[#0f2a47]" />
+              </div>
+              <div>
+                <div className="text-3xl font-black text-[#0f2a47]">97%</div>
+                <p className="font-bold text-[#0f2a47] text-sm">
+                  Satisfied Travelers
+                </p>
+                <p className="text-xs text-gray-400">
+                  Backed by real traveler reviews.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature) => (
-            <div
-              key={feature.id}
-              className="group relative bg-white/70 backdrop-blur-lg
-              border border-white/40 rounded-3xl p-8 text-center
-              shadow-md hover:shadow-2xl
-              transition-all duration-500
-              hover:-translate-y-3"
-            >
-              {/* Icon */}
-              <div className="mb-6 flex justify-center">
-                <div
-                  className="w-16 h-16 flex items-center justify-center
-                  rounded-2xl bg-indigo-100
-                  group-hover:bg-indigo-600
-                  transition-all duration-500 shadow-md"
-                >
-                  <feature.icon
-                    size={28}
-                    className="text-indigo-600 group-hover:text-white transition-all duration-500"
-                  />
-                </div>
-              </div>
-
-              {/* Title */}
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                {feature.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm text-gray-600 leading-relaxed">
-                {feature.description}
-              </p>
-
-              {/* Subtle Glow Effect */}
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-indigo-200/20 to-transparent pointer-events-none"></div>
-            </div>
-          ))}
+        {/* Right Image Side */}
+        <div className="relative flex justify-center lg:justify-end">
+          <div className="relative w-full max-w-[600px] aspect-square lg:aspect-auto">
+            <Image
+              src="https://i.ibb.co.com/vxDXZW5F/Travel-essentials-flat-lay-arrangement-removebg-preview.png"
+              alt="Travel Essentials"
+              width={800}
+              height={800}
+              className="object-contain drop-shadow-2xl"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>
