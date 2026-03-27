@@ -27,7 +27,7 @@ const Stories = () => {
     },
   })
 
-  
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) setItemsVisible(1)
@@ -78,11 +78,11 @@ const Stories = () => {
   return (
     <section
       style={bgStyle}
-      className="py-20 px-4 transition-colors duration-300 overflow-hidden"
+      className="py-5 px-4 transition-colors duration-300 overflow-hidden"
     >
       <div className="max-w-[1440px] mx-auto relative group">
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-5">
           <h2
             className={`text-4xl md:text-5xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
           >

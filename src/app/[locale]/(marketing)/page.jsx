@@ -36,9 +36,10 @@ export default function Home() {
         <Personalized />
         <LastMinuteOffers />
         <ChooseTour />
-        <Stories />
+
         <Features />
         <Newsletter />
+        <Stories />
       </Container>
     </div>
   )
