@@ -22,6 +22,7 @@ const geistSans = Geist({
 export const metadata = {
   title: 'Travel Tour',
   description: 'Your Ultimate Travel Companion',
+  referrer: 'no-referrer',
 }
 
 export default async function RootLayout({ children, params }) {
@@ -37,7 +38,7 @@ export default async function RootLayout({ children, params }) {
           <NextIntlClientProvider messages={messages} locale={locale}>
             <AuthProvider>
               <ThemeProvider>
-                {/* Navbar এবং Footer এখান থেকে সরিয়ে (marketing)/layout.jsx এ নিয়ে যান */}
+
 
                 <main className="w-full min-h-screen">
                   {children}

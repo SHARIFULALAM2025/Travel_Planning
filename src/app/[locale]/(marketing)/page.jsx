@@ -3,7 +3,7 @@
 import Container from '@/Components/Container/Container'
 import Banner from '@/Components/HomePage/Banner/Banner'
 import ChooseTour from '@/Components/HomePage/ChooseTour/ChooseTour'
-import Features from '@/Components/HomePage/Features/Features'
+
 import HeroSection from '@/Components/HomePage/HeroSection/HeroSection'
 import LastMinuteOffers from '@/Components/HomePage/LastMinuteOffers/LastMinuteOffers'
 import Newsletter from '@/Components/HomePage/Newsletter/Newsletter'
@@ -37,7 +37,7 @@ export default function Home() {
         <LastMinuteOffers />
         <ChooseTour />
 
-        <Features />
+
         <Newsletter />
         <Stories />
       </Container>

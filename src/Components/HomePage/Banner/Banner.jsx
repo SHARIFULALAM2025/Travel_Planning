@@ -11,9 +11,13 @@ import { useRouter } from 'next/navigation'
 import Container from '@/Components/Container/Container'
 
 const images = [
-  '/assets/image121.jpg',
+  'https://i.ibb.co.com/fYNV14H1/cruise-large-04.jpg',
+  'https://i.ibb.co.com/7JhfkXhF/cruise-large-01.jpg',
   '/assets/bannerimage2.jpg',
   '/assets/bannerimage3.jpg',
+  'https://i.ibb.co.com/hJqSB9y8/cruise-large-03.jpg',
+  'https://i.ibb.co.com/Nnb2d5yH/cruise-large-02.jpg',
+  '/assets/image121.jpg',
   '/assets/bannerimage4.jpg',
   '/assets/bannerimage6.jpg',
 ]
