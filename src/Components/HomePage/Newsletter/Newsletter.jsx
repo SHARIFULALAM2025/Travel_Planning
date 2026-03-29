@@ -2,9 +2,21 @@
 import { Send } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
+import { useEffect, useState } from 'react' 
 
 const SpecialPromotions = () => {
   const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <section
@@ -13,14 +25,12 @@ const SpecialPromotions = () => {
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Left Side: Discover Special Deals Card */}
         <div className="relative h-[350px] md:h-[400px] rounded-xl overflow-hidden group">
-          {/* Background Image */}
           <Image
             src="https://i.ibb.co.com/C34MfmKh/felix-rostig-Um-V2wr-Vbq8-unsplash.jpg"
             alt="Special Deals"
             fill
             className="object-cover group-hover:scale-110 transition-transform duration-700"
           />
-          {/* Overlay */}
           <div className="absolute inset-0 bg-black/40 flex flex-col justify-center px-8 md:px-12">
             <h2 className="text-white text-4xl md:text-5xl font-bold mb-4 drop-shadow-md">
               Discover Special Deals!
@@ -45,7 +55,7 @@ const SpecialPromotions = () => {
           </h2>
 
           <div
-            className={`space-y-1 mb-10 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}
+            className={`space-y-1 mb-10 ${theme === 'dark' ? 'text-gray-400' : 'text-gray-50'}`}
           >
             <p className="text-lg">
               Get update to special deals and exclusive offers.
@@ -53,13 +63,12 @@ const SpecialPromotions = () => {
             <p className="text-lg">Sign up to our newsletter!</p>
           </div>
 
-          {/* Subscription Input Field */}
           <form className="relative flex items-center w-full max-w-lg">
             <div
               className={`flex items-center w-full rounded-full overflow-hidden border p-1.5 transition-all ${theme === 'dark' ? 'bg-slate-900 border-slate-600 focus-within:border-blue-500' : 'bg-white border-gray-200 focus-within:border-blue-400 shadow-sm'}`}
             >
               <div className="pl-4 text-gray-400">
-                <Send size={20} className="" />
+                <Send size={20} />
               </div>
               <input
                 type="email"
@@ -74,7 +83,6 @@ const SpecialPromotions = () => {
                 Subscribe
               </button>
             </div>
-            {/* Mobile Subscribe Button */}
             <button
               type="submit"
               className="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-full font-bold text-sm tracking-wider uppercase transition-all md:hidden"

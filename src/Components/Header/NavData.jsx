@@ -18,10 +18,11 @@ export const navItems = [
   {
     id: 2,
     name: 'explore',
-    path: '/destinations',
-    icon: <ExploreIcon></ExploreIcon>,
+    path: '/explore',
+    con: <ExploreIcon></ExploreIcon>,
     access: 'public',
   },
+
   {
     id: 3,
     name: 'Destination',
@@ -51,7 +52,7 @@ export const navItems = [
     name: 'Contact',
     path: '/contact',
     icon: <LuggageIcon></LuggageIcon>,
-    access: 'private',
+    access: 'public',
   },
   {
     id: 7,

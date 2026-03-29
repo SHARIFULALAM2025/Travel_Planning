@@ -1,13 +1,12 @@
 {
   "Navbar": {
     "logo_text": "Travel",
-    "title": " Tour",
+    "title": "Tour",
     "home": "Home",
-    "explore": "Explore",
+    "explore":"Explore",
     "Destination": "Destination",
     "blog": "Blog",
     "Shop": "Shop",
-
     "Contact": "Contact",
     "Wishlist":"Wishlist",
     "signup-button": "Sign Up",
