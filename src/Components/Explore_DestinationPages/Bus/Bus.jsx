@@ -8,10 +8,11 @@ import { motion } from 'framer-motion'
 import { FaBus, FaStar, FaRegHeart, FaCheckCircle } from 'react-icons/fa'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { TbSteeringWheel } from 'react-icons/tb'
+import { useTheme } from 'next-themes'
 
 const Bus = () => {
   const locale = useLocale()
-
+const { theme } = useTheme()
   const { data: explore = [], isLoading } = useQuery({
     queryKey: ['All explore', locale],
     queryFn: async () => {
@@ -21,7 +22,15 @@ const Bus = () => {
       return res.data
     },
   })
-
+ const bgStyle =
+   theme === 'dark'
+     ? {
+         backgroundColor: '#0F172A',
+         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+       }
+     : {
+         backgroundColor: '#FFFFFF',
+       }
   // শুধুমাত্র Bus ক্যাটাগরি ফিল্টার করা
   const BusData = explore.filter((item) => item.category?.en === 'Bus')
 
@@ -33,7 +42,7 @@ const Bus = () => {
     )
 
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
+    <section style={bgStyle} className="py-16 px-4 max-w-7xl mx-auto">
       {/* আকর্ষণীয় হেডিং */}
       <div className="text-center mb-12">
         <motion.span
@@ -43,12 +52,16 @@ const Bus = () => {
         >
           {locale === 'bn' ? 'আরামদায়ক ভ্রমণ' : 'Premium Travel Experience'}
         </motion.span>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-gray-100 leading-tight">
+        <h2
+          className={`text-3xl md:text-5xl font-extrabold ${theme === 'dark' ? 'text-white' : 'text-slate-900'} leading-tight`}
+        >
           {locale === 'bn'
             ? 'শীর্ষ রেটযুক্ত বাস সার্ভিসসমূহ'
             : 'Top Rated Bus Services for You'}
         </h2>
-        <p className="text-gray-100 mt-4 max-w-2xl mx-auto text-lg">
+        <p
+          className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} mt-4 max-w-2xl mx-auto text-lg`}
+        >
           {locale === 'bn'
             ? 'সবচেয়ে সাশ্রয়ী এবং ভেরিফাইড বাসে উপভোগ করুন আপনার পরবর্তী যাত্রা।'
             : 'Find the best-rated, verified bus services with premium amenities for a relaxed journey.'}

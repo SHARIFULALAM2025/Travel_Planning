@@ -8,10 +8,11 @@ import { motion } from 'framer-motion'
 import { FaStar, FaRegHeart, FaGlobeAmericas, FaPassport } from 'react-icons/fa'
 import { HiOutlineClock, HiOutlineShieldCheck } from 'react-icons/hi'
 import { MdOutlineModeEditOutline } from 'react-icons/md'
+import { useTheme } from 'next-themes'
 
 const Visa = () => {
   const locale = useLocale()
-
+  const { theme } = useTheme()
   const { data: explore = [], isLoading } = useQuery({
     queryKey: ['All explore', locale],
     queryFn: async () => {
@@ -21,6 +22,15 @@ const Visa = () => {
       return res.data
     },
   })
+  const bgStyle =
+    theme === 'dark'
+      ? {
+          backgroundColor: '#0F172A',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+        }
+      : {
+          backgroundColor: '#FFFFFF',
+        }
 
   // 'visa' ক্যাটাগরি ফিল্টার করা
   const VisaData = explore.filter(
@@ -37,7 +47,7 @@ const Visa = () => {
     )
 
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
+    <section style={bgStyle} className="py-16 px-4 max-w-7xl mx-auto">
       {/* ক্যাচি হেডিং */}
       <div className="text-center mb-12">
         <motion.div
@@ -48,12 +58,16 @@ const Visa = () => {
           <FaPassport />{' '}
           {locale === 'bn' ? 'ভিসা সহায়তা' : 'Global Visa Solutions'}
         </motion.div>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-slate-100">
+        <h2
+          className={`text-3xl md:text-5xl font-extrabold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+        >
           {locale === 'bn'
             ? 'সহজ এবং দ্রুত ভিসা প্রসেসিং'
             : 'Fast & Reliable Visa Services'}
         </h2>
-        <p className="text-slate-100 mt-4 max-w-2xl mx-auto text-lg">
+        <p
+          className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} mt-4 max-w-2xl mx-auto text-lg`}
+        >
           {locale === 'bn'
             ? 'আপনার বিদেশের স্বপ্ন পূরণ করতে আমরা দিচ্ছি সঠিক গাইডলাইন এবং প্রসেসিং সাপোর্ট।'
             : 'Expert guidance for your academic and travel visas with high success rates.'}

@@ -7,10 +7,11 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { FaRegHeart, FaExchangeAlt, FaStar } from 'react-icons/fa'
 import { PiAirplaneTiltLight } from 'react-icons/pi'
+import { useTheme } from 'next-themes'
 
 const Trending = () => {
   const locale = useLocale()
-
+const {theme}=useTheme()
   const { data: explore = [], isLoading } = useQuery({
     queryKey: ['All explore', locale],
     queryFn: async () => {
@@ -20,14 +21,26 @@ const Trending = () => {
       return res.data
     },
   })
+     const bgStyle =
+       theme === 'dark'
+         ? {
+             backgroundColor: '#0F172A',
+             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+           }
+         : {
+             backgroundColor: '#FFFFFF',
+           }
 
   const FlightData = explore.filter((item) => item.category?.en === 'Flight')
 
   if (isLoading) return <div className="text-center py-20">Loading...</div>
 
   return (
-    <section className="py-3 px-4 max-w-7xl mx-auto">
-      <h1 className="text-3xl text-center md:text-4xl font-bold text-gray-100 mb-10">
+    <section style={bgStyle} className="py-3 px-4 max-w-7xl mx-auto">
+      <h1
+        className={`text-3xl text-center md:text-4xl font-bold
+      ${theme === 'dark' ? 'text-white' : 'text-slate-900'} mb-10`}
+      >
         {locale === 'bn'
           ? 'আপনার যাত্রার জন্য শীর্ষ রেটযুক্ত ফ্লাইট'
           : 'Top Rated Flights for Your Journey'}

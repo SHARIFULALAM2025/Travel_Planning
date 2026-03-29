@@ -6,14 +6,14 @@ import { useLocale } from 'next-intl'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-// সংশোধিত ইমপোর্ট: ডুপ্লিকেট রিমুভ করা হয়েছে
 import { FaStar, FaRegHeart, FaCheckCircle } from 'react-icons/fa'
 import { HiOutlineMapPin, HiOutlineBuildingOffice2 } from 'react-icons/hi2'
 import { MdOutlineLocalDrink, MdOutlineWifi } from 'react-icons/md'
+import { useTheme } from 'next-themes'
 
 const Hotel = () => {
   const locale = useLocale()
-
+  const { theme } = useTheme()
   const { data: explore = [], isLoading } = useQuery({
     queryKey: ['All explore', locale],
     queryFn: async () => {
@@ -23,7 +23,15 @@ const Hotel = () => {
       return res.data
     },
   })
-
+  const bgStyle =
+    theme === 'dark'
+      ? {
+          backgroundColor: '#0F172A',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+        }
+      : {
+          backgroundColor: '#FFFFFF',
+        }
   // 'Hotel' ক্যাটাগরি ফিল্টার
   const HotelData = explore.filter(
     (item) => item.category?.en?.toLowerCase() === 'hotel'
@@ -39,7 +47,7 @@ const Hotel = () => {
     )
 
   return (
-    <section className="py-3 px-4 max-w-7xl mx-auto">
+    <section style={bgStyle} className="py-3 px-4 max-w-7xl mx-auto">
       {/* হেডিং সেকশন */}
       <div className="text-center ">
         <motion.div
@@ -50,12 +58,16 @@ const Hotel = () => {
           <HiOutlineBuildingOffice2 size={16} />{' '}
           {locale === 'bn' ? 'সেরা হোটেল' : 'Luxury Stays'}
         </motion.div>
-        <h2 className="text-3xl md:text-5xl font-black text-slate-100 italic">
+        <h2
+          className={`text-3xl md:text-5xl font-black ${theme === 'dark' ? 'text-white' : 'text-slate-900'} italic`}
+        >
           {locale === 'bn'
             ? 'পছন্দের গন্তব্যে সেরা হোটেল'
             : 'Find Your Perfect Sanctuary'}
         </h2>
-        <p className="text-slate-100 mt-2 max-w-2xl mx-auto text-lg">
+        <p
+          className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} mt-2 max-w-2xl mx-auto text-lg`}
+        >
           {locale === 'bn'
             ? 'বিলাসিতা এবং আরামের এক অনন্য সংমিশ্রণ নিয়ে আপনার অপেক্ষায় আমাদের সেরা হোটেলগুলো।'
             : 'Handpicked hotels offering premium comfort, antique charm, and modern luxury.'}
