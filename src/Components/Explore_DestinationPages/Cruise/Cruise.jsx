@@ -8,10 +8,11 @@ import { motion } from 'framer-motion'
 import { FaStar, FaRegHeart, FaCheckCircle, FaAnchor } from 'react-icons/fa'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { MdOutlineTimer, MdOutlinePeopleAlt } from 'react-icons/md'
+import { useTheme } from 'next-themes'
 
 const Cruise = () => {
   const locale = useLocale()
-
+const {theme}=useTheme()
   const { data: explore = [], isLoading } = useQuery({
     queryKey: ['All explore', locale],
     queryFn: async () => {
@@ -22,7 +23,15 @@ const Cruise = () => {
     },
   })
 
-
+ const bgStyle =
+   theme === 'dark'
+     ? {
+         backgroundColor: '#0F172A',
+         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+       }
+     : {
+         backgroundColor: '#FFFFFF',
+       }
   const CruiseData = explore.filter(
     (item) => item.cat?.en === 'Cruise' || item.category?.en === 'Cruise'
   )
@@ -35,7 +44,7 @@ const Cruise = () => {
     )
 
   return (
-    <section className="py-3 px-4 max-w-7xl mx-auto">
+    <section style={bgStyle} className="py-3 px-4 max-w-7xl mx-auto">
       {/* ক্যাচি হেডিং */}
       <div className="text-center mb-12">
         <motion.div
@@ -45,12 +54,16 @@ const Cruise = () => {
         >
           <FaAnchor /> {locale === 'bn' ? 'সমুদ্র যাত্রা' : 'Ocean Expeditions'}
         </motion.div>
-        <h2 className="text-3xl md:text-5xl font-black text-slate-100">
+        <h2
+          className={`text-3xl md:text-5xl font-black ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+        >
           {locale === 'bn'
             ? 'সেরা বিলাসবহুল ক্রুজ জাহাজসমূহ'
             : 'Explore World-Class Luxury Cruises'}
         </h2>
-        <p className="text-slate-100 mt-4 max-w-2xl mx-auto text-lg">
+        <p
+          className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} mt-4 max-w-2xl mx-auto text-lg`}
+        >
           {locale === 'bn'
             ? 'নীল জলরাশিতে হারান এক চমৎকার অভিজ্ঞতার সাথে। বেছে নিন আপনার পছন্দের ক্রুজ।'
             : 'Sail away into the deep blue with our handpicked selection of premium cruises.'}

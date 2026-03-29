@@ -4,8 +4,10 @@ import HeroExplore from '@/Components/Explore_DestinationPages/HeroUi/HeroExplor
 import Hotel from '@/Components/Explore_DestinationPages/Hotel/Hotel';
 import Trending from '@/Components/Explore_DestinationPages/Trending/Trending';
 import Visa from '@/Components/Explore_DestinationPages/Visa/Visa';
+
 import React from 'react';
 const ExplorePage = () => {
+
     return (
         <div>
 
