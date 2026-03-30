@@ -12,7 +12,16 @@ import {
   FaStar,
   FaMapMarkerAlt,
 } from 'react-icons/fa'
-import { ChevronLeft, ChevronRight, Heart, Maximize2, MessageSquare, Star, ThumbsDown, ThumbsUp } from 'lucide-react'
+import {
+  ChevronLeft,
+  ChevronRight,
+  Heart,
+  Maximize2,
+  MessageSquare,
+  Star,
+  ThumbsDown,
+  ThumbsUp,
+} from 'lucide-react'
 import Image from 'next/image'
 import { GiCommercialAirplane } from 'react-icons/gi'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -123,9 +132,9 @@ const ViewFlight = ({ params }) => {
 
       {/* Content Section */}
       <main className="">
-        <div style={bgStyle} className="grid grid-cols-12 gap-4">
+        <div style={bgStyle} className="grid grid-cols-12  gap-4">
           {/* Main Details */}
-          <section className="col-span-12 lg:col-span-9 space-y-5">
+          <section className="col-span-12 lg:col-span-9 md:mt-3 space-y-5">
             <div className="flex flex-col md:flex-row justify-between items-start gap-6">
               <div className="space-y-4 w-full">
                 <div className="flex flex-wrap items-center gap-3">
@@ -145,14 +154,22 @@ const ViewFlight = ({ params }) => {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-4 md:gap-6 text-sm text-slate-500 font-semibold">
-                  <span className="flex items-center gap-2">
+                  <span
+                    className={`flex items-center gap-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                  >
                     <FaPlane className="text-rose-500 rotate-45" size={18} />
                     {singleFlight?.company?.[locale]}
                   </span>
+                  <span className={`hidden md:inline text-slate-300 `}>|</span>
+                  <span
+                    className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                  >
+                    {singleFlight?.destination?.[locale]}
+                  </span>
                   <span className="hidden md:inline text-slate-300">|</span>
-                  <span>{singleFlight?.destination?.[locale]}</span>
-                  <span className="hidden md:inline text-slate-300">|</span>
-                  <span className="flex items-center gap-2">
+                  <span
+                    className={`flex items-center gap-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                  >
                     <FaMapMarkerAlt className="text-rose-500" size={16} />
                     {singleFlight?.location?.[locale]}
                   </span>
@@ -172,10 +189,14 @@ const ViewFlight = ({ params }) => {
               </div>
 
               <div className="flex items-center gap-3 w-full md:w-auto justify-start md:justify-end">
-                <button className="p-4 border border-slate-200 rounded-full hover:bg-slate-50 transition-all text-slate-600 shadow-sm">
+                <button
+                  className={`p-4 border border-slate-200 rounded-full hover:bg-slate-50 transition-all  ${theme === 'dark' ? 'text-white' : 'text-slate-900'} shadow-sm`}
+                >
                   <FaShareAlt size={18} />
                 </button>
-                <button className="flex-1 md:flex-none flex items-center justify-center gap-2 px-8 py-3.5 border border-slate-400 rounded-full hover:bg-rose-50 hover:text-rose-500 transition-all font-black text-sm uppercase tracking-widest">
+                <button
+                  className={`flex-1  ${theme === 'dark' ? 'text-white' : 'text-slate-900'} md:flex-none flex items-center justify-center gap-2 px-8 py-3.5 border border-slate-400 rounded-full hover:bg-rose-50 hover:text-rose-500 transition-all font-black text-sm uppercase tracking-widest`}
+                >
                   <FaRegHeart size={18} /> Save
                 </button>
               </div>
@@ -507,7 +528,6 @@ const ViewFlight = ({ params }) => {
                           <div className="flex gap-4">
                             <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden relative border-2 border-white shadow-sm">
                               <Image
-                                
                                 src={`https://randomuser.me/api/portraits/men/${(index % 50) + 1}.jpg`}
                                 alt={review.userName}
                                 fill
@@ -573,12 +593,196 @@ const ViewFlight = ({ params }) => {
             />
           </section>
 
-          {/* Sidebar */}
-          <aside className="col-span-12 lg:col-span-3">
-            <div className="sticky top-8 p-6 bg-amber-50 border-2 border-dashed border-amber-200 rounded-2xl h-[400px] flex items-center justify-center">
-              <p className="text-amber-800 font-bold italic">
-                Booking Sidebar Content
-              </p>
+          <aside className="col-span-12 lg:col-span-3 md:mt-3 space-y-4">
+            {/* 1. Check Availability Card */}
+            <div
+              style={bgStyle}
+              className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-5"
+            >
+              <div className="flex justify-between items-center bg-slate-50 p-2 rounded-2xl border border-slate-100">
+                <span className="text-xs font-bold text-slate-900 px-3">
+                  Newyork
+                </span>
+                <div className="bg-rose-500 p-2 rounded-full text-white rotate-90 md:rotate-0">
+                  <FaPlane size={12} />
+                </div>
+                <span className="text-xs font-bold text-slate-900 px-3">
+                  Sydney
+                </span>
+              </div>
+
+              <div className="flex justify-between items-end border-b border-dashed border-slate-200 pb-4">
+                <p
+                  className={`text-xs font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                >
+                  Starts From
+                </p>
+                <p className="text-2xl font-black text-rose-500">
+                  $500{' '}
+                  <span
+                    className={`text-[10px] ${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-normal`}
+                  >
+                    / Person
+                  </span>
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <h3
+                  className={`font-bold  ${theme === 'dark' ? 'text-white' : 'text-slate-900'} `}
+                >
+                  Check Availability
+                </h3>
+
+                {/* From/To inputs */}
+                <div className="space-y-3">
+                  <div className="p-3 border border-slate-200 rounded-xl">
+                    <p className="text-[10px] uppercase font-bold text-slate-400">
+                      From
+                    </p>
+                    <h4
+                      className={`font-bold  ${theme === 'dark' ? 'text-white' : 'text-slate-900'} `}
+                    >
+                      Newyork
+                    </h4>
+                    <p className="text-[10px] text-slate-400">
+                      Ken International Airport
+                    </p>
+                  </div>
+                  <div className="p-3 border border-slate-200 rounded-xl">
+                    <p className="text-[10px] uppercase font-bold text-slate-400">
+                      To
+                    </p>
+                    <h4
+                      className={`font-bold  ${theme === 'dark' ? 'text-white' : 'text-slate-900'} `}
+                    >
+                      Las Vegas
+                    </h4>
+                    <p className="text-[10px] text-slate-400">
+                      Martial International Airport
+                    </p>
+                  </div>
+                </div>
+
+                {/* Date & Class */}
+                <div className="p-3 border border-slate-200 rounded-xl">
+                  <p className="text-[10px] uppercase font-bold text-slate-400">
+                    Departure
+                  </p>
+                  <h4
+                    className={`font-bold  ${theme === 'dark' ? 'text-white' : 'text-slate-900'} `}
+                  >
+                    30-03-2026
+                  </h4>
+                  <p className="text-[10px] text-slate-400">Monday</p>
+                </div>
+
+                <select className="w-full p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold text-slate-700 outline-none">
+                  <option>Economy</option>
+                  <option>Business</option>
+                </select>
+
+                {/* Passengers count */}
+                <div className="border border-slate-200 rounded-xl p-3 space-y-3">
+                  <p
+                    className={`text-[10px] font-bold  ${theme === 'dark' ? 'text-white' : 'text-slate-900'} `}
+                  >
+                    Details
+                  </p>
+                  {['Adults', 'Infants (0-12 Yrs)', 'Children (2-12 Yrs)'].map(
+                    (label) => (
+                      <div
+                        key={label}
+                        className="flex justify-between items-center text-xs"
+                      >
+                        <span
+                          className={` ${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-bold`}
+                        >
+                          {label}
+                        </span>
+                        <div className="flex items-center gap-3">
+                          <button className="w-6 h-6 bg-slate-100 text-slate-700 rounded-full flex items-center justify-center">
+                            -
+                          </button>
+                          <span className="font-bold">01</span>
+                          <button className="w-6 h-6 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center">
+                            +
+                          </button>
+                        </div>
+                      </div>
+                    )
+                  )}
+                </div>
+
+                <button className="w-full py-4 bg-rose-500 text-white rounded-2xl font-bold uppercase tracking-widest text-sm hover:bg-rose-600 transition-colors shadow-lg shadow-rose-200">
+                  Book Now
+                </button>
+                <p className="text-center text-[10px] text-emerald-500 font-bold italic">
+                  40 Seats Available on your Search
+                </p>
+              </div>
+            </div>
+
+            {/* 2. Map Section */}
+            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <div className="h-[200px] relative bg-slate-100">
+                <Image
+                  src="https://i.ibb.co.com/d44yDrGM/Captusfttddfre.png"
+                  alt="Map"
+                  fill
+                  className="object-cover"
+                />
+                <button className="absolute top-3 left-3 text-black px-3 py-1.5 rounded-lg text-[10px] font-bold flex items-center gap-1 shadow-md">
+                  <FaMapMarkerAlt className="text-rose-500" /> Maps
+                </button>
+              </div>
+              <div className="p-4 flex items-start gap-2">
+                <FaMapMarkerAlt
+                  className="text-rose-500 mt-1 shrink-0"
+                  size={14}
+                />
+                <p className="text-[11px] font-medium text-slate-600">
+                  15, Adri Street, Ciutat Vella, Barcelona
+                </p>
+              </div>
+            </div>
+
+            {/* 3. Enquire Us Form */}
+            <div
+              style={bgStyle}
+              className="bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-4"
+            >
+              <h3
+                className={`font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'} text-lg`}
+              >
+                Enquire Us
+              </h3>
+              <div className="space-y-3">
+                {['Name', 'Email', 'Phone'].map((field) => (
+                  <div key={field} className="space-y-1">
+                    <label className="text-[10px] font-bold text-slate-400 uppercase ml-1">
+                      {field}
+                    </label>
+                    <input
+                      type="text"
+                      placeholder={`${field}.......`}
+                      className={`w-full border border-slate-200 p-3 ${theme === 'dark' ? 'text-white' : 'text-slate-900 border border-slate-200  '} rounded-xl  transition-colors`}
+                    />
+                  </div>
+                ))}
+                <div className="space-y-1">
+                  <label className="text-[10px] font-bold text-slate-400 uppercase ml-1">
+                    Message
+                  </label>
+                  <textarea
+                    placeholder="Message........"
+                    className={`w-full border border-slate-200 p-3 ${theme === 'dark' ? 'text-white' : 'text-slate-900 border border-slate-200  '} rounded-xl  h-24 focus:border-indigo-400`}
+                  />
+                </div>
+                <button className="w-full py-4 bg-rose-500 text-white rounded-2xl font-bold text-sm uppercase tracking-wider hover:bg-rose-600">
+                  Submit Enquiry
+                </button>
+              </div>
             </div>
           </aside>
         </div>
