@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import { FaRegHeart, FaExchangeAlt, FaStar } from 'react-icons/fa'
 import { PiAirplaneTiltLight } from 'react-icons/pi'
 import { useTheme } from 'next-themes'
+import Link from 'next/link'
 
 const Trending = () => {
   const locale = useLocale()
@@ -33,7 +34,11 @@ const {theme}=useTheme()
 
   const FlightData = explore.filter((item) => item.category?.en === 'Flight')
 
-  if (isLoading) return <div className="text-center py-20">Loading...</div>
+  if (isLoading) return (
+    <div className="flex justify-center items-center min-h-[400px]">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+    </div>
+  )
 
   return (
     <section style={bgStyle} className="py-3 px-4 max-w-7xl mx-auto">
@@ -81,9 +86,9 @@ const {theme}=useTheme()
 
             {/* Content Section */}
             <div className="p-5">
-              <h3 className="text-xl font-bold text-gray-800 mb-1 truncate">
+              <Link href={`explore/${item._id}`} className="text-xl font-bold text-gray-800 line-clamp-1 group-hover:text-red-500 transition-colors">
                 {item.flightTitle?.[locale]}
-              </h3>
+              </Link>
 
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-5 h-5 bg-red-600 rounded-full flex items-center justify-center text-white text-[10px] font-bold">
