@@ -106,7 +106,7 @@ const { theme } = useTheme()
               </button>
             </div>
 
-            {/* কার্ড কন্টেন্ট */}
+            
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex justify-between items-start mb-3">
                 <h3 className="text-xl font-bold text-gray-800 line-clamp-1 group-hover:text-red-500 transition-colors">
@@ -114,7 +114,7 @@ const { theme } = useTheme()
                 </h3>
               </div>
 
-              {/* লোকেশন লজিক (যদি ডাটাতে From/To থাকে) */}
+
               <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
                 <HiOutlineLocationMarker className="text-red-500 shrink-0" />
                 <span className="truncate">
