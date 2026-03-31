@@ -5870,111 +5870,123 @@
     },
     "rating": 5.0,
     "totalReviews": 400,
-    "busInformation": {
-      "launchedOn": "25 May 2025",
-      "transmission": {
-        "en": "Manual",
-        "bn": "ম্যানুয়াল"
-      },
-      "seats": 200,
-      "fuel": "200 Liters",
-      "weight": "8 Tons",
-      "height": "3.5 Meters",
-      "length": "12 Meters",
-      "speed": "80.6 knots"
-    },
+    "bus_info_title": { "en": "Bus Information", "bn": "বাসের তথ্য" },
+    "launched_on": { "en": "Launched On", "bn": "চালু করা হয়েছে" },
+    "launch_date": { "en": "25 May 2025", "bn": "২৫ মে ২০২৫" },
+    "transmission": { "en": "Transmission", "bn": "ট্রান্সমিশন" },
+    "manual": { "en": "Manual", "bn": "ম্যানুয়াল" },
+    "seats": { "en": "Seats", "bn": "আসন সংখ্যা" },
+    "seat_count": { "en": "200", "bn": "২০০" },
+    "fuel": { "en": "Fuel", "bn": "জ্বালানি" },
+    "fuel_capacity": { "en": "200 Liters", "bn": "২০০ লিটার" },
+    "weight": { "en": "Weight", "bn": "ওজন" },
+    "weight_value": { "en": "8 Tons", "bn": "৮ টন" },
+    "height": { "en": "Height", "bn": "উচ্চতা" },
+    "height_value": { "en": "3.5 Meters", "bn": "৩.৫ মিটার" },
+    "length": { "en": "Length", "bn": "দৈর্ঘ্য" },
+    "length_value": { "en": "12 Meters", "bn": "১২ মিটার" },
+    "speed": { "en": "Speed", "bn": "গতিবেগ" },
+    "speed_value": { "en": "80.6 knots", "bn": "৮০.৬ নট" },
     "description": {
-      "en": "The Royal Travels Comfortline Coach is a luxury intercity bus designed for long-distance comfort. It features ergonomically designed seats, ample legroom, and personal air vents to ensure a relaxed journey. Each seat includes a USB charging port, reading light, and foldable tray for added convenience.",
-      "bn": "রয়্যাল ট্রাভেলস কমফোর্টলাইন কোচ একটি বিলাসবহুল আন্তঃনগর বাস যা দীর্ঘ দূরত্বের আরামের জন্য ডিজাইন করা হয়েছে। এতে রয়েছে এরগোনোমিকভাবে ডিজাইন করা সিট, পর্যাপ্ত লেগরুম এবং ব্যক্তিগত এয়ার ভেন্ট। প্রতিটি সিটে ইউএসবি চার্জিং পোর্ট, রিডিং লাইট এবং ফোল্ডেবল ট্রে অন্তর্ভুক্ত রয়েছে।"
+      "en": "Experience ultimate luxury with our Scania Sleeper Coach. Designed for overnight journeys with full-flat beds and premium privacy curtains.",
+      "bn": "আমাদের স্ক্যানিয়া স্লিপার কোচের সাথে চরম বিলাসিতা অনুভব করুন। ফুল-ফ্ল্যাট বেড এবং প্রিমিয়াম প্রাইভেসি কার্টেনসহ এটি রাতভর ভ্রমণের জন্য ডিজাইন করা হয়েছে।"
     },
-    "amenities": {
-      "comfortSeating": {
-        "title": { "en": "Comfort & Seating", "bn": "আরাম ও আসন" },
-        "items": {
-          "en": [
-            "Reclining semi sleeper seats",
-            "Extra legroom and footrests",
-            "Personal reading lights",
-            "Clean blankets and pillows"
-          ],
-          "bn": [
-            "রিক্লাইনিং সেমি স্লিপার সিট",
-            "অতিরিক্ত লেগরুম এবং ফুটরেস্ট",
-            "ব্যক্তিগত রিডিং লাইট",
-            "পরিষ্কার কম্বল এবং বালিশ"
-          ]
-        }
-      },
-      "connectivityEntertainment": {
-        "title": {
-          "en": "Connectivity & Entertainment",
-          "bn": "সংযোগ ও বিনোদন"
-        },
-        "items": {
-          "en": [
-            "Free high-speed Wi-Fi",
-            "USB charging ports at every seat",
-            "Individual entertainment screens",
-            "Bluetooth headphone support"
-          ],
-          "bn": [
-            "ফ্রি হাই-স্পিড ওয়াই-ফাই",
-            "প্রতিটি সিটে ইউএসবি চার্জিং পোর্ট",
-            "ব্যক্তিগত বিনোদন স্ক্রিন",
-            "ব্লুটুথ হেডফোন সাপোর্ট"
-          ]
-        }
-      },
-      "travelAssistance": {
-        "title": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
-        "items": {
-          "en": [
-            "GPS tracking with live updates",
-            "24/7 customer support",
-            "Bottled water and light snacks",
-            "Friendly and trained crew"
-          ],
-          "bn": [
-            "লাইভ আপডেটসহ জিপিএস ট্র্যাকিং",
-            "২৪/৭ কাস্টমার সাপোর্ট",
-            "বোতলজাত পানি এবং হালকা নাস্তা",
-            "বন্ধুত্বপূর্ণ এবং প্রশিক্ষিত ক্রু"
-          ]
-        }
-      }
+    "amenities_title": { "en": "Amenities", "bn": "সুযোগ-সুবিধা" },
+
+    "comfort_seating": { "en": "Comfort & Seating", "bn": "আরামদায়ক আসন" },
+    "reclining_seats": {
+      "en": "Reclining semi sleeper seats",
+      "bn": "হেলান দেওয়া সেমি স্লিপার আসন"
     },
-    "faq": [
-      {
-        "question": {
-          "en": "How early should I arrive before departure?",
-          "bn": "যাত্রার কতক্ষণ আগে আমাকে পৌঁছাতে হবে?"
-        },
-        "answer": {
-          "en": "We recommend arriving at least 30 minutes before the scheduled departure time to ensure a smooth boarding experience.",
-          "bn": "সুশৃঙ্খলভাবে বাসে ওঠার জন্য আমরা নির্ধারিত সময়ের অন্তত ৩০ মিনিট আগে পৌঁছানোর পরামর্শ দিই।"
-        }
-      },
-      {
-        "question": {
-          "en": "Can I choose my seat while booking?",
-          "bn": "আমি কি বুকিং করার সময় সিট বেছে নিতে পারি?"
-        },
-        "answer": {
-          "en": "Yes, you can select your preferred seat from the available options during the booking process.",
-          "bn": "হ্যাঁ, বুকিং করার সময় আপনি আপনার পছন্দমতো সিট বেছে নিতে পারবেন।"
-        }
-      },
-      {
-        "question": {
-          "en": "Is Wi-Fi available on the bus?",
-          "bn": "বাসে কি ওয়াই-ফাই সুবিধা আছে?"
-        },
-        "answer": {
-          "en": "Yes, we provide free high-speed Wi-Fi for all our passengers.",
-          "bn": "হ্যাঁ, আমরা সকল যাত্রীদের জন্য ফ্রি হাই-স্পিড ওয়াই-ফাই সুবিধা প্রদান করি।"
-        }
-      }
-    ],
+    "extra_legroom": {
+      "en": "Extra legroom and footrests",
+      "bn": "অতিরিক্ত লেগরুম এবং ফুটরেস্ট"
+    },
+    "reading_lights": {
+      "en": "Personal reading lights",
+      "bn": "ব্যক্তিগত রিডিং লাইট"
+    },
+    "blankets_pillows": {
+      "en": "Clean blankets and pillows",
+      "bn": "পরিষ্কার কম্বল এবং বালিশ"
+    },
+
+    "connectivity_entertainment": {
+      "en": "Connectivity & Entertainment",
+      "bn": "কানেক্টিভিটি এবং বিনোদন"
+    },
+    "wifi": { "en": "Free high-speed Wi-Fi", "bn": "ফ্রি হাই-স্পিড ওয়াই-ফাই" },
+    "usb_ports": {
+      "en": "USB charging ports at every seat",
+      "bn": "প্রতিটি আসনে ইউএসবি চার্জিং পোর্ট"
+    },
+    "screens": {
+      "en": "Individual entertainment screens",
+      "bn": "ব্যক্তিগত বিনোদন স্ক্রিন"
+    },
+    "bluetooth": {
+      "en": "Bluetooth headphone support",
+      "bn": "ব্লুটুথ হেডফোন সাপোর্ট"
+    },
+
+    "travel_assistance": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
+    "gps_tracking": {
+      "en": "GPS tracking with live updates",
+      "bn": "লাইভ আপডেটসহ জিপিএস ট্র্যাকিং"
+    },
+    "customer_support": {
+      "en": "24/7 customer support",
+      "bn": "২৪/৭ কাস্টমার সাপোর্ট"
+    },
+    "water_snacks": {
+      "en": "Bottled water and light snacks",
+      "bn": "বোতলজাত পানি এবং হালকা নাস্তা"
+    },
+    "crew": {
+      "en": "Friendly and trained crew",
+      "bn": "বন্ধুত্বপূর্ণ এবং প্রশিক্ষিত ক্রু"
+    },
+    "faq_title": {
+      "en": "Frequently Asked Questions",
+      "bn": "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী"
+    },
+
+    "arrival_time_q": {
+      "en": "How early should I arrive before departure?",
+      "bn": "বাস ছাড়ার কতক্ষণ আগে আমার পৌঁছানো উচিত?"
+    },
+    "arrival_time_a": {
+      "en": "We recommend arriving at least 30 minutes before the scheduled departure time to ensure a smooth and stress-free boarding experience. Arriving early allows you to check in your luggage, confirm your seat, and settle in comfortably before departure.",
+      "bn": "একটি মসৃণ এবং চাপমুক্ত বোর্ডিং অভিজ্ঞতা নিশ্চিত করতে আমরা নির্ধারিত প্রস্থানের সময়ের কমপক্ষে ৩০ মিনিট আগে পৌঁছানোর পরামর্শ দিই। আগে পৌঁছালে আপনি আপনার লাগেজ চেক-ইন করতে, আপনার আসন নিশ্চিত করতে এবং প্রস্থানের আগে আরামদায়কভাবে বসতি স্থাপন করতে পারবেন।"
+    },
+
+    "seat_choice_q": {
+      "en": "Can I choose my seat while booking?",
+      "bn": "আমি কি বুকিং করার সময় আমার আসন বেছে নিতে পারি?"
+    },
+    "seat_choice_a": {
+      "en": "Yes, our interactive seat map allows you to select your preferred available seat during the booking process.",
+      "bn": "হ্যাঁ, আমাদের ইন্টারেক্টিভ সিট ম্যাপ আপনাকে বুকিং প্রক্রিয়া চলাকালীন আপনার পছন্দের উপলব্ধ আসনটি বেছে নেওয়ার সুযোগ দেয়।"
+    },
+
+    "wifi_available_q": {
+      "en": "Is Wi-Fi available on the bus?",
+      "bn": "বাসে কি ওয়াই-ফাই সুবিধা আছে?"
+    },
+    "wifi_available_a": {
+      "en": "Yes, we provide free high-speed Wi-Fi on all our premium buses to keep you connected throughout the journey.",
+      "bn": "হ্যাঁ, আপনার পুরো যাত্রা জুড়ে কানেক্টেড থাকতে আমাদের সকল প্রিমিয়াম বাসে আমরা ফ্রি হাই-স্পিড ওয়াই-ফাই প্রদান করি।"
+    },
+
+    "food_drinks_q": {
+      "en": "Are food or drinks provided during the trip?",
+      "bn": "ভ্রমণের সময় কি খাবার বা পানীয় সরবরাহ করা হয়?"
+    },
+    "food_drinks_a": {
+      "en": "We provide complimentary bottled water and light snacks. For longer journeys, we also schedule refreshment breaks at high-quality roadside restaurants.",
+      "bn": "আমরা সৌজন্যমূলক বোতলজাত পানি এবং হালকা নাস্তা সরবরাহ করি। দীর্ঘ যাত্রার জন্য, আমরা উন্নত মানের হাইওয়ে রেস্তোরাঁয় বিরতির ব্যবস্থা করি।"
+    },
+
     "reviewSummary": {
       "averageRating": 4.9,
       "totalReviews": 2459,
@@ -6049,109 +6061,176 @@
     "busType": { "en": "Sleeper", "bn": "স্লিপার" },
     "rating": 4.8,
     "totalReviews": 850,
-    "busInformation": {
-      "launchedOn": "12 January 2024",
-      "transmission": { "en": "Automatic", "bn": "অটোমেটিক" },
-      "seats": 32,
-      "fuel": "350 Liters",
-      "weight": "12 Tons",
-      "height": "3.8 Meters",
-      "length": "14 Meters",
-      "speed": "95.2 knots"
-    },
+    "bus_info_title": { "en": "Bus Information", "bn": "বাসের তথ্য" },
+    "launched_on": { "en": "Launched On", "bn": "চালু করা হয়েছে" },
+    "launch_date": { "en": "25 May 2025", "bn": "২৫ মে ২০২৫" },
+    "transmission": { "en": "Transmission", "bn": "ট্রান্সমিশন" },
+    "manual": { "en": "Manual", "bn": "ম্যানুয়াল" },
+    "seats": { "en": "Seats", "bn": "আসন সংখ্যা" },
+    "seat_count": { "en": "200", "bn": "২০০" },
+    "fuel": { "en": "Fuel", "bn": "জ্বালানি" },
+    "fuel_capacity": { "en": "200 Liters", "bn": "২০০ লিটার" },
+    "weight": { "en": "Weight", "bn": "ওজন" },
+    "weight_value": { "en": "8 Tons", "bn": "৮ টন" },
+    "height": { "en": "Height", "bn": "উচ্চতা" },
+    "height_value": { "en": "3.5 Meters", "bn": "৩.৫ মিটার" },
+    "length": { "en": "Length", "bn": "দৈর্ঘ্য" },
+    "length_value": { "en": "12 Meters", "bn": "১২ মিটার" },
+    "speed": { "en": "Speed", "bn": "গতিবেগ" },
+    "speed_value": { "en": "80.6 knots", "bn": "৮০.৬ নট" },
     "description": {
       "en": "Experience ultimate luxury with our Scania Sleeper Coach. Designed for overnight journeys with full-flat beds and premium privacy curtains.",
       "bn": "আমাদের স্ক্যানিয়া স্লিপার কোচের সাথে চরম বিলাসিতা অনুভব করুন। ফুল-ফ্ল্যাট বেড এবং প্রিমিয়াম প্রাইভেসি কার্টেনসহ এটি রাতভর ভ্রমণের জন্য ডিজাইন করা হয়েছে।"
     },
-    "amenities": {
-      "comfortSeating": {
-        "title": { "en": "Comfort & Seating", "bn": "আরাম ও আসন" },
-        "items": {
-          "en": [
-            "Full flat sleeper beds",
-            "Pillow and heavy blankets",
-            "Privacy curtains",
-            "Ambient mood lighting"
-          ],
-          "bn": [
-            "ফুল ফ্ল্যাট স্লিপার বেড",
-            "বালিশ এবং ভারী কম্বল",
-            "প্রাইভেসি পর্দা",
-            "অ্যাম্বিয়েন্ট মুড লাইটিং"
-          ]
-        }
-      },
-      "connectivityEntertainment": {
-        "title": {
-          "en": "Connectivity & Entertainment",
-          "bn": "সংযোগ ও বিনোদন"
-        },
-        "items": {
-          "en": [
-            "Wi-Fi 6 Support",
-            "Netflix enabled screens",
-            "Noise cancelling headphones",
-            "Personal tablet holder"
-          ],
-          "bn": [
-            "ওয়াই-ফাই ৬ সাপোর্ট",
-            "নেটফ্লিক্স সাপোর্টেড স্ক্রিন",
-            "নয়েজ ক্যান্সেলিং হেডফোন",
-            "পার্সোনাল ট্যাবলেট হোল্ডার"
-          ]
-        }
-      },
-      "travelAssistance": {
-        "title": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
-        "items": {
-          "en": [
-            "Real-time arrival alerts",
-            "Emergency medical kit",
-            "Complimentary dinner box",
-            "On-board washroom"
-          ],
-          "bn": [
-            "রিয়েল-টাইম অ্যারাইভাল অ্যালার্ট",
-            "জরুরি মেডিকেল কিট",
-            "পরিপূরক ডিনার বক্স",
-            "অন-বোর্ড ওয়াশরুম"
-          ]
-        }
-      }
+    "amenities_title": { "en": "Amenities", "bn": "সুযোগ-সুবিধা" },
+
+    "comfort_seating": { "en": "Comfort & Seating", "bn": "আরামদায়ক আসন" },
+    "reclining_seats": {
+      "en": "Reclining semi sleeper seats",
+      "bn": "হেলান দেওয়া সেমি স্লিপার আসন"
     },
-    "faq": [
-      {
-        "question": {
-          "en": "Is there a washroom inside?",
-          "bn": "বাসের ভেতরে কি ওয়াশরুম আছে?"
-        },
-        "answer": {
-          "en": "Yes, this premium coach includes a clean and maintained chemical toilet.",
-          "bn": "হ্যাঁ, এই প্রিমিয়াম কোচে একটি পরিষ্কার এবং উন্নত কেমিক্যাল টয়লেট রয়েছে।"
-        }
-      }
-    ],
+    "extra_legroom": {
+      "en": "Extra legroom and footrests",
+      "bn": "অতিরিক্ত লেগরুম এবং ফুটরেস্ট"
+    },
+    "reading_lights": {
+      "en": "Personal reading lights",
+      "bn": "ব্যক্তিগত রিডিং লাইট"
+    },
+    "blankets_pillows": {
+      "en": "Clean blankets and pillows",
+      "bn": "পরিষ্কার কম্বল এবং বালিশ"
+    },
+
+    "connectivity_entertainment": {
+      "en": "Connectivity & Entertainment",
+      "bn": "কানেক্টিভিটি এবং বিনোদন"
+    },
+    "wifi": { "en": "Free high-speed Wi-Fi", "bn": "ফ্রি হাই-স্পিড ওয়াই-ফাই" },
+    "usb_ports": {
+      "en": "USB charging ports at every seat",
+      "bn": "প্রতিটি আসনে ইউএসবি চার্জিং পোর্ট"
+    },
+    "screens": {
+      "en": "Individual entertainment screens",
+      "bn": "ব্যক্তিগত বিনোদন স্ক্রিন"
+    },
+    "bluetooth": {
+      "en": "Bluetooth headphone support",
+      "bn": "ব্লুটুথ হেডফোন সাপোর্ট"
+    },
+
+    "travel_assistance": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
+    "gps_tracking": {
+      "en": "GPS tracking with live updates",
+      "bn": "লাইভ আপডেটসহ জিপিএস ট্র্যাকিং"
+    },
+    "customer_support": {
+      "en": "24/7 customer support",
+      "bn": "২৪/৭ কাস্টমার সাপোর্ট"
+    },
+    "water_snacks": {
+      "en": "Bottled water and light snacks",
+      "bn": "বোতলজাত পানি এবং হালকা নাস্তা"
+    },
+    "crew": {
+      "en": "Friendly and trained crew",
+      "bn": "বন্ধুত্বপূর্ণ এবং প্রশিক্ষিত ক্রু"
+    },
+    "faq_title": {
+      "en": "Frequently Asked Questions",
+      "bn": "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী"
+    },
+
+    "arrival_time_q": {
+      "en": "How early should I arrive before departure?",
+      "bn": "বাস ছাড়ার কতক্ষণ আগে আমার পৌঁছানো উচিত?"
+    },
+    "arrival_time_a": {
+      "en": "We recommend arriving at least 30 minutes before the scheduled departure time to ensure a smooth and stress-free boarding experience. Arriving early allows you to check in your luggage, confirm your seat, and settle in comfortably before departure.",
+      "bn": "একটি মসৃণ এবং চাপমুক্ত বোর্ডিং অভিজ্ঞতা নিশ্চিত করতে আমরা নির্ধারিত প্রস্থানের সময়ের কমপক্ষে ৩০ মিনিট আগে পৌঁছানোর পরামর্শ দিই। আগে পৌঁছালে আপনি আপনার লাগেজ চেক-ইন করতে, আপনার আসন নিশ্চিত করতে এবং প্রস্থানের আগে আরামদায়কভাবে বসতি স্থাপন করতে পারবেন।"
+    },
+
+    "seat_choice_q": {
+      "en": "Can I choose my seat while booking?",
+      "bn": "আমি কি বুকিং করার সময় আমার আসন বেছে নিতে পারি?"
+    },
+    "seat_choice_a": {
+      "en": "Yes, our interactive seat map allows you to select your preferred available seat during the booking process.",
+      "bn": "হ্যাঁ, আমাদের ইন্টারেক্টিভ সিট ম্যাপ আপনাকে বুকিং প্রক্রিয়া চলাকালীন আপনার পছন্দের উপলব্ধ আসনটি বেছে নেওয়ার সুযোগ দেয়।"
+    },
+
+    "wifi_available_q": {
+      "en": "Is Wi-Fi available on the bus?",
+      "bn": "বাসে কি ওয়াই-ফাই সুবিধা আছে?"
+    },
+    "wifi_available_a": {
+      "en": "Yes, we provide free high-speed Wi-Fi on all our premium buses to keep you connected throughout the journey.",
+      "bn": "হ্যাঁ, আপনার পুরো যাত্রা জুড়ে কানেক্টেড থাকতে আমাদের সকল প্রিমিয়াম বাসে আমরা ফ্রি হাই-স্পিড ওয়াই-ফাই প্রদান করি।"
+    },
+
+    "food_drinks_q": {
+      "en": "Are food or drinks provided during the trip?",
+      "bn": "ভ্রমণের সময় কি খাবার বা পানীয় সরবরাহ করা হয়?"
+    },
+    "food_drinks_a": {
+      "en": "We provide complimentary bottled water and light snacks. For longer journeys, we also schedule refreshment breaks at high-quality roadside restaurants.",
+      "bn": "আমরা সৌজন্যমূলক বোতলজাত পানি এবং হালকা নাস্তা সরবরাহ করি। দীর্ঘ যাত্রার জন্য, আমরা উন্নত মানের হাইওয়ে রেস্তোরাঁয় বিরতির ব্যবস্থা করি।"
+    },
     "reviewSummary": {
-      "averageRating": 4.8,
-      "totalReviews": 850,
+      "averageRating": 4.9,
+      "totalReviews": 2459,
       "ratingBreakdown": [
-        { "stars": 5, "count": 600 },
-        { "stars": 4, "count": 150 },
-        { "stars": 3, "count": 50 },
-        { "stars": 2, "count": 30 },
-        { "stars": 1, "count": 20 }
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
       ]
     },
     "userReviews": [
       {
-        "userId": "990122",
-        "userName": "Rahat Ahmed",
-        "date": { "en": "5 days ago", "bn": "৫ দিন আগে" },
+        "userId": "215045",
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
         "rating": 5.0,
-        "title": { "en": "Best Sleeper Bus!", "bn": "সেরা স্লিপার বাস!" },
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিশ্বাস্য অভিজ্ঞতা!" },
         "comment": {
-          "en": "The beds were very comfortable for a long trip.",
-          "bn": "দীর্ঘ ভ্রমণের জন্য বিছানাগুলো খুব আরামদায়ক ছিল।"
+          "en": "It was a good location however the cocoon concept was weird. No tables, chairs etc was difficult as everything went on the floor.",
+          "bn": "লোকেশনটি খুব ভালো ছিল তবে কোকুন কনসেপ্টটি একটু অদ্ভুত ছিল। টেবিল বা চেয়ার না থাকায় সবকিছু মেঝেতে রাখতে হয়েছে যা কিছুটা অসুবিধাজনক ছিল।"
+        }
+      },
+      {
+        "userId": "153052",
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged.",
+          "bn": "আসার পর থেকেই স্টাফরা আমাদের খুব সুন্দরভাবে স্বাগত জানিয়েছে। রুমগুলো একদম পরিষ্কার ছিল এবং প্রতিটি ছোট ছোট বিষয় খুব যত্ন নিয়ে সাজানো ছিল।"
+        }
+      },
+      {
+        "userId": "133875",
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "5.0", "bn": "৫.০" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "সুবিধাজনক লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable.",
+          "bn": "শহর ঘোরার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং রুম থেকে বাইরের দৃশ্য ছিল অসাধারণ। এটি আমাদের ট্রিপকে আরও আনন্দদায়ক করে তুলেছে।"
+        }
+      },
+      {
+        "userId": "102146",
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable.",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য ধন্যবাদ! আমাদের লোকেশন এবং ভিউ আপনার ট্রিপকে সুন্দর করেছে জেনে আমরা আনন্দিত। আমরা আপনাকে আবারও স্বাগত জানাতে উন্মুখ!"
         }
       }
     ],
@@ -6172,109 +6251,177 @@
     "busType": { "en": "Semi-Sleeper", "bn": "সেমি-স্লিপার" },
     "rating": 4.6,
     "totalReviews": 1200,
-    "busInformation": {
-      "launchedOn": "10 August 2024",
-      "transmission": { "en": "Semi-Automatic", "bn": "সেমি-অটোমেটিক" },
-      "seats": 40,
-      "fuel": "300 Liters",
-      "weight": "10 Tons",
-      "height": "3.6 Meters",
-      "length": "13 Meters",
-      "speed": "88.5 knots"
-    },
+    "bus_info_title": { "en": "Bus Information", "bn": "বাসের তথ্য" },
+    "launched_on": { "en": "Launched On", "bn": "চালু করা হয়েছে" },
+    "launch_date": { "en": "25 May 2025", "bn": "২৫ মে ২০২৫" },
+    "transmission": { "en": "Transmission", "bn": "ট্রান্সমিশন" },
+    "manual": { "en": "Manual", "bn": "ম্যানুয়াল" },
+    "seats": { "en": "Seats", "bn": "আসন সংখ্যা" },
+    "seat_count": { "en": "200", "bn": "২০০" },
+    "fuel": { "en": "Fuel", "bn": "জ্বালানি" },
+    "fuel_capacity": { "en": "200 Liters", "bn": "২০০ লিটার" },
+    "weight": { "en": "Weight", "bn": "ওজন" },
+    "weight_value": { "en": "8 Tons", "bn": "৮ টন" },
+    "height": { "en": "Height", "bn": "উচ্চতা" },
+    "height_value": { "en": "3.5 Meters", "bn": "৩.৫ মিটার" },
+    "length": { "en": "Length", "bn": "দৈর্ঘ্য" },
+    "length_value": { "en": "12 Meters", "bn": "১২ মিটার" },
+    "speed": { "en": "Speed", "bn": "গতিবেগ" },
+    "speed_value": { "en": "80.6 knots", "bn": "৮০.৬ নট" },
     "description": {
-      "en": "The Volvo Multi-Axle series offers a smooth ride with advanced air suspension. Ideal for business travelers looking for punctuality and comfort.",
-      "bn": "ভলভো মাল্টি-এক্সেল সিরিজ উন্নত এয়ার সাসপেনশন সহ একটি মসৃণ যাত্রা নিশ্চিত করে। সময়ানুবর্তিতা এবং আরামের সন্ধানে থাকা ব্যবসায়িক ভ্রমণকারীদের জন্য আদর্শ।"
+      "en": "Experience ultimate luxury with our Scania Sleeper Coach. Designed for overnight journeys with full-flat beds and premium privacy curtains.",
+      "bn": "আমাদের স্ক্যানিয়া স্লিপার কোচের সাথে চরম বিলাসিতা অনুভব করুন। ফুল-ফ্ল্যাট বেড এবং প্রিমিয়াম প্রাইভেসি কার্টেনসহ এটি রাতভর ভ্রমণের জন্য ডিজাইন করা হয়েছে।"
     },
-    "amenities": {
-      "comfortSeating": {
-        "title": { "en": "Comfort & Seating", "bn": "আরাম ও আসন" },
-        "items": {
-          "en": [
-            "Calf support rests",
-            "Adjustable headrests",
-            "Large windows",
-            "Individual AC control"
-          ],
-          "bn": [
-            "কাফ সাপোর্ট রেস্ট",
-            "অ্যাডজাস্টেবল হেডরেস্ট",
-            "বড় জানালা",
-            "ব্যক্তিগত এসি কন্ট্রোল"
-          ]
-        }
-      },
-      "connectivityEntertainment": {
-        "title": {
-          "en": "Connectivity & Entertainment",
-          "bn": "সংযোগ ও বিনোদন"
-        },
-        "items": {
-          "en": [
-            "Central LED TV",
-            "USB port for every row",
-            "Magazine rack",
-            "Reading spot lights"
-          ],
-          "bn": [
-            "সেন্ট্রাল এলইডি টিভি",
-            "প্রতিটি সারির জন্য ইউএসবি পোর্ট",
-            "ম্যাগাজিন র‍্যাক",
-            "রিডিং স্পট লাইট"
-          ]
-        }
-      },
-      "travelAssistance": {
-        "title": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
-        "items": {
-          "en": [
-            "CCTV surveillance",
-            "Luggage insurance",
-            "Mineral water",
-            "Emergency exit"
-          ],
-          "bn": [
-            "সিসিটিভি নজরদারি",
-            "লাগেজ ইন্স্যুরেন্স",
-            "মিনারেল ওয়াটার",
-            "ইমার্জেন্সি এক্সিট"
-          ]
-        }
-      }
+    "amenities_title": { "en": "Amenities", "bn": "সুযোগ-সুবিধা" },
+
+    "comfort_seating": { "en": "Comfort & Seating", "bn": "আরামদায়ক আসন" },
+    "reclining_seats": {
+      "en": "Reclining semi sleeper seats",
+      "bn": "হেলান দেওয়া সেমি স্লিপার আসন"
     },
-    "faq": [
-      {
-        "question": {
-          "en": "Do they provide snacks?",
-          "bn": "তারা কি নাস্তা দেয়?"
-        },
-        "answer": {
-          "en": "Yes, a light snack box and water are provided mid-journey.",
-          "bn": "হ্যাঁ, যাত্রার মাঝপথে একটি হালকা নাস্তার বক্স এবং পানি দেওয়া হয়।"
-        }
-      }
-    ],
+    "extra_legroom": {
+      "en": "Extra legroom and footrests",
+      "bn": "অতিরিক্ত লেগরুম এবং ফুটরেস্ট"
+    },
+    "reading_lights": {
+      "en": "Personal reading lights",
+      "bn": "ব্যক্তিগত রিডিং লাইট"
+    },
+    "blankets_pillows": {
+      "en": "Clean blankets and pillows",
+      "bn": "পরিষ্কার কম্বল এবং বালিশ"
+    },
+
+    "connectivity_entertainment": {
+      "en": "Connectivity & Entertainment",
+      "bn": "কানেক্টিভিটি এবং বিনোদন"
+    },
+    "wifi": { "en": "Free high-speed Wi-Fi", "bn": "ফ্রি হাই-স্পিড ওয়াই-ফাই" },
+    "usb_ports": {
+      "en": "USB charging ports at every seat",
+      "bn": "প্রতিটি আসনে ইউএসবি চার্জিং পোর্ট"
+    },
+    "screens": {
+      "en": "Individual entertainment screens",
+      "bn": "ব্যক্তিগত বিনোদন স্ক্রিন"
+    },
+    "bluetooth": {
+      "en": "Bluetooth headphone support",
+      "bn": "ব্লুটুথ হেডফোন সাপোর্ট"
+    },
+
+    "travel_assistance": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
+    "gps_tracking": {
+      "en": "GPS tracking with live updates",
+      "bn": "লাইভ আপডেটসহ জিপিএস ট্র্যাকিং"
+    },
+    "customer_support": {
+      "en": "24/7 customer support",
+      "bn": "২৪/৭ কাস্টমার সাপোর্ট"
+    },
+    "water_snacks": {
+      "en": "Bottled water and light snacks",
+      "bn": "বোতলজাত পানি এবং হালকা নাস্তা"
+    },
+    "crew": {
+      "en": "Friendly and trained crew",
+      "bn": "বন্ধুত্বপূর্ণ এবং প্রশিক্ষিত ক্রু"
+    },
+    "faq_title": {
+      "en": "Frequently Asked Questions",
+      "bn": "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী"
+    },
+
+    "arrival_time_q": {
+      "en": "How early should I arrive before departure?",
+      "bn": "বাস ছাড়ার কতক্ষণ আগে আমার পৌঁছানো উচিত?"
+    },
+    "arrival_time_a": {
+      "en": "We recommend arriving at least 30 minutes before the scheduled departure time to ensure a smooth and stress-free boarding experience. Arriving early allows you to check in your luggage, confirm your seat, and settle in comfortably before departure.",
+      "bn": "একটি মসৃণ এবং চাপমুক্ত বোর্ডিং অভিজ্ঞতা নিশ্চিত করতে আমরা নির্ধারিত প্রস্থানের সময়ের কমপক্ষে ৩০ মিনিট আগে পৌঁছানোর পরামর্শ দিই। আগে পৌঁছালে আপনি আপনার লাগেজ চেক-ইন করতে, আপনার আসন নিশ্চিত করতে এবং প্রস্থানের আগে আরামদায়কভাবে বসতি স্থাপন করতে পারবেন।"
+    },
+
+    "seat_choice_q": {
+      "en": "Can I choose my seat while booking?",
+      "bn": "আমি কি বুকিং করার সময় আমার আসন বেছে নিতে পারি?"
+    },
+    "seat_choice_a": {
+      "en": "Yes, our interactive seat map allows you to select your preferred available seat during the booking process.",
+      "bn": "হ্যাঁ, আমাদের ইন্টারেক্টিভ সিট ম্যাপ আপনাকে বুকিং প্রক্রিয়া চলাকালীন আপনার পছন্দের উপলব্ধ আসনটি বেছে নেওয়ার সুযোগ দেয়।"
+    },
+
+    "wifi_available_q": {
+      "en": "Is Wi-Fi available on the bus?",
+      "bn": "বাসে কি ওয়াই-ফাই সুবিধা আছে?"
+    },
+    "wifi_available_a": {
+      "en": "Yes, we provide free high-speed Wi-Fi on all our premium buses to keep you connected throughout the journey.",
+      "bn": "হ্যাঁ, আপনার পুরো যাত্রা জুড়ে কানেক্টেড থাকতে আমাদের সকল প্রিমিয়াম বাসে আমরা ফ্রি হাই-স্পিড ওয়াই-ফাই প্রদান করি।"
+    },
+
+    "food_drinks_q": {
+      "en": "Are food or drinks provided during the trip?",
+      "bn": "ভ্রমণের সময় কি খাবার বা পানীয় সরবরাহ করা হয়?"
+    },
+    "food_drinks_a": {
+      "en": "We provide complimentary bottled water and light snacks. For longer journeys, we also schedule refreshment breaks at high-quality roadside restaurants.",
+      "bn": "আমরা সৌজন্যমূলক বোতলজাত পানি এবং হালকা নাস্তা সরবরাহ করি। দীর্ঘ যাত্রার জন্য, আমরা উন্নত মানের হাইওয়ে রেস্তোরাঁয় বিরতির ব্যবস্থা করি।"
+    },
+
     "reviewSummary": {
-      "averageRating": 4.6,
-      "totalReviews": 1200,
+      "averageRating": 4.9,
+      "totalReviews": 2459,
       "ratingBreakdown": [
-        { "stars": 5, "count": 800 },
-        { "stars": 4, "count": 250 },
-        { "stars": 3, "count": 100 },
-        { "stars": 2, "count": 30 },
-        { "stars": 1, "count": 20 }
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
       ]
     },
     "userReviews": [
       {
-        "userId": "882140",
-        "userName": "Sifat Khan",
-        "date": { "en": "1 week ago", "bn": "১ সপ্তাহ আগে" },
-        "rating": 4.0,
-        "title": { "en": "Very Punctual", "bn": "খুবই সময়নিষ্ঠ" },
+        "userId": "215045",
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিশ্বাস্য অভিজ্ঞতা!" },
         "comment": {
-          "en": "The bus started and reached exactly on time.",
-          "bn": "বাসটি ঠিক সময়ে ছেড়েছে এবং গন্তব্যে পৌঁছেছে।"
+          "en": "It was a good location however the cocoon concept was weird. No tables, chairs etc was difficult as everything went on the floor.",
+          "bn": "লোকেশনটি খুব ভালো ছিল তবে কোকুন কনসেপ্টটি একটু অদ্ভুত ছিল। টেবিল বা চেয়ার না থাকায় সবকিছু মেঝেতে রাখতে হয়েছে যা কিছুটা অসুবিধাজনক ছিল।"
+        }
+      },
+      {
+        "userId": "153052",
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged.",
+          "bn": "আসার পর থেকেই স্টাফরা আমাদের খুব সুন্দরভাবে স্বাগত জানিয়েছে। রুমগুলো একদম পরিষ্কার ছিল এবং প্রতিটি ছোট ছোট বিষয় খুব যত্ন নিয়ে সাজানো ছিল।"
+        }
+      },
+      {
+        "userId": "133875",
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "5.0", "bn": "৫.০" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "সুবিধাজনক লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable.",
+          "bn": "শহর ঘোরার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং রুম থেকে বাইরের দৃশ্য ছিল অসাধারণ। এটি আমাদের ট্রিপকে আরও আনন্দদায়ক করে তুলেছে।"
+        }
+      },
+      {
+        "userId": "102146",
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable.",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য ধন্যবাদ! আমাদের লোকেশন এবং ভিউ আপনার ট্রিপকে সুন্দর করেছে জেনে আমরা আনন্দিত। আমরা আপনাকে আবারও স্বাগত জানাতে উন্মুখ!"
         }
       }
     ],
@@ -6298,104 +6445,177 @@
     "busType": { "en": "Non-AC Seater", "bn": "নন-এসি সিটার" },
     "rating": 4.2,
     "totalReviews": 3200,
-    "busInformation": {
-      "launchedOn": "15 March 2023",
-      "transmission": { "en": "Manual", "bn": "ম্যানুয়াল" },
-      "seats": 52,
-      "fuel": "250 Liters",
-      "weight": "9 Tons",
-      "height": "3.4 Meters",
-      "length": "12.5 Meters",
-      "speed": "75.0 knots"
-    },
+    "bus_info_title": { "en": "Bus Information", "bn": "বাসের তথ্য" },
+    "launched_on": { "en": "Launched On", "bn": "চালু করা হয়েছে" },
+    "launch_date": { "en": "25 May 2025", "bn": "২৫ মে ২০২৫" },
+    "transmission": { "en": "Transmission", "bn": "ট্রান্সমিশন" },
+    "manual": { "en": "Manual", "bn": "ম্যানুয়াল" },
+    "seats": { "en": "Seats", "bn": "আসন সংখ্যা" },
+    "seat_count": { "en": "200", "bn": "২০০" },
+    "fuel": { "en": "Fuel", "bn": "জ্বালানি" },
+    "fuel_capacity": { "en": "200 Liters", "bn": "২০০ লিটার" },
+    "weight": { "en": "Weight", "bn": "ওজন" },
+    "weight_value": { "en": "8 Tons", "bn": "৮ টন" },
+    "height": { "en": "Height", "bn": "উচ্চতা" },
+    "height_value": { "en": "3.5 Meters", "bn": "৩.৫ মিটার" },
+    "length": { "en": "Length", "bn": "দৈর্ঘ্য" },
+    "length_value": { "en": "12 Meters", "bn": "১২ মিটার" },
+    "speed": { "en": "Speed", "bn": "গতিবেগ" },
+    "speed_value": { "en": "80.6 knots", "bn": "৮০.৬ নট" },
     "description": {
-      "en": "The classic Hino AK1J series known for its durability and powerful performance on all road conditions. The most reliable economic travel option.",
-      "bn": "ক্লাসিক হিনো AK1J সিরিজ যা সব ধরণের রাস্তার অবস্থায় স্থায়িত্ব এবং শক্তিশালী পারফরম্যান্সের জন্য পরিচিত। সবচেয়ে নির্ভরযোগ্য সাশ্রয়ী ভ্রমণের বিকল্প।"
+      "en": "Experience ultimate luxury with our Scania Sleeper Coach. Designed for overnight journeys with full-flat beds and premium privacy curtains.",
+      "bn": "আমাদের স্ক্যানিয়া স্লিপার কোচের সাথে চরম বিলাসিতা অনুভব করুন। ফুল-ফ্ল্যাট বেড এবং প্রিমিয়াম প্রাইভেসি কার্টেনসহ এটি রাতভর ভ্রমণের জন্য ডিজাইন করা হয়েছে।"
     },
-    "amenities": {
-      "comfortSeating": {
-        "title": { "en": "Comfort & Seating", "bn": "আরাম ও আসন" },
-        "items": {
-          "en": [
-            "High-back seats",
-            "Window curtains",
-            "Ample overhead storage",
-            "Footrests"
-          ],
-          "bn": [
-            "হাই-ব্যাক সিট",
-            "জানালার পর্দা",
-            "পর্যাপ্ত ওভারহেড স্টোরেজ",
-            "ফুটরেস্ট"
-          ]
-        }
-      },
-      "connectivityEntertainment": {
-        "title": {
-          "en": "Connectivity & Entertainment",
-          "bn": "সংযোগ ও বিনোদন"
-        },
-        "items": {
-          "en": [
-            "Music system",
-            "Public address system",
-            "Mobile charging point at driver's cabin"
-          ],
-          "bn": [
-            "মিউজিক সিস্টেম",
-            "পাবলিক অ্যাড্রেস সিস্টেম",
-            "ড্রাইভার কেবিনে মোবাইল চার্জিং পয়েন্ট"
-          ]
-        }
-      },
-      "travelAssistance": {
-        "title": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
-        "items": {
-          "en": [
-            "Experienced driver",
-            "First aid box",
-            "Fire extinguisher",
-            "Multiple stopovers"
-          ],
-          "bn": [
-            "অভিজ্ঞ ড্রাইভার",
-            "ফার্স্ট এইড বক্স",
-            "অগ্নিনির্বাপক যন্ত্র",
-            "একাধিক যাত্রা বিরতি"
-          ]
-        }
-      }
+    "amenities_title": { "en": "Amenities", "bn": "সুযোগ-সুবিধা" },
+
+    "comfort_seating": { "en": "Comfort & Seating", "bn": "আরামদায়ক আসন" },
+    "reclining_seats": {
+      "en": "Reclining semi sleeper seats",
+      "bn": "হেলান দেওয়া সেমি স্লিপার আসন"
     },
-    "faq": [
-      {
-        "question": { "en": "Is this an AC bus?", "bn": "এটি কি এসি বাস?" },
-        "answer": {
-          "en": "No, this is a Non-AC coach with sliding windows for natural ventilation.",
-          "bn": "না, এটি একটি নন-এসি কোচ যাতে প্রাকৃতিক বাতাসের জন্য স্লাইডিং জানালা রয়েছে।"
-        }
-      }
-    ],
+    "extra_legroom": {
+      "en": "Extra legroom and footrests",
+      "bn": "অতিরিক্ত লেগরুম এবং ফুটরেস্ট"
+    },
+    "reading_lights": {
+      "en": "Personal reading lights",
+      "bn": "ব্যক্তিগত রিডিং লাইট"
+    },
+    "blankets_pillows": {
+      "en": "Clean blankets and pillows",
+      "bn": "পরিষ্কার কম্বল এবং বালিশ"
+    },
+
+    "connectivity_entertainment": {
+      "en": "Connectivity & Entertainment",
+      "bn": "কানেক্টিভিটি এবং বিনোদন"
+    },
+    "wifi": { "en": "Free high-speed Wi-Fi", "bn": "ফ্রি হাই-স্পিড ওয়াই-ফাই" },
+    "usb_ports": {
+      "en": "USB charging ports at every seat",
+      "bn": "প্রতিটি আসনে ইউএসবি চার্জিং পোর্ট"
+    },
+    "screens": {
+      "en": "Individual entertainment screens",
+      "bn": "ব্যক্তিগত বিনোদন স্ক্রিন"
+    },
+    "bluetooth": {
+      "en": "Bluetooth headphone support",
+      "bn": "ব্লুটুথ হেডফোন সাপোর্ট"
+    },
+
+    "travel_assistance": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
+    "gps_tracking": {
+      "en": "GPS tracking with live updates",
+      "bn": "লাইভ আপডেটসহ জিপিএস ট্র্যাকিং"
+    },
+    "customer_support": {
+      "en": "24/7 customer support",
+      "bn": "২৪/৭ কাস্টমার সাপোর্ট"
+    },
+    "water_snacks": {
+      "en": "Bottled water and light snacks",
+      "bn": "বোতলজাত পানি এবং হালকা নাস্তা"
+    },
+    "crew": {
+      "en": "Friendly and trained crew",
+      "bn": "বন্ধুত্বপূর্ণ এবং প্রশিক্ষিত ক্রু"
+    },
+    "faq_title": {
+      "en": "Frequently Asked Questions",
+      "bn": "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী"
+    },
+
+    "arrival_time_q": {
+      "en": "How early should I arrive before departure?",
+      "bn": "বাস ছাড়ার কতক্ষণ আগে আমার পৌঁছানো উচিত?"
+    },
+    "arrival_time_a": {
+      "en": "We recommend arriving at least 30 minutes before the scheduled departure time to ensure a smooth and stress-free boarding experience. Arriving early allows you to check in your luggage, confirm your seat, and settle in comfortably before departure.",
+      "bn": "একটি মসৃণ এবং চাপমুক্ত বোর্ডিং অভিজ্ঞতা নিশ্চিত করতে আমরা নির্ধারিত প্রস্থানের সময়ের কমপক্ষে ৩০ মিনিট আগে পৌঁছানোর পরামর্শ দিই। আগে পৌঁছালে আপনি আপনার লাগেজ চেক-ইন করতে, আপনার আসন নিশ্চিত করতে এবং প্রস্থানের আগে আরামদায়কভাবে বসতি স্থাপন করতে পারবেন।"
+    },
+
+    "seat_choice_q": {
+      "en": "Can I choose my seat while booking?",
+      "bn": "আমি কি বুকিং করার সময় আমার আসন বেছে নিতে পারি?"
+    },
+    "seat_choice_a": {
+      "en": "Yes, our interactive seat map allows you to select your preferred available seat during the booking process.",
+      "bn": "হ্যাঁ, আমাদের ইন্টারেক্টিভ সিট ম্যাপ আপনাকে বুকিং প্রক্রিয়া চলাকালীন আপনার পছন্দের উপলব্ধ আসনটি বেছে নেওয়ার সুযোগ দেয়।"
+    },
+
+    "wifi_available_q": {
+      "en": "Is Wi-Fi available on the bus?",
+      "bn": "বাসে কি ওয়াই-ফাই সুবিধা আছে?"
+    },
+    "wifi_available_a": {
+      "en": "Yes, we provide free high-speed Wi-Fi on all our premium buses to keep you connected throughout the journey.",
+      "bn": "হ্যাঁ, আপনার পুরো যাত্রা জুড়ে কানেক্টেড থাকতে আমাদের সকল প্রিমিয়াম বাসে আমরা ফ্রি হাই-স্পিড ওয়াই-ফাই প্রদান করি।"
+    },
+
+    "food_drinks_q": {
+      "en": "Are food or drinks provided during the trip?",
+      "bn": "ভ্রমণের সময় কি খাবার বা পানীয় সরবরাহ করা হয়?"
+    },
+    "food_drinks_a": {
+      "en": "We provide complimentary bottled water and light snacks. For longer journeys, we also schedule refreshment breaks at high-quality roadside restaurants.",
+      "bn": "আমরা সৌজন্যমূলক বোতলজাত পানি এবং হালকা নাস্তা সরবরাহ করি। দীর্ঘ যাত্রার জন্য, আমরা উন্নত মানের হাইওয়ে রেস্তোরাঁয় বিরতির ব্যবস্থা করি।"
+    },
+
     "reviewSummary": {
-      "averageRating": 4.2,
-      "totalReviews": 3200,
+      "averageRating": 4.9,
+      "totalReviews": 2459,
       "ratingBreakdown": [
-        { "stars": 5, "count": 1500 },
-        { "stars": 4, "count": 800 },
-        { "stars": 3, "count": 500 },
-        { "stars": 2, "count": 300 },
-        { "stars": 1, "count": 100 }
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
       ]
     },
     "userReviews": [
       {
-        "userId": "773122",
-        "userName": "Tanvir Alam",
-        "date": { "en": "3 days ago", "bn": "৩ দিন আগে" },
-        "rating": 4.0,
-        "title": { "en": "Value for money", "bn": "টাকার সঠিক মূল্য" },
+        "userId": "215045",
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিশ্বাস্য অভিজ্ঞতা!" },
         "comment": {
-          "en": "Affordable price for long distance.",
-          "bn": "দীর্ঘ দূরত্বের জন্য সাশ্রয়ী মূল্য।"
+          "en": "It was a good location however the cocoon concept was weird. No tables, chairs etc was difficult as everything went on the floor.",
+          "bn": "লোকেশনটি খুব ভালো ছিল তবে কোকুন কনসেপ্টটি একটু অদ্ভুত ছিল। টেবিল বা চেয়ার না থাকায় সবকিছু মেঝেতে রাখতে হয়েছে যা কিছুটা অসুবিধাজনক ছিল।"
+        }
+      },
+      {
+        "userId": "153052",
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged.",
+          "bn": "আসার পর থেকেই স্টাফরা আমাদের খুব সুন্দরভাবে স্বাগত জানিয়েছে। রুমগুলো একদম পরিষ্কার ছিল এবং প্রতিটি ছোট ছোট বিষয় খুব যত্ন নিয়ে সাজানো ছিল।"
+        }
+      },
+      {
+        "userId": "133875",
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "5.0", "bn": "৫.০" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "সুবিধাজনক লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable.",
+          "bn": "শহর ঘোরার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং রুম থেকে বাইরের দৃশ্য ছিল অসাধারণ। এটি আমাদের ট্রিপকে আরও আনন্দদায়ক করে তুলেছে।"
+        }
+      },
+      {
+        "userId": "102146",
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable.",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য ধন্যবাদ! আমাদের লোকেশন এবং ভিউ আপনার ট্রিপকে সুন্দর করেছে জেনে আমরা আনন্দিত। আমরা আপনাকে আবারও স্বাগত জানাতে উন্মুখ!"
         }
       }
     ],
@@ -6419,109 +6639,177 @@
     "busType": { "en": "AC Seater", "bn": "এসি সিটার" },
     "rating": 4.7,
     "totalReviews": 2100,
-    "busInformation": {
-      "launchedOn": "05 November 2024",
-      "transmission": { "en": "Automatic", "bn": "অটোমেটিক" },
-      "seats": 28,
-      "fuel": "320 Liters",
-      "weight": "11 Tons",
-      "height": "3.7 Meters",
-      "length": "13.5 Meters",
-      "speed": "92.4 knots"
-    },
+    "bus_info_title": { "en": "Bus Information", "bn": "বাসের তথ্য" },
+    "launched_on": { "en": "Launched On", "bn": "চালু করা হয়েছে" },
+    "launch_date": { "en": "25 May 2025", "bn": "২৫ মে ২০২৫" },
+    "transmission": { "en": "Transmission", "bn": "ট্রান্সমিশন" },
+    "manual": { "en": "Manual", "bn": "ম্যানুয়াল" },
+    "seats": { "en": "Seats", "bn": "আসন সংখ্যা" },
+    "seat_count": { "en": "200", "bn": "২০০" },
+    "fuel": { "en": "Fuel", "bn": "জ্বালানি" },
+    "fuel_capacity": { "en": "200 Liters", "bn": "২০০ লিটার" },
+    "weight": { "en": "Weight", "bn": "ওজন" },
+    "weight_value": { "en": "8 Tons", "bn": "৮ টন" },
+    "height": { "en": "Height", "bn": "উচ্চতা" },
+    "height_value": { "en": "3.5 Meters", "bn": "৩.৫ মিটার" },
+    "length": { "en": "Length", "bn": "দৈর্ঘ্য" },
+    "length_value": { "en": "12 Meters", "bn": "১২ মিটার" },
+    "speed": { "en": "Speed", "bn": "গতিবেগ" },
+    "speed_value": { "en": "80.6 knots", "bn": "৮০.৬ নট" },
     "description": {
-      "en": "Hyundai Universe luxury coaches redefined. Featuring a 2+1 seating arrangement for extra space and a premium feel.",
-      "bn": "হুন্দাই ইউনিভার্স লাক্সারি কোচের নতুন রূপ। অতিরিক্ত জায়গা এবং প্রিমিয়াম অনুভূতির জন্য এতে ২+১ আসন বিন্যাস রয়েছে।"
+      "en": "Experience ultimate luxury with our Scania Sleeper Coach. Designed for overnight journeys with full-flat beds and premium privacy curtains.",
+      "bn": "আমাদের স্ক্যানিয়া স্লিপার কোচের সাথে চরম বিলাসিতা অনুভব করুন। ফুল-ফ্ল্যাট বেড এবং প্রিমিয়াম প্রাইভেসি কার্টেনসহ এটি রাতভর ভ্রমণের জন্য ডিজাইন করা হয়েছে।"
     },
-    "amenities": {
-      "comfortSeating": {
-        "title": { "en": "Comfort & Seating", "bn": "আরাম ও আসন" },
-        "items": {
-          "en": [
-            "2+1 Spacious layout",
-            "Leather seats",
-            "Leg rests",
-            "Double glazed windows"
-          ],
-          "bn": [
-            "২+১ প্রশস্ত লেআউট",
-            "লেদার সিট",
-            "লেগ রেস্ট",
-            "ডাবল গ্লেজড জানালা"
-          ]
-        }
-      },
-      "connectivityEntertainment": {
-        "title": {
-          "en": "Connectivity & Entertainment",
-          "bn": "সংযোগ ও বিনোদন"
-        },
-        "items": {
-          "en": [
-            "Personal LED TV",
-            "High speed Wi-Fi",
-            "Charging socket for laptop",
-            "Bluetooth audio"
-          ],
-          "bn": [
-            "ব্যক্তিগত এলইডি টিভি",
-            "হাই স্পিড ওয়াই-ফাই",
-            "ল্যাপটপ চার্জিং সকেট",
-            "ব্লুটুথ অডিও"
-          ]
-        }
-      },
-      "travelAssistance": {
-        "title": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
-        "items": {
-          "en": [
-            "Passenger insurance",
-            "Attendant service",
-            "Wet wipes & sanitizer",
-            "GPS tracking"
-          ],
-          "bn": [
-            "যাত্রী বিমা",
-            "অ্যাটেনডেন্ট সার্ভিস",
-            "ওয়েট ওয়াইপস এবং স্যানিটাইজার",
-            "জিপিএস ট্র্যাকিং"
-          ]
-        }
-      }
+    "amenities_title": { "en": "Amenities", "bn": "সুযোগ-সুবিধা" },
+
+    "comfort_seating": { "en": "Comfort & Seating", "bn": "আরামদায়ক আসন" },
+    "reclining_seats": {
+      "en": "Reclining semi sleeper seats",
+      "bn": "হেলান দেওয়া সেমি স্লিপার আসন"
     },
-    "faq": [
-      {
-        "question": {
-          "en": "What is 2+1 seating?",
-          "bn": "২+১ আসন বিন্যাস কি?"
-        },
-        "answer": {
-          "en": "It means one side has two seats and the other side has a single seat, providing more shoulder room.",
-          "bn": "এর মানে হলো এক পাশে দুটি সিট এবং অন্য পাশে একটি একক সিট, যা চলাচলের জন্য বেশি জায়গা দেয়।"
-        }
-      }
-    ],
+    "extra_legroom": {
+      "en": "Extra legroom and footrests",
+      "bn": "অতিরিক্ত লেগরুম এবং ফুটরেস্ট"
+    },
+    "reading_lights": {
+      "en": "Personal reading lights",
+      "bn": "ব্যক্তিগত রিডিং লাইট"
+    },
+    "blankets_pillows": {
+      "en": "Clean blankets and pillows",
+      "bn": "পরিষ্কার কম্বল এবং বালিশ"
+    },
+
+    "connectivity_entertainment": {
+      "en": "Connectivity & Entertainment",
+      "bn": "কানেক্টিভিটি এবং বিনোদন"
+    },
+    "wifi": { "en": "Free high-speed Wi-Fi", "bn": "ফ্রি হাই-স্পিড ওয়াই-ফাই" },
+    "usb_ports": {
+      "en": "USB charging ports at every seat",
+      "bn": "প্রতিটি আসনে ইউএসবি চার্জিং পোর্ট"
+    },
+    "screens": {
+      "en": "Individual entertainment screens",
+      "bn": "ব্যক্তিগত বিনোদন স্ক্রিন"
+    },
+    "bluetooth": {
+      "en": "Bluetooth headphone support",
+      "bn": "ব্লুটুথ হেডফোন সাপোর্ট"
+    },
+
+    "travel_assistance": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
+    "gps_tracking": {
+      "en": "GPS tracking with live updates",
+      "bn": "লাইভ আপডেটসহ জিপিএস ট্র্যাকিং"
+    },
+    "customer_support": {
+      "en": "24/7 customer support",
+      "bn": "২৪/৭ কাস্টমার সাপোর্ট"
+    },
+    "water_snacks": {
+      "en": "Bottled water and light snacks",
+      "bn": "বোতলজাত পানি এবং হালকা নাস্তা"
+    },
+    "crew": {
+      "en": "Friendly and trained crew",
+      "bn": "বন্ধুত্বপূর্ণ এবং প্রশিক্ষিত ক্রু"
+    },
+    "faq_title": {
+      "en": "Frequently Asked Questions",
+      "bn": "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী"
+    },
+
+    "arrival_time_q": {
+      "en": "How early should I arrive before departure?",
+      "bn": "বাস ছাড়ার কতক্ষণ আগে আমার পৌঁছানো উচিত?"
+    },
+    "arrival_time_a": {
+      "en": "We recommend arriving at least 30 minutes before the scheduled departure time to ensure a smooth and stress-free boarding experience. Arriving early allows you to check in your luggage, confirm your seat, and settle in comfortably before departure.",
+      "bn": "একটি মসৃণ এবং চাপমুক্ত বোর্ডিং অভিজ্ঞতা নিশ্চিত করতে আমরা নির্ধারিত প্রস্থানের সময়ের কমপক্ষে ৩০ মিনিট আগে পৌঁছানোর পরামর্শ দিই। আগে পৌঁছালে আপনি আপনার লাগেজ চেক-ইন করতে, আপনার আসন নিশ্চিত করতে এবং প্রস্থানের আগে আরামদায়কভাবে বসতি স্থাপন করতে পারবেন।"
+    },
+
+    "seat_choice_q": {
+      "en": "Can I choose my seat while booking?",
+      "bn": "আমি কি বুকিং করার সময় আমার আসন বেছে নিতে পারি?"
+    },
+    "seat_choice_a": {
+      "en": "Yes, our interactive seat map allows you to select your preferred available seat during the booking process.",
+      "bn": "হ্যাঁ, আমাদের ইন্টারেক্টিভ সিট ম্যাপ আপনাকে বুকিং প্রক্রিয়া চলাকালীন আপনার পছন্দের উপলব্ধ আসনটি বেছে নেওয়ার সুযোগ দেয়।"
+    },
+
+    "wifi_available_q": {
+      "en": "Is Wi-Fi available on the bus?",
+      "bn": "বাসে কি ওয়াই-ফাই সুবিধা আছে?"
+    },
+    "wifi_available_a": {
+      "en": "Yes, we provide free high-speed Wi-Fi on all our premium buses to keep you connected throughout the journey.",
+      "bn": "হ্যাঁ, আপনার পুরো যাত্রা জুড়ে কানেক্টেড থাকতে আমাদের সকল প্রিমিয়াম বাসে আমরা ফ্রি হাই-স্পিড ওয়াই-ফাই প্রদান করি।"
+    },
+
+    "food_drinks_q": {
+      "en": "Are food or drinks provided during the trip?",
+      "bn": "ভ্রমণের সময় কি খাবার বা পানীয় সরবরাহ করা হয়?"
+    },
+    "food_drinks_a": {
+      "en": "We provide complimentary bottled water and light snacks. For longer journeys, we also schedule refreshment breaks at high-quality roadside restaurants.",
+      "bn": "আমরা সৌজন্যমূলক বোতলজাত পানি এবং হালকা নাস্তা সরবরাহ করি। দীর্ঘ যাত্রার জন্য, আমরা উন্নত মানের হাইওয়ে রেস্তোরাঁয় বিরতির ব্যবস্থা করি।"
+    },
+
     "reviewSummary": {
-      "averageRating": 4.7,
-      "totalReviews": 2100,
+      "averageRating": 4.9,
+      "totalReviews": 2459,
       "ratingBreakdown": [
-        { "stars": 5, "count": 1400 },
-        { "stars": 4, "count": 400 },
-        { "stars": 3, "count": 200 },
-        { "stars": 2, "count": 60 },
-        { "stars": 1, "count": 40 }
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
       ]
     },
     "userReviews": [
       {
-        "userId": "554199",
-        "userName": "Arif Hossain",
-        "date": { "en": "4 days ago", "bn": "৪ দিন আগে" },
+        "userId": "215045",
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
         "rating": 5.0,
-        "title": { "en": "Feels like flight", "bn": "বিমানের মতো অনুভূতি" },
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিশ্বাস্য অভিজ্ঞতা!" },
         "comment": {
-          "en": "The 2+1 seats are very wide and comfortable.",
-          "bn": "২+১ সিটগুলো অনেক প্রশস্ত এবং আরামদায়ক।"
+          "en": "It was a good location however the cocoon concept was weird. No tables, chairs etc was difficult as everything went on the floor.",
+          "bn": "লোকেশনটি খুব ভালো ছিল তবে কোকুন কনসেপ্টটি একটু অদ্ভুত ছিল। টেবিল বা চেয়ার না থাকায় সবকিছু মেঝেতে রাখতে হয়েছে যা কিছুটা অসুবিধাজনক ছিল।"
+        }
+      },
+      {
+        "userId": "153052",
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged.",
+          "bn": "আসার পর থেকেই স্টাফরা আমাদের খুব সুন্দরভাবে স্বাগত জানিয়েছে। রুমগুলো একদম পরিষ্কার ছিল এবং প্রতিটি ছোট ছোট বিষয় খুব যত্ন নিয়ে সাজানো ছিল।"
+        }
+      },
+      {
+        "userId": "133875",
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "5.0", "bn": "৫.০" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "সুবিধাজনক লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable.",
+          "bn": "শহর ঘোরার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং রুম থেকে বাইরের দৃশ্য ছিল অসাধারণ। এটি আমাদের ট্রিপকে আরও আনন্দদায়ক করে তুলেছে।"
+        }
+      },
+      {
+        "userId": "102146",
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable.",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য ধন্যবাদ! আমাদের লোকেশন এবং ভিউ আপনার ট্রিপকে সুন্দর করেছে জেনে আমরা আনন্দিত। আমরা আপনাকে আবারও স্বাগত জানাতে উন্মুখ!"
         }
       }
     ],
@@ -6542,109 +6830,177 @@
     "busType": { "en": "AC Seater", "bn": "এসি সিটার" },
     "rating": 4.9,
     "totalReviews": 1850,
-    "busInformation": {
-      "launchedOn": "20 December 2024",
-      "transmission": { "en": "Automatic", "bn": "অটোমেটিক" },
-      "seats": 30,
-      "fuel": "340 Liters",
-      "weight": "11.5 Tons",
-      "height": "3.75 Meters",
-      "length": "14 Meters",
-      "speed": "98.0 knots"
-    },
+    "bus_info_title": { "en": "Bus Information", "bn": "বাসের তথ্য" },
+    "launched_on": { "en": "Launched On", "bn": "চালু করা হয়েছে" },
+    "launch_date": { "en": "25 May 2025", "bn": "২৫ মে ২০২৫" },
+    "transmission": { "en": "Transmission", "bn": "ট্রান্সমিশন" },
+    "manual": { "en": "Manual", "bn": "ম্যানুয়াল" },
+    "seats": { "en": "Seats", "bn": "আসন সংখ্যা" },
+    "seat_count": { "en": "200", "bn": "২০০" },
+    "fuel": { "en": "Fuel", "bn": "জ্বালানি" },
+    "fuel_capacity": { "en": "200 Liters", "bn": "২০০ লিটার" },
+    "weight": { "en": "Weight", "bn": "ওজন" },
+    "weight_value": { "en": "8 Tons", "bn": "৮ টন" },
+    "height": { "en": "Height", "bn": "উচ্চতা" },
+    "height_value": { "en": "3.5 Meters", "bn": "৩.৫ মিটার" },
+    "length": { "en": "Length", "bn": "দৈর্ঘ্য" },
+    "length_value": { "en": "12 Meters", "bn": "১২ মিটার" },
+    "speed": { "en": "Speed", "bn": "গতিবেগ" },
+    "speed_value": { "en": "80.6 knots", "bn": "৮০.৬ নট" },
     "description": {
-      "en": "MAN Lion's Coach is the epitome of German engineering. Offering a silent, vibration-free journey with world-class safety features.",
-      "bn": "ম্যান লায়নস কোচ জার্মান প্রকৌশলের এক অনন্য নিদর্শন। বিশ্বমানের নিরাপত্তা বৈশিষ্ট্যসহ একটি নীরব ও কম্পনমুক্ত যাত্রা নিশ্চিত করে।"
+      "en": "Experience ultimate luxury with our Scania Sleeper Coach. Designed for overnight journeys with full-flat beds and premium privacy curtains.",
+      "bn": "আমাদের স্ক্যানিয়া স্লিপার কোচের সাথে চরম বিলাসিতা অনুভব করুন। ফুল-ফ্ল্যাট বেড এবং প্রিমিয়াম প্রাইভেসি কার্টেনসহ এটি রাতভর ভ্রমণের জন্য ডিজাইন করা হয়েছে।"
     },
-    "amenities": {
-      "comfortSeating": {
-        "title": { "en": "Comfort & Seating", "bn": "আরাম ও আসন" },
-        "items": {
-          "en": [
-            "Ergonomic luxury seats",
-            "Automatic footrests",
-            "Folding tables",
-            "Individually controlled LED lights"
-          ],
-          "bn": [
-            "এরগোনোমিক লাক্সারি সিট",
-            "অটোমেটিক ফুটরেস্ট",
-            "ফোল্ডিং টেবিল",
-            "ব্যক্তিগতভাবে নিয়ন্ত্রিত এলইডি লাইট"
-          ]
-        }
-      },
-      "connectivityEntertainment": {
-        "title": {
-          "en": "Connectivity & Entertainment",
-          "bn": "সংযোগ ও বিনোদন"
-        },
-        "items": {
-          "en": [
-            "VOD entertainment system",
-            "5G Wi-Fi hotspot",
-            "USB-C fast charging",
-            "Headrest speakers"
-          ],
-          "bn": [
-            "ভিওডি বিনোদন সিস্টেম",
-            "৫জি ওয়াই-ফাই হটস্পট",
-            "ইউএসবি-সি ফাস্ট চার্জিং",
-            "হেডরেস্ট স্পিকার"
-          ]
-        }
-      },
-      "travelAssistance": {
-        "title": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
-        "items": {
-          "en": [
-            "Coffee & tea maker",
-            "Newspaper service",
-            "Trained steward",
-            "Advanced EBS braking"
-          ],
-          "bn": [
-            "কফি এবং চা মেকার",
-            "সংবাদপত্র পরিষেবা",
-            "প্রশিক্ষিত স্টুয়ার্ড",
-            "উন্নত ইবিএস ব্রেকিং"
-          ]
-        }
-      }
+    "amenities_title": { "en": "Amenities", "bn": "সুযোগ-সুবিধা" },
+
+    "comfort_seating": { "en": "Comfort & Seating", "bn": "আরামদায়ক আসন" },
+    "reclining_seats": {
+      "en": "Reclining semi sleeper seats",
+      "bn": "হেলান দেওয়া সেমি স্লিপার আসন"
     },
-    "faq": [
-      {
-        "question": {
-          "en": "Is there a luggage limit?",
-          "bn": "লাগেজের কোনো সীমা আছে কি?"
-        },
-        "answer": {
-          "en": "Each passenger can carry up to 20kg of luggage for free.",
-          "bn": "প্রতিটি যাত্রী বিনামূল্যে ২০ কেজি পর্যন্ত লাগেজ বহন করতে পারবেন।"
-        }
-      }
-    ],
+    "extra_legroom": {
+      "en": "Extra legroom and footrests",
+      "bn": "অতিরিক্ত লেগরুম এবং ফুটরেস্ট"
+    },
+    "reading_lights": {
+      "en": "Personal reading lights",
+      "bn": "ব্যক্তিগত রিডিং লাইট"
+    },
+    "blankets_pillows": {
+      "en": "Clean blankets and pillows",
+      "bn": "পরিষ্কার কম্বল এবং বালিশ"
+    },
+
+    "connectivity_entertainment": {
+      "en": "Connectivity & Entertainment",
+      "bn": "কানেক্টিভিটি এবং বিনোদন"
+    },
+    "wifi": { "en": "Free high-speed Wi-Fi", "bn": "ফ্রি হাই-স্পিড ওয়াই-ফাই" },
+    "usb_ports": {
+      "en": "USB charging ports at every seat",
+      "bn": "প্রতিটি আসনে ইউএসবি চার্জিং পোর্ট"
+    },
+    "screens": {
+      "en": "Individual entertainment screens",
+      "bn": "ব্যক্তিগত বিনোদন স্ক্রিন"
+    },
+    "bluetooth": {
+      "en": "Bluetooth headphone support",
+      "bn": "ব্লুটুথ হেডফোন সাপোর্ট"
+    },
+
+    "travel_assistance": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
+    "gps_tracking": {
+      "en": "GPS tracking with live updates",
+      "bn": "লাইভ আপডেটসহ জিপিএস ট্র্যাকিং"
+    },
+    "customer_support": {
+      "en": "24/7 customer support",
+      "bn": "২৪/৭ কাস্টমার সাপোর্ট"
+    },
+    "water_snacks": {
+      "en": "Bottled water and light snacks",
+      "bn": "বোতলজাত পানি এবং হালকা নাস্তা"
+    },
+    "crew": {
+      "en": "Friendly and trained crew",
+      "bn": "বন্ধুত্বপূর্ণ এবং প্রশিক্ষিত ক্রু"
+    },
+    "faq_title": {
+      "en": "Frequently Asked Questions",
+      "bn": "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী"
+    },
+
+    "arrival_time_q": {
+      "en": "How early should I arrive before departure?",
+      "bn": "বাস ছাড়ার কতক্ষণ আগে আমার পৌঁছানো উচিত?"
+    },
+    "arrival_time_a": {
+      "en": "We recommend arriving at least 30 minutes before the scheduled departure time to ensure a smooth and stress-free boarding experience. Arriving early allows you to check in your luggage, confirm your seat, and settle in comfortably before departure.",
+      "bn": "একটি মসৃণ এবং চাপমুক্ত বোর্ডিং অভিজ্ঞতা নিশ্চিত করতে আমরা নির্ধারিত প্রস্থানের সময়ের কমপক্ষে ৩০ মিনিট আগে পৌঁছানোর পরামর্শ দিই। আগে পৌঁছালে আপনি আপনার লাগেজ চেক-ইন করতে, আপনার আসন নিশ্চিত করতে এবং প্রস্থানের আগে আরামদায়কভাবে বসতি স্থাপন করতে পারবেন।"
+    },
+
+    "seat_choice_q": {
+      "en": "Can I choose my seat while booking?",
+      "bn": "আমি কি বুকিং করার সময় আমার আসন বেছে নিতে পারি?"
+    },
+    "seat_choice_a": {
+      "en": "Yes, our interactive seat map allows you to select your preferred available seat during the booking process.",
+      "bn": "হ্যাঁ, আমাদের ইন্টারেক্টিভ সিট ম্যাপ আপনাকে বুকিং প্রক্রিয়া চলাকালীন আপনার পছন্দের উপলব্ধ আসনটি বেছে নেওয়ার সুযোগ দেয়।"
+    },
+
+    "wifi_available_q": {
+      "en": "Is Wi-Fi available on the bus?",
+      "bn": "বাসে কি ওয়াই-ফাই সুবিধা আছে?"
+    },
+    "wifi_available_a": {
+      "en": "Yes, we provide free high-speed Wi-Fi on all our premium buses to keep you connected throughout the journey.",
+      "bn": "হ্যাঁ, আপনার পুরো যাত্রা জুড়ে কানেক্টেড থাকতে আমাদের সকল প্রিমিয়াম বাসে আমরা ফ্রি হাই-স্পিড ওয়াই-ফাই প্রদান করি।"
+    },
+
+    "food_drinks_q": {
+      "en": "Are food or drinks provided during the trip?",
+      "bn": "ভ্রমণের সময় কি খাবার বা পানীয় সরবরাহ করা হয়?"
+    },
+    "food_drinks_a": {
+      "en": "We provide complimentary bottled water and light snacks. For longer journeys, we also schedule refreshment breaks at high-quality roadside restaurants.",
+      "bn": "আমরা সৌজন্যমূলক বোতলজাত পানি এবং হালকা নাস্তা সরবরাহ করি। দীর্ঘ যাত্রার জন্য, আমরা উন্নত মানের হাইওয়ে রেস্তোরাঁয় বিরতির ব্যবস্থা করি।"
+    },
+
     "reviewSummary": {
       "averageRating": 4.9,
-      "totalReviews": 1850,
+      "totalReviews": 2459,
       "ratingBreakdown": [
-        { "stars": 5, "count": 1600 },
-        { "stars": 4, "count": 150 },
-        { "stars": 3, "count": 50 },
-        { "stars": 2, "count": 30 },
-        { "stars": 1, "count": 20 }
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
       ]
     },
     "userReviews": [
       {
-        "userId": "442100",
-        "userName": "Zayn Malik",
-        "date": { "en": "1 day ago", "bn": "১ দিন আগে" },
+        "userId": "215045",
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
         "rating": 5.0,
-        "title": { "en": "Top class", "bn": "শীর্ষ মানের" },
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিশ্বাস্য অভিজ্ঞতা!" },
         "comment": {
-          "en": "The quietest bus ride I have ever experienced.",
-          "bn": "আমার এ পর্যন্ত অভিজ্ঞতায় সবচেয়ে শান্ত বাস যাত্রা।"
+          "en": "It was a good location however the cocoon concept was weird. No tables, chairs etc was difficult as everything went on the floor.",
+          "bn": "লোকেশনটি খুব ভালো ছিল তবে কোকুন কনসেপ্টটি একটু অদ্ভুত ছিল। টেবিল বা চেয়ার না থাকায় সবকিছু মেঝেতে রাখতে হয়েছে যা কিছুটা অসুবিধাজনক ছিল।"
+        }
+      },
+      {
+        "userId": "153052",
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged.",
+          "bn": "আসার পর থেকেই স্টাফরা আমাদের খুব সুন্দরভাবে স্বাগত জানিয়েছে। রুমগুলো একদম পরিষ্কার ছিল এবং প্রতিটি ছোট ছোট বিষয় খুব যত্ন নিয়ে সাজানো ছিল।"
+        }
+      },
+      {
+        "userId": "133875",
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "5.0", "bn": "৫.০" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "সুবিধাজনক লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable.",
+          "bn": "শহর ঘোরার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং রুম থেকে বাইরের দৃশ্য ছিল অসাধারণ। এটি আমাদের ট্রিপকে আরও আনন্দদায়ক করে তুলেছে।"
+        }
+      },
+      {
+        "userId": "102146",
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable.",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য ধন্যবাদ! আমাদের লোকেশন এবং ভিউ আপনার ট্রিপকে সুন্দর করেছে জেনে আমরা আনন্দিত। আমরা আপনাকে আবারও স্বাগত জানাতে উন্মুখ!"
         }
       }
     ],
@@ -6665,109 +7021,177 @@
     "busType": { "en": "AC Seater", "bn": "এসি সিটার" },
     "rating": 4.9,
     "totalReviews": 1150,
-    "busInformation": {
-      "launchedOn": "10 February 2025",
-      "transmission": { "en": "Automatic", "bn": "অটোমেটিক" },
-      "seats": 28,
-      "fuel": "380 Liters",
-      "weight": "12.5 Tons",
-      "height": "3.8 Meters",
-      "length": "14.5 Meters",
-      "speed": "98.5 knots"
-    },
+    "bus_info_title": { "en": "Bus Information", "bn": "বাসের তথ্য" },
+    "launched_on": { "en": "Launched On", "bn": "চালু করা হয়েছে" },
+    "launch_date": { "en": "25 May 2025", "bn": "২৫ মে ২০২৫" },
+    "transmission": { "en": "Transmission", "bn": "ট্রান্সমিশন" },
+    "manual": { "en": "Manual", "bn": "ম্যানুয়াল" },
+    "seats": { "en": "Seats", "bn": "আসন সংখ্যা" },
+    "seat_count": { "en": "200", "bn": "২০০" },
+    "fuel": { "en": "Fuel", "bn": "জ্বালানি" },
+    "fuel_capacity": { "en": "200 Liters", "bn": "২০০ লিটার" },
+    "weight": { "en": "Weight", "bn": "ওজন" },
+    "weight_value": { "en": "8 Tons", "bn": "৮ টন" },
+    "height": { "en": "Height", "bn": "উচ্চতা" },
+    "height_value": { "en": "3.5 Meters", "bn": "৩.৫ মিটার" },
+    "length": { "en": "Length", "bn": "দৈর্ঘ্য" },
+    "length_value": { "en": "12 Meters", "bn": "১২ মিটার" },
+    "speed": { "en": "Speed", "bn": "গতিবেগ" },
+    "speed_value": { "en": "80.6 knots", "bn": "৮০.৬ নট" },
     "description": {
-      "en": "The Mercedes-Benz SHD series offers the ultimate travel comfort with air-suspension and vibration-free cabin. A perfect choice for a royal journey.",
-      "bn": "মার্সিডিজ-বেঞ্জ এসএইচডি সিরিজ এয়ার-সাসপেনশন এবং কম্পনমুক্ত কেবিন সহ চূড়ান্ত ভ্রমণ আরাম প্রদান করে। রাজকীয় ভ্রমণের জন্য একটি নিখুঁত পছন্দ।"
+      "en": "Experience ultimate luxury with our Scania Sleeper Coach. Designed for overnight journeys with full-flat beds and premium privacy curtains.",
+      "bn": "আমাদের স্ক্যানিয়া স্লিপার কোচের সাথে চরম বিলাসিতা অনুভব করুন। ফুল-ফ্ল্যাট বেড এবং প্রিমিয়াম প্রাইভেসি কার্টেনসহ এটি রাতভর ভ্রমণের জন্য ডিজাইন করা হয়েছে।"
     },
-    "amenities": {
-      "comfortSeating": {
-        "title": { "en": "Comfort & Seating", "bn": "আরাম ও আসন" },
-        "items": {
-          "en": [
-            "Calf support seats",
-            "Massage functions",
-            "Adjustable headrests",
-            "Premium leather interior"
-          ],
-          "bn": [
-            "কাফ সাপোর্ট সিট",
-            "ম্যাসাজ ফাংশন",
-            "অ্যাডজাস্টেবল হেডরেস্ট",
-            "প্রিমিয়াম লেদার ইন্টেরিয়র"
-          ]
-        }
-      },
-      "connectivityEntertainment": {
-        "title": {
-          "en": "Connectivity & Entertainment",
-          "bn": "সংযোগ ও বিনোদন"
-        },
-        "items": {
-          "en": [
-            "Personal 10-inch screens",
-            "Wi-Fi 6 Support",
-            "USB-C charging ports",
-            "Noise-cancelling headsets"
-          ],
-          "bn": [
-            "ব্যক্তিগত ১০-ইঞ্চি স্ক্রিন",
-            "ওয়াই-ফাই ৬ সাপোর্ট",
-            "ইউএসবি-সি চার্জিং পোর্ট",
-            "নয়েজ-ক্যান্সেলিং হেডসেট"
-          ]
-        }
-      },
-      "travelAssistance": {
-        "title": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
-        "items": {
-          "en": [
-            "On-board snacks and juice",
-            "Emergency medical support",
-            "Real-time GPS tracking",
-            "Multi-lingual crew"
-          ],
-          "bn": [
-            "অন-বোর্ড স্ন্যাকস এবং জুস",
-            "জরুরি চিকিৎসা সহায়তা",
-            "রিয়েল-টাইম জিপিএস ট্র্যাকিং",
-            "বহুভাষিক ক্রু"
-          ]
-        }
-      }
+    "amenities_title": { "en": "Amenities", "bn": "সুযোগ-সুবিধা" },
+
+    "comfort_seating": { "en": "Comfort & Seating", "bn": "আরামদায়ক আসন" },
+    "reclining_seats": {
+      "en": "Reclining semi sleeper seats",
+      "bn": "হেলান দেওয়া সেমি স্লিপার আসন"
     },
-    "faq": [
-      {
-        "question": {
-          "en": "Is there a washroom on board?",
-          "bn": "বাসের ভেতরে কি ওয়াশরুম আছে?"
-        },
-        "answer": {
-          "en": "Yes, it features a clean and modern washroom facility.",
-          "bn": "হ্যাঁ, এতে পরিষ্কার এবং আধুনিক ওয়াশরুম সুবিধা রয়েছে।"
-        }
-      }
-    ],
+    "extra_legroom": {
+      "en": "Extra legroom and footrests",
+      "bn": "অতিরিক্ত লেগরুম এবং ফুটরেস্ট"
+    },
+    "reading_lights": {
+      "en": "Personal reading lights",
+      "bn": "ব্যক্তিগত রিডিং লাইট"
+    },
+    "blankets_pillows": {
+      "en": "Clean blankets and pillows",
+      "bn": "পরিষ্কার কম্বল এবং বালিশ"
+    },
+
+    "connectivity_entertainment": {
+      "en": "Connectivity & Entertainment",
+      "bn": "কানেক্টিভিটি এবং বিনোদন"
+    },
+    "wifi": { "en": "Free high-speed Wi-Fi", "bn": "ফ্রি হাই-স্পিড ওয়াই-ফাই" },
+    "usb_ports": {
+      "en": "USB charging ports at every seat",
+      "bn": "প্রতিটি আসনে ইউএসবি চার্জিং পোর্ট"
+    },
+    "screens": {
+      "en": "Individual entertainment screens",
+      "bn": "ব্যক্তিগত বিনোদন স্ক্রিন"
+    },
+    "bluetooth": {
+      "en": "Bluetooth headphone support",
+      "bn": "ব্লুটুথ হেডফোন সাপোর্ট"
+    },
+
+    "travel_assistance": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
+    "gps_tracking": {
+      "en": "GPS tracking with live updates",
+      "bn": "লাইভ আপডেটসহ জিপিএস ট্র্যাকিং"
+    },
+    "customer_support": {
+      "en": "24/7 customer support",
+      "bn": "২৪/৭ কাস্টমার সাপোর্ট"
+    },
+    "water_snacks": {
+      "en": "Bottled water and light snacks",
+      "bn": "বোতলজাত পানি এবং হালকা নাস্তা"
+    },
+    "crew": {
+      "en": "Friendly and trained crew",
+      "bn": "বন্ধুত্বপূর্ণ এবং প্রশিক্ষিত ক্রু"
+    },
+    "faq_title": {
+      "en": "Frequently Asked Questions",
+      "bn": "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী"
+    },
+
+    "arrival_time_q": {
+      "en": "How early should I arrive before departure?",
+      "bn": "বাস ছাড়ার কতক্ষণ আগে আমার পৌঁছানো উচিত?"
+    },
+    "arrival_time_a": {
+      "en": "We recommend arriving at least 30 minutes before the scheduled departure time to ensure a smooth and stress-free boarding experience. Arriving early allows you to check in your luggage, confirm your seat, and settle in comfortably before departure.",
+      "bn": "একটি মসৃণ এবং চাপমুক্ত বোর্ডিং অভিজ্ঞতা নিশ্চিত করতে আমরা নির্ধারিত প্রস্থানের সময়ের কমপক্ষে ৩০ মিনিট আগে পৌঁছানোর পরামর্শ দিই। আগে পৌঁছালে আপনি আপনার লাগেজ চেক-ইন করতে, আপনার আসন নিশ্চিত করতে এবং প্রস্থানের আগে আরামদায়কভাবে বসতি স্থাপন করতে পারবেন।"
+    },
+
+    "seat_choice_q": {
+      "en": "Can I choose my seat while booking?",
+      "bn": "আমি কি বুকিং করার সময় আমার আসন বেছে নিতে পারি?"
+    },
+    "seat_choice_a": {
+      "en": "Yes, our interactive seat map allows you to select your preferred available seat during the booking process.",
+      "bn": "হ্যাঁ, আমাদের ইন্টারেক্টিভ সিট ম্যাপ আপনাকে বুকিং প্রক্রিয়া চলাকালীন আপনার পছন্দের উপলব্ধ আসনটি বেছে নেওয়ার সুযোগ দেয়।"
+    },
+
+    "wifi_available_q": {
+      "en": "Is Wi-Fi available on the bus?",
+      "bn": "বাসে কি ওয়াই-ফাই সুবিধা আছে?"
+    },
+    "wifi_available_a": {
+      "en": "Yes, we provide free high-speed Wi-Fi on all our premium buses to keep you connected throughout the journey.",
+      "bn": "হ্যাঁ, আপনার পুরো যাত্রা জুড়ে কানেক্টেড থাকতে আমাদের সকল প্রিমিয়াম বাসে আমরা ফ্রি হাই-স্পিড ওয়াই-ফাই প্রদান করি।"
+    },
+
+    "food_drinks_q": {
+      "en": "Are food or drinks provided during the trip?",
+      "bn": "ভ্রমণের সময় কি খাবার বা পানীয় সরবরাহ করা হয়?"
+    },
+    "food_drinks_a": {
+      "en": "We provide complimentary bottled water and light snacks. For longer journeys, we also schedule refreshment breaks at high-quality roadside restaurants.",
+      "bn": "আমরা সৌজন্যমূলক বোতলজাত পানি এবং হালকা নাস্তা সরবরাহ করি। দীর্ঘ যাত্রার জন্য, আমরা উন্নত মানের হাইওয়ে রেস্তোরাঁয় বিরতির ব্যবস্থা করি।"
+    },
+
     "reviewSummary": {
       "averageRating": 4.9,
-      "totalReviews": 1150,
+      "totalReviews": 2459,
       "ratingBreakdown": [
-        { "stars": 5, "count": 900 },
-        { "stars": 4, "count": 150 },
-        { "stars": 3, "count": 50 },
-        { "stars": 2, "count": 30 },
-        { "stars": 1, "count": 20 }
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
       ]
     },
     "userReviews": [
       {
-        "userId": "334112",
-        "userName": "Fahim Shahriar",
-        "date": { "en": "3 days ago", "bn": "৩ দিন আগে" },
+        "userId": "215045",
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
         "rating": 5.0,
-        "title": { "en": "Royal Experience", "bn": "রাজকীয় অভিজ্ঞতা" },
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিশ্বাস্য অভিজ্ঞতা!" },
         "comment": {
-          "en": "Best service in the country so far.",
-          "bn": "এখন পর্যন্ত দেশের সেরা সার্ভিস।"
+          "en": "It was a good location however the cocoon concept was weird. No tables, chairs etc was difficult as everything went on the floor.",
+          "bn": "লোকেশনটি খুব ভালো ছিল তবে কোকুন কনসেপ্টটি একটু অদ্ভুত ছিল। টেবিল বা চেয়ার না থাকায় সবকিছু মেঝেতে রাখতে হয়েছে যা কিছুটা অসুবিধাজনক ছিল।"
+        }
+      },
+      {
+        "userId": "153052",
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged.",
+          "bn": "আসার পর থেকেই স্টাফরা আমাদের খুব সুন্দরভাবে স্বাগত জানিয়েছে। রুমগুলো একদম পরিষ্কার ছিল এবং প্রতিটি ছোট ছোট বিষয় খুব যত্ন নিয়ে সাজানো ছিল।"
+        }
+      },
+      {
+        "userId": "133875",
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "5.0", "bn": "৫.০" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "সুবিধাজনক লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable.",
+          "bn": "শহর ঘোরার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং রুম থেকে বাইরের দৃশ্য ছিল অসাধারণ। এটি আমাদের ট্রিপকে আরও আনন্দদায়ক করে তুলেছে।"
+        }
+      },
+      {
+        "userId": "102146",
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable.",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য ধন্যবাদ! আমাদের লোকেশন এবং ভিউ আপনার ট্রিপকে সুন্দর করেছে জেনে আমরা আনন্দিত। আমরা আপনাকে আবারও স্বাগত জানাতে উন্মুখ!"
         }
       }
     ],
@@ -6788,109 +7212,177 @@
     "busType": { "en": "AC Seater", "bn": "এসি সিটার" },
     "rating": 4.5,
     "totalReviews": 980,
-    "busInformation": {
-      "launchedOn": "15 June 2024",
-      "transmission": { "en": "Manual", "bn": "ম্যানুয়াল" },
-      "seats": 40,
-      "fuel": "280 Liters",
-      "weight": "10 Tons",
-      "height": "3.5 Meters",
-      "length": "13 Meters",
-      "speed": "85.0 knots"
-    },
+    "bus_info_title": { "en": "Bus Information", "bn": "বাসের তথ্য" },
+    "launched_on": { "en": "Launched On", "bn": "চালু করা হয়েছে" },
+    "launch_date": { "en": "25 May 2025", "bn": "২৫ মে ২০২৫" },
+    "transmission": { "en": "Transmission", "bn": "ট্রান্সমিশন" },
+    "manual": { "en": "Manual", "bn": "ম্যানুয়াল" },
+    "seats": { "en": "Seats", "bn": "আসন সংখ্যা" },
+    "seat_count": { "en": "200", "bn": "২০০" },
+    "fuel": { "en": "Fuel", "bn": "জ্বালানি" },
+    "fuel_capacity": { "en": "200 Liters", "bn": "২০০ লিটার" },
+    "weight": { "en": "Weight", "bn": "ওজন" },
+    "weight_value": { "en": "8 Tons", "bn": "৮ টন" },
+    "height": { "en": "Height", "bn": "উচ্চতা" },
+    "height_value": { "en": "3.5 Meters", "bn": "৩.৫ মিটার" },
+    "length": { "en": "Length", "bn": "দৈর্ঘ্য" },
+    "length_value": { "en": "12 Meters", "bn": "১২ মিটার" },
+    "speed": { "en": "Speed", "bn": "গতিবেগ" },
+    "speed_value": { "en": "80.6 knots", "bn": "৮০.৬ নট" },
     "description": {
-      "en": "Skyline Express focuses on reliability and passenger safety. Ideal for budget-conscious travelers who still want the comfort of air conditioning.",
-      "bn": "স্কাইলাইন এক্সপ্রেস নির্ভরযোগ্যতা এবং যাত্রী নিরাপত্তার ওপর গুরুত্ব দেয়। যারা বাজেটের মধ্যে থেকে এসি বাসের আরাম চান তাদের জন্য এটি আদর্শ।"
+      "en": "Experience ultimate luxury with our Scania Sleeper Coach. Designed for overnight journeys with full-flat beds and premium privacy curtains.",
+      "bn": "আমাদের স্ক্যানিয়া স্লিপার কোচের সাথে চরম বিলাসিতা অনুভব করুন। ফুল-ফ্ল্যাট বেড এবং প্রিমিয়াম প্রাইভেসি কার্টেনসহ এটি রাতভর ভ্রমণের জন্য ডিজাইন করা হয়েছে।"
     },
-    "amenities": {
-      "comfortSeating": {
-        "title": { "en": "Comfort & Seating", "bn": "আরাম ও আসন" },
-        "items": {
-          "en": [
-            "Push-back seats",
-            "Window curtains",
-            "Ample legroom",
-            "Overhead racks"
-          ],
-          "bn": [
-            "পুশ-ব্যাক সিট",
-            "জানালার পর্দা",
-            "পর্যাপ্ত লেগরুম",
-            "ওভারহেড র‍্যাক"
-          ]
-        }
-      },
-      "connectivityEntertainment": {
-        "title": {
-          "en": "Connectivity & Entertainment",
-          "bn": "সংযোগ ও বিনোদন"
-        },
-        "items": {
-          "en": [
-            "Public Wi-Fi",
-            "Common TV screens",
-            "Reading lights",
-            "Charging points"
-          ],
-          "bn": [
-            "পাবলিক ওয়াই-ফাই",
-            "সাধারণ টিভি স্ক্রিন",
-            "রিডিং লাইট",
-            "চার্জিং পয়েন্ট"
-          ]
-        }
-      },
-      "travelAssistance": {
-        "title": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
-        "items": {
-          "en": [
-            "Emergency exit door",
-            "First-aid kit",
-            "Water bottle",
-            "24/7 helpline"
-          ],
-          "bn": [
-            "জরুরি বহির্গমন দরজা",
-            "ফার্স্ট-এইড কিট",
-            "পানির বোতল",
-            "২৪/৭ হেল্পলাইন"
-          ]
-        }
-      }
+    "amenities_title": { "en": "Amenities", "bn": "সুযোগ-সুবিধা" },
+
+    "comfort_seating": { "en": "Comfort & Seating", "bn": "আরামদায়ক আসন" },
+    "reclining_seats": {
+      "en": "Reclining semi sleeper seats",
+      "bn": "হেলান দেওয়া সেমি স্লিপার আসন"
     },
-    "faq": [
-      {
-        "question": {
-          "en": "Are pets allowed?",
-          "bn": "পোষা প্রাণী কি অনুমোদিত?"
-        },
-        "answer": {
-          "en": "No, pets are not allowed inside the cabin for safety reasons.",
-          "bn": "না, নিরাপত্তার কারণে কেবিনের ভেতরে পোষা প্রাণী অনুমোদিত নয়।"
-        }
-      }
-    ],
+    "extra_legroom": {
+      "en": "Extra legroom and footrests",
+      "bn": "অতিরিক্ত লেগরুম এবং ফুটরেস্ট"
+    },
+    "reading_lights": {
+      "en": "Personal reading lights",
+      "bn": "ব্যক্তিগত রিডিং লাইট"
+    },
+    "blankets_pillows": {
+      "en": "Clean blankets and pillows",
+      "bn": "পরিষ্কার কম্বল এবং বালিশ"
+    },
+
+    "connectivity_entertainment": {
+      "en": "Connectivity & Entertainment",
+      "bn": "কানেক্টিভিটি এবং বিনোদন"
+    },
+    "wifi": { "en": "Free high-speed Wi-Fi", "bn": "ফ্রি হাই-স্পিড ওয়াই-ফাই" },
+    "usb_ports": {
+      "en": "USB charging ports at every seat",
+      "bn": "প্রতিটি আসনে ইউএসবি চার্জিং পোর্ট"
+    },
+    "screens": {
+      "en": "Individual entertainment screens",
+      "bn": "ব্যক্তিগত বিনোদন স্ক্রিন"
+    },
+    "bluetooth": {
+      "en": "Bluetooth headphone support",
+      "bn": "ব্লুটুথ হেডফোন সাপোর্ট"
+    },
+
+    "travel_assistance": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
+    "gps_tracking": {
+      "en": "GPS tracking with live updates",
+      "bn": "লাইভ আপডেটসহ জিপিএস ট্র্যাকিং"
+    },
+    "customer_support": {
+      "en": "24/7 customer support",
+      "bn": "২৪/৭ কাস্টমার সাপোর্ট"
+    },
+    "water_snacks": {
+      "en": "Bottled water and light snacks",
+      "bn": "বোতলজাত পানি এবং হালকা নাস্তা"
+    },
+    "crew": {
+      "en": "Friendly and trained crew",
+      "bn": "বন্ধুত্বপূর্ণ এবং প্রশিক্ষিত ক্রু"
+    },
+    "faq_title": {
+      "en": "Frequently Asked Questions",
+      "bn": "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী"
+    },
+
+    "arrival_time_q": {
+      "en": "How early should I arrive before departure?",
+      "bn": "বাস ছাড়ার কতক্ষণ আগে আমার পৌঁছানো উচিত?"
+    },
+    "arrival_time_a": {
+      "en": "We recommend arriving at least 30 minutes before the scheduled departure time to ensure a smooth and stress-free boarding experience. Arriving early allows you to check in your luggage, confirm your seat, and settle in comfortably before departure.",
+      "bn": "একটি মসৃণ এবং চাপমুক্ত বোর্ডিং অভিজ্ঞতা নিশ্চিত করতে আমরা নির্ধারিত প্রস্থানের সময়ের কমপক্ষে ৩০ মিনিট আগে পৌঁছানোর পরামর্শ দিই। আগে পৌঁছালে আপনি আপনার লাগেজ চেক-ইন করতে, আপনার আসন নিশ্চিত করতে এবং প্রস্থানের আগে আরামদায়কভাবে বসতি স্থাপন করতে পারবেন।"
+    },
+
+    "seat_choice_q": {
+      "en": "Can I choose my seat while booking?",
+      "bn": "আমি কি বুকিং করার সময় আমার আসন বেছে নিতে পারি?"
+    },
+    "seat_choice_a": {
+      "en": "Yes, our interactive seat map allows you to select your preferred available seat during the booking process.",
+      "bn": "হ্যাঁ, আমাদের ইন্টারেক্টিভ সিট ম্যাপ আপনাকে বুকিং প্রক্রিয়া চলাকালীন আপনার পছন্দের উপলব্ধ আসনটি বেছে নেওয়ার সুযোগ দেয়।"
+    },
+
+    "wifi_available_q": {
+      "en": "Is Wi-Fi available on the bus?",
+      "bn": "বাসে কি ওয়াই-ফাই সুবিধা আছে?"
+    },
+    "wifi_available_a": {
+      "en": "Yes, we provide free high-speed Wi-Fi on all our premium buses to keep you connected throughout the journey.",
+      "bn": "হ্যাঁ, আপনার পুরো যাত্রা জুড়ে কানেক্টেড থাকতে আমাদের সকল প্রিমিয়াম বাসে আমরা ফ্রি হাই-স্পিড ওয়াই-ফাই প্রদান করি।"
+    },
+
+    "food_drinks_q": {
+      "en": "Are food or drinks provided during the trip?",
+      "bn": "ভ্রমণের সময় কি খাবার বা পানীয় সরবরাহ করা হয়?"
+    },
+    "food_drinks_a": {
+      "en": "We provide complimentary bottled water and light snacks. For longer journeys, we also schedule refreshment breaks at high-quality roadside restaurants.",
+      "bn": "আমরা সৌজন্যমূলক বোতলজাত পানি এবং হালকা নাস্তা সরবরাহ করি। দীর্ঘ যাত্রার জন্য, আমরা উন্নত মানের হাইওয়ে রেস্তোরাঁয় বিরতির ব্যবস্থা করি।"
+    },
+
     "reviewSummary": {
-      "averageRating": 4.5,
-      "totalReviews": 980,
+      "averageRating": 4.9,
+      "totalReviews": 2459,
       "ratingBreakdown": [
-        { "stars": 5, "count": 600 },
-        { "stars": 4, "count": 250 },
-        { "stars": 3, "count": 80 },
-        { "stars": 2, "count": 30 },
-        { "stars": 1, "count": 20 }
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
       ]
     },
     "userReviews": [
       {
-        "userId": "229188",
-        "userName": "Anisur Rahman",
-        "date": { "en": "1 week ago", "bn": "১ সপ্তাহ আগে" },
-        "rating": 4.0,
-        "title": { "en": "Good journey", "bn": "ভালো যাত্রা" },
+        "userId": "215045",
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিশ্বাস্য অভিজ্ঞতা!" },
         "comment": {
-          "en": "Comfortable ride for the price.",
-          "bn": "দামের তুলনায় আরামদায়ক যাত্রা।"
+          "en": "It was a good location however the cocoon concept was weird. No tables, chairs etc was difficult as everything went on the floor.",
+          "bn": "লোকেশনটি খুব ভালো ছিল তবে কোকুন কনসেপ্টটি একটু অদ্ভুত ছিল। টেবিল বা চেয়ার না থাকায় সবকিছু মেঝেতে রাখতে হয়েছে যা কিছুটা অসুবিধাজনক ছিল।"
+        }
+      },
+      {
+        "userId": "153052",
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged.",
+          "bn": "আসার পর থেকেই স্টাফরা আমাদের খুব সুন্দরভাবে স্বাগত জানিয়েছে। রুমগুলো একদম পরিষ্কার ছিল এবং প্রতিটি ছোট ছোট বিষয় খুব যত্ন নিয়ে সাজানো ছিল।"
+        }
+      },
+      {
+        "userId": "133875",
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "5.0", "bn": "৫.০" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "সুবিধাজনক লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable.",
+          "bn": "শহর ঘোরার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং রুম থেকে বাইরের দৃশ্য ছিল অসাধারণ। এটি আমাদের ট্রিপকে আরও আনন্দদায়ক করে তুলেছে।"
+        }
+      },
+      {
+        "userId": "102146",
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable.",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য ধন্যবাদ! আমাদের লোকেশন এবং ভিউ আপনার ট্রিপকে সুন্দর করেছে জেনে আমরা আনন্দিত। আমরা আপনাকে আবারও স্বাগত জানাতে উন্মুখ!"
         }
       }
     ],
@@ -6911,106 +7403,177 @@
     "busType": { "en": "Sleeper", "bn": "স্লিপার" },
     "rating": 4.7,
     "totalReviews": 540,
-    "busInformation": {
-      "launchedOn": "20 December 2024",
-      "transmission": { "en": "Automatic", "bn": "অটোমেটিক" },
-      "seats": 30,
-      "fuel": "340 Liters",
-      "weight": "11 Tons",
-      "height": "3.9 Meters",
-      "length": "13.8 Meters",
-      "speed": "90.2 knots"
-    },
+    "bus_info_title": { "en": "Bus Information", "bn": "বাসের তথ্য" },
+    "launched_on": { "en": "Launched On", "bn": "চালু করা হয়েছে" },
+    "launch_date": { "en": "25 May 2025", "bn": "২৫ মে ২০২৫" },
+    "transmission": { "en": "Transmission", "bn": "ট্রান্সমিশন" },
+    "manual": { "en": "Manual", "bn": "ম্যানুয়াল" },
+    "seats": { "en": "Seats", "bn": "আসন সংখ্যা" },
+    "seat_count": { "en": "200", "bn": "২০০" },
+    "fuel": { "en": "Fuel", "bn": "জ্বালানি" },
+    "fuel_capacity": { "en": "200 Liters", "bn": "২০০ লিটার" },
+    "weight": { "en": "Weight", "bn": "ওজন" },
+    "weight_value": { "en": "8 Tons", "bn": "৮ টন" },
+    "height": { "en": "Height", "bn": "উচ্চতা" },
+    "height_value": { "en": "3.5 Meters", "bn": "৩.৫ মিটার" },
+    "length": { "en": "Length", "bn": "দৈর্ঘ্য" },
+    "length_value": { "en": "12 Meters", "bn": "১২ মিটার" },
+    "speed": { "en": "Speed", "bn": "গতিবেগ" },
+    "speed_value": { "en": "80.6 knots", "bn": "৮০.৬ নট" },
     "description": {
-      "en": "Blue Ocean brings a futuristic sleeper experience with cubicle-style beds and high-tech cabin controls. Perfect for night travelers.",
-      "bn": "ব্লু ওশান কিউবিকেল-স্টাইল বেড এবং হাই-টেক কেবিন কন্ট্রোলসহ একটি ভবিষ্যৎমুখী স্লিপার অভিজ্ঞতা নিয়ে এসেছে। রাতভর ভ্রমণকারীদের জন্য নিখুঁত।"
+      "en": "Experience ultimate luxury with our Scania Sleeper Coach. Designed for overnight journeys with full-flat beds and premium privacy curtains.",
+      "bn": "আমাদের স্ক্যানিয়া স্লিপার কোচের সাথে চরম বিলাসিতা অনুভব করুন। ফুল-ফ্ল্যাট বেড এবং প্রিমিয়াম প্রাইভেসি কার্টেনসহ এটি রাতভর ভ্রমণের জন্য ডিজাইন করা হয়েছে।"
     },
-    "amenities": {
-      "comfortSeating": {
-        "title": { "en": "Comfort & Seating", "bn": "আরাম ও আসন" },
-        "items": {
-          "en": [
-            "Flat beds",
-            "Clean sheets and pillow",
-            "Privacy curtains",
-            "Personal AC vent"
-          ],
-          "bn": [
-            "ফ্ল্যাট বেড",
-            "পরিষ্কার চাদর এবং বালিশ",
-            "প্রাইভেসি পর্দা",
-            "ব্যক্তিগত এসি ভেন্ট"
-          ]
-        }
-      },
-      "connectivityEntertainment": {
-        "title": {
-          "en": "Connectivity & Entertainment",
-          "bn": "সংযোগ ও বিনোদন"
-        },
-        "items": {
-          "en": [
-            "High speed Wi-Fi",
-            "USB charging point",
-            "Reading lamp",
-            "Bluetooth audio"
-          ],
-          "bn": [
-            "হাই স্পিড ওয়াই-ফাই",
-            "ইউএসবি চার্জিং পয়েন্ট",
-            "রিডিং ল্যাম্প",
-            "ব্লুটুথ অডিও"
-          ]
-        }
-      },
-      "travelAssistance": {
-        "title": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
-        "items": {
-          "en": [
-            "Snack box",
-            "Attendant call button",
-            "CCTV monitoring",
-            "Blankets"
-          ],
-          "bn": [
-            "স্ন্যাক বক্স",
-            "অ্যাটেনডেন্ট কল বাটন",
-            "সিসিটিভি মনিটরিং",
-            "কম্বল"
-          ]
-        }
-      }
+    "amenities_title": { "en": "Amenities", "bn": "সুযোগ-সুবিধা" },
+
+    "comfort_seating": { "en": "Comfort & Seating", "bn": "আরামদায়ক আসন" },
+    "reclining_seats": {
+      "en": "Reclining semi sleeper seats",
+      "bn": "হেলান দেওয়া সেমি স্লিপার আসন"
     },
-    "faq": [
-      {
-        "question": { "en": "What is the bed size?", "bn": "বেডের সাইজ কত?" },
-        "answer": {
-          "en": "The beds are approximately 6 feet in length and 2.5 feet wide.",
-          "bn": "বেডগুলো লম্বায় প্রায় ৬ ফিট এবং চওড়ায় ২.৫ ফিট।"
-        }
-      }
-    ],
+    "extra_legroom": {
+      "en": "Extra legroom and footrests",
+      "bn": "অতিরিক্ত লেগরুম এবং ফুটরেস্ট"
+    },
+    "reading_lights": {
+      "en": "Personal reading lights",
+      "bn": "ব্যক্তিগত রিডিং লাইট"
+    },
+    "blankets_pillows": {
+      "en": "Clean blankets and pillows",
+      "bn": "পরিষ্কার কম্বল এবং বালিশ"
+    },
+
+    "connectivity_entertainment": {
+      "en": "Connectivity & Entertainment",
+      "bn": "কানেক্টিভিটি এবং বিনোদন"
+    },
+    "wifi": { "en": "Free high-speed Wi-Fi", "bn": "ফ্রি হাই-স্পিড ওয়াই-ফাই" },
+    "usb_ports": {
+      "en": "USB charging ports at every seat",
+      "bn": "প্রতিটি আসনে ইউএসবি চার্জিং পোর্ট"
+    },
+    "screens": {
+      "en": "Individual entertainment screens",
+      "bn": "ব্যক্তিগত বিনোদন স্ক্রিন"
+    },
+    "bluetooth": {
+      "en": "Bluetooth headphone support",
+      "bn": "ব্লুটুথ হেডফোন সাপোর্ট"
+    },
+
+    "travel_assistance": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
+    "gps_tracking": {
+      "en": "GPS tracking with live updates",
+      "bn": "লাইভ আপডেটসহ জিপিএস ট্র্যাকিং"
+    },
+    "customer_support": {
+      "en": "24/7 customer support",
+      "bn": "২৪/৭ কাস্টমার সাপোর্ট"
+    },
+    "water_snacks": {
+      "en": "Bottled water and light snacks",
+      "bn": "বোতলজাত পানি এবং হালকা নাস্তা"
+    },
+    "crew": {
+      "en": "Friendly and trained crew",
+      "bn": "বন্ধুত্বপূর্ণ এবং প্রশিক্ষিত ক্রু"
+    },
+    "faq_title": {
+      "en": "Frequently Asked Questions",
+      "bn": "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী"
+    },
+
+    "arrival_time_q": {
+      "en": "How early should I arrive before departure?",
+      "bn": "বাস ছাড়ার কতক্ষণ আগে আমার পৌঁছানো উচিত?"
+    },
+    "arrival_time_a": {
+      "en": "We recommend arriving at least 30 minutes before the scheduled departure time to ensure a smooth and stress-free boarding experience. Arriving early allows you to check in your luggage, confirm your seat, and settle in comfortably before departure.",
+      "bn": "একটি মসৃণ এবং চাপমুক্ত বোর্ডিং অভিজ্ঞতা নিশ্চিত করতে আমরা নির্ধারিত প্রস্থানের সময়ের কমপক্ষে ৩০ মিনিট আগে পৌঁছানোর পরামর্শ দিই। আগে পৌঁছালে আপনি আপনার লাগেজ চেক-ইন করতে, আপনার আসন নিশ্চিত করতে এবং প্রস্থানের আগে আরামদায়কভাবে বসতি স্থাপন করতে পারবেন।"
+    },
+
+    "seat_choice_q": {
+      "en": "Can I choose my seat while booking?",
+      "bn": "আমি কি বুকিং করার সময় আমার আসন বেছে নিতে পারি?"
+    },
+    "seat_choice_a": {
+      "en": "Yes, our interactive seat map allows you to select your preferred available seat during the booking process.",
+      "bn": "হ্যাঁ, আমাদের ইন্টারেক্টিভ সিট ম্যাপ আপনাকে বুকিং প্রক্রিয়া চলাকালীন আপনার পছন্দের উপলব্ধ আসনটি বেছে নেওয়ার সুযোগ দেয়।"
+    },
+
+    "wifi_available_q": {
+      "en": "Is Wi-Fi available on the bus?",
+      "bn": "বাসে কি ওয়াই-ফাই সুবিধা আছে?"
+    },
+    "wifi_available_a": {
+      "en": "Yes, we provide free high-speed Wi-Fi on all our premium buses to keep you connected throughout the journey.",
+      "bn": "হ্যাঁ, আপনার পুরো যাত্রা জুড়ে কানেক্টেড থাকতে আমাদের সকল প্রিমিয়াম বাসে আমরা ফ্রি হাই-স্পিড ওয়াই-ফাই প্রদান করি।"
+    },
+
+    "food_drinks_q": {
+      "en": "Are food or drinks provided during the trip?",
+      "bn": "ভ্রমণের সময় কি খাবার বা পানীয় সরবরাহ করা হয়?"
+    },
+    "food_drinks_a": {
+      "en": "We provide complimentary bottled water and light snacks. For longer journeys, we also schedule refreshment breaks at high-quality roadside restaurants.",
+      "bn": "আমরা সৌজন্যমূলক বোতলজাত পানি এবং হালকা নাস্তা সরবরাহ করি। দীর্ঘ যাত্রার জন্য, আমরা উন্নত মানের হাইওয়ে রেস্তোরাঁয় বিরতির ব্যবস্থা করি।"
+    },
+
     "reviewSummary": {
-      "averageRating": 4.7,
-      "totalReviews": 540,
+      "averageRating": 4.9,
+      "totalReviews": 2459,
       "ratingBreakdown": [
-        { "stars": 5, "count": 350 },
-        { "stars": 4, "count": 120 },
-        { "stars": 3, "count": 40 },
-        { "stars": 2, "count": 20 },
-        { "stars": 1, "count": 10 }
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
       ]
     },
     "userReviews": [
       {
-        "userId": "550199",
-        "userName": "Sadman Sakib",
-        "date": { "en": "5 days ago", "bn": "৫ দিন আগে" },
+        "userId": "215045",
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
         "rating": 5.0,
-        "title": { "en": "Sleep while traveling", "bn": "ভ্রমণের সময় ঘুম" },
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিশ্বাস্য অভিজ্ঞতা!" },
         "comment": {
-          "en": "I slept through the whole journey, it was so peaceful.",
-          "bn": "আমি পুরো যাত্রা জুড়ে ঘুমিয়েছি, এটি খুবই শান্তিপূর্ণ ছিল।"
+          "en": "It was a good location however the cocoon concept was weird. No tables, chairs etc was difficult as everything went on the floor.",
+          "bn": "লোকেশনটি খুব ভালো ছিল তবে কোকুন কনসেপ্টটি একটু অদ্ভুত ছিল। টেবিল বা চেয়ার না থাকায় সবকিছু মেঝেতে রাখতে হয়েছে যা কিছুটা অসুবিধাজনক ছিল।"
+        }
+      },
+      {
+        "userId": "153052",
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged.",
+          "bn": "আসার পর থেকেই স্টাফরা আমাদের খুব সুন্দরভাবে স্বাগত জানিয়েছে। রুমগুলো একদম পরিষ্কার ছিল এবং প্রতিটি ছোট ছোট বিষয় খুব যত্ন নিয়ে সাজানো ছিল।"
+        }
+      },
+      {
+        "userId": "133875",
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "5.0", "bn": "৫.০" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "সুবিধাজনক লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable.",
+          "bn": "শহর ঘোরার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং রুম থেকে বাইরের দৃশ্য ছিল অসাধারণ। এটি আমাদের ট্রিপকে আরও আনন্দদায়ক করে তুলেছে।"
+        }
+      },
+      {
+        "userId": "102146",
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable.",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য ধন্যবাদ! আমাদের লোকেশন এবং ভিউ আপনার ট্রিপকে সুন্দর করেছে জেনে আমরা আনন্দিত। আমরা আপনাকে আবারও স্বাগত জানাতে উন্মুখ!"
         }
       }
     ],
@@ -7031,94 +7594,177 @@
     "busType": { "en": "Non-AC Seater", "bn": "নন-এসি সিটার" },
     "rating": 4.1,
     "totalReviews": 2100,
-    "busInformation": {
-      "launchedOn": "05 March 2023",
-      "transmission": { "en": "Manual", "bn": "ম্যানুয়াল" },
-      "seats": 52,
-      "fuel": "240 Liters",
-      "weight": "8.5 Tons",
-      "height": "3.3 Meters",
-      "length": "12 Meters",
-      "speed": "70.0 knots"
-    },
+    "bus_info_title": { "en": "Bus Information", "bn": "বাসের তথ্য" },
+    "launched_on": { "en": "Launched On", "bn": "চালু করা হয়েছে" },
+    "launch_date": { "en": "25 May 2025", "bn": "২৫ মে ২০২৫" },
+    "transmission": { "en": "Transmission", "bn": "ট্রান্সমিশন" },
+    "manual": { "en": "Manual", "bn": "ম্যানুয়াল" },
+    "seats": { "en": "Seats", "bn": "আসন সংখ্যা" },
+    "seat_count": { "en": "200", "bn": "২০০" },
+    "fuel": { "en": "Fuel", "bn": "জ্বালানি" },
+    "fuel_capacity": { "en": "200 Liters", "bn": "২০০ লিটার" },
+    "weight": { "en": "Weight", "bn": "ওজন" },
+    "weight_value": { "en": "8 Tons", "bn": "৮ টন" },
+    "height": { "en": "Height", "bn": "উচ্চতা" },
+    "height_value": { "en": "3.5 Meters", "bn": "৩.৫ মিটার" },
+    "length": { "en": "Length", "bn": "দৈর্ঘ্য" },
+    "length_value": { "en": "12 Meters", "bn": "১২ মিটার" },
+    "speed": { "en": "Speed", "bn": "গতিবেগ" },
+    "speed_value": { "en": "80.6 knots", "bn": "৮০.৬ নট" },
     "description": {
-      "en": "Reliable city-to-city commuter bus with large seating capacity and robust engine. The most affordable way to travel across districts.",
-      "bn": "বিশাল আসন ক্ষমতা এবং শক্তিশালী ইঞ্জিন সহ নির্ভরযোগ্য আন্তঃজেলা কমিউটার বাস। জেলাজুড়ে ভ্রমণের সবচেয়ে সাশ্রয়ী মাধ্যম।"
+      "en": "Experience ultimate luxury with our Scania Sleeper Coach. Designed for overnight journeys with full-flat beds and premium privacy curtains.",
+      "bn": "আমাদের স্ক্যানিয়া স্লিপার কোচের সাথে চরম বিলাসিতা অনুভব করুন। ফুল-ফ্ল্যাট বেড এবং প্রিমিয়াম প্রাইভেসি কার্টেনসহ এটি রাতভর ভ্রমণের জন্য ডিজাইন করা হয়েছে।"
     },
-    "amenities": {
-      "comfortSeating": {
-        "title": { "en": "Comfort & Seating", "bn": "আরাম ও আসন" },
-        "items": {
-          "en": [
-            "Fabric seats",
-            "Sliding windows",
-            "Sturdy grab handles",
-            "Luggage hold"
-          ],
-          "bn": [
-            "ফ্যাব্রিক সিট",
-            "স্লাইডিং জানালা",
-            "মজবুত হ্যান্ডেল",
-            "লাগেজ হোল্ড"
-          ]
-        }
-      },
-      "connectivityEntertainment": {
-        "title": {
-          "en": "Connectivity & Entertainment",
-          "bn": "সংযোগ ও বিনোদন"
-        },
-        "items": {
-          "en": ["FM Radio system", "Standard interior lighting"],
-          "bn": ["এফএম রেডিও সিস্টেম", "স্ট্যান্ডার্ড ইন্টেরিয়র লাইটিং"]
-        }
-      },
-      "travelAssistance": {
-        "title": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
-        "items": {
-          "en": [
-            "Experienced driver",
-            "Fire extinguisher",
-            "Regular stopovers"
-          ],
-          "bn": [
-            "অভিজ্ঞ ড্রাইভার",
-            "অগ্নিনির্বাপক যন্ত্র",
-            "নিয়মিত যাত্রা বিরতি"
-          ]
-        }
-      }
+    "amenities_title": { "en": "Amenities", "bn": "সুযোগ-সুবিধা" },
+
+    "comfort_seating": { "en": "Comfort & Seating", "bn": "আরামদায়ক আসন" },
+    "reclining_seats": {
+      "en": "Reclining semi sleeper seats",
+      "bn": "হেলান দেওয়া সেমি স্লিপার আসন"
     },
-    "faq": [
-      {
-        "question": { "en": "Does it have AC?", "bn": "এতে কি এসি আছে?" },
-        "answer": {
-          "en": "No, this is a Non-AC bus designed for affordability.",
-          "bn": "না, এটি সাশ্রয়ী মূল্যের জন্য ডিজাইন করা একটি নন-এসি বাস।"
-        }
-      }
-    ],
+    "extra_legroom": {
+      "en": "Extra legroom and footrests",
+      "bn": "অতিরিক্ত লেগরুম এবং ফুটরেস্ট"
+    },
+    "reading_lights": {
+      "en": "Personal reading lights",
+      "bn": "ব্যক্তিগত রিডিং লাইট"
+    },
+    "blankets_pillows": {
+      "en": "Clean blankets and pillows",
+      "bn": "পরিষ্কার কম্বল এবং বালিশ"
+    },
+
+    "connectivity_entertainment": {
+      "en": "Connectivity & Entertainment",
+      "bn": "কানেক্টিভিটি এবং বিনোদন"
+    },
+    "wifi": { "en": "Free high-speed Wi-Fi", "bn": "ফ্রি হাই-স্পিড ওয়াই-ফাই" },
+    "usb_ports": {
+      "en": "USB charging ports at every seat",
+      "bn": "প্রতিটি আসনে ইউএসবি চার্জিং পোর্ট"
+    },
+    "screens": {
+      "en": "Individual entertainment screens",
+      "bn": "ব্যক্তিগত বিনোদন স্ক্রিন"
+    },
+    "bluetooth": {
+      "en": "Bluetooth headphone support",
+      "bn": "ব্লুটুথ হেডফোন সাপোর্ট"
+    },
+
+    "travel_assistance": { "en": "Travel Assistance", "bn": "ভ্রমণ সহায়তা" },
+    "gps_tracking": {
+      "en": "GPS tracking with live updates",
+      "bn": "লাইভ আপডেটসহ জিপিএস ট্র্যাকিং"
+    },
+    "customer_support": {
+      "en": "24/7 customer support",
+      "bn": "২৪/৭ কাস্টমার সাপোর্ট"
+    },
+    "water_snacks": {
+      "en": "Bottled water and light snacks",
+      "bn": "বোতলজাত পানি এবং হালকা নাস্তা"
+    },
+    "crew": {
+      "en": "Friendly and trained crew",
+      "bn": "বন্ধুত্বপূর্ণ এবং প্রশিক্ষিত ক্রু"
+    },
+    "faq_title": {
+      "en": "Frequently Asked Questions",
+      "bn": "সচরাচর জিজ্ঞাসিত প্রশ্নাবলী"
+    },
+
+    "arrival_time_q": {
+      "en": "How early should I arrive before departure?",
+      "bn": "বাস ছাড়ার কতক্ষণ আগে আমার পৌঁছানো উচিত?"
+    },
+    "arrival_time_a": {
+      "en": "We recommend arriving at least 30 minutes before the scheduled departure time to ensure a smooth and stress-free boarding experience. Arriving early allows you to check in your luggage, confirm your seat, and settle in comfortably before departure.",
+      "bn": "একটি মসৃণ এবং চাপমুক্ত বোর্ডিং অভিজ্ঞতা নিশ্চিত করতে আমরা নির্ধারিত প্রস্থানের সময়ের কমপক্ষে ৩০ মিনিট আগে পৌঁছানোর পরামর্শ দিই। আগে পৌঁছালে আপনি আপনার লাগেজ চেক-ইন করতে, আপনার আসন নিশ্চিত করতে এবং প্রস্থানের আগে আরামদায়কভাবে বসতি স্থাপন করতে পারবেন।"
+    },
+
+    "seat_choice_q": {
+      "en": "Can I choose my seat while booking?",
+      "bn": "আমি কি বুকিং করার সময় আমার আসন বেছে নিতে পারি?"
+    },
+    "seat_choice_a": {
+      "en": "Yes, our interactive seat map allows you to select your preferred available seat during the booking process.",
+      "bn": "হ্যাঁ, আমাদের ইন্টারেক্টিভ সিট ম্যাপ আপনাকে বুকিং প্রক্রিয়া চলাকালীন আপনার পছন্দের উপলব্ধ আসনটি বেছে নেওয়ার সুযোগ দেয়।"
+    },
+
+    "wifi_available_q": {
+      "en": "Is Wi-Fi available on the bus?",
+      "bn": "বাসে কি ওয়াই-ফাই সুবিধা আছে?"
+    },
+    "wifi_available_a": {
+      "en": "Yes, we provide free high-speed Wi-Fi on all our premium buses to keep you connected throughout the journey.",
+      "bn": "হ্যাঁ, আপনার পুরো যাত্রা জুড়ে কানেক্টেড থাকতে আমাদের সকল প্রিমিয়াম বাসে আমরা ফ্রি হাই-স্পিড ওয়াই-ফাই প্রদান করি।"
+    },
+
+    "food_drinks_q": {
+      "en": "Are food or drinks provided during the trip?",
+      "bn": "ভ্রমণের সময় কি খাবার বা পানীয় সরবরাহ করা হয়?"
+    },
+    "food_drinks_a": {
+      "en": "We provide complimentary bottled water and light snacks. For longer journeys, we also schedule refreshment breaks at high-quality roadside restaurants.",
+      "bn": "আমরা সৌজন্যমূলক বোতলজাত পানি এবং হালকা নাস্তা সরবরাহ করি। দীর্ঘ যাত্রার জন্য, আমরা উন্নত মানের হাইওয়ে রেস্তোরাঁয় বিরতির ব্যবস্থা করি।"
+    },
+
     "reviewSummary": {
-      "averageRating": 4.1,
-      "totalReviews": 2100,
+      "averageRating": 4.9,
+      "totalReviews": 2459,
       "ratingBreakdown": [
-        { "stars": 5, "count": 800 },
-        { "stars": 4, "count": 600 },
-        { "stars": 3, "count": 400 },
-        { "stars": 2, "count": 200 },
-        { "stars": 1, "count": 100 }
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
       ]
     },
     "userReviews": [
       {
-        "userId": "110332",
-        "userName": "Mehedi Hasan",
-        "date": { "en": "2 weeks ago", "bn": "২ সপ্তাহ আগে" },
-        "rating": 4.0,
-        "title": { "en": "Cheap and good", "bn": "সস্তা এবং ভালো" },
+        "userId": "215045",
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিশ্বাস্য অভিজ্ঞতা!" },
         "comment": {
-          "en": "Good for quick travels when budget is tight.",
-          "bn": "বাজেট কম থাকলে দ্রুত ভ্রমণের জন্য ভালো।"
+          "en": "It was a good location however the cocoon concept was weird. No tables, chairs etc was difficult as everything went on the floor.",
+          "bn": "লোকেশনটি খুব ভালো ছিল তবে কোকুন কনসেপ্টটি একটু অদ্ভুত ছিল। টেবিল বা চেয়ার না থাকায় সবকিছু মেঝেতে রাখতে হয়েছে যা কিছুটা অসুবিধাজনক ছিল।"
+        }
+      },
+      {
+        "userId": "153052",
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged.",
+          "bn": "আসার পর থেকেই স্টাফরা আমাদের খুব সুন্দরভাবে স্বাগত জানিয়েছে। রুমগুলো একদম পরিষ্কার ছিল এবং প্রতিটি ছোট ছোট বিষয় খুব যত্ন নিয়ে সাজানো ছিল।"
+        }
+      },
+      {
+        "userId": "133875",
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "5.0", "bn": "৫.০" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "সুবিধাজনক লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable.",
+          "bn": "শহর ঘোরার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং রুম থেকে বাইরের দৃশ্য ছিল অসাধারণ। এটি আমাদের ট্রিপকে আরও আনন্দদায়ক করে তুলেছে।"
+        }
+      },
+      {
+        "userId": "102146",
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable.",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য ধন্যবাদ! আমাদের লোকেশন এবং ভিউ আপনার ট্রিপকে সুন্দর করেছে জেনে আমরা আনন্দিত। আমরা আপনাকে আবারও স্বাগত জানাতে উন্মুখ!"
         }
       }
     ],
@@ -7139,9 +7785,9 @@
       "en": "Egypt",
       "bn": "মিশর"
     },
-    "category":{
-      "en":"visa",
-      "bn":"ভিসা"
+    "category": {
+      "en": "visa",
+      "bn": "ভিসা"
     },
     "cat": {
       "en": "Student Visa",
@@ -7416,9 +8062,9 @@
       "en": "UK Student Route Visa",
       "bn": "ইউকে স্টুডেন্ট রুট ভিসা"
     },
-    "category":{
-      "en":"visa",
-      "bn":"ভিসা"
+    "category": {
+      "en": "visa",
+      "bn": "ভিসা"
     },
     "country": { "en": "UK", "bn": "যুক্তরাজ্য" },
     "cat": { "en": "Student Visa", "bn": "স্টুডেন্ট ভিসা" },
@@ -9449,8 +10095,3 @@
     ]
   }
 ]
-
-
-
-
-

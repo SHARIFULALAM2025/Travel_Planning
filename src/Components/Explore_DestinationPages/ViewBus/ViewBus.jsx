@@ -4,6 +4,8 @@ import axios from 'axios'
 import { useLocale } from 'next-intl'
 import { useTheme } from 'next-themes'
 import React, { use, useEffect, useState } from 'react'
+import { TbBus } from 'react-icons/tb'
+
 import {
   FaPlane,
   FaRegCheckCircle,
@@ -29,7 +31,7 @@ import { IoIosArrowUp } from 'react-icons/io'
 import { IoIosArrowDown } from 'react-icons/io'
 import Accordion from '../Accordion'
 
-const ViewFlight = ({ params }) => {
+const ViewBus = ({ params }) => {
   const locale = useLocale()
   const resolvedParams = use(params)
   const id = resolvedParams.id
@@ -104,7 +106,7 @@ const ViewFlight = ({ params }) => {
           transition={{ duration: 10, ease: 'linear' }}
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('https://i.ibb.co.com/vCmrRVSz/Travelers-boarding-at-sunset.png')`,
+            backgroundImage: `url('https://i.ibb.co.com/3YjJk1SD/juan-encalada-6mc-Vao-GNz1w-unsplash.jpg')`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent z-10" />
@@ -141,7 +143,7 @@ const ViewFlight = ({ params }) => {
                   <h1
                     className={`text-3xl md:text-5xl font-black ${theme === 'dark' ? 'text-white' : 'text-slate-900'} italic`}
                   >
-                    {singleFlight?.flightTitle?.[locale] || 'Loading...'}
+                    {singleFlight?.busName?.[locale] || 'Loading...'}
                   </h1>
                   <div className="flex gap-2">
                     <span className="bg-emerald-100 text-emerald-600 text-[10px] font-bold px-3 py-1 rounded-full flex items-center gap-1 uppercase">
@@ -157,32 +159,21 @@ const ViewFlight = ({ params }) => {
                   <span
                     className={`flex items-center gap-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
                   >
-                    <FaPlane className="text-rose-500 rotate-45" size={18} />
-                    {singleFlight?.company?.[locale]}
+                    <TbBus className="text-rose-500 rotate-45" size={18} />
+                    Bus
                   </span>
                   <span className={`hidden md:inline text-slate-300 `}>|</span>
                   <span
                     className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
                   >
-                    {singleFlight?.destination?.[locale]}
+                    {singleFlight?.busType?.[locale]}
                   </span>
                   <span className="hidden md:inline text-slate-300">|</span>
-                  <span
-                    className={`flex items-center gap-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
-                  >
-                    <FaMapMarkerAlt className="text-rose-500" size={16} />
-                    {singleFlight?.location?.[locale]}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <button className="text-rose-600 hover:text-rose-700 underline text-xs font-black uppercase tracking-widest transition-colors">
-                    View Location
-                  </button>
                   <div className="flex items-center gap-1.5 bg-orange-50 px-3 py-1 rounded-lg text-orange-600 font-black">
                     <FaStar size={14} /> {singleFlight?.rating?.[locale]}
                     <span className="text-slate-400 font-medium ml-1">
-                      ({singleFlight?.review?.[locale]} Reviews)
+                      {singleFlight?.rating}({singleFlight?.totalReviews}{' '}
+                      Reviews)
                     </span>
                   </div>
                 </div>
@@ -358,125 +349,88 @@ const ViewFlight = ({ params }) => {
               </div>
             </motion.div>
             <Accordion
-              title={singleFlight?.description?.[locale]}
-              content={singleFlight?.des?.[locale]}
+              title={'Description'}
+              content={singleFlight?.description?.[locale]}
             />
             <Accordion
-              title={singleFlight?.Amenities?.[locale]}
+              title={singleFlight?.amenities_title?.[locale]}
               content={
                 <div className="grid grid-cols-2 md:grid-cols-3">
                   <div className="">
-                    <h1 className="underline">{singleFlight?.Din?.[locale]}</h1>
-
-                    <ol className="list-decimal pl-5">
-                      {singleFlight.denyingService?.[locale]?.map(
-                        (item, index) => (
-                          <li key={index} className="mb-1">
-                            {item}
-                          </li>
-                        )
-                      )}
-                    </ol>
                     <h1 className="underline">
-                      {singleFlight?.Wellness?.[locale]}
+                      {singleFlight?.comfort_seating?.[locale]}
                     </h1>
-
-                    <ol className="list-decimal pl-5">
-                      {singleFlight.wellnessServices?.[locale]?.map(
-                        (item, index) => (
-                          <li key={index} className="mb-1">
-                            {item}
-                          </li>
-                        )
-                      )}
-                    </ol>
+                    <div className="">
+                      <h1 className="">
+                        {singleFlight?.reclining_seats?.[locale]}
+                      </h1>
+                      <h1 className="">
+                        {singleFlight?.extra_legroom?.[locale]}
+                      </h1>
+                      <h1 className="">
+                        {singleFlight?.reading_lights?.[locale]}
+                      </h1>
+                      <h1 className="">
+                        {singleFlight?.blankets_pillows?.[locale]}
+                      </h1>
+                    </div>
                   </div>
                   <div className="">
                     <h1 className="underline">
-                      {singleFlight?.Entertainment?.[locale]}
+                      {singleFlight?.travel_assistance?.[locale]}
                     </h1>
-
-                    <ol className="list-decimal pl-5">
-                      {singleFlight.entertainmentServices?.[locale]?.map(
-                        (item, index) => (
-                          <li key={index} className="mb-1">
-                            {item}
-                          </li>
-                        )
-                      )}
-                    </ol>
-                    <h1 className="underline">
-                      {singleFlight?.Family?.[locale]}
-                    </h1>
-
-                    <ol className="list-decimal pl-5">
-                      {singleFlight.familyServices?.[locale]?.map(
-                        (item, index) => (
-                          <li key={index} className="mb-1">
-                            {item}
-                          </li>
-                        )
-                      )}
-                    </ol>
+                    <div className="">
+                      <h1 className="">
+                        {singleFlight?.gps_tracking?.[locale]}
+                      </h1>
+                      <h1 className="">
+                        {singleFlight?.customer_support?.[locale]}
+                      </h1>
+                      <h1 className="">
+                        {singleFlight?.water_snacks?.[locale]}
+                      </h1>
+                      <h1 className="">{singleFlight?.crew?.[locale]}</h1>
+                    </div>
                   </div>
                   <div className="">
                     <h1 className="underline">
-                      {singleFlight?.Sports?.[locale]}
+                      {singleFlight?.connectivity_entertainment?.[locale]}
                     </h1>
-                    <ol className="list-decimal pl-5">
-                      {singleFlight.activityServices?.[locale]?.map(
-                        (item, index) => (
-                          <li key={index} className="mb-1">
-                            {item}
-                          </li>
-                        )
-                      )}
-                    </ol>
-                    <h1 className="underline">
-                      {singleFlight?.Accommodations?.[locale]}
-                    </h1>
-                    <ol className="list-decimal pl-5">
-                      {singleFlight.accommodationServices?.[locale]?.map(
-                        (item, index) => (
-                          <li key={index} className="mb-1">
-                            {item}
-                          </li>
-                        )
-                      )}
-                    </ol>
+                    <div className="">
+                      <h1 className="">{singleFlight?.wifi?.[locale]}</h1>
+                      <h1 className="">{singleFlight?.usb_ports?.[locale]}</h1>
+                      <h1 className="">{singleFlight?.screens?.[locale]}</h1>
+                      <h1 className="">{singleFlight?.bluetooth?.[locale]}</h1>
+                    </div>
                   </div>
                 </div>
               }
             />
             <Accordion
-              title={singleFlight?.Frequently?.[locale]}
+              title={singleFlight?.faq_title?.[locale]}
               content={
                 <div>
                   <Accordion
-                    title={singleFlight?.question1?.[locale]}
-                    content={singleFlight?.answer1?.[locale]}
+                    title={singleFlight?.arrival_time_q?.[locale]}
+                    content={singleFlight?.arrival_time_a?.[locale]}
                   />
                   <Accordion
-                    title={singleFlight?.question2?.[locale]}
-                    content={singleFlight?.answer2?.[locale]}
+                    title={singleFlight?.seat_choice_q?.[locale]}
+                    content={singleFlight?.seat_choice_a?.[locale]}
                   />
                   <Accordion
-                    title={singleFlight?.question3?.[locale]}
-                    content={singleFlight?.answer3?.[locale]}
+                    title={singleFlight?.wifi_available_q?.[locale]}
+                    content={singleFlight?.wifi_available_a?.[locale]}
                   />
                   <Accordion
-                    title={singleFlight?.question4?.[locale]}
-                    content={singleFlight?.answer4?.[locale]}
-                  />
-                  <Accordion
-                    title={singleFlight?.question5?.[locale]}
-                    content={singleFlight?.answer5?.[locale]}
+                    title={singleFlight?.food_drinks_q?.[locale]}
+                    content={singleFlight?.food_drinks_a?.[locale]}
                   />
                 </div>
               }
             />
             <Accordion
-              title={singleFlight?.Reviews?.[locale]}
+              title={'Reviews'}
               content={
                 <div className="max-w-5xl mx-auto md:p-4   space-y-8">
                   {/* Header with Stats */}
@@ -585,7 +539,7 @@ const ViewFlight = ({ params }) => {
                               <div
                                 className={`flex items-center gap-2 text-xs ${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-medium`}
                               >
-                                <span>{review.date[locale]}</span>
+                                <span>one day ago</span>
                                 <span className="bg-amber-100 text-amber-700 px-2 py-0.5 rounded flex items-center gap-1 font-bold">
                                   <Star size={10} fill="currentColor" />{' '}
                                   {review.rating.toFixed(1)}
@@ -650,7 +604,6 @@ const ViewFlight = ({ params }) => {
           </section>
 
           <aside className="col-span-12 lg:col-span-3 md:mt-3 space-y-4">
-            
             <div
               style={bgStyle}
               className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm space-y-5"
@@ -847,4 +800,4 @@ const ViewFlight = ({ params }) => {
   )
 }
 
-export default ViewFlight
+export default ViewBus

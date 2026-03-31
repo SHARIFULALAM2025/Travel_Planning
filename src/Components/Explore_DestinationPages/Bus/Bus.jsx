@@ -9,6 +9,7 @@ import { FaBus, FaStar, FaRegHeart, FaCheckCircle } from 'react-icons/fa'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { TbSteeringWheel } from 'react-icons/tb'
 import { useTheme } from 'next-themes'
+import Link from 'next/link'
 
 const Bus = () => {
   const locale = useLocale()
@@ -31,7 +32,7 @@ const { theme } = useTheme()
      : {
          backgroundColor: '#FFFFFF',
        }
-  // শুধুমাত্র Bus ক্যাটাগরি ফিল্টার করা
+  
   const BusData = explore.filter((item) => item.category?.en === 'Bus')
 
   if (isLoading)
@@ -106,12 +107,12 @@ const { theme } = useTheme()
               </button>
             </div>
 
-            
+
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex justify-between items-start mb-3">
-                <h3 className="text-xl font-bold text-gray-800 line-clamp-1 group-hover:text-red-500 transition-colors">
+                <Link href={`/bus/${item._id}`} className="text-xl font-bold text-gray-800 line-clamp-1 group-hover:text-red-500 transition-colors">
                   {item.busName?.[locale]}
-                </h3>
+                </Link>
               </div>
 
 
