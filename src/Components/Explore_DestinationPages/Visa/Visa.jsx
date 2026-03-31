@@ -9,6 +9,7 @@ import { FaStar, FaRegHeart, FaGlobeAmericas, FaPassport } from 'react-icons/fa'
 import { HiOutlineClock, HiOutlineShieldCheck } from 'react-icons/hi'
 import { MdOutlineModeEditOutline } from 'react-icons/md'
 import { useTheme } from 'next-themes'
+import Link from 'next/link'
 
 const Visa = () => {
   const locale = useLocale()
@@ -114,9 +115,9 @@ const Visa = () => {
                 </span>
               </div>
 
-              <h3 className="text-xl font-bold text-slate-800 mb-4 group-hover:text-emerald-600 transition-colors leading-snug">
+              <Link href={`/visa/${item._id}`} className="text-xl font-bold text-slate-800 mb-4 group-hover:text-emerald-600 transition-colors leading-snug">
                 {item.visaName?.[locale]}
-              </h3>
+              </Link>
 
               {/* ভিসা ডিটেইলস গ্রিড */}
               <div className="grid grid-cols-2 gap-4 ">
