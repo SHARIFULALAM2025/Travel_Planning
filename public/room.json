@@ -307,6 +307,63 @@
     ]
   },
   {
+     "reviewSummary": {
+      "totalReviews": 2459,
+      "averageRating": 4.9,
+      "ratingBreakdown": [
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
+      ]
+    },
+    "userReviews": [
+      {
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিস্মরণীয় অভিজ্ঞতা!" },
+        "comment": {
+          "en": "This hotel exceeded my expectations! The pool, spa, and dining options were top-notch, and the room had every amenity I could ask for. It felt like a true getaway.",
+          "bn": "এই হোটেলটি আমার প্রত্যাশা ছাড়িয়ে গেছে! পুল, স্পা এবং ডাইনিং অপশনগুলো ছিল চমৎকার। রুমে আমার প্রয়োজনীয় সব সুবিধা ছিল। এটি ছিল সত্যিকারের একটি অবকাশ।"
+        },
+        "userId": "215045"
+      },
+      {
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged. It was the perfect blend of comfort and luxury!",
+          "bn": "পৌঁছানোর মুহূর্ত থেকেই স্টাফরা আমাদের উষ্ণ অভ্যর্থনা জানিয়েছেন। রুমগুলো ছিল একদম পরিষ্কার এবং প্রতিটি ছোটখাটো জিনিসের যত্ন নেওয়া হয়েছে। এটি ছিল আরাম এবং আভিজাত্যের নিখুঁত সংমিশ্রণ!"
+        },
+        "userId": "153052"
+      },
+      {
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "চমৎকার লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable to stay somewhere central and scenic.",
+          "bn": "শহরটি ঘুরে দেখার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং আমাদের রুম থেকে দৃশ্যগুলো ছিল শ্বাসরুদ্ধকর। শহরের প্রাণকেন্দ্রে এবং সুন্দর পরিবেশে থাকা আমাদের ভ্রমণকে আরও আনন্দদায়ক করেছে।"
+        },
+        "userId": "133875"
+      },
+      {
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable. We hope to welcome you back soon for another scenic stay!",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য অনেক ধন্যবাদ! আমাদের লোকেশন এবং দৃশ্যগুলো আপনার ভ্রমণকে আরও আনন্দদায়ক করেছে শুনে আমরা আনন্দিত। আমরা আশা করি আপনাকে আবারও স্বাগত জানাতে পারব!"
+        },
+        "userId": "102146"
+      }
+    ],
     "category": {
       "en": "Flight",
       "bn": "ফ্লাইট"
@@ -421,6 +478,63 @@
     "Reviews": { "en": "Reviews", "bn": "পর্যালোচনা" }
   },
   {
+     "reviewSummary": {
+      "totalReviews": 2459,
+      "averageRating": 4.9,
+      "ratingBreakdown": [
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
+      ]
+    },
+    "userReviews": [
+      {
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিস্মরণীয় অভিজ্ঞতা!" },
+        "comment": {
+          "en": "This hotel exceeded my expectations! The pool, spa, and dining options were top-notch, and the room had every amenity I could ask for. It felt like a true getaway.",
+          "bn": "এই হোটেলটি আমার প্রত্যাশা ছাড়িয়ে গেছে! পুল, স্পা এবং ডাইনিং অপশনগুলো ছিল চমৎকার। রুমে আমার প্রয়োজনীয় সব সুবিধা ছিল। এটি ছিল সত্যিকারের একটি অবকাশ।"
+        },
+        "userId": "215045"
+      },
+      {
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged. It was the perfect blend of comfort and luxury!",
+          "bn": "পৌঁছানোর মুহূর্ত থেকেই স্টাফরা আমাদের উষ্ণ অভ্যর্থনা জানিয়েছেন। রুমগুলো ছিল একদম পরিষ্কার এবং প্রতিটি ছোটখাটো জিনিসের যত্ন নেওয়া হয়েছে। এটি ছিল আরাম এবং আভিজাত্যের নিখুঁত সংমিশ্রণ!"
+        },
+        "userId": "153052"
+      },
+      {
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "চমৎকার লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable to stay somewhere central and scenic.",
+          "bn": "শহরটি ঘুরে দেখার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং আমাদের রুম থেকে দৃশ্যগুলো ছিল শ্বাসরুদ্ধকর। শহরের প্রাণকেন্দ্রে এবং সুন্দর পরিবেশে থাকা আমাদের ভ্রমণকে আরও আনন্দদায়ক করেছে।"
+        },
+        "userId": "133875"
+      },
+      {
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable. We hope to welcome you back soon for another scenic stay!",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য অনেক ধন্যবাদ! আমাদের লোকেশন এবং দৃশ্যগুলো আপনার ভ্রমণকে আরও আনন্দদায়ক করেছে শুনে আমরা আনন্দিত। আমরা আশা করি আপনাকে আবারও স্বাগত জানাতে পারব!"
+        },
+        "userId": "102146"
+      }
+    ],
     "category": {
       "en": "Flight",
       "bn": "ফ্লাইট"
@@ -529,6 +643,63 @@
     "Reviews": { "en": "Reviews", "bn": "পর্যালোচনা" }
   },
   {
+     "reviewSummary": {
+      "totalReviews": 2459,
+      "averageRating": 4.9,
+      "ratingBreakdown": [
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
+      ]
+    },
+    "userReviews": [
+      {
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিস্মরণীয় অভিজ্ঞতা!" },
+        "comment": {
+          "en": "This hotel exceeded my expectations! The pool, spa, and dining options were top-notch, and the room had every amenity I could ask for. It felt like a true getaway.",
+          "bn": "এই হোটেলটি আমার প্রত্যাশা ছাড়িয়ে গেছে! পুল, স্পা এবং ডাইনিং অপশনগুলো ছিল চমৎকার। রুমে আমার প্রয়োজনীয় সব সুবিধা ছিল। এটি ছিল সত্যিকারের একটি অবকাশ।"
+        },
+        "userId": "215045"
+      },
+      {
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged. It was the perfect blend of comfort and luxury!",
+          "bn": "পৌঁছানোর মুহূর্ত থেকেই স্টাফরা আমাদের উষ্ণ অভ্যর্থনা জানিয়েছেন। রুমগুলো ছিল একদম পরিষ্কার এবং প্রতিটি ছোটখাটো জিনিসের যত্ন নেওয়া হয়েছে। এটি ছিল আরাম এবং আভিজাত্যের নিখুঁত সংমিশ্রণ!"
+        },
+        "userId": "153052"
+      },
+      {
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "চমৎকার লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable to stay somewhere central and scenic.",
+          "bn": "শহরটি ঘুরে দেখার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং আমাদের রুম থেকে দৃশ্যগুলো ছিল শ্বাসরুদ্ধকর। শহরের প্রাণকেন্দ্রে এবং সুন্দর পরিবেশে থাকা আমাদের ভ্রমণকে আরও আনন্দদায়ক করেছে।"
+        },
+        "userId": "133875"
+      },
+      {
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable. We hope to welcome you back soon for another scenic stay!",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য অনেক ধন্যবাদ! আমাদের লোকেশন এবং দৃশ্যগুলো আপনার ভ্রমণকে আরও আনন্দদায়ক করেছে শুনে আমরা আনন্দিত। আমরা আশা করি আপনাকে আবারও স্বাগত জানাতে পারব!"
+        },
+        "userId": "102146"
+      }
+    ],
     "category": {
       "en": "Flight",
       "bn": "ফ্লাইট"
@@ -637,6 +808,63 @@
     "Reviews": { "en": "Reviews", "bn": "পর্যালোচনা" }
   },
   {
+     "reviewSummary": {
+      "totalReviews": 2459,
+      "averageRating": 4.9,
+      "ratingBreakdown": [
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
+      ]
+    },
+    "userReviews": [
+      {
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিস্মরণীয় অভিজ্ঞতা!" },
+        "comment": {
+          "en": "This hotel exceeded my expectations! The pool, spa, and dining options were top-notch, and the room had every amenity I could ask for. It felt like a true getaway.",
+          "bn": "এই হোটেলটি আমার প্রত্যাশা ছাড়িয়ে গেছে! পুল, স্পা এবং ডাইনিং অপশনগুলো ছিল চমৎকার। রুমে আমার প্রয়োজনীয় সব সুবিধা ছিল। এটি ছিল সত্যিকারের একটি অবকাশ।"
+        },
+        "userId": "215045"
+      },
+      {
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged. It was the perfect blend of comfort and luxury!",
+          "bn": "পৌঁছানোর মুহূর্ত থেকেই স্টাফরা আমাদের উষ্ণ অভ্যর্থনা জানিয়েছেন। রুমগুলো ছিল একদম পরিষ্কার এবং প্রতিটি ছোটখাটো জিনিসের যত্ন নেওয়া হয়েছে। এটি ছিল আরাম এবং আভিজাত্যের নিখুঁত সংমিশ্রণ!"
+        },
+        "userId": "153052"
+      },
+      {
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "চমৎকার লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable to stay somewhere central and scenic.",
+          "bn": "শহরটি ঘুরে দেখার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং আমাদের রুম থেকে দৃশ্যগুলো ছিল শ্বাসরুদ্ধকর। শহরের প্রাণকেন্দ্রে এবং সুন্দর পরিবেশে থাকা আমাদের ভ্রমণকে আরও আনন্দদায়ক করেছে।"
+        },
+        "userId": "133875"
+      },
+      {
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable. We hope to welcome you back soon for another scenic stay!",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য অনেক ধন্যবাদ! আমাদের লোকেশন এবং দৃশ্যগুলো আপনার ভ্রমণকে আরও আনন্দদায়ক করেছে শুনে আমরা আনন্দিত। আমরা আশা করি আপনাকে আবারও স্বাগত জানাতে পারব!"
+        },
+        "userId": "102146"
+      }
+    ],
     "category": {
       "en": "Flight",
       "bn": "ফ্লাইট"
@@ -742,6 +970,63 @@
     "Reviews": { "en": "Reviews", "bn": "পর্যালোচনা" }
   },
   {
+     "reviewSummary": {
+      "totalReviews": 2459,
+      "averageRating": 4.9,
+      "ratingBreakdown": [
+        { "stars": 5, "count": 247 },
+        { "stars": 4, "count": 145 },
+        { "stars": 3, "count": 600 },
+        { "stars": 2, "count": 560 },
+        { "stars": 1, "count": 400 }
+      ]
+    },
+    "userReviews": [
+      {
+        "userName": "Joseph Massey",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Unforgettable Stay!", "bn": "অবিস্মরণীয় অভিজ্ঞতা!" },
+        "comment": {
+          "en": "This hotel exceeded my expectations! The pool, spa, and dining options were top-notch, and the room had every amenity I could ask for. It felt like a true getaway.",
+          "bn": "এই হোটেলটি আমার প্রত্যাশা ছাড়িয়ে গেছে! পুল, স্পা এবং ডাইনিং অপশনগুলো ছিল চমৎকার। রুমে আমার প্রয়োজনীয় সব সুবিধা ছিল। এটি ছিল সত্যিকারের একটি অবকাশ।"
+        },
+        "userId": "215045"
+      },
+      {
+        "userName": "Jeffrey Jones",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 4.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "From the moment we arrived, the staff made us feel welcome. The rooms were immaculate, and every detail was thoughtfully arranged. It was the perfect blend of comfort and luxury!",
+          "bn": "পৌঁছানোর মুহূর্ত থেকেই স্টাফরা আমাদের উষ্ণ অভ্যর্থনা জানিয়েছেন। রুমগুলো ছিল একদম পরিষ্কার এবং প্রতিটি ছোটখাটো জিনিসের যত্ন নেওয়া হয়েছে। এটি ছিল আরাম এবং আভিজাত্যের নিখুঁত সংমিশ্রণ!"
+        },
+        "userId": "153052"
+      },
+      {
+        "userName": "Jessie Alves",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 5.0,
+        "title": { "en": "Convenient Location!", "bn": "চমৎকার লোকেশন!" },
+        "comment": {
+          "en": "The location was perfect for exploring the city, and the views from our room were breathtaking. It made our trip so much more enjoyable to stay somewhere central and scenic.",
+          "bn": "শহরটি ঘুরে দেখার জন্য লোকেশনটি একদম পারফেক্ট ছিল এবং আমাদের রুম থেকে দৃশ্যগুলো ছিল শ্বাসরুদ্ধকর। শহরের প্রাণকেন্দ্রে এবং সুন্দর পরিবেশে থাকা আমাদের ভ্রমণকে আরও আনন্দদায়ক করেছে।"
+        },
+        "userId": "133875"
+      },
+      {
+        "userName": "Adrian Hendriques",
+        "date": { "en": "2 days ago", "bn": "২ দিন আগে" },
+        "rating": 2.0,
+        "title": { "en": "Excellent service!", "bn": "চমৎকার সার্ভিস!" },
+        "comment": {
+          "en": "Thank you so much for your kind words! We're thrilled to hear that our location and views made your trip even more enjoyable. We hope to welcome you back soon for another scenic stay!",
+          "bn": "আপনার সুন্দর মন্তব্যের জন্য অনেক ধন্যবাদ! আমাদের লোকেশন এবং দৃশ্যগুলো আপনার ভ্রমণকে আরও আনন্দদায়ক করেছে শুনে আমরা আনন্দিত। আমরা আশা করি আপনাকে আবারও স্বাগত জানাতে পারব!"
+        },
+        "userId": "102146"
+      }
+    ],
     "category": {
       "en": "Flight",
       "bn": "ফ্লাইট"
