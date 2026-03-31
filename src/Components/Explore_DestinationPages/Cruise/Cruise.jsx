@@ -9,10 +9,11 @@ import { FaStar, FaRegHeart, FaCheckCircle, FaAnchor } from 'react-icons/fa'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { MdOutlineTimer, MdOutlinePeopleAlt } from 'react-icons/md'
 import { useTheme } from 'next-themes'
+import Link from 'next/link'
 
 const Cruise = () => {
   const locale = useLocale()
-const {theme}=useTheme()
+  const { theme } = useTheme()
   const { data: explore = [], isLoading } = useQuery({
     queryKey: ['All explore', locale],
     queryFn: async () => {
@@ -23,18 +24,20 @@ const {theme}=useTheme()
     },
   })
 
- const bgStyle =
-   theme === 'dark'
-     ? {
-         backgroundColor: '#0F172A',
-         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
-       }
-     : {
-         backgroundColor: '#FFFFFF',
-       }
+  const bgStyle =
+    theme === 'dark'
+      ? {
+          backgroundColor: '#0F172A',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+        }
+      : {
+          backgroundColor: '#FFFFFF',
+        }
   const CruiseData = explore.filter(
     (item) => item.cat?.en === 'Cruise' || item.category?.en === 'Cruise'
   )
+  console.log(CruiseData)
+
 
   if (isLoading)
     return (
@@ -108,9 +111,9 @@ const {theme}=useTheme()
 
             {/* কার্ড বডি */}
             <div className="p-7 flex flex-col flex-grow">
-              <h3 className="text-2xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors line-clamp-1">
+              <Link href={`/cruise/${item._id}`} className="text-2xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors line-clamp-1">
                 {item.cruiseName?.[locale]}
-              </h3>
+              </Link>
 
               <div className="flex items-center gap-2 text-sm text-slate-500 mb-5">
                 <HiOutlineLocationMarker
