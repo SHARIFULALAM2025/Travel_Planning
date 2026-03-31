@@ -275,57 +275,83 @@ const ViewFlight = ({ params }) => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="p-6 md:p-8 bg-slate-50 border border-slate-200 rounded-2xl"
+              className="p-6 md:p-8 border border-slate-200 rounded-2xl"
             >
               <div className="flex gap-3 items-center mb-6">
                 <GiCommercialAirplane className="text-indigo-600 text-2xl" />
-                <h2 className="text-xl font-bold text-slate-900">
+                <h2
+                  className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                >
                   {singleFlight?.flightInfo?.[locale]}
                 </h2>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4">
                 <div className="space-y-1">
-                  <p className="text-xs font-bold text-slate-400 uppercase">
+                  <p
+                    className={`text-xs font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'} uppercase`}
+                  >
                     Launch
                   </p>
-                  <h3 className="text-slate-900 font-bold">
+                  <h3
+                    className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-bold`}
+                  >
                     {singleFlight?.launchDate?.[locale]}
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p
+                    className={`text-sm ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                  >
                     {singleFlight?.Launched?.[locale]}
                   </p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-xs font-bold text-slate-400 uppercase">
+                  <p
+                    className={`text-xs font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'} uppercase`}
+                  >
                     Physical
                   </p>
-                  <h3 className="text-slate-900 font-bold">
+                  <h3
+                    className={` ${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-bold`}
+                  >
                     {singleFlight?.Weight?.[locale]}
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p
+                    className={`text-sm ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                  >
                     {singleFlight?.weightNumber?.[locale]}
                   </p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-xs font-bold text-slate-400 uppercase">
+                  <p
+                    className={`text-xs font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'} uppercase`}
+                  >
                     Capacity
                   </p>
-                  <h3 className="text-slate-900 font-bold">
+                  <h3
+                    className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-bold`}
+                  >
                     {singleFlight?.Staffs?.[locale]}
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p
+                    className={`text-sm ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                  >
                     {singleFlight?.stfLimit?.[locale]}
                   </p>
                 </div>
                 <div className="space-y-1">
-                  <p className="text-xs font-bold text-slate-400 uppercase">
+                  <p
+                    className={`text-xs font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'} uppercase`}
+                  >
                     Speed & Dim
                   </p>
-                  <h3 className="text-slate-900 font-bold">
+                  <h3
+                    className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-bold`}
+                  >
                     {singleFlight?.Speed?.[locale]}
                   </h3>
-                  <p className="text-sm text-slate-600">
+                  <p
+                    className={`text-sm ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                  >
                     {singleFlight?.km?.[locale]}
                   </p>
                 </div>
@@ -338,7 +364,7 @@ const ViewFlight = ({ params }) => {
             <Accordion
               title={singleFlight?.Amenities?.[locale]}
               content={
-                <div className="grid grid-cols-3">
+                <div className="grid grid-cols-2 md:grid-cols-3">
                   <div className="">
                     <h1 className="underline">{singleFlight?.Din?.[locale]}</h1>
 
@@ -452,10 +478,12 @@ const ViewFlight = ({ params }) => {
             <Accordion
               title={singleFlight?.Reviews?.[locale]}
               content={
-                <div className="max-w-5xl mx-auto p-4 md:p-6 bg-white space-y-8">
+                <div className="max-w-5xl mx-auto md:p-4   space-y-8">
                   {/* Header with Stats */}
                   <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-10">
-                    <h2 className="text-xl font-bold text-slate-800 self-start">
+                    <h2
+                      className={`text-xl font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'} self-start`}
+                    >
                       Reviews ({singleFlight?.reviewSummary?.totalReviews})
                     </h2>
                     <button className="bg-rose-500 hover:bg-rose-600 text-white px-6 py-2 rounded-lg flex items-center gap-2 transition-all font-bold text-sm">
@@ -463,22 +491,34 @@ const ViewFlight = ({ params }) => {
                     </button>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-slate-50/50 p-6 rounded-2xl border border-slate-100">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center  p-6 rounded-2xl border border-slate-100">
                     {/* Average Rating Card */}
                     <div className="text-center space-y-2 border-r border-slate-200 hidden md:block">
-                      <p className="text-slate-500 font-bold uppercase tracking-wider text-xs">
+                      <p
+                        className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-bold uppercase tracking-wider text-xs`}
+                      >
                         Customer Reviews & Ratings
                       </p>
-                      <h1 className="text-6xl font-black text-slate-900">
+                      <h1
+                        className={`text-6xl font-black ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                      >
                         {singleFlight?.reviewSummary?.averageRating}
-                        <span className="text-2xl text-slate-400">/ 5.0</span>
+                        <span
+                          className={`text-2xl ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                        >
+                          / 5.0
+                        </span>
                       </h1>
-                      <div className="flex justify-center text-rose-500 gap-1">
+                      <div
+                        className={`flex justify-center ${theme === 'dark' ? 'text-white' : 'text-rose-500'} gap-1`}
+                      >
                         {[...Array(5)].map((_, i) => (
                           <Star key={i} size={20} fill="currentColor" />
                         ))}
                       </div>
-                      <p className="text-slate-400 text-sm italic">
+                      <p
+                        className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} text-sm italic`}
+                      >
                         Based On{' '}
                         {singleFlight?.reviewSummary?.totalReviews.toLocaleString()}{' '}
                         Reviews
@@ -496,18 +536,20 @@ const ViewFlight = ({ params }) => {
                           return (
                             <div
                               key={item.stars}
-                              className="flex items-center gap-4 text-sm font-bold text-slate-600"
+                              className={`flex items-center gap-4 text-sm font-bold ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
                             >
                               <span className="w-24 shrink-0">
                                 {item.stars} Star Ratings
                               </span>
-                              <div className="flex-1 h-2.5 bg-slate-200 rounded-full overflow-hidden">
+                              <div className="flex-1 h-2.5 bg-black rounded-full overflow-hidden">
                                 <div
                                   className="h-full bg-rose-500 rounded-full"
                                   style={{ width: `${percentage}%` }}
                                 />
                               </div>
-                              <span className="w-10 text-right text-slate-400">
+                              <span
+                                className={`w-10 text-right ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                              >
                                 {item.count}
                               </span>
                             </div>
@@ -522,11 +564,11 @@ const ViewFlight = ({ params }) => {
                     {singleFlight?.userReviews?.map((review, index) => (
                       <div
                         key={index}
-                        className="border border-slate-200 rounded-2xl p-6 space-y-4 hover:shadow-md transition-shadow"
+                        className="border border-slate-200 rounded-2xl p-1 md:p-6 space-y-4 hover:shadow-md transition-shadow"
                       >
                         <div className="flex justify-between items-start">
-                          <div className="flex gap-4">
-                            <div className="w-12 h-12 rounded-full bg-slate-200 overflow-hidden relative border-2 border-white shadow-sm">
+                          <div className="flex md:gap-4 gap-2">
+                            <div className="md:w-12 w-9 md:h-12 h-8 rounded-full bg-slate-200 overflow-hidden relative border-2 border-white shadow-sm">
                               <Image
                                 src={`https://randomuser.me/api/portraits/men/${(index % 50) + 1}.jpg`}
                                 alt={review.userName}
@@ -535,10 +577,14 @@ const ViewFlight = ({ params }) => {
                               />
                             </div>
                             <div>
-                              <h4 className="font-bold text-slate-900">
+                              <h4
+                                className={`font-bold  ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}
+                              >
                                 {review.userName}
                               </h4>
-                              <div className="flex items-center gap-2 text-xs text-slate-400 font-medium">
+                              <div
+                                className={`flex items-center gap-2 text-xs ${theme === 'dark' ? 'text-white' : 'text-slate-900'} font-medium`}
+                              >
                                 <span>{review.date[locale]}</span>
                                 <span className="bg-amber-100 text-amber-700 px-2 py-0.5 rounded flex items-center gap-1 font-bold">
                                   <Star size={10} fill="currentColor" />{' '}
@@ -550,24 +596,34 @@ const ViewFlight = ({ params }) => {
                               </div>
                             </div>
                           </div>
-                          <button className="text-slate-400 hover:text-slate-600 border border-slate-200 px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-1 transition-all">
+                          <button
+                            className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} border border-slate-200 px-3 py-1 rounded-lg text-xs font-bold flex items-center gap-1 transition-all`}
+                          >
                             Reply
                           </button>
                         </div>
 
-                        <p className="text-slate-600 leading-relaxed text-sm">
+                        <p
+                          className={`${theme === 'dark' ? 'text-white' : 'text-slate-900'} leading-relaxed text-sm`}
+                        >
                           {review.comment[locale]}
                         </p>
 
                         {/* Reactions */}
                         <div className="flex items-center gap-6 pt-2 border-t border-slate-50">
-                          <button className="flex items-center gap-1.5 text-slate-400 hover:text-indigo-600 transition-colors text-xs font-bold">
+                          <button
+                            className={`flex items-center gap-1.5 ${theme === 'dark' ? 'text-white' : 'text-slate-900'} hover:text-indigo-600 transition-colors text-xs font-bold`}
+                          >
                             <ThumbsUp size={16} /> {review.userId.slice(0, 2)}
                           </button>
-                          <button className="flex items-center gap-1.5 text-slate-400 hover:text-rose-600 transition-colors text-xs font-bold">
+                          <button
+                            className={`flex items-center gap-1.5 ${theme === 'dark' ? 'text-white' : 'text-slate-900'} hover:text-rose-600 transition-colors text-xs font-bold`}
+                          >
                             <ThumbsDown size={16} /> {review.userId.slice(2, 4)}
                           </button>
-                          <button className="flex items-center gap-1.5 text-slate-400 hover:text-rose-500 transition-colors text-xs font-bold">
+                          <button
+                            className={`flex items-center gap-1.5 ${theme === 'dark' ? 'text-white' : 'text-slate-900'} hover:text-rose-500 transition-colors text-xs font-bold`}
+                          >
                             <Heart
                               size={16}
                               fill={index === 0 ? 'currentColor' : 'none'}
