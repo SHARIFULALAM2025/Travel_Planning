@@ -3,7 +3,7 @@ import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
 import { useTranslations } from 'use-intl'
-import { motion } from 'framer-motion'
+import { color, motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import axios from 'axios'
 import toast from 'react-hot-toast'
@@ -34,6 +34,17 @@ const Contact = () => {
       toast.error(error.response?.data?.message || 'Something went wrong!')
     }
   }
+    const bgStyle =
+      theme === 'dark'
+        ? {
+          backgroundColor: '#0F172A',
+          color:"#FFFFFF",
+            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+          }
+        : {
+          backgroundColor: '#FFFFFF',
+          color:"#000000"
+          }
   // Prevent hydration mismatch
   useEffect(() => {
     setMounted(true)
@@ -51,9 +62,8 @@ const Contact = () => {
 
   return (
     <div
-      className={`min-h-screen transition-colors duration-500 ${
-        isDark ? 'bg-black text-white' : 'bg-white text-black'
-      }`}
+      style={bgStyle}
+      className={`min-h-screen transition-colors duration-500`}
     >
       <motion.section
         initial="hidden"
@@ -67,26 +77,17 @@ const Contact = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
+            style={bgStyle}
             className={`lg:col-span-4 p-6 md:p-8 rounded-3xl border ${
               isDark
-                ? 'bg-neutral-900 border-neutral-800'
-                : 'bg-gray-50 border-gray-200'
+                ? 'bg-neutral-900 border-neutral-200'
+                : 'bg-gray-50 border-gray-900'
             } shadow-sm`}
           >
-            <h3
-              className={`text-2xl font-bold mb-4 ${isDark ? 'text-white' : 'text-gray-900'}`}
-            >
-              {t('info')}
-            </h3>
-            <p
-              className={`${isDark ? 'text-gray-400' : 'text-gray-700'} mb-8 leading-relaxed`}
-            >
-              {t('des')}
-            </p>
+            <h3 className={`text-2xl font-bold mb-4`}>{t('info')}</h3>
+            <p className={` mb-8 leading-relaxed`}>{t('des')}</p>
 
-            <div
-              className={`space-y-5 ${isDark ? 'text-gray-300' : 'text-gray-700'}`}
-            >
+            <div className={`space-y-5 `}>
               <div className="flex flex-col">
                 <span className="text-xs uppercase tracking-wider font-bold mb-1 opacity-60">
                   {t('phoneText')}
@@ -140,25 +141,18 @@ const Contact = () => {
             >
               {t('title')}
             </h2>
-            <p
-              className={`mb-10 max-w-2xl text-lg ${isDark ? 'text-gray-400' : 'text-gray-600'}`}
-            >
-              {t('description')}
-            </p>
+            <p className={`mb-10 max-w-2xl text-lg`}>{t('description')}</p>
 
             <form className="space-y-5" onSubmit={handleSubmit(handelForm)}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className="flex flex-col gap-2">
                   <label className="font-medium">{t('name')}</label>
                   <input
+                    style={bgStyle}
                     type="text"
                     {...register('text', { required: true })}
                     placeholder={t('placeholderName')}
-                    className={`w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all ${
-                      isDark
-                        ? 'bg-neutral-900 border-neutral-800 text-white'
-                        : 'bg-white border-gray-300 text-black'
-                    }`}
+                    className={`w-full p-4  rounded-xl border focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all `}
                   />
                   {errors.text && (
                     <span className="text-red-700">{t('errorMessage')}</span>
@@ -167,14 +161,11 @@ const Contact = () => {
                 <div className="flex flex-col gap-2">
                   <label className="font-medium">{t('email_2')}</label>
                   <input
+                    style={bgStyle}
                     type="email"
                     {...register('email', { required: true })}
                     placeholder={t('placeholderEmail')}
-                    className={`w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all ${
-                      isDark
-                        ? 'bg-neutral-900 border-neutral-800 text-white'
-                        : 'bg-white border-gray-300 text-black'
-                    }`}
+                    className={`w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all `}
                   />
                   {errors.email && (
                     <span className="text-red-700">{t('errorMessage')}</span>
@@ -184,27 +175,21 @@ const Contact = () => {
               <div className="flex flex-col gap-2">
                 <label className="font-medium">{t('website')}</label>
                 <input
+                  style={bgStyle}
                   type="url"
                   {...register('url')}
                   placeholder={t('placeholderWeb')}
-                  className={`w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all ${
-                    isDark
-                      ? 'bg-neutral-900 border-neutral-800 text-white'
-                      : 'bg-white border-gray-300 text-black'
-                  }`}
+                  className={`w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all`}
                 />
               </div>
               <div className="flex flex-col gap-2">
                 <label className="font-medium">{t('comment')}</label>
                 <textarea
+                  style={bgStyle}
                   rows="5"
                   {...register('message', { required: true })}
                   placeholder={t('placeholderComment')}
-                  className={`w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all ${
-                    isDark
-                      ? 'bg-neutral-900 border-neutral-800 text-white'
-                      : 'bg-white border-gray-300 text-black'
-                  }`}
+                  className={`w-full p-4 rounded-xl border focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all `}
                 ></textarea>
                 {errors.message && (
                   <span className="text-red-700">{t('errorMessage')}</span>
