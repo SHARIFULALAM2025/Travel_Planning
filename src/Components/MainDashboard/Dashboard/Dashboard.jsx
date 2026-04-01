@@ -42,16 +42,17 @@ const Dashboard = ({ children }) => {
     },
   })
 
-  const bgStyle =
-    theme === 'dark'
+
+  const bgStyle = !mounted
+    ? { backgroundColor: '#FFFFFF' } 
+    : theme === 'dark'
       ? {
-          backgroundColor: mounted ? '#0F172A' : '#FFFFFF',
-          backgroundImage: mounted ? `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")` : "none",
+          backgroundColor: '#0F172A',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
         }
       : {
           backgroundColor: '#FFFFFF',
         }
-
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -82,8 +83,13 @@ const Dashboard = ({ children }) => {
                 href="/"
                 className={`flex items-center rounded-xl hover:bg-slate-100 transition-all group ${!open && 'justify-center'}`}
               >
-                <Home className="text-slate-400 group-hover:text-blue-600" size={12} />
-                <span className="ml-1 text-xs text-slate-600">Back to Site</span>
+                <Home
+                  className="text-slate-400 group-hover:text-blue-600"
+                  size={12}
+                />
+                <span className="ml-1 text-xs text-slate-600">
+                  Back to Site
+                </span>
               </Link>
             </div>
           )}
@@ -108,11 +114,17 @@ const Dashboard = ({ children }) => {
                   ${isActive ? 'bg-blue-50 text-blue-600' : 'text-slate-500 hover:bg-slate-50'}
                   ${!open && 'justify-center'}`}
               >
-                <div className={`${isActive ? 'text-blue-600' : 'text-slate-400 group-hover:text-blue-500'}`}>
+                <div
+                  className={`${isActive ? 'text-blue-600' : 'text-slate-400 group-hover:text-blue-500'}`}
+                >
                   {item.icon}
                 </div>
 
-                {open && <span className="ml-3 font-semibold text-[14px]">{item.name}</span>}
+                {open && (
+                  <span className="ml-3 font-semibold text-[14px]">
+                    {item.name}
+                  </span>
+                )}
 
                 {!open && (
                   <div className="absolute left-16 bg-slate-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap z-50">
@@ -165,9 +177,17 @@ const Dashboard = ({ children }) => {
 
             <div className="h-8 w-8 lg:h-9 lg:w-9 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center font-bold border border-indigo-200 overflow-hidden flex-shrink-0">
               {session?.user?.image ? (
-                <Image src={session.user.image} alt="profile" width={36} height={36} className="object-cover" />
+                <Image
+                  src={session.user.image}
+                  alt="profile"
+                  width={36}
+                  height={36}
+                  className="object-cover"
+                />
               ) : (
-                <span className="text-xs uppercase">{session?.user?.name?.charAt(0) || 'U'}</span>
+                <span className="text-xs uppercase">
+                  {session?.user?.name?.charAt(0) || 'U'}
+                </span>
               )}
             </div>
           </div>
