@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import FacebookIcon from '@mui/icons-material/Facebook'
-import TwitterIcon from '@mui/icons-material/Twitter'
+
 import PublicIcon from '@mui/icons-material/Public'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
@@ -10,10 +10,11 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { FaXTwitter } from 'react-icons/fa6'
 import Link from 'next/link'
+import { useTheme } from 'next-themes'
 
 const MyProfile = () => {
   const { data: session, status } = useSession()
-
+const {theme}=useTheme()
   const { data: User = {}, isLoading } = useQuery({
     queryKey: ['user', session?.user?.email],
     enabled: !!session?.user?.email, // Only fetch when email is available
@@ -25,6 +26,16 @@ const MyProfile = () => {
     },
   })
 
+ const bgStyle =
+   theme === 'dark'
+     ? {
+         backgroundColor: '#0F172A',
+         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+       }
+     : {
+         backgroundColor: '#FFFFFF',
+       }
+
   if (status === 'loading' || isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -34,14 +45,18 @@ const MyProfile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#f4f7f6] p-6 lg:p-12 font-sans text-[#444]">
+    <div
+      style={bgStyle}
+      className="min-h-screen  p-3 font-sans text-[#444]"
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
         {/* LEFT COLUMN: INFO SECTIONS */}
         <div className="lg:col-span-8 bg-white rounded-xl shadow-[0_2px_20px_rgba(0,0,0,0.05)] overflow-hidden">
           {/* Header */}
           <div className="px-8 py-6 bg-white border-b border-gray-900 flex justify-between items-center">
             <h2 className="text-xl font-bold text-gray-800">My Profile</h2>
-            <Link href={`/editUser`}
+            <Link
+              href={`/editUser`}
               aria-label="Edit Profile"
               className="p-2.5 bg-slate-900 text-white rounded-full transition-all duration-300 hover:bg-amber-400 hover:text-slate-900 hover:rotate-12 active:scale-95"
             >
