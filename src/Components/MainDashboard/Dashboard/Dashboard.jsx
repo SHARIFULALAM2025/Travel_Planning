@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -9,13 +9,17 @@ import { useQuery } from '@tanstack/react-query'
 import { useSession } from 'next-auth/react'
 import axios from 'axios'
 import Image from 'next/image'
+import { useTheme } from 'next-themes'
+import DarkMode from '@/Components/DarkMode/DarkMode'
 
 const Dashboard = ({ children }) => {
+  const { theme } = useTheme()
   const { data: session } = useSession()
   const [open, setOpen] = useState(true)
   const pathname = usePathname()
+   const [mounted, setMounted] = useState(false)
   const { data: role } = useQuery({
-    queryKey: ['role', ],
+    queryKey: ['role'],
     queryFn: async () => {
       const { data } = await axios.get(
         `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/users/role/${session.user?.email}`
@@ -24,14 +28,27 @@ const Dashboard = ({ children }) => {
     },
   })
 
+  const bgStyle =
+    theme === 'dark'
+      ? {
+          backgroundColor: mounted ? '#0F172A' : '#FFFFFF',
+          backgroundImage: mounted ?`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`:"none",
+        }
+      : {
+          backgroundColor: '#FFFFFF',
+        }
 
 
+  useEffect(() => {
+    setMounted(true)
+  }, [])
   const filteredLinks = DashboardLink.filter((item) => item.role.includes(role))
 
   return (
-    <div className="flex h-screen bg-[#F3F4F6] text-slate-900 font-sans">
+    <div className="flex h-screen  text-slate-900 font-sans">
       <aside
-        className={`fixed inset-y-0 left-0 bg-white border-r border-slate-200 z-50 transition-all duration-300 ease-in-out shadow-sm
+        style={bgStyle}
+        className={`fixed inset-y-0 left-0 border-r border-slate-200 z-50 transition-all duration-300 ease-in-out shadow-sm
         ${open ? 'w-[200px]' : 'w-[70px]'}`}
       >
         {/* Drawer Header */}
@@ -104,9 +121,12 @@ const Dashboard = ({ children }) => {
         ${open ? 'ml-[200px]' : 'ml-[70px]'}`}
       >
         {/* Top Navbar */}
-        <header className="h-12 bg-white/80 backdrop-blur-md border-b border-slate-200 px-6 flex items-center justify-between sticky top-0 z-40">
+        <header
+          style={bgStyle}
+          className="h-12 p-4 border-b border-slate-200 px-6 flex items-center justify-between sticky top-0 z-40"
+        >
           <div className="flex items-center gap-4">
-            <h2 className="text-lg font-bold text-slate-700">
+            <h2 className="text-lg font-bold text-slate-100">
               Dashboard Overview
             </h2>
           </div>
@@ -120,6 +140,7 @@ const Dashboard = ({ children }) => {
                 className="bg-transparent border-none outline-none ml-2 text-sm w-48"
               />
             </div>
+            <DarkMode />
             <button className="p-2 text-slate-400 hover:bg-slate-100 rounded-full relative">
               <Bell size={20} />
               <span className="absolute top-2 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
@@ -145,7 +166,9 @@ const Dashboard = ({ children }) => {
 
         {/* Dynamic Page Content */}
         <main className="">
-          <div className="bg-white">{children}</div>
+          <div style={bgStyle} className="">
+            {children}
+          </div>
         </main>
       </div>
     </div>
