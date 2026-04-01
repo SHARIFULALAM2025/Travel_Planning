@@ -10,6 +10,7 @@ import { FaStar, FaRegHeart, FaCheckCircle } from 'react-icons/fa'
 import { HiOutlineMapPin, HiOutlineBuildingOffice2 } from 'react-icons/hi2'
 import { MdOutlineLocalDrink, MdOutlineWifi } from 'react-icons/md'
 import { useTheme } from 'next-themes'
+import Link from 'next/link'
 
 const Hotel = () => {
   const locale = useLocale()
@@ -119,9 +120,9 @@ const Hotel = () => {
                 </span>
               </div>
 
-              <h3 className="text-2xl font-black text-slate-800 mb-2 line-clamp-1 group-hover:text-rose-600 transition-colors">
+              <Link href={`/hotel/${item._id}`} className="text-2xl font-black text-slate-800 mb-2 line-clamp-1 group-hover:text-rose-600 transition-colors">
                 {item.hotelName?.[locale]}
-              </h3>
+              </Link>
 
               <p className="text-slate-500 text-sm line-clamp-2 mb-2 leading-relaxed">
                 {item.description?.[locale]}
