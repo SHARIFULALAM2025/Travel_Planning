@@ -46,7 +46,10 @@ const Navbar = () => {
     },
     enabled: !!session?.user?.email,
   })
-
+const toggleCard = (e) => {
+  e.stopPropagation()
+  setIsCardOpen((prev) => !prev)
+}
   //handelDelete
   const { mutate: deleteItem } = useMutation({
     mutationFn: async (id) => {
@@ -280,7 +283,7 @@ const Navbar = () => {
                         initial={{ opacity: 0, y: 15, scale: 0.95 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 15, scale: 0.95 }}
-                        className="absolute right-0 mt-2 w-80 bg-white dark:bg-slate-800 shadow-2xl rounded-xl overflow-hidden border dark:border-slate-700 z-[100]"
+                        className="absolute right-0 mt-2 w-80 bg-white dark:bg-slate-800 shadow-2xl rounded-xl overflow-hidden border dark:border-slate-700 z-[1000]"
                       >
                         <div className="p-4 border-b dark:border-slate-700 flex justify-between items-center">
                           <h3 className="font-bold text-sm">
@@ -509,7 +512,7 @@ const Navbar = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className={`md:hidden overflow-hidden border-t ${
+              className={`md:hidden  border-t ${
                 theme === 'dark'
                   ? 'bg-slate-900 border-slate-800'
                   : 'bg-white border-gray-100'
@@ -532,12 +535,11 @@ const Navbar = () => {
                 <div className="pt-4 border-t flex justify-between items-center">
                   <DarkMode />
                   {session?.user && (
-                    <div
-                      className="relative"
-                      onMouseEnter={() => setIsCardOpen(true)}
-                      onMouseLeave={() => setIsCardOpen(false)}
-                    >
-                      <button className="relative p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full transition-colors group">
+                    <div className="relative   ">
+                      <button
+                        onClick={toggleCard}
+                        className="relative p-2 hover:bg-gray-100 dark:hover:bg-slate-800 rounded-full transition-colors group"
+                      >
                         <BsCart3
                           size={22}
                           className={`${theme === 'dark' ? 'text-white' : 'text-black'} group-hover:text-blue-600`}
@@ -554,7 +556,7 @@ const Navbar = () => {
                             initial={{ opacity: 0, y: 15, scale: 0.95 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 15, scale: 0.95 }}
-                            className="absolute right-0 mt-2 w-80 bg-white dark:bg-slate-800 shadow-2xl rounded-xl overflow-hidden border dark:border-slate-700 z-[100]"
+                            className="fixed left-1/2 -translate-x-1/2 mt-3 w-[95vw] max-w-sm bg-white dark:bg-slate-800 shadow-2xl rounded-xl overflow-hidden border dark:border-slate-700 z-[2000]"
                           >
                             <div className="p-4 border-b dark:border-slate-700 flex justify-between items-center">
                               <h3 className="font-bold text-sm">
