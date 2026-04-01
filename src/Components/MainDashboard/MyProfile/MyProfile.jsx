@@ -47,7 +47,7 @@ const {theme}=useTheme()
   return (
     <div
       style={bgStyle}
-      className="min-h-screen  p-3 font-sans text-[#444]"
+      className="min-h-screen  md:p-3 font-sans text-[#444]"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10">
         {/* LEFT COLUMN: INFO SECTIONS */}

@@ -13,7 +13,9 @@ const MainDashboardPage = () => {
          : {
              backgroundColor: '#FFFFFF',
            }
-  return <div style={bgStyle} className='min-h-screen'>das</div>
+    return <div style={bgStyle} className='min-h-screen '>
+      <h1 className="text-white">shariful</h1>
+  </div>
 }
 
 export default MainDashboardPage
