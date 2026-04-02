@@ -178,7 +178,7 @@ const LastMinuteOffers = () => {
         {/* Footer Link */}
         <div className="mt-12 flex justify-center">
           <Link
-            href="/all-rooms"
+            href="/explore"
             className="group flex items-center gap-3 text-gray-500 dark:text-gray-400 font-bold hover:text-blue-600 transition-all duration-300"
           >
             <span className="uppercase text-xs tracking-[0.2em] border-b-2 border-transparent group-hover:border-blue-600 pb-1">
