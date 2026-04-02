@@ -67,6 +67,16 @@ const Login = () => {
   }
   const { theme } = useTheme()
   const [mounted, setMounted] = useState(false)
+   const bgStyle =
+     theme === 'dark'
+       ? {
+           backgroundColor: '#0F172A',
+
+           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+         }
+       : {
+           backgroundColor: '#FFFFFF',
+         }
 
   useEffect(() => {
     setMounted(true)
@@ -87,9 +97,13 @@ const Login = () => {
   return (
     <Container>
       <div
-        className={`${theme == 'dark' ? 'bg-slate-900' : 'bg-white'} min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-10`}
+        style={bgStyle}
+        className={` min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-10`}
       >
-        <div className="w-full max-w-5xl rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 border border-white/40">
+        <div
+          style={bgStyle}
+          className="w-full max-w-5xl rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-2 border border-white/40"
+        >
           {/* Left Section - Hidden on Mobile/Tablet or adjusted height */}
           <div className="relative h-64 lg:h-auto overflow-hidden">
             <Image
@@ -111,7 +125,8 @@ const Login = () => {
 
           {/* Right Section - Content padding adjusted for small screens */}
           <div
-            className={`p-6 sm:p-10 md:p-14 flex flex-col justify-center ${theme == 'dark' ? 'bg-slate-800 lg:bg-transparent' : 'bg-white lg:bg-transparent'}`}
+            style={bgStyle}
+            className={`p-6 sm:p-10 md:p-14 flex flex-col justify-center`}
           >
             <div className="mb-6 md:mb-10 space-y-2">
               <h1
