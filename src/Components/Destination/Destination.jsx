@@ -58,7 +58,7 @@ const Destination = () => {
         </div>
       </div>
 
-      <div className="">
+      <div className="mt-3">
         {isLoading ? (
           <div className="text-center py-20 text-2xl font-bold">Loading...</div>
         ) : (
