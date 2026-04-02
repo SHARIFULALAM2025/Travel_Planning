@@ -9,11 +9,15 @@ import { useLocale } from 'next-intl'
 import Container from '../Container/Container'
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 
 const BlogPage = () => {
   // const t = useTranslations('blogsData')
   // const blogs = t.raw("items") || []
   const locale = useLocale()
+  const [mounted, setMounted] = useState(false)
+  const {theme}=useTheme()
   const { data: blogs = [] } = useQuery({
     queryKey: ['All Blog', locale],
     queryFn: async () => {
@@ -23,12 +27,29 @@ const BlogPage = () => {
       return res.data
     },
   })
+   const bgStyle =
+     theme === 'dark'
+       ? {
+           backgroundColor: '#0F172A',
+
+           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+         }
+       : {
+           backgroundColor: '#FFFFFF',
+      }
+  useEffect(() => {
+      setMounted(true)
+    }, [])
+    if (!mounted) return null
   console.log(blogs)
 
   return (
     <Container>
       <section className="grid grid-cols-12">
-        <div className="min-h-screen col-span-9 bg-slate-50 dark:bg-slate-950 py-5  px-4 sm:px-6 lg:px-8">
+        <div
+          style={bgStyle}
+          className="min-h-screen col-span-9  py-5  px-4 sm:px-6 lg:px-8"
+        >
           <div className="max-w-7xl mx-auto">
             {/* Blog Card Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
@@ -124,7 +145,10 @@ const BlogPage = () => {
           </div>
         </div>
         {/* Sidebar: col-span-3 */}
-        <aside className="col-span-12 lg:col-span-3 bg-white shadow-md  dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 p-8 min-h-screen">
+        <aside
+          style={bgStyle}
+          className="col-span-12 lg:col-span-3  shadow-md   border-l border-slate-200 dark:border-slate-800 p-8 min-h-screen"
+        >
           <div className="sticky top-24 space-y-10">
             {/* Search Widget */}
             <div className="relative">
