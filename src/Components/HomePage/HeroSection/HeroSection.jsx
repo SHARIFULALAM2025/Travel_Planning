@@ -8,7 +8,16 @@ const   HeroSection=()=> {
   const [open, setOpen] = useState(false);
   const { theme } = useTheme()
   const [mounted, setMounted] = useState(false)
+ const bgStyle =
+   theme === 'dark'
+     ? {
+         backgroundColor: '#0F172A',
 
+         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+       }
+     : {
+         backgroundColor: '#FFFFFF',
+       }
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -16,9 +25,7 @@ const   HeroSection=()=> {
   if (!mounted) return null
 
   return (
-    <section
-      className={`w-full ${theme == 'dark' ? 'bg-slate-900' : 'bg-white'} py-3`}
-    >
+    <section style={bgStyle} className={`w-full py-3`}>
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
         {/* LEFT SIDE */}
         <div className="relative group">
