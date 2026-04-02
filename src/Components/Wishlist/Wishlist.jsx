@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Container from '../Container/Container'
 import { useSession } from 'next-auth/react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
@@ -8,12 +8,14 @@ import { useLocale } from 'next-intl'
 import Image from 'next/image'
 import { Trash2, ShoppingCart, HeartOff } from 'lucide-react'
 import toast from 'react-hot-toast'
+import { useTheme } from 'next-themes'
 
 const Wishlist = () => {
   const locale = useLocale()
   const queryClient = useQueryClient()
   const { data: session } = useSession()
-
+  const [mounted, setMounted] = useState(false)
+  const {theme}=useTheme()
   // Fetch Wishlist Data
   const { data: wishlist = [], isLoading } = useQuery({
     queryKey: ['AllWishlist', locale, session?.user?.email],
@@ -54,6 +56,20 @@ const Wishlist = () => {
       toast.success('Added to cart')
     },
   })
+  const bgStyle =
+       theme === 'dark'
+         ? {
+             backgroundColor: '#0F172A',
+
+             backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+           }
+         : {
+             backgroundColor: '#FFFFFF',
+           }
+    useEffect(() => {
+      setMounted(true)
+    }, [])
+    if (!mounted) return null
 
   if (isLoading)
     return (
@@ -64,7 +80,7 @@ const Wishlist = () => {
 
   return (
     <Container>
-      <div className="">
+      <div style={bgStyle} className="">
         {wishlist.length > 0 ? (
           <div className="overflow-x-auto border border-gray-100 dark:border-slate-800 shadow-sm">
             <table className="w-full text-left border-collapse">

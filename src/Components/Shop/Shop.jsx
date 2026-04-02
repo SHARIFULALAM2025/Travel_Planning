@@ -30,6 +30,16 @@ const Shop = () => {
       return res.data
     },
   })
+  const bgStyle =
+    theme === 'dark'
+      ? {
+          backgroundColor: '#0F172A',
+
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+        }
+      : {
+          backgroundColor: '#FFFFFF',
+        }
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -67,7 +77,7 @@ const Shop = () => {
       image: selectedProduct.image[0],
       email: session?.user?.email,
     }
-    
+
 
     mutate(cartData)
   }
@@ -106,10 +116,12 @@ const Shop = () => {
   return (
     <Container>
       <section
-        className={`${theme === 'dark' ? 'bg-slate-900 text-white' : 'text-slate-900 bg-white'} grid gap-6 grid-cols-1 lg:grid-cols-12 py-6`}
+        style={bgStyle}
+        className={`${theme === 'dark' ? ' text-white' : 'text-slate-900 '} grid gap-6 grid-cols-1 lg:grid-cols-12 py-6`}
       >
         <aside
-          className={`${theme === 'dark' ? 'bg-slate-900 text-white' : 'text-slate-900 bg-white'} col-span-1 lg:col-span-3`}
+          style={bgStyle}
+          className={`${theme === 'dark' ? ' text-white' : 'text-slate-900 '} col-span-1 lg:col-span-3`}
         >
           <div className="lg:sticky lg:top-24 space-y-8">
             <div className="relative">
@@ -202,7 +214,7 @@ const Shop = () => {
 
                 <div className="absolute flex flex-col gap-2 top-3 right-3 lg:opacity-0 lg:group-hover:opacity-100 lg:translate-x-5 lg:group-hover:translate-x-0 transition-all duration-300">
                   <button
-                    onClick={()=>handelWishlist(item._id)}
+                    onClick={() => handelWishlist(item._id)}
                     className="p-3 bg-white/80 dark:bg-slate-700 text-black dark:text-white shadow-md rounded-full hover:bg-blue-600 hover:text-white transition-colors"
                   >
                     <FaHeart size={14} />
