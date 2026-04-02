@@ -85,7 +85,7 @@ const Shop = () => {
    const {mutate: addToWishlist } = useMutation({
       mutationFn: async (cartInfo) => {
         const res = await axios.post(
-          `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/wishlist`,
+          `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/wishlist`,
           cartInfo
         )
         return res.data
