@@ -3,7 +3,7 @@ import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaStar } from 'react-icons/fa'
 import { FaCalendarAlt } from 'react-icons/fa'
 import { CiClock2 } from 'react-icons/ci'
@@ -29,7 +29,19 @@ const SingleDestination = ({ destId, tourId }) => {
     },
   })
   const [open, setOpen] = useState(0)
-
+   const [mounted, setMounted] = useState(false)
+  const bgStyle =
+    theme === 'dark'
+      ? {
+          backgroundColor: '#0F172A',
+          backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+        }
+      : {
+          backgroundColor: '#FFFFFF',
+        }
+  useEffect(() => {
+    setMounted(true)
+  }, [])
   const toggle = (index) => {
     setOpen(open === index ? null : index)
   }
@@ -43,7 +55,7 @@ const SingleDestination = ({ destId, tourId }) => {
 
   if (!tourDetails)
     return <div className="p-10 text-center">Tour Not Found!</div>
-
+  if (!mounted) return null
   return (
     <main className="">
       {/* Image Section */}
@@ -74,7 +86,10 @@ const SingleDestination = ({ destId, tourId }) => {
       </div>
 
       {/* Content Section */}
-      <section className="grid grid-cols-12 gap-0 relative items-stretch">
+      <section
+        style={bgStyle}
+        className="grid grid-cols-12 gap-0 relative items-stretch"
+      >
         {/* Left Column */}
         <div className="col-span-12 lg:col-span-9 p-8">
           <div className="flex justify-between">
@@ -427,7 +442,7 @@ const SingleDestination = ({ destId, tourId }) => {
                       <ChevronRight />
                     </button>
                   </div>
-                  
+
                   <div className="flex gap-2 mt-4 overflow-x-auto pb-2">
                     {tourDetails?.slide?.map((img, idx) => (
                       <div
@@ -450,9 +465,11 @@ const SingleDestination = ({ destId, tourId }) => {
           </div>
         </div>
 
-        <aside className="col-span-12 lg:col-span-3 flex flex-col relative">
+        <aside  className="col-span-12 lg:col-span-3 flex flex-col relative">
           <div
+
             className="
+            
               lg:-mt-24
               lg:mb-0
               relative
