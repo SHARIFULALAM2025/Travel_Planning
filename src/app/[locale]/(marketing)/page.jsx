@@ -36,8 +36,6 @@ export default function Home() {
         <Personalized />
         <LastMinuteOffers />
         <ChooseTour />
-
-
         <Newsletter />
         <Stories />
       </Container>

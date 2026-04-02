@@ -24,6 +24,16 @@ const PopularDestination = () => {
       return res.data
     },
   })
+   const bgStyle =
+     theme === 'dark'
+       ? {
+           backgroundColor: '#0F172A',
+
+           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23334155' fill-opacity='0.2' d='M1 3h1v1H1V3zm2-2h1v1H2V1z'%3E%3C/path%3E%3C/svg%3E")`,
+         }
+       : {
+           backgroundColor: '#FFFFFF',
+         }
 
   useEffect(() => {
     setMounted(true)
@@ -32,9 +42,7 @@ const PopularDestination = () => {
   if (!mounted) return null
 
   return (
-    <section
-      className={`${theme === 'dark' ? 'bg-slate-950' : 'bg-gray-50'} mt-2 px-4`}
-    >
+    <section style={bgStyle} className={`  px-4`}>
       {/* Section Header */}
       <div className="text-center space-y-2 mb-8">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
@@ -81,7 +89,7 @@ const PopularDestination = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10" />
 
                 {/* Content Container */}
-                
+
                 <div className="absolute inset-x-0 bottom-0 p-6 z-20 transition-all duration-500 transform lg:group-hover:-translate-y-2">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-blue-400">
