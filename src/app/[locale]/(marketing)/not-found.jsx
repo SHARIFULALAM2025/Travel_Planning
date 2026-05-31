@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import Container from '@/Components/Container/Container'
+
 import { useLocale } from 'next-intl'
 
 export default function NotFound() {
@@ -10,7 +10,7 @@ export default function NotFound() {
 
   return (
     <div className="min-h-[80vh] flex items-center justify-center ">
-      <Container>
+
         <div className="flex flex-col items-center text-center relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export default function NotFound() {
             </Link>
           </motion.div>
         </div>
-      </Container>
+
     </div>
   )
 }

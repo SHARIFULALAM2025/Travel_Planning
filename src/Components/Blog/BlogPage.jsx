@@ -6,7 +6,7 @@ import { FaRegClock, FaUser, FaCalendarAlt } from 'react-icons/fa'
 import { FaArrowRight } from 'react-icons/fa6'
 import Link from 'next/link'
 import { useLocale } from 'next-intl'
-import Container from '../Container/Container'
+
 import { useQuery } from '@tanstack/react-query'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
@@ -44,7 +44,7 @@ const BlogPage = () => {
   console.log(blogs)
 
   return (
-    <Container>
+
       <section className="grid grid-cols-12">
         <div
           style={bgStyle}
@@ -227,7 +227,7 @@ const BlogPage = () => {
           </div>
         </aside>
       </section>
-    </Container>
+    
   )
 }
 

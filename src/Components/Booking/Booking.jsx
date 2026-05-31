@@ -2,7 +2,7 @@
 import { useLocale } from 'next-intl'
 import Image from 'next/image'
 import React, { use, useState } from 'react'
-import Container from '../Container/Container'
+
 import { FaRegClock, FaUser, FaStar, FaMapMarkerAlt } from 'react-icons/fa'
 import { AiOutlineGlobal } from 'react-icons/ai'
 import { CiCircleCheck } from 'react-icons/ci'
@@ -33,7 +33,7 @@ const Booking = ({ params }) => {
   }
 
   return (
-    <Container>
+
       <section className="py-12 px-4 transition-colors duration-300 bg-white dark:bg-slate-950">
         <div className="mb-24">
           <div className="mb-8">
@@ -573,7 +573,7 @@ const Booking = ({ params }) => {
           </div>
         </div>
       </section>
-    </Container>
+    
   )
 }
 

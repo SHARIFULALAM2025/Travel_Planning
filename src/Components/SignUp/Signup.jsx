@@ -18,7 +18,7 @@ import { useTheme } from 'next-themes'
 import { IoEye } from 'react-icons/io5'
 import { IoMdEyeOff } from 'react-icons/io'
 import { useTranslations } from 'next-intl'
-import Container from '../Container/Container'
+
 
 const Signup = () => {
   const t = useTranslations('signupPage')
@@ -123,7 +123,7 @@ const Signup = () => {
 
 
   return (
-    <Container>
+
       <div
         style={bgStyle}
         className={`min-h-screen  flex items-center justify-center p-3 sm:p-5`}
@@ -344,7 +344,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-    </Container>
+    
   )
 }
 

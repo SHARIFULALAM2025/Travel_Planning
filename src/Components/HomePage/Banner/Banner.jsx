@@ -8,7 +8,7 @@ import { FaMapMarkerAlt, FaUserFriends } from 'react-icons/fa'
 import { popularDestinations } from './Data'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
-import Container from '@/Components/Container/Container'
+
 
 const images = [
   'https://i.ibb.co.com/fYNV14H1/cruise-large-04.jpg',
@@ -89,7 +89,7 @@ const Banner = ({allData}) => {
   if (!mounted) return null
 
   return (
-    <Container>
+
       <section className="relative w-full min-h-[90vh] lg:h-[85vh] flex items-center justify-center overflow-visible py-3">
         {/* Background slider code */}
         {images.map((img, index) => (
@@ -262,7 +262,7 @@ const Banner = ({allData}) => {
           </form>
         </div>
       </section>
-    </Container>
+
   )
 }
 

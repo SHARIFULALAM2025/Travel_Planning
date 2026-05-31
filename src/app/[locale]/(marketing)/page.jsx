@@ -1,6 +1,6 @@
 'use client'
 
-import Container from '@/Components/Container/Container'
+
 import Banner from '@/Components/HomePage/Banner/Banner'
 import ChooseTour from '@/Components/HomePage/ChooseTour/ChooseTour'
 
@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <div>
-      <Container>
+
        <Banner />
         <HeroSection />
         <PopularDestinations />
@@ -38,7 +38,7 @@ export default function Home() {
         <ChooseTour />
         <Newsletter />
         <Stories />
-      </Container>
+
     </div>
   )
 }

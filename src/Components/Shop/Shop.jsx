@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import Container from '../Container/Container'
+
 import { FaArrowRight, FaStar, FaCartPlus, FaHeart } from 'react-icons/fa'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
@@ -114,7 +114,7 @@ const Shop = () => {
     return null
   }
   return (
-    <Container>
+
       <section
         style={bgStyle}
         className={`${theme === 'dark' ? ' text-white' : 'text-slate-900 '} grid gap-6 grid-cols-1 lg:grid-cols-12 py-6`}
@@ -274,7 +274,7 @@ const Shop = () => {
           </div>
         </div>
       </section>
-    </Container>
+
   )
 }
 

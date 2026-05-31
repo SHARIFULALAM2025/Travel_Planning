@@ -9,7 +9,7 @@ import PersonalInjuryIcon from '@mui/icons-material/PersonalInjury'
 
 import { FaFacebookF, FaYoutube, FaEnvelope, FaPhoneAlt } from 'react-icons/fa'
 import { IoLocationSharp } from 'react-icons/io5'
-import Container from '../Container/Container'
+
 import { useLocale, useTranslations } from 'next-intl'
 import { GiCommercialAirplane } from 'react-icons/gi'
 import { navItems } from '../Header/NavData'
@@ -97,7 +97,7 @@ const Footer = () => {
   if (!mounted) return null
 
   return (
-    <Container>
+
       <footer
         style={bgStyle}
         className="w-full border-t bg-white transition-colors  duration-300 dark:border-slate-800 dark:bg-slate-950"
@@ -282,7 +282,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-    </Container>
+   
   )
 }
 
