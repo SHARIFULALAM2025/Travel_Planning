@@ -13,7 +13,7 @@ import { IoEye, IoMail } from 'react-icons/io5'
 import { useTheme } from 'next-themes'
 import { FaLock } from 'react-icons/fa'
 import { useTranslations } from 'next-intl'
-import Container from '../Container/Container'
+
 
 const Login = () => {
   const t = useTranslations('loginPage')
@@ -95,7 +95,7 @@ const Login = () => {
   if (!mounted) return null
 
   return (
-    <Container>
+
       <div
         style={bgStyle}
         className={` min-h-screen flex items-center justify-center p-4 sm:p-6 md:p-10`}
@@ -267,7 +267,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </Container>
+   
   )
 }
 

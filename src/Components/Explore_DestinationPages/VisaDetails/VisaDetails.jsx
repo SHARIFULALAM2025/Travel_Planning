@@ -5,7 +5,7 @@ import { useLocale } from 'next-intl'
 import { useTheme } from 'next-themes'
 import React, { use, useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import Container from '@/Components/Container/Container'
+
 import Image from 'next/image'
 import {
   FaMapMarkerAlt,
@@ -93,7 +93,7 @@ const VisaDetails = ({ params }) => {
 
   if (!mounted) return null
   return (
-    <Container>
+
       <div>
         <section className="relative w-full h-[50vh] md:h-[70vh] min-h-[400px] overflow-hidden">
           <motion.div
@@ -734,7 +734,7 @@ const VisaDetails = ({ params }) => {
           </div>
         </main>
       </div>
-    </Container>
+
   )
 }
 

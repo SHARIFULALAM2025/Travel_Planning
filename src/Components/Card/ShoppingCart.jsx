@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import Container from '../Container/Container'
+
 import { useSession } from 'next-auth/react'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
@@ -58,41 +58,7 @@ const ShoppingCart = () => {
     totalPrice += element
   }
   const TotalAmount = totalPrice + AllTotalPrice
-  //
-  // const handlePayment = async () => {
-  //   const paymentData = {
-  //     price: TotalAmount,
-  //     customerName: session?.user?.name || 'Anonymous',
-  //     email: session?.user?.email,
-  //     phone: '01700000000',
-  //     address: 'Dhaka, Bangladesh',
-  //     productName: card.map((item) => item.title?.[locale]).join(' ').substring(0, 150),
 
-  //   }
-  //   try {
-  //     const response = await fetch(
-  //       `${process.env.NEXT_PUBLIC_SERVER_BASE_URL_Backend}/init`,
-  //       {
-  //         method: 'POST',
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //         },
-  //         body: JSON.stringify(paymentData),
-  //       }
-  //     )
-
-  //     const data = await response.json()
-
-  //     if (data?.url) {
-  //       window.location.replace(data.url)
-  //     } else {
-  //       toast.error('Failed to initialize payment.')
-  //     }
-  //   } catch (error) {
-  //     console.error('Payment Error:', error)
-  //     toast.error('Something went wrong!')
-  //   }
-  // }
   const [updateQuantity, setUpdateQuantity] = useState({})
   const handleIncomingQuantity = (id,qty) => {
   setUpdateQuantity(prev => ({
@@ -151,7 +117,7 @@ const ShoppingCart = () => {
 
   return (
     <div className="bg-gray-50 dark:bg-slate-950 min-h-screen ">
-      <Container>
+
         <div className="">
           {/* 1. Left Side: Cart Items List */}
           <div className=" bg-white dark:bg-slate-900  shadow-sm overflow-hidden border dark:border-slate-800">
@@ -251,7 +217,7 @@ const ShoppingCart = () => {
             </div>
           </div>
         </div>
-      </Container>
+      
     </div>
   )
 }

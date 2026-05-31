@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import Container from '../Container/Container'
+
 import { useSession } from 'next-auth/react'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
@@ -79,7 +79,7 @@ const Wishlist = () => {
     )
 
   return (
-    <Container>
+
       <div style={bgStyle} className="">
         {wishlist.length > 0 ? (
           <div className="overflow-x-auto border border-gray-100 dark:border-slate-800 shadow-sm">
@@ -169,7 +169,7 @@ const Wishlist = () => {
           </div>
         )}
       </div>
-    </Container>
+   
   )
 }
 

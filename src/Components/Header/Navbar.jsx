@@ -15,7 +15,7 @@ import { BsX } from 'react-icons/bs'
 import { MyLanguages } from './Language'
 import { useRouter } from 'next/navigation'
 import { GiCommercialAirplane } from 'react-icons/gi'
-import Container from '../Container/Container'
+
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import { IoTrashOutline } from 'react-icons/io5'
@@ -166,7 +166,7 @@ const toggleCard = (e) => {
     setIsOpen(false)
   }
   return (
-    <Container>
+
       <nav
         style={bgStyle}
         className={`sticky top-0 z-50 transition-all duration-300 ${
@@ -672,7 +672,7 @@ const toggleCard = (e) => {
           )}
         </AnimatePresence>
       </nav>
-    </Container>
+
   )
 }
 
